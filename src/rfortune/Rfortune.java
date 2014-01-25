@@ -17,7 +17,7 @@ public class Rfortune {
     String name;
     String welcomeMsg = 
               "\n\t************************************************"
-            + "\n\t* Welcome to the game, Rectangle of Fortune     *"
+            + "\n\t* Welcome to the game, Rectangle of Fortune.    *"
             + "\n\t* You will be playing against one or two other  *"
             + "\n\t* players. The object of the game is to have    *"
             + "\n\t* earned the most money by the end of the game. *"
@@ -27,6 +27,9 @@ public class Rfortune {
             + "\n";    
    
     public static void main(String[] args) {     
+        Rfortune rfortune = new Rfortune();
+        rfortune.getName();
+        rfortune.displayHelp();
         // TODO code application logic here
     }
     
@@ -36,7 +39,7 @@ public class Rfortune {
         this.name = input.next();
     }
     public void displayHelp() {
-        System.out.println("\nWelcome " + this.name + "\n");
+        System.out.println("\nHello " + this.name + "!\n");
         System.out.println(this.welcomeMsg);
     }
     
