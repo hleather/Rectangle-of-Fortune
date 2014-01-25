@@ -16,12 +16,14 @@ public class Score {
     long rGuesses = 0;
     long wGuesses = 0;
     long phrasesCompleted = 0;
-    
+    String guess;
+    int amountMoney = 0;
     
     public Score() {
     }
         
     public void displayName() {
-            System.out.println("\t\tHello " + this.name);
+            System.out.println("\t\tHello " + this.name + " you currently have " 
+                    + this.amountMoney + " money.");
         }
     }
