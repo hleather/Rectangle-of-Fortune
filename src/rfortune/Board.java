@@ -13,8 +13,8 @@ package rfortune;
  * @author Heather
  */
 public class Board {
-    int wordCount; // This needs to be an equation or command that counts the 
-                   // amount of letters in the current word or phrase.
+    int wordCount = 4; // This needs to be an equation or command that counts 
+                       // the amount of letters in the current word or phrase.
     
     String playerName1;
     String playerName2;
@@ -31,10 +31,11 @@ public class Board {
     // Pause/Exit button
     
     int spinButton(){
-        int guessWorth; // This would select a random amount of money (using 
-                        // some equation or code) that would
-                        // be awarded to the player whose turn it is if they
-                        // guessed a letter that was in the word/phrase.
+        int guessWorth = 100; // This would select a random amount of money  
+                              // (using some equation or code) that would
+                              // be awarded to the player whose turn it is if 
+                              // they guessed a letter that was in the 
+                              // word or phrase.
         return guessWorth;
     }
     public Board() {
