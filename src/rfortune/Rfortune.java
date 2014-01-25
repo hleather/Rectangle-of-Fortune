@@ -27,9 +27,9 @@ public class Rfortune {
             + "\n";    
    
     public static void main(String[] args) {     
-        Rfortune rfortune = new Rfortune();
-        rfortune.getName();
-        rfortune.displayHelp();
+        Rfortune myGame = new Rfortune();
+        myGame.getName();
+        myGame.displayHelp();
         // TODO code application logic here
     }
     
