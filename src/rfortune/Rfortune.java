@@ -6,12 +6,15 @@
 
 package rfortune;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Heather and Laura
  */
 public class Rfortune {
-    
+    // Instance variables
+    String name;
     String welcomeMsg = 
               "\n\t************************************************"
             + "\n\t* Welcome to the game, Rectangle of Fortune     *"
@@ -21,24 +24,19 @@ public class Rfortune {
             + "\n\t* The game ends when a player guesses the word  *"
             + "\n\t* or phrase.                                    *"
             + "\n\t*************************************************"
-            + "\n";
-    
-    
-    public Rfortune(){
-        
-    }
-    
-
+            + "\n";    
    
-    public static void main(String[] args) {
-        Rfortune rfortune = new Rfortune();
-        rfortune.display();
-        
-             
-    
+    public static void main(String[] args) {     
+        // TODO code application logic here
     }
     
-    private void display(){
+    public void getName() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        this.name = input.next();
+    }
+    public void displayHelp() {
+        System.out.println("\nWelcome " + this.name + "\n");
         System.out.println(this.welcomeMsg);
     }
     
