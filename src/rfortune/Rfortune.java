@@ -17,7 +17,7 @@ class GameBoard {
     int equations;
 }
 class Players {
-    char name;
+    string name;
     int score;
 }
 class Menu {
@@ -29,7 +29,7 @@ class Menu {
 
    
     class displayName {
-public static void main(String args[]) {
+public void main(String args[]) {
 
        Players player1 = new Players();
        Players player2 = new Players();
