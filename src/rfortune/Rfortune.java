@@ -8,46 +8,38 @@ package rfortune;
 
 /**
  *
- * @author Heather
+ * @author Heather and Laura
  */
 public class Rfortune {
-class GameBoard {
-    char wordsPhrases;
-    char playerTurn;
-    int equations;
-}
-class Players {
-    string name;
-    int score;
-}
-class Menu {
-    char welcomeScreen;
-    char mMain;
-    char mHelp;
-    char mGame;
-}
-
-   
-    class displayName {
-public void main(String args[]) {
-
-       Players player1 = new Players();
-       Players player2 = new Players();
-       
-       //assign values to the fields in player1
-       player1.name = "Sally";
-       player1.score = 100;
-       
-       //assign values to the fields in player2
-       player2.name = "Bob";
-       player2.score = 50;
-       
-       System.out.print("Player 1, " + player1.name + " has a score of " 
-       + player1.score + " . ");
-       System.out.print("Player 2, " + player2.name + " has a score of " 
-               + player2.score + " . ");
-
+    
+    String welcomeMsg = 
+              "\n\t************************************************"
+            + "\n\t* Welcome to the game, Rectangle of Fortune     *"
+            + "\n\t* You will be playing against one or two other  *"
+            + "\n\t* players. The object of the game is to have    *"
+            + "\n\t* earned the most money by the end of the game. *"
+            + "\n\t* The game ends when a player guesses the word  *"
+            + "\n\t* or phrase.                                    *"
+            + "\n\t*************************************************"
+            + "\n";
+    
+    
+    public Rfortune(){
+        
     }
     
-}
+
+   
+    public static void main(String[] args) {
+        Rfortune rfortune = new Rfortune();
+        rfortune.display();
+        
+             
+    
+    }
+    
+    private void display(){
+        System.out.println(this.welcomeMsg);
+    }
+    
 }
