@@ -11,10 +11,9 @@ package rfortune;
  */
 public class Board {
     int lengthPhraseCount = 4;     
-    Score player;
-    Score amountMoney;
+    int amountMoney = 150;
     
-    int spinWorth(){
+public int spinWorth(){
         int guessWorth = 100;
         return guessWorth;
     }
@@ -26,7 +25,7 @@ public class Board {
     public void displaySize() {
         System.out.println("\nThe word or phrase is " + this.lengthPhraseCount 
                 + " characters long.");
-        System.out.println("\n$" + spinWorth());
-        System.out.println("\n" + this.player + " has $" + this.amountMoney);
+        System.out.println("\nIf you guess correctly, you get $" + spinWorth());
+        System.out.println("\nPlayer 1 has $" + this.amountMoney);
     }    
 }
