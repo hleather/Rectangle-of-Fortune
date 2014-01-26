@@ -13,9 +13,9 @@ package rfortune;
 public class Game {
     
         String phrase; 
-        String playerName1;
-        String playerName2;
-        String playerName3;
+        String player1;
+        String player2;
+        String player3;
         Score winner;
         Score loser;
         String status;
@@ -27,12 +27,12 @@ public class Game {
     
     public Game(){
         
-        //this.playerName1 = new Player();
-        //this.playerName1.name = "Guy";
-        //this.playerName2 = new Player();
-        //this.playerName2.name = "Faye";
-        //this.playerName3 = new Player();
-        //this.playerName3.name = "Lenny";
+        //this.player1 = new Player();
+        //this.player1.name = "Guy";
+        //this.player2 = new Player();
+        //this.player2.name = "Faye";
+        //this.player3 = new Player();
+        //this.player3.name = "Lenny";
     }
     
     public void displayWinningMessage (){
