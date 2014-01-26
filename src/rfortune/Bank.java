@@ -15,10 +15,10 @@ public class Bank {
     String name;
     long rGuesses = 0;
     long wGuesses = 0;
-    long phraseGuess = 0;
     int amountMoney = 0;
     
     public Bank(){   
+        
     }
     
     public void displayPlayer1(){
