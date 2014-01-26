@@ -35,6 +35,10 @@ public class Rfortune {
         myPlayers.getNumberPlayers();
         myPlayers.getPlayerNames();
         
+        Score myScore = new Score();
+        myScore.getAnswer();
+        myScore.displayScore();
+        
         // TODO code application logic here
     }
     
