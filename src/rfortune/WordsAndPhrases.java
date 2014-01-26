@@ -12,4 +12,25 @@ package rfortune;
  */
 public class WordsAndPhrases {
     
+        String easyPhrases;
+        String hardPhrases;
+        Board board;
+   
+   public WordsAndPhrases(){
+       /* We are wondering if it is possible to link this to a date base to
+       save space*/
+
+       /*List easyPhrases = new ArrayList("Better Late Than Never",
+               + "Blood is thicker than water", "Misery loves company");
+         List hardPhrases = new ArrayList("Every cloud has a sliver lining",
+               +"Knowledge is power", "Much is expected where much is given");*/
+       
+   }
+   
+   //public class DeterminePhrase(){
+          /*This would use boolean to determine whether the Easy words and
+          phrases should be used or the hard ones. It would then return that
+          value and another function will use a random generator to determine
+          the phrase that will be used in the array*/      
+   //} 
 }
