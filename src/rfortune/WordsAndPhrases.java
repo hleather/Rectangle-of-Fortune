@@ -17,7 +17,7 @@ public class WordsAndPhrases {
         Board board;
        
    
-   //public WordsAndPhrases(){
+   public WordsAndPhrases(){
        /* We are wondering if it is possible to link this to a date base to
        save space*/
 
@@ -25,8 +25,8 @@ public class WordsAndPhrases {
                + "Blood is thicker than water", "Misery loves company");
          List hardPhrases = new ArrayList("Every cloud has a sliver lining",
                +"Knowledge is power", "Much is expected where much is given");*/
-       
-   //}
+               System.out.println("\n\tThe phrase is" + easyPhrases);
+   }
    
    //public class DeterminePhrase(){
           /*It would use boolean to determine whether the Easy words and
