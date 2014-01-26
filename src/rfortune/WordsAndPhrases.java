@@ -18,7 +18,7 @@ public class WordsAndPhrases {
        
    
    public WordsAndPhrases(){
-       /* We are wondering if it is possible to link this to a date base to
+       /* We are wondering if it is possible to link this to a data base to
        save space*/
 
        /*List easyPhrases = new ArrayList("Better Late Than Never",
