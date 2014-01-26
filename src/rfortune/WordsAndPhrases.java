@@ -25,7 +25,7 @@ public class WordsAndPhrases {
                + "Blood is thicker than water", "Misery loves company");
          List hardPhrases = new ArrayList("Every cloud has a sliver lining",
                +"Knowledge is power", "Much is expected where much is given");*/
-               System.out.println("\n\tThe phrase is" + easyPhrases);
+               System.out.println("\n\tThe phrase is" + board);
    }
    
    //public class DeterminePhrase(){
