@@ -14,9 +14,9 @@ import java.util.Scanner;
  */
 public class Player {
     String numPlayers;
-    String player1 = "Susan";
-    String player2 = "Bob";
-    String player3 = "Dan";
+    String player1 = "Player 1";
+    String player2 = "Player 2";
+    String player3 = "Player 3";
     
     
     public Player() {
