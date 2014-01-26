@@ -24,12 +24,17 @@ public class Rfortune {
             + "\n\t* The game ends when a player guesses the word  *"
             + "\n\t* or phrase.                                    *"
             + "\n\t*************************************************"
-            + "\n";    
+            + "\n";
    
     public static void main(String[] args) {     
         Rfortune myGame = new Rfortune();
         myGame.getName();
         myGame.displayHelp();
+        
+        Player myPlayers = new Player();
+        myPlayers.getNumberPlayers();
+        myPlayers.getPlayerNames();
+        
         // TODO code application logic here
     }
     
