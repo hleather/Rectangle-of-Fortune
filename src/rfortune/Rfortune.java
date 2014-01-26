@@ -35,9 +35,18 @@ public class Rfortune {
         myPlayers.getNumberPlayers();
         myPlayers.getPlayerNames();
         
+        Board myBoard = new Board();
+        myBoard.spinWorth();
+        myBoard.displaySize(); 
+        
+        Letters myLetters = new Letters();
+        myLetters.getGuess();
+        myLetters.displayLetter();
+        
         Score myScore = new Score();
         myScore.getAnswer();
-        myScore.displayScore();
+        myScore.displayScore();  
+        
         
         // TODO code application logic here
     }
