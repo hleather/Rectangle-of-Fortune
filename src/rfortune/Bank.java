@@ -12,4 +12,19 @@ package rfortune;
  */
 public class Bank {
     
+    String name;
+    long rGuesses = 0;
+    long wGuesses = 0;
+    int amountMoney = 0;
+    
+    public Bank(){   
+        
+    }
+    
+    public void displayPlayer1(){
+        System.out.println("\n\tHello" + this.name + "you currently have"
+            + this.amountMoney +"money.");
+    }
 }
+
+    
