@@ -15,6 +15,7 @@ public class WordsAndPhrases {
         String easyPhrases;
         String hardPhrases;
         Board board;
+       
    
    //public WordsAndPhrases(){
        /* We are wondering if it is possible to link this to a date base to
@@ -28,7 +29,7 @@ public class WordsAndPhrases {
    //}
    
    //public class DeterminePhrase(){
-          /*This would use boolean to determine whether the Easy words and
+          /*It would use boolean to determine whether the Easy words and
           phrases should be used or the hard ones. It would then return that
           value and another function will use a random generator to determine
           the phrase that will be used in the array*/      
