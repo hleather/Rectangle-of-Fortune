@@ -20,28 +20,59 @@ public class Game {
         Score loser;
         String status;
         Board board;
-        //Player currentPlayer;
-        //Player otherPlayerA;
-        //Player otherPlayerB;
+        
         
     
     public Game(){
         
-        //this.player1 = new Player();
-        //this.player1.name = "Guy";
-        //this.player2 = new Player();
-        //this.player2.name = "Faye";
-        //this.player3 = new Player();
-        //this.player3.name = "Lenny";
     }
     
-    public void displayWinningMessage (){
-        System.out.println(
-            "\n\t*****************************************************"
-            + "\n\t Congratulations" + this.winner.name + "! You won the game."
-            + "\n\t You may assume bragging rights for the day!"
-            + "\n\t******************************************************");
-    }
+     public void determineUserGuess(){
+        char isValid = 'v';
+        int v = (int) isValid;        
+        char userGuess = 'l';
+        int x = (int) userGuess;
+        char repeatCheck = 'n';
+        int y = (int) repeatCheck;
+        char inPhrase = 'l';
+        int z = (int) inPhrase;
+        int correctGuesses = 0;
+        int incorrectGuesses = 0;
+       
+        System.out.println("Please enter your guess: ");
+        
+        System.out.println("\t(Your guess was 9)");
+         if (userGuess != v) 
+             System.out.println("9 is invalid. Please enter a single lower "
+             + "case consonant:");
+         
+         System.out.println("\t(Your guess was n)");
+         if ((userGuess == x) && (userGuess != y))
+             System.out.println("Sorry, n has already been guessed. Please "
+             + "enter a different letter:");
+        
+         System.out.println("\t(If your guess was r)");
+         if ((userGuess == x) && (userGuess != 'r'))
+             System.out.println("Sorry, r is not in the phrase.");
+                     correctGuesses++;
+        
+         System.out.println("\t(If your guess was l)");
+         if ((userGuess == x) && (userGuess == z))
+             System.out.println("Good job! l is in the phrase.");
+                     incorrectGuesses++;
+         
+        System.out.println("You now have " + correctGuesses + " correct "
+                + "guesses." + "\n\t\t(or) \nYou now have " + incorrectGuesses + 
+                " incorrect guesses.");
+     }
+    
+    //public void displayWinningMessage (){
+        //System.out.println(
+           // "\n\t*****************************************************"
+           // + "\n\t Congratulations" + this.winner.name + "! You won the game."
+            //+ "\n\t You may assume bragging rights for the day!"
+            //+ "\n\t******************************************************");
+    //}
     
     public void displayTiedMessage (){
         System.out.println(
