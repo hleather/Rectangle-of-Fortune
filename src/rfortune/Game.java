@@ -76,6 +76,7 @@ public class Game {
              return correctGuesses++;
          if (b = false)
              return incorrectGuesses++;
+         else return 0;
          
     }
     
