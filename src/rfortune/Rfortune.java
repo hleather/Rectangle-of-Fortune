@@ -29,6 +29,7 @@ public class Rfortune {
     public static void main(String[] args) {     
         Rfortune myGame = new Rfortune();
         myGame.getName();
+       
         myGame.displayHelp();
         
         Player myPlayers = new Player();
@@ -42,10 +43,13 @@ public class Rfortune {
         Letters myLetters = new Letters();
         myLetters.getGuess();
         myLetters.displayLetter();
-        
+
         Score myScore = new Score();
         myScore.getAnswer();
         myScore.displayScore();  
+        
+        Game userGuess = new Game();
+        userGuess.determineUserGuess();
         
         
         // TODO code application logic here

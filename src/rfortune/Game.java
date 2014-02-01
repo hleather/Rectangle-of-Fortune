@@ -40,27 +40,27 @@ public class Game {
         int incorrectGuesses = 0;
         boolean b;
         
-        System.out.println("Please enter your guess: ");
+        System.out.println("\nPlease enter your guess: ");
         
         System.out.println("\t(Your guess was 9)");
          if (userGuess != v) 
              System.out.println("Sorry, 9 is invalid. Please enter a single "
-             + "lower case consonant:");
+             + "lower case consonant: ");
          
          System.out.println("\t(Your guess was a)");
          if (userGuess != v) 
              System.out.println("Sorry, a is invalid. Please enter a single "
-             + "lower case consonant:");
+             + "lower case consonant: ");
          
          System.out.println("\t(Your guess was ff)");
          if (userGuess != v)
              System.out.println("Sorry, ff is invalid. Please enter a single "
-             + "lower case consonant:");
+             + "lower case consonant: ");
          
          System.out.println("\t(Your guess was n)");
          if ((userGuess == x) && (userGuess != y))
              System.out.println("Sorry, n has already been guessed. Please "
-             + "enter a different letter:");
+             + "enter a different letter: ");
          
          System.out.println("\t(If your guess was r)");
          if ((userGuess == x) && (userGuess != 'r'))
