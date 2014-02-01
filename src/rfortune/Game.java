@@ -85,11 +85,16 @@ public class Game {
     
     public void buyAVowel(){
     
-        int vowel1 = 'a';
-        int vowel2 = 'e';
-        int vowel3 = 'i';
-        int vowel4 = 'o';
-        int vowel5 = 'u';
+        char vowel1 = 'a';
+        int newVowel1 = (int)('a');
+        char vowel2 = 'e';
+        int newVowel2 = (int)('e');
+        char vowel3 = 'i';
+        int newVowel3 = (int)('i');
+        char vowel4 = 'o';
+        int newVowel4 = (int)('o');
+        char vowel5 = 'u';
+        int newVowel5 =(int)('u');
         int currentScore = Board.guessWorth;
         
         
@@ -98,13 +103,14 @@ public class Game {
         System.out.println("Please enter a vowel:");
         this.guess1 = userGuess.next();
        
-        if ((guess1 != vowel1) || (guess1 != vowel2)|| (guess1 != vowel3)
-               || (guess1 != vowel4) || (guess1 != vowel5)){
-             System.out.println(userGuess + "is invalid. Please enter a vowel.");
+        if ((guess1 != newVowel1) || (guess1 != newVowel2)|| 
+                (guess1 != newVowel3) || (guess1 != newVowel4) || 
+                (guess1 != newVowel5)){
+             System.out.println(userGuess + "is invalid. \nPlease enter a vowel.");
         }else{
             int newScore = currentScore - 250;
             return newScore;
-            System.out.println("Your new score is " + newScore);   
+            System.out.println("\tYour new score is " + newScore);   
         }
     }
                      
