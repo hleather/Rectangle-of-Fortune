@@ -6,6 +6,8 @@
 
 package rfortune;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Laura
@@ -20,6 +22,7 @@ public class Game {
         Score loser;
         String status;
         Board board;
+    private String guess1;
         
         
     
@@ -79,6 +82,32 @@ public class Game {
          else return 0;
          
     }
+    
+    public void buyAVowel(){
+    
+        int vowel1 = 'a';
+        int vowel2 = 'e';
+        int vowel3 = 'i';
+        int vowel4 = 'o';
+        int vowel5 = 'u';
+        int currentScore = Board.guessWorth;
+        
+        
+        Scanner userGuess = new Scanner(System.in);
+        int guess1 = Integer.parseInt(userGuess);
+        System.out.println("Please enter a vowel:");
+        this.guess1 = userGuess.next();
+       
+        if ((guess1 != vowel1) || (guess1 != vowel2)|| (guess1 != vowel3)
+               || (guess1 != vowel4) || (guess1 != vowel5)){
+             System.out.println(userGuess + "is invalid. Please enter a vowel.");
+        }else{
+            int newScore = currentScore - 250;
+            return newScore;
+            System.out.println("Your new score is " + newScore);   
+        }
+    }
+                     
     
     //public void displayWinningMessage (){
         //System.out.println(
