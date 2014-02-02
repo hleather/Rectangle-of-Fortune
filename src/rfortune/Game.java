@@ -95,21 +95,24 @@ public class Game {
         int newVowel4 = (int)('o');
         char vowel5 = 'u';
         int newVowel5 =(int)('u');
-        int currentScore = Board.guessWorth;
+        int currentScore = 500;
+        //int currentScore = Board.guessWorth;
+        
+        String newVowel;
         
         
-        Scanner userGuess = new Scanner(System.in);
-        int guess1 = Integer.parseInt(userGuess);
+        Scanner vowelGuess = new Scanner(System.in);
         System.out.println("Please enter a vowel:");
-        this.guess1 = userGuess.next();
+        newVowel = vowelGuess.next();
+        char checkVowel = newVowel.charAt(0);
        
-        if ((guess1 != newVowel1) || (guess1 != newVowel2)|| 
-                (guess1 != newVowel3) || (guess1 != newVowel4) || 
-                (guess1 != newVowel5)){
-             System.out.println(userGuess + "is invalid. \nPlease enter a vowel.");
+        if ((checkVowel != newVowel1) & (checkVowel != newVowel2) & 
+                (checkVowel != newVowel3) & (checkVowel != newVowel4) & 
+                (checkVowel != newVowel5)){
+             System.out.println(newVowel + " is invalid. \nPlease enter a vowel.");
         }else{
             int newScore = currentScore - 250;
-            return newScore;
+            //return newScore;
             System.out.println("\tYour new score is " + newScore);   
         }
     }
