@@ -50,6 +50,7 @@ public class Rfortune {
         
         Game userGuess = new Game();
         userGuess.determineUserGuess();
+        userGuess.buyAVowel();
         
         
         // TODO code application logic here
