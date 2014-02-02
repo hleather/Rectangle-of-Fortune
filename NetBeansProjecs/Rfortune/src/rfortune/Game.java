@@ -12,8 +12,7 @@ import java.util.Scanner;
  *
  * @author Laura
  */
-public class Game {
-    
+public class Game {  
         String phrase; 
         String player1;
         String player2;
@@ -22,9 +21,12 @@ public class Game {
         Score loser;
         String status;
         Board board;
-    private String guess1;
-        
-        
+        static char share;
+        static int correctGuesses = 0;
+        static int incorrectGuesses = 0;
+        static int phraseGuess = 1;
+        private String guess1;
+        static char userGuess;
     
     public Game(){
         
@@ -32,19 +34,18 @@ public class Game {
     
     public int determineUserGuess(){
         char valid = 'v';
-        int v = (int) valid;        
-        char userGuess = 'l';
+        int v = (int) valid;
+        userGuess = 'l';
         int x = (int) userGuess;
         char repeatCheck = 'n';
         int y = (int) repeatCheck;
         char inPhrase = 'l';
         int z = (int) inPhrase;
-        int correctGuesses = 0;
-        int incorrectGuesses = 0;
         boolean b;
+
         
-        System.out.println("\nPlease enter your guess: ");
         
+                
         System.out.println("\t(Your guess was 9)");
          if (userGuess != v) 
              System.out.println("Sorry, 9 is invalid. Please enter a single "
@@ -74,13 +75,24 @@ public class Game {
          if ((userGuess == x) && (userGuess == z))
              b = true;
                 System.out.println("Good job! l is in the phrase.");
-           
-         if (b = true)
-             return correctGuesses++;
-         if (b = false)
-             return incorrectGuesses++;
-         else return 0;
+        
+
          
+          System.out.println("\n\t(If you had guessed the whole phrase, after "
+          + "only one letter had been correctly guessed");
+         
+         Game.phraseGuess = 1;
+           
+         if (b = true) 
+             share = '1';
+         if (share == '1')
+             return ++Game.correctGuesses;
+         if (b = false)
+             share = '0';
+         if (share == '0')
+             return ++Game.incorrectGuesses;
+         else 
+             return 0;
     }
     
     public void buyAVowel(){
