@@ -8,7 +8,7 @@ package rfortune;
 
 /**
  *
- * @author Heather
+ * @author Heather and Laura
  */
 public class RfortuneError {
     public Object displayError(Object object) {
