@@ -27,6 +27,9 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
+        HelpMenuView myHelp = new HelpMenuView();
+        myHelp.getInput();
+        
         Rfortune myGame = new Rfortune();
         myGame.getName();
        

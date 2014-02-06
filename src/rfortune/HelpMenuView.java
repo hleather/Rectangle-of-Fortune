@@ -70,7 +70,7 @@ public class HelpMenuView  {
                 case "Q": 
                     break;
                 default: 
-                    new TicTacToeError().displayError("Invalid command. Please enter a valid command.");
+                    new RfortuneError().displayError("Invalid command. Please enter a valid command.");
                     continue;
             }
         } while (!command.equals("Q"));  
