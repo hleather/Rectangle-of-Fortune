@@ -11,7 +11,7 @@ package rfortune;
  * @author Heather
  */
 public class Board {
-    int lengthPhraseCount = 4;     
+    int lengthPhraseCount = 14;     
     int amountMoney = 150;
     
 public int spinWorth(){
