@@ -19,7 +19,7 @@ public class Letters {
     
     public Letters() {
         
-    }
+}
     
     public void getGuess() {
         Scanner input = new Scanner(System.in);

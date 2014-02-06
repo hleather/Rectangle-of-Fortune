@@ -1,2 +1,0 @@
-Rectangle-of-Fortune
-====================

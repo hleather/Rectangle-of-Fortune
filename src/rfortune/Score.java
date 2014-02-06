@@ -25,7 +25,7 @@ public class Score {
     String answer3;
     
     public Score() {
-    }
+}
         
     public void getAnswer() {
         Scanner input = new Scanner(System.in);

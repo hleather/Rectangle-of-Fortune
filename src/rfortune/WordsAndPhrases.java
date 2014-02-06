@@ -8,7 +8,7 @@ package rfortune;
 
 /**
  *
- * @author Laura
+ * @author Heather
  */
 public class WordsAndPhrases {
     
@@ -26,7 +26,7 @@ public class WordsAndPhrases {
          List hardPhrases = new ArrayList("Every cloud has a sliver lining",
                +"Knowledge is power", "Much is expected where much is given");*/
                System.out.println("\n\tThe phrase is" + board);
-   }
+}
    
    //public class DeterminePhrase(){
           /*It would use boolean to determine whether the Easy words and

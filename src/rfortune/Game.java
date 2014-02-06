@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Laura
+ * @author Heather
  */
 public class Game {
     
@@ -28,7 +28,7 @@ public class Game {
     
     public Game(){
         
-    }
+}
     
     public int determineUserGuess(){
         char valid = 'v';

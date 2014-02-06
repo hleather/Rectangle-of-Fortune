@@ -5,6 +5,7 @@
  */
 
 package rfortune;
+
 /**
  *
  * @author Heather
@@ -16,7 +17,7 @@ public class Board {
 public int spinWorth(){
         int guessWorth = 100;
         return guessWorth;
-    }
+}
     
     public Board() {
     
