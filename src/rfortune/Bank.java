@@ -8,7 +8,7 @@ package rfortune;
 
 /**
  *
- * @author Laura
+ * @author Heather
  */
 public class Bank {
     
@@ -19,7 +19,7 @@ public class Bank {
     
     public Bank(){   
         
-    }
+}
     
     public void displayPlayer1(){
         System.out.println("\n\tHello" + this.name + "you currently have"
