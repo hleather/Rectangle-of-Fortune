@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Player {
     String numPlayers;
-    String player1 = "Player 1";
+    String player1 = Rfortune.name;
     String player2 = "Player 2";
     String player3 = "Player 3";
     
@@ -33,7 +33,7 @@ public class Player {
             case "three":
                 {
                     Scanner input = new Scanner(System.in);
-                    System.out.println("Player 1 is " + Rfortune.name);                  
+                    System.out.println("Player 1 is " + player1);                  
                     System.out.println("Enter name of Player 2: ");
                     this.player2 = input.next();
                     System.out.println("Enter name of Player 3: ");
