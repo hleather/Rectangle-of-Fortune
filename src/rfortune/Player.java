@@ -33,8 +33,7 @@ public class Player {
             case "three":
                 {
                     Scanner input = new Scanner(System.in);
-                    System.out.println("Enter name of Player 1: ");
-                    this.player1 = input.next();
+                    System.out.println("Player 1 is " + Rfortune.name);                  
                     System.out.println("Enter name of Player 2: ");
                     this.player2 = input.next();
                     System.out.println("Enter name of Player 3: ");
@@ -44,8 +43,7 @@ public class Player {
             case "two":
                 {
                     Scanner input = new Scanner(System.in);
-                    System.out.println("Enter name of Player 1: ");
-                    this.player1 = input.next();
+                    System.out.println("Player 1 is " + Rfortune.name);
                     System.out.println("Enter name of Player 2: ");
                     this.player2 = input.next();
                     break;
@@ -53,8 +51,7 @@ public class Player {
             default:
                 {
                     Scanner input = new Scanner(System.in);
-                    System.out.println("Enter name of Player 1: ");
-                    this.player1 = input.next();
+                    System.out.println("Player 1 is " + Rfortune.name);
                     break;
                 }
          }
