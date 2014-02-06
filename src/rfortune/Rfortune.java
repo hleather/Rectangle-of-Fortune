@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Rfortune {
     // Instance variables
-    String name;
+    static String name;
     String welcomeMsg = 
               "\n\t************************************************"
             + "\n\t* Welcome to the game, Rectangle of Fortune.    *"
@@ -59,10 +59,10 @@ public class Rfortune {
     public void getName() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your name: ");
-        this.name = input.next();
+        Rfortune.name = input.next();
 }
     public void displayHelp() {
-        System.out.println("\nHello " + this.name + "!\n");
+        System.out.println("\nHello " + Rfortune.name + "!\n");
         System.out.println(this.welcomeMsg);
     }
     
