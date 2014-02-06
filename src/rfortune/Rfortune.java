@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Heather and Laura
+ * @author Heather
  */
 public class Rfortune {
     // Instance variables
@@ -25,8 +25,8 @@ public class Rfortune {
             + "\n\t* or phrase.                                    *"
             + "\n\t*************************************************"
             + "\n";
-   
-    public static void main(String[] args) {     
+
+    public static void main(String[] args) {
         Rfortune myGame = new Rfortune();
         myGame.getName();
        
@@ -60,7 +60,7 @@ public class Rfortune {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter your name: ");
         this.name = input.next();
-    }
+}
     public void displayHelp() {
         System.out.println("\nHello " + this.name + "!\n");
         System.out.println(this.welcomeMsg);
