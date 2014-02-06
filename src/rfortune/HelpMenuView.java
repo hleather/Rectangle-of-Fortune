@@ -21,12 +21,11 @@ import java.util.Scanner;
 public class HelpMenuView  {
         
     private final static String[][] menuItems = {
-        {"B", "The board"},
-        {"C", "A computer player"}, 
-        {"G", "The Tic-Tac-Toe game"},
-        {"L", "A location"},
-        {"M", "A marker"},
-        {"R", "A regular player"},        
+        {"B", "The Board"}, 
+        {"R", "The Rectangle of Fortune game"},
+        {"V", "Buy a Vowel"},
+        {"G", "Make a Guess"},
+        {"P", "The Players"},        
         {"Q", "Quit Help"}        
     };
     
@@ -56,20 +55,17 @@ public class HelpMenuView  {
                 case "B":
                     this.helpMenuControl.displayBoardHelp();
                     break;
-                case "C":
-                    this.helpMenuControl.displayComputerPlayerHelp();
-                    break;
-                case "G":
+                case "R":
                     this.helpMenuControl.displayGameHelp();
                     break;                  
-                case "L":
-                    this.helpMenuControl.displayLocationHelp();
+                case "V":
+                    this.helpMenuControl.displayVowelHelp();
                     break;
-                case "M":
-                    this.helpMenuControl.displayMarkerHelp();
+                case "G":
+                    this.helpMenuControl.displayGuessHelp();
                     break;
-                 case "R":
-                    this.helpMenuControl.displayRealPlayerHelp();
+                 case "P":
+                    this.helpMenuControl.displayPlayerHelp();
                     break; 
                 case "Q": 
                     break;
