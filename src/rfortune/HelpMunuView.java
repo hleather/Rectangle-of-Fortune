@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author jacksonrkj
+ * @author Heather and Laura
  */
 public class HelpMenuView  {
         
