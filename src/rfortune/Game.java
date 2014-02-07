@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class Game {
     
         String phrase; 
-        String player1;
-        String player2;
-        String player3;
+        public static String player1 =  "ONE_PLAYER";
+        String player2 = "TWO_PLAYER";
+        String player3 = "THREE_PLAYER";
         Score winner;
         Score loser;
         String status;
