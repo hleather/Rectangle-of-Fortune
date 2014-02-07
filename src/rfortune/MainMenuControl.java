@@ -13,7 +13,8 @@ import java.util.Scanner;
  */
 public class MainMenuControl {
     
-    
+        Player myPlayers = new Player();
+        myPlayers.getPlayerNames();
      
     public void startGame(long noPlayers) {
                 
@@ -22,27 +23,11 @@ public class MainMenuControl {
             return;
         }
         
-        Game game;
-        if (noPlayers == 1) {
-            game = this.create("ONE_PLAYER");
-        }
-        else if (noPlayers == 2){
-            game = this.create("TWO_PLAYER");
-        }
-        else {
-            game = this.create("THREE_PLAYER");
-        }
-
-        GameMenuView gameMenu = new GameMenuView(game);
-        gameMenu.getInput();
+   
     }
 
     
     
-    public Game create(String gameType) {
-        
-
-    } 
     
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
