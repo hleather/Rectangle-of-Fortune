@@ -20,10 +20,12 @@ public class HelpMenuControl  {
         System.out.println();
         this.displayHelpBorder();             
         System.out.println( 
-                "\tThe game board for Tic-Tac-Toe. It consist of a grid of "
-                + "\n\tlocations. Players place their marker on the different locations "
-                + "\n\ton the board in an effort to win the game. The default board is "
-                + "\n\t3 rows by 3 columns.");
+                "\tThe game board for Rectangle of Fortune. It consists of a "
+                + "\n\tgrid of rectangles. The grid is 4 rows by 4 columns. "
+                + "\n\tEach rectangle holds a different monetary value. Blank "
+                + "\n\tspaces are also displayed. The number of blank spaces "
+                + "\n\tis the amount of letters in the word or phrase. When a"
+                + "\n\t");
         displayHelpBorder();
     }
     
