@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 
 public class MainMenuView {
+    public static String command;
     
     
     private static final String[][] menuItems = {
@@ -32,9 +33,8 @@ public class MainMenuView {
     }
  
     
-    public void getInput() {       
+    public String getInput() {       
 
-        String command;
         Scanner inFile = new Scanner(System.in);
         
         do {
@@ -51,6 +51,9 @@ public class MainMenuView {
                 case "2":
                     this.mainMenuControl.startGame(2);
                     break;
+                case "3":
+                    this.mainMenuControl.startGame(3);
+                    break;
                 case "H":
                     this.mainMenuControl.displayHelpMenu();            
                     break;
@@ -62,7 +65,7 @@ public class MainMenuView {
             }
         } while (!command.equals("X"));
 
-        return;
+        return command;
     }
     
 
