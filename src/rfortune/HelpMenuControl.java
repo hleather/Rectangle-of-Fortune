@@ -37,12 +37,11 @@ public class HelpMenuControl  {
         System.out.println( 
                  "\tThe objective of the game is to be the player with the most "
                 + "\n\tmoney when the word or phrase is completed. Each player "
-                + "\n\ttakes a turn by pressing a button to see how much money "
-                + "\n\tthey will win for guessing correct letters. They then "
-                + "\n\tguess a letter to see if it is in the phrase. If it is  "
-                + "\n\tin the phrase, they will earn money and get another turn. "
-                + "\n\tIf not, it is the next player's turn. The person with"
-                + "\n\tthe most money at the end of the game wins! "
+                + "\n\ttakes a turn by guessing letters to see if it is in the "
+                + "\n\tphrase. If it is in the phrase, they will earn money  "
+                + "\n\tand get another turn. If not, it is the next player's "
+                + "\n\tturn. The person with the most money at the end of the "
+                + "\n\tgame wins! "
                 ); 
         displayHelpBorder();
     }
@@ -64,10 +63,10 @@ public class HelpMenuControl  {
         displayHelpBorder();     
         System.out.println( 
                 "\tMaking a Guess. To make a guess on your turn, the player "
-                + "\n\twill press the 'Play' button. The board will light up "
-                + "\n\tthe value of money earned if the player guesses a letter "
-                + "\n\tin the word or phrase. The player then will then enter "
-                +  "\n\ta consonant. If it is in the phrase, it will appear "
+                + "\n\twill press the 'Guess a Consonant' button. The board  "
+                + "\n\twill display the value of money earned if the player "
+                + "\n\tguesses a correct letter. The player will then enter "
+                + "\n\ta consonant. If it is in the phrase, it will appear "
                 + "\n\ton the board where it is located in the phrase. "
                 ); 
         displayHelpBorder();
@@ -77,7 +76,8 @@ public class HelpMenuControl  {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
-               "\tA location on the board where a player can place their marker"
+               "\tA player takes their turn by selecting the'Guess a Consonant' "
+                + "\n\tbutton or the 'Buy a Vowel' button."
                 ); 
         displayHelpBorder();
     }
