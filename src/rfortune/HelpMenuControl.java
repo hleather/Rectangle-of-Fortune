@@ -43,7 +43,7 @@ public class HelpMenuControl  {
         displayHelpBorder();
     }
             
-    public void displayRealPlayerHelp() {
+    public void displayVowelHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -54,7 +54,7 @@ public class HelpMenuControl  {
     }
     
                    
-    public void displayComputerPlayerHelp() {
+    public void displayGuessHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -64,7 +64,7 @@ public class HelpMenuControl  {
         displayHelpBorder();
     }
              
-    public void displayLocationHelp() {
+    public void displayPlayerHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -72,18 +72,7 @@ public class HelpMenuControl  {
                 ); 
         displayHelpBorder();
     }
-                 
-    public void displayMarkerHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-               "\tA symbol that \"marks\" the locations in the board that are occupied "
-                + "by a player. "
-                + "\n\tThe default markers are \"X\" and \"O\"."
-                ); 
-        displayHelpBorder();
-    }
-    
+   
     
     public void displayHelpBorder() {       
         System.out.println(
