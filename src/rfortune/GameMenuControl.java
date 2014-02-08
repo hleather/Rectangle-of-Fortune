@@ -37,7 +37,7 @@ public class GameMenuControl {
             
     public void displayPreferencesMenu() {
         GamePreferencesView PreferencesMenu = new GamePreferencesView();
-        PreferencesMenu.getInput();
+        GamePreferencesView.getInput();
     }
     
     public void displayHelpMenu() {
