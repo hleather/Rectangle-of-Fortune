@@ -53,7 +53,7 @@ public class GameMenuView {
                     gameMenuControl.startNewGame();
                     break;
                 case "P":
-                    gameMenuControl.displayPreferencesMenu();
+                    GamePreferencesView.getInput();
                     break;
                 case "H":
                     gameMenuControl.displayHelpMenu();
