@@ -22,7 +22,6 @@ public class GamePreferencesView {
     };
 
     public GamePreferencesView() {
-        this.game = game;
     }
     
     public void getInput() {       
