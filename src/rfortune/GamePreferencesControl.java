@@ -6,13 +6,11 @@
 
 package rfortune;
 
-
 /**
  *
  * @author Laura
  */
 public class GamePreferencesControl {
-
 
     public GamePreferencesControl() {
     }

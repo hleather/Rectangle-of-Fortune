@@ -12,7 +12,7 @@ package rfortune;
  */
 public class GameMenuControl {
 
-
+    
     public GameMenuControl(Game game) {
 
     }
