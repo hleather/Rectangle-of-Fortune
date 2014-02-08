@@ -30,8 +30,8 @@ public class Rfortune {
         HelpMenuView myHelp = new HelpMenuView();
         myHelp.getInput();
         
-        GamePreferencesView myPreferences = new GamePreferencesView();
-        myPreferences.getInput();
+        GamePreferencesView PreferencesMenu = new GamePreferencesView();
+        PreferencesMenu.getInput();
         
         Rfortune myGame = new Rfortune();
         myGame.getName();

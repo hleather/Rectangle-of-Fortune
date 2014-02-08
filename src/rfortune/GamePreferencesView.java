@@ -23,6 +23,10 @@ public class GamePreferencesView {
 
     public GamePreferencesView() {
     }
+
+    GamePreferencesView(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void getInput() {       
         String command;
