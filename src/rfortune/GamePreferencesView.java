@@ -14,19 +14,16 @@ import java.util.Scanner;
  */
 public class GamePreferencesView {
      Game game;
-    private GamePreferencesControl gamePreferenceControl = new GamePreferencesControl(game);
+    private final GamePreferencesControl gamePreferenceControl = new GamePreferencesControl(game);
 
     private final static String[][] menuItems = {
-        {"1", "Change Marker of the first Player"},
-        {"2", "Change Marker of the second Player"},
-        {"D", "Change the dimensions of the board"},
+        {"D", "Select Difficulty Level"},
         {"Q", "Return to game menu"}
     };
 
-    public GamePreferencesView(Game game) {
+    public GamePreferencesView() {
         this.game = game;
     }
-
     
     public void getInput() {       
         String command;
@@ -40,19 +37,13 @@ public class GamePreferencesView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "1":
-                    this.gamePreferenceControl.getMarker(this.game.playerA);
-                    break;
-                case "2":
-                    this.gamePreferenceControl.getMarker(this.game.playerB);
-                    break;
                 case "D":
-                    this.gamePreferenceControl.getDimensions();
+                    this.gamePreferenceControl.setDifficulty();
                     break;
                 case "Q":
                     break;
                 default: 
-                    new TicTacToeError().displayError("Invalid command. Please enter a valid command.");
+                    new RfortuneError().displayError("Invalid command. Please enter a valid command.");
                     continue;
             }
         } while (!command.equals("Q"));
@@ -66,7 +57,7 @@ public class GamePreferencesView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
-        for (int i = 0; i < GamePreferencesMenuView.menuItems.length; i++) {
+        for (int i = 0; i < GamePreferencesView.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
