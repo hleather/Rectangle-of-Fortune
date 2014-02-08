@@ -13,7 +13,6 @@ import java.util.Scanner;
  * @author Heather
  */
 public class Player {
-    String numPlayers;
     String player1 = Rfortune.name;
     String player2 = "Player 2";
     String player3 = "Player 3";
@@ -22,15 +21,10 @@ public class Player {
     public Player() {
 }
     
-    public void getNumberPlayers() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter number of players (one, two, or three): ");
-        this.numPlayers = input.next();       
-    }
     
     public void getPlayerNames () {
-        switch (this.numPlayers) {
-            case "three":
+        switch (MainMenuView.command) {
+            case "3":
                 {
                     Scanner input = new Scanner(System.in);
                     System.out.println("Player 1 is " + player1);                  
@@ -40,7 +34,7 @@ public class Player {
                     this.player3 = input.next();
                     break;
                 }
-            case "two":
+            case "2":
                 {
                     Scanner input = new Scanner(System.in);
                     System.out.println("Player 1 is " + Rfortune.name);
@@ -57,5 +51,5 @@ public class Player {
          }
         
         }     
- 
+
     }

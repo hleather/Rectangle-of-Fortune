@@ -6,10 +6,79 @@
 
 package rfortune;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Heather
  */
+
+
 public class MainMenuView {
+    public static String command;
+    
+    
+    private static final String[][] menuItems = {
+        {"1", "One player game"},
+        {"2", "Two player game"},
+        {"3", "Three player game"},
+        {"H", "Help"},
+        {"X", "Exit Tic-Tac-Toe"}
+    }; 
+  
+    MainMenuControl mainMenuControl = new MainMenuControl();
+    
+    public MainMenuView() {
+
+    }
+ 
+    
+    public String getInput() {       
+
+        Scanner inFile = new Scanner(System.in);
+        
+        do {
+            this.display(); // display the menu
+
+            // get commaned entered
+            command = inFile.nextLine();
+            command = command.trim().toUpperCase();
+            
+            switch (command) {
+                case "1":
+                    this.mainMenuControl.startGame(1);
+                    break;
+                case "2":
+                    this.mainMenuControl.startGame(2);
+                    break;
+                case "3":
+                    this.mainMenuControl.startGame(3);
+                    break;
+                case "H":
+                    this.mainMenuControl.displayHelpMenu();            
+                    break;
+                case "X":
+                    break;
+                default: 
+                    new RfortuneError().displayError("Invalid command. Please enter a valid command.");
+                    continue;                    
+            }
+        } while (!command.equals("X"));
+
+        return command;
+    }
+    
+
+    
+    
+   public final void display() {
+        System.out.println("\n\t===============================================================");
+        System.out.println("\tEnter the letter associated with one of the following commands:");
+
+        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
+            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        }
+        System.out.println("\t===============================================================\n");
+    }   
     
 }

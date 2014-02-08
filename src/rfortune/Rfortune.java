@@ -38,9 +38,7 @@ public class Rfortune {
        
         myGame.displayHelp();
         
-        Player myPlayers = new Player();
-        myPlayers.getNumberPlayers();
-        myPlayers.getPlayerNames();
+
         
         Board myBoard = new Board();
         myBoard.spinWorth();
