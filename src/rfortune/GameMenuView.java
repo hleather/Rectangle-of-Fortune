@@ -26,11 +26,8 @@ public class GameMenuView {
         {"Q", "QUIT"}
     };
 
-    public GameMenuView(Game game) {
-        this.gameMenuControl = new GameMenuControl(game);
-        
+    public GameMenuView() {        
     }
-
     
     
     public void getInput() {
