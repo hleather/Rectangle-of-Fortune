@@ -27,6 +27,19 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.getInput();
+        
+        GameMenuView mainGameMenu =  new GameMenuView();
+        mainGameMenu.getInput();
+        
+        HelpMenuView myHelp = new HelpMenuView();
+        myHelp.getInput();
+        
+        GamePreferencesView PreferencesMenu = new GamePreferencesView();
+        PreferencesMenu.getInput();
+        
         Rfortune myGame = new Rfortune();
         myGame.getName();
         myGame.displayHelp();

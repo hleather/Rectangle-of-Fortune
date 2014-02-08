@@ -6,10 +6,25 @@
 
 package rfortune;
 
+import java.awt.Dimension;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
 /**
  *
- * @author Heather
+ * @author Laura
  */
 public class GamePreferencesControl {
+    private Game game;
+
+    public GamePreferencesControl(Game game) {
+        this.game = game;
+    }
+          
+    public void setDifficulty() {
+        System.out.println("\n\tsetDifficulty called");
+   
+    }
+    
     
 }
