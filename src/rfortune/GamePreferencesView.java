@@ -26,12 +26,12 @@ public class GamePreferencesView {
    
 
     
-    public void getInput() {       
+    public static void getInput() {       
         String command;
         Scanner inFile = new Scanner(System.in);
         
         do {
-            this.display();
+            GamePreferencesView.display();
 
             // get commaned entered
             command = inFile.nextLine();
@@ -44,23 +44,21 @@ public class GamePreferencesView {
                 case "H":
                     System.out.println("You are on hard mode.");
                     break;
+                case "Q":
+                    break;
                 default: 
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
-                    continue;
             }
         } while (!command.equals("Q"));
-
-        return;
     }
     
     
         
-    public final void display() {
+    public static final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < GamePreferencesView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (String[] menuItem : GamePreferencesView.menuItems) {
+            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t===============================================================\n");
     }
