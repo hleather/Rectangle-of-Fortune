@@ -11,9 +11,10 @@ package rfortune;
  * @author Heather
  */
 public class GameMenuControl {
-    
 
-    public GameMenuControl() {
+    
+    public GameMenuControl(Game game) {
+
     }
 
        
