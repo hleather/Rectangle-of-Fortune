@@ -15,12 +15,15 @@ import java.util.Scanner;
 public class GamePreferencesView {
 
     private final static String[][] menuItems = {
-        {"D", "Select Difficulty Level"},
+        {"E", "Easy"},
+        {"H", "Hard"},
         {"Q", "Return to game menu"}
     };
 
     public GamePreferencesView() {
     }
+
+   
 
     
     public void getInput() {       
@@ -35,9 +38,11 @@ public class GamePreferencesView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "D":                   
+                case "E":
+                    System.out.println("You are on easy mode.");
                     break;
-                case "Q":
+                case "H":
+                    System.out.println("You are on hard mode.");
                     break;
                 default: 
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");

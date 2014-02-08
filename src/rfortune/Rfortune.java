@@ -34,14 +34,10 @@ public class Rfortune {
         
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.getInput();
-
         
-        GamePreferencesView PreferencesMenu = new GamePreferencesView();
-        PreferencesMenu.getInput();
+        GamePreferencesView preferencesMenu = new GamePreferencesView();
+        preferencesMenu.getInput();
 
-        
-        MainMenuView myMainMenu = new MainMenuView();
-        myMainMenu.getInput();
 
         // TODO code application logic here
     }
