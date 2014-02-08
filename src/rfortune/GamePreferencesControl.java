@@ -35,11 +35,5 @@ public class GamePreferencesControl {
    
     }
     
-     public boolean getDimensions() {
-
-       System.out.println("\n\tgetDimensions called");
-       return true;
-    }   
-    
     
 }
