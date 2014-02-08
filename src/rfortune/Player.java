@@ -13,43 +13,37 @@ import java.util.Scanner;
  * @author Heather
  */
 public class Player {
-    String player1 = Rfortune.name;
-    String player2 = "Player 2";
-    String player3 = "Player 3";
-    
+    public static final String player1 = Rfortune.name;
+    public static String player2 = " ";
+    public static String player3 = " ";
+    Board newBoard = new Board();
     
     public Player() {
 }
     
     
-    public void getPlayerNames () {
-        switch (MainMenuView.command) {
-            case "3":
-                {
+    public final int getPlayerNames (long numPlayers) {
+        
+        if (numPlayers == 3) 
+        {
                     Scanner input = new Scanner(System.in);
-                    System.out.println("Player 1 is " + player1);                  
                     System.out.println("Enter name of Player 2: ");
-                    this.player2 = input.next();
+                    Player.player2 = input.next();
                     System.out.println("Enter name of Player 3: ");
-                    this.player3 = input.next();
-                    break;
-                }
-            case "2":
-                {
-                    Scanner input = new Scanner(System.in);
-                    System.out.println("Player 1 is " + Rfortune.name);
-                    System.out.println("Enter name of Player 2: ");
-                    this.player2 = input.next();
-                    break;
-                }
-            default:
-                {
-                    Scanner input = new Scanner(System.in);
-                    System.out.println("Player 1 is " + Rfortune.name);
-                    break;
-                }
+                    Player.player3 = input.next();
+                    
          }
+        else if (numPlayers == 2)
+        {
+                    Scanner input = new Scanner(System.in);
+                    System.out.println("Enter name of Player 2: ");
+                    Player.player2 = input.next();
+        }
+        else 
+        {
+                    Scanner input = new Scanner(System.in);
+        }
+return 0;
         
         }     
-
-    }
+ }

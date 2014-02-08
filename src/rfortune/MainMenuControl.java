@@ -6,29 +6,28 @@
 
 package rfortune;
 
-import java.util.Scanner;
+
 /**
  *
  * @author Heather
  */
 public class MainMenuControl {
-    
-        Player myPlayers = new Player();
-        myPlayers.getPlayerNames();
-     
-    public void startGame(long noPlayers) {
-                
-        if (noPlayers != 1  &&  noPlayers != 2 && noPlayers != 3) {
-            new RfortuneError().displayError("startGame - invalid number of players specified.");
-            return;
-        }
+    static int numberPlayers = 2;
         
-   
+    public void setScreen(long numPlayers) {
+            numPlayers = numberPlayers;  
+            String gameDisplay[][] = {
+                {Player.player1, Player.player2, Player.player3},
+                {"150", "150", "150"}
+            };
+            int i;
+            System.out.println("\n\t===============================================================");
+            for(i=0; i<numberPlayers; i++) {                
+                System.out.println("\t" + gameDisplay[i][0] + "\t\t\t" + gameDisplay[i][1] + "\t\t\t" + gameDisplay[i][2]);     
+             }
+            System.out.println("\t===============================================================\n");
     }
-
-    
-    
-    
+            
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();

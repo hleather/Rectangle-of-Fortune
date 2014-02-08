@@ -27,33 +27,13 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
-        HelpMenuView myHelp = new HelpMenuView();
-        myHelp.getInput();
-        
         Rfortune myGame = new Rfortune();
         myGame.getName();
-       
         myGame.displayHelp();
         
+        MainMenuView myMainMenu = new MainMenuView();
+        myMainMenu.getInput();
 
-        
-        Board myBoard = new Board();
-        myBoard.spinWorth();
-        myBoard.displaySize(); 
-        
-        Letters myLetters = new Letters();
-        myLetters.getGuess();
-        myLetters.displayLetter();
-
-        Score myScore = new Score();
-        myScore.getAnswer();
-        myScore.displayScore();  
-        
-        Game userGuess = new Game();
-        userGuess.determineUserGuess();
-        userGuess.buyAVowel();
-        
-        
         // TODO code application logic here
     }
     
