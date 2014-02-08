@@ -11,12 +11,10 @@ package rfortune;
  * @author Heather
  */
 public class GameMenuControl {
-    private Game game;
-    private Board board;
+
 
     public GameMenuControl(Game game) {
-        this.game = game;
-        this.board = game.board;
+
     }
 
        
@@ -38,7 +36,7 @@ public class GameMenuControl {
     
             
     public void displayPreferencesMenu() {
-        GamePreferencesView PreferencesMenu = new GamePreferencesView(this.game);
+        GamePreferencesView PreferencesMenu = new GamePreferencesView();
         PreferencesMenu.getInput();
     }
     

@@ -13,8 +13,6 @@ import java.util.Scanner;
  * @author Laura
  */
 public class GamePreferencesView {
-     Game game;
-    private final GamePreferencesControl gamePreferenceControl = new GamePreferencesControl(game);
 
     private final static String[][] menuItems = {
         {"D", "Select Difficulty Level"},
@@ -24,9 +22,6 @@ public class GamePreferencesView {
     public GamePreferencesView() {
     }
 
-    GamePreferencesView(Game game) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     public void getInput() {       
         String command;
@@ -40,8 +35,7 @@ public class GamePreferencesView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "D":
-                    this.gamePreferenceControl.setDifficulty();
+                case "D":                   
                     break;
                 case "Q":
                     break;

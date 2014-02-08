@@ -26,6 +26,9 @@ public class MainMenuControl {
                 System.out.println("\t" + gameDisplay[i][0] + "\t\t\t" + gameDisplay[i][1] + "\t\t\t" + gameDisplay[i][2]);     
              }
             System.out.println("\t===============================================================\n");
+                            
+        GameMenuView mainGameMenu =  new GameMenuView();
+        mainGameMenu.getInput();
     }
             
     public void displayHelpMenu() {
