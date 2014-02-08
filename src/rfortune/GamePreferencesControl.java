@@ -20,16 +20,7 @@ public class GamePreferencesControl {
     public GamePreferencesControl(Game game) {
         this.game = game;
     }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
           
-    
     public void setDifficulty() {
         System.out.println("\n\tsetDifficulty called");
    
