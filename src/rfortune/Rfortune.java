@@ -27,6 +27,9 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
+        Letters myVowel = new Letters();
+        myVowel.determineVowel();
+        
         Rfortune myGame = new Rfortune();
         myGame.getName();
         myGame.displayHelp(); 

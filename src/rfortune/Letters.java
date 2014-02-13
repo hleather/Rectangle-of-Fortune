@@ -13,29 +13,55 @@ import java.util.Scanner;
  * @author Heather
  */
 public class Letters {
-    Score player;
-    static String guess = "c";
+
     
     
     public Letters() {
         
 }
     
-    public void getGuess() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your guess: \n\tHint = code ");
-        guess = input.next();
-    }
-    
-    public void displayLetter() { 
-        if ("code".equals(guess)) {
-                System.out.println("code is correct!");
+ 
+        
+        
+  
+        
+ 
+ public String determineVowel(){
+     
+     String boundaryCheck = "A";
+     String vowelGuess = null;
+     boolean valid = false;
+     Scanner input = new Scanner(System.in);
+     String vowel1 = "A";     
+     String vowel2 = "E";        
+     String vowel3 = "I";        
+     String vowel4 = "O";        
+     String vowel5 = "U";
+        
+
+     
+        while(!valid)
+        {                  
+            System.out.println("Please enter a vowel: ");
+            vowelGuess = input.next().toUpperCase();
+        
+            if ((!vowelGuess.equals(vowel1)) & (!vowelGuess.equals(vowel2)) & 
+                (!vowelGuess.equals(vowel3)) & (!vowelGuess.equals(vowel4)) & 
+                (!vowelGuess.equals(vowel5)))
+            {
+                
+                new RfortuneError().displayError("That value is invalid.");
+                continue;
             }
-        else {
-                System.out.println("Sorry " + guess + " is incorrect.");
-            }
+
+        if (boundaryCheck.equals(vowelGuess))
+        {
+           new RfortuneError().displayError("That letter has already been guessed. Try again.");  
+           continue;
         }
-    
-    
-    
+        valid = true;
+        }
+        return vowelGuess;
+ }
+
 }
