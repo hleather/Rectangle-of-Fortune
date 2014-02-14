@@ -12,4 +12,22 @@ package rfortune;
  */
 public class BoardView {
     
+   public void defaultDisplayBoard(){
+       System.out.println("_ _ _  _ _  _ _ _");
+   }
+    
+    public static void searchPhrase(){
+        int defaultPhrase[] = {'H','o','p','o','n','P','o','p'};
+        boolean found = false;
+          
+    }
+    
+    for (int x : searchPhrase ){
+        if(x == val){
+            found = true;
+            break;
+        }
+    }
+    if (found)
+        System.out.println("Value found!");
 }
