@@ -27,6 +27,10 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
+        
+        BoardView boardView = new BoardView();
+        BoardView.searchPhrase();
+        
         Letters myVowel = new Letters();
         myVowel.determineVowel();
         
