@@ -18,20 +18,36 @@ public class WordsAndPhrases {
        
    
    public WordsAndPhrases(){
-       /* We are wondering if it is possible to link this to a data base to
-       save space*/
-
-       /*List easyPhrases = new ArrayList("Better Late Than Never",
-               + "Blood is thicker than water", "Misery loves company");
-         List hardPhrases = new ArrayList("Every cloud has a sliver lining",
-               +"Knowledge is power", "Much is expected where much is given");*/
-               System.out.println("\n\tThe phrase is" + board);
-}
+   }
+       
+       
    
-   //public class DeterminePhrase(){
-          /*It would use boolean to determine whether the Easy words and
-          phrases should be used or the hard ones. It would then return that
-          value and another function will use a random generator to determine
-          the phrase that will be used in the array*/      
-   //} 
-}
+
+       /*List easyPhrases = new ArrayList("",
+               + , );
+         List hardPhrases = new ArrayList();
+               System.out.println("\n\tThe phrase is" + board);*/
+
+   
+public static void setPhrase(String difficulty){    
+    String easyPhrases[] = {"BetterLateThanNever", "Bloodisthickerthanwater", "Miserylovescompany"};
+    String hardPhrases[] = {"Everycloudhasasliverlining", "Knowledgeispower", "Muchisexpectedwheremuchisgiven", "HoponPop"};
+    //I couldn't figure out how to make this a random selection yet. Will have to save that project for later.
+    if("E".equals(difficulty))
+            {                
+                new BoardView().getPhrase(easyPhrases[0]);
+            }
+    if("H".equals(difficulty))
+            {
+                new BoardView().getPhrase(hardPhrases[3]);
+            }
+
+    }
+      }
+
+
+
+    
+    
+
+

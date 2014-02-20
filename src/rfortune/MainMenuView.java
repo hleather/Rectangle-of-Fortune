@@ -49,14 +49,17 @@ public class MainMenuView {
                 case "1":
                     this.myPlayers.getPlayerNames(1);
                     this.mainMenuControl.setScreen(1);
+                    new PlayerTurn().playersTurn(1);
                     break;
                 case "2":
                     this.myPlayers.getPlayerNames(2);
                     this.mainMenuControl.setScreen(2);
+                    new PlayerTurn().playersTurn(2);
                     break;
                 case "3":
                     this.myPlayers.getPlayerNames(3);
                     this.mainMenuControl.setScreen(3);
+                    new PlayerTurn().playersTurn(3);
                     break;
                 case "H":
                     this.mainMenuControl.displayHelpMenu();            

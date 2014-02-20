@@ -27,6 +27,11 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
+
+
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.getInput();
         
         BoardView boardView = new BoardView();
         BoardView.searchPhrase();
@@ -38,14 +43,13 @@ public class Rfortune {
         myGame.getName();
         myGame.displayHelp(); 
         
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.getInput();
+        GamePreferencesView preferencesMenu = new GamePreferencesView();
+        GamePreferencesView.getInput();
         
         GameMenuView mainGameMenu =  new GameMenuView();
         mainGameMenu.getInput();
         
-        GamePreferencesView preferencesMenu = new GamePreferencesView();
-        GamePreferencesView.getInput();
+
         
         // TODO code application logic here
     }

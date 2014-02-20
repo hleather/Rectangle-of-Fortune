@@ -5,6 +5,7 @@
  */
 package rfortune;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -12,12 +13,16 @@ import java.util.Scanner;
  * @author Laura
  */
 public class BoardView {
+    char[] charArray;
     
    public void defaultDisplayBoard(){
        System.out.println("_ _ _  _ _  _ _ _");
    }
    
-    
+    public void getPhrase(String phrase){         
+        charArray = phrase.toCharArray();
+        System.out.println("Character Array: " + Arrays.toString(charArray));           
+    }
     
     public static void searchPhrase(){
         String phrase[] = {"H","o","p","o","n","P","o","p"};

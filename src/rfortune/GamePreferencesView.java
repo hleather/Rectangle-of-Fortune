@@ -39,10 +39,12 @@ public class GamePreferencesView {
             
             switch (command) {
                 case "E":
-                    System.out.println("You are on easy mode.");
+                    System.out.println("You are in Easy mode.");
+                    new GamePreferencesControl().setDifficulty("E");
                     break;
                 case "H":
-                    System.out.println("You are on hard mode.");
+                    System.out.println("You are in Hard mode.");
+                    new GamePreferencesControl().setDifficulty("H");
                     break;
                 case "Q":
                     break;
@@ -50,6 +52,7 @@ public class GamePreferencesView {
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
             }
         } while (!command.equals("Q"));
+       
     }
     
     
