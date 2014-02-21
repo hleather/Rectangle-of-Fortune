@@ -12,7 +12,7 @@ package rfortune;
  * @author Heather
  */
 public class MainMenuControl {
-    static int numberPlayers = 2;
+    static int numberPlayers = 3;
         
     public void setScreen(long numPlayers) {
             numPlayers = numberPlayers;  
@@ -22,7 +22,7 @@ public class MainMenuControl {
             };
             int i;
             System.out.println("\n\t===============================================================");
-            for(i=0; i<numberPlayers; i++) {                
+            for(i = 0; i < numberPlayers; i++) {                
                 System.out.println("\t" + gameDisplay[i][0] + "\t\t\t" + gameDisplay[i][1] + "\t\t\t" + gameDisplay[i][2]);     
              }
             System.out.println("\t===============================================================\n");

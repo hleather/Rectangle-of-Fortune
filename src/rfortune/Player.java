@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class Player {
     public static final String player1 = Rfortune.name;
-    public static String player2 = " ";
-    public static String player3 = " ";
+    public static String player2 = "player2";
+    public static String player3 = "player3";
     Board newBoard = new Board();
     
     public Player() {

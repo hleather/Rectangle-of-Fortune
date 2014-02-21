@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Rfortune {
     // Instance variables
-    static String name;
+    static String name = "player1";
     String welcomeMsg = 
               "\n\t************************************************"
             + "\n\t* Welcome to the game, Rectangle of Fortune.    *"
@@ -27,9 +27,13 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
-
-
         
+        PlayerTurn playerTurn = new PlayerTurn();
+        playerTurn.playersTurn(3);
+
+        GameMenuView mainGameMenu =  new GameMenuView();
+        mainGameMenu.getInput();
+                
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.getInput();
         
@@ -46,8 +50,7 @@ public class Rfortune {
         GamePreferencesView preferencesMenu = new GamePreferencesView();
         GamePreferencesView.getInput();
         
-        GameMenuView mainGameMenu =  new GameMenuView();
-        mainGameMenu.getInput();
+        
         
 
         

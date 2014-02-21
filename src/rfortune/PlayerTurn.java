@@ -16,11 +16,15 @@ public class PlayerTurn {
     public static void playersTurn(int numPlayers){
         String playerListOrder[] = {Player.player1, Player.player2, Player.player3};
         numPlayers = 3;
-        for (int i = 0; i <= (numPlayers - 1); i--){
-           if(i == 0){
-               i = 3; 
+        int n = 0;
+        System.out.println("\nFor this test, please just keep entering T ");
+        for (int i = 0; n <= Game.roundNumber; i++){
+            if(3 == i){
+               i = 0;                
            }
-           System.out.println(playerListOrder[i]);
+           n++;
+           System.out.println("\nIt is " + playerListOrder[i] + "'s turn");
         }
+
         }
 }

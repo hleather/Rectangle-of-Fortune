@@ -13,10 +13,9 @@ import java.util.Scanner;
  * @author Heather
  */
 public class Game {
+    public static int roundNumber = 0;
     
         String phrase;         
-        Score winner;
-        Score loser;
         String status;
         Board board;
     private String guess1;
