@@ -29,7 +29,7 @@ public class Rfortune {
     public static void main(String[] args) {
         
         PlayerTurn playerTurn = new PlayerTurn();
-        playerTurn.playersTurn(3);
+        playerTurn.playersTurn(MainMenuControl.numberPlayers);
 
         GameMenuView mainGameMenu =  new GameMenuView();
         mainGameMenu.getInput();
