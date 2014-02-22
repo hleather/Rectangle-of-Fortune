@@ -37,9 +37,19 @@ public class Board {
     
 public int spinWorth(){
     Random spin = new Random();
-    int guessLworth;
-    guessLworth = 25 * (1 + spin.nextInt(8));
-    return guessLworth;
+    String difficulty = GamePreferencesView.setDifficulty;
+    int amount = 50;
+        switch (difficulty) {
+            case "E":
+                amount = 25;
+                break;
+            case "H":
+                amount = 50;
+                break;
+        }
+    int guessCworth;
+    guessCworth = amount * (1 + spin.nextInt(8));
+    return guessCworth;
 }
 
 public int phraseWorth(){

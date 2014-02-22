@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author Laura
  */
 public class GamePreferencesView {
+    public static String setDifficulty = "H";
 
     private final static String[][] menuItems = {
         {"E", "Easy"},
@@ -41,10 +42,12 @@ public class GamePreferencesView {
                 case "E":
                     System.out.println("You are in Easy mode.");
                     new GamePreferencesControl().setDifficulty("E");
+                    setDifficulty = "E";
                     break;
                 case "H":
                     System.out.println("You are in Hard mode.");
                     new GamePreferencesControl().setDifficulty("H");
+                    setDifficulty = "H";
                     break;
                 case "Q":
                     break;

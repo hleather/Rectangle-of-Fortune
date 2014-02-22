@@ -38,7 +38,7 @@ public static void setPhrase(String setDifficulty){
     Random indexLocation = new Random();
     int index = 1 + indexLocation.nextInt(3);
     
-    setDifficulty = "E";
+    setDifficulty = "H";
     String difficulty = setDifficulty;
     
     if("E".equals(difficulty))
