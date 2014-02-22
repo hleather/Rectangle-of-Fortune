@@ -23,9 +23,9 @@ public class PlayersList {
     public String[] getInput(){
         Scanner inFile = new Scanner(System.in);
         
-        System.out.println("\n\t---------------------------------------------");
-        System.out.println("\t Eter a list of names of those who will be playing"
-                + "Rectangle of Fortune.");
+        System.out.println("\n\t-----------------------------------------------");
+        System.out.println("\t Enter a list of names of those who \n\t will be "
+                + "playing Rectangle of Fortune.");
         System.out.println("\t-----------------------------------------------");
         
         int playerIndex = 0;
@@ -38,13 +38,13 @@ public class PlayersList {
             playerName = playerName.trim();
             
             if (playerName.length()< 1){
-                new RfortuneError().displayError("\tA name must be at least one"
+                new RfortuneError().displayError("\tA name must be at least one "
                         + "character long. Try again or enter \"Q\" to quit.");
                 continue;
             }
             
             if (alreadyInList(listOfPlayerNames, playerName)){
-                new RfortuneError().displayError("That name has already been"
+                new RfortuneError().displayError("That name has already been "
                         + "entered. Try again or enter \"Q\" to quit.");
                 continue;
             }
@@ -101,7 +101,7 @@ public class PlayersList {
         
         
         public void displayNameList(String[] names){
-            System.out.println("\n\t===================================");
+            System.out.println("\n\t=========================================");
             System.out.println("\tHere is the list of players in the game:");
             
             for (int i = 0; i <names.length; i++){

@@ -30,9 +30,6 @@ public class Rfortune {
         
         PlayersList playersList = new PlayersList();
         playersList.getInput();
-        playersList.sortList(PlayersList.String[] names);
-        playersList.alreadyInList(PlayersList.String[] list, String value);
-        playersList.displayNameList(PlayersList.String[] names);
         
         
         PlayerTurn playerTurn = new PlayerTurn();
