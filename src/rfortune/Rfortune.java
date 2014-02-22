@@ -28,6 +28,12 @@ public class Rfortune {
 
     public static void main(String[] args) {
         
+        PlayerList playerList = new PlayerList();
+        playerList.getInput();
+        playerList.sortList();
+        playerList.displayNameList();
+        
+        
         PlayerTurn playerTurn = new PlayerTurn();
         playerTurn.playersTurn(MainMenuControl.numberPlayers);
 
