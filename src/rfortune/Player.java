@@ -22,7 +22,7 @@ public class Player {
 }
     
     
-    public final int getPlayerNames (long numPlayers) {
+    public final int getPlayerNames (int numPlayers) {
         
         if (numPlayers == 3) 
         {
@@ -31,6 +31,7 @@ public class Player {
                     Player.player2 = input.next();
                     System.out.println("Enter name of Player 3: ");
                     Player.player3 = input.next();
+                    //new PlayersListIdeas().getInput(3);
                     
          }
         else if (numPlayers == 2)
@@ -38,12 +39,14 @@ public class Player {
                     Scanner input = new Scanner(System.in);
                     System.out.println("Enter name of Player 2: ");
                     Player.player2 = input.next();
+                    //new PlayersListIdeas().getInput(2);
         }
         else 
         {
                     Scanner input = new Scanner(System.in);
+                    //new PlayersListIdeas().getInput(1);
         }
-return 0;
+return numPlayers;
         
         }     
  }

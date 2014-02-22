@@ -5,7 +5,7 @@
  */
 
 package rfortune;
-
+import java.util.Random;
 /**
  *
  * @author Heather
@@ -29,21 +29,39 @@ public class WordsAndPhrases {
                System.out.println("\n\tThe phrase is" + board);*/
 
    
-public static void setPhrase(String difficulty){    
-    String easyPhrases[] = {"BetterLateThanNever", "Bloodisthickerthanwater", "Miserylovescompany"};
-    String hardPhrases[] = {"Everycloudhasasliverlining", "Knowledgeispower", "Muchisexpectedwheremuchisgiven", "HoponPop"};
-    //I couldn't figure out how to make this a random selection yet. Will have to save that project for later.
+public static void setPhrase(String setDifficulty){    
+    String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER", "MISERYLOVESCOMPANY"};
+    String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- ---- -----", "------ ----- -------"};
+    String hardPhrases[] = {"EVERYCLOUDHASASILVERLINING", "KNOWLEDGEISPOWER", "MUCHISEXPECTEDWHEREMUCHISGIVEN", "HOPONPOP"};
+    String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- -- -----", "---- -- -------- ----- ---- -- -----", "--- -- ---"};
+    
+    Random indexLocation = new Random();
+    int index = 1 + indexLocation.nextInt(3);
+    
+    setDifficulty = "E";
+    String difficulty = setDifficulty;
+    
     if("E".equals(difficulty))
             {                
-                new BoardView().getPhrase(easyPhrases[0]);
+                new BoardView().getPhrase(easyPhrases[index]);
+                new BoardView().getParallelPhrase(pEasyPhrases[index]);
+                new BoardView().defaultDisplayBoard(pEasyPhrases[index]);
             }
     if("H".equals(difficulty))
             {
-                new BoardView().getPhrase(hardPhrases[3]);
+                new BoardView().getPhrase(hardPhrases[index]);
+                new BoardView().getParallelPhrase(pHardPhrases[index]);
+                new BoardView().defaultDisplayBoard(pHardPhrases[index]);
             }
+ 
 
     }
-      }
+
+
+
+
+
+}
 
 
 

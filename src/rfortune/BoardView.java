@@ -13,41 +13,35 @@ import java.util.Scanner;
  * @author Laura
  */
 public class BoardView {
-    char[] charArray;
+    static char[] charArray;
+    static char[] parallelCharArray;
+    static char guess = 'P';
     
-   public void defaultDisplayBoard(){
-       System.out.println("_ _ _  _ _  _ _ _");
-   }
-   
-    public void getPhrase(String phrase){         
+   public void getPhrase(String setPhrase){  
+       setPhrase = "HOPONPOP";
+       String phrase = setPhrase;
         charArray = phrase.toCharArray();
         System.out.println("Character Array: " + Arrays.toString(charArray));           
     }
-    
-    public static void searchPhrase(){
-        String phrase[] = {"H","o","p","o","n","P","o","p"};
-        String parallel[] = {"_","_","_","_","_","_","_","_"};
-        boolean foundMatch = false;
-        
-    System.out.println("Please enter your guess.");
-    Scanner input = new Scanner(System.in);
-     String guess = input.next().toUpperCase();
-          
-    for(int i = 0; i  < phrase.length; i++){
-        if(phrase[i].equals(guess)){
-            parallel[i] = guess;
-            foundMatch = true;
-        }
-    }
-    if(foundMatch)
-        System.out.println("You have a match.");
-    for (int i = 0; i< parallel.length; i++) {
-           System.out.println(parallel[i]);
-       }
-    if(!foundMatch)
-        new RfortuneError().displayError("That is not in the phrase. Your turn is over.");
+   
+   public void getParallelPhrase(String setParallelArray){
+       setParallelArray = "--- -- ---";
+       String parallelArray = setParallelArray;
+       parallelCharArray = parallelArray.toCharArray();
+       System.out.println("Parallel Character Array: " + Arrays.toString(parallelCharArray));
+   }
+   public void defaultDisplayBoard(String setParallelArray){
+       setParallelArray = "--- -- ---";
+       String parallelArray = setParallelArray;
+       System.out.println("Default Display: " + parallelArray);
+   }
        
+    public void getCharGuess(){
+        Scanner charGuess = new Scanner(System.in);    
+        System.out.println("Please enter your guess.");
+        String newGuess = charGuess.next().toUpperCase();
+        guess = newGuess.charAt(0);
     }
-    
+   
 }
   

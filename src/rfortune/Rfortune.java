@@ -28,6 +28,20 @@ public class Rfortune {
 
     public static void main(String[] args) {
         
+        //first
+        /*Rfortune myGame = new Rfortune();
+        myGame.getName();
+        myGame.displayHelp(); 
+        
+        //second
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.getInput();*/
+        
+        //test
+        Board newBoard = new Board();
+        newBoard.displayBoardView();
+        
+        /*
         PlayersList playersList = new PlayersList();
         playersList.getInput();
         
@@ -38,8 +52,7 @@ public class Rfortune {
         GameMenuView mainGameMenu =  new GameMenuView();
         mainGameMenu.getInput();
                 
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.getInput();
+
         
         BoardView boardView = new BoardView();
         BoardView.searchPhrase();
@@ -47,13 +60,11 @@ public class Rfortune {
         Letters myVowel = new Letters();
         myVowel.determineVowel();
         
-        Rfortune myGame = new Rfortune();
-        myGame.getName();
-        myGame.displayHelp(); 
+
         
         GamePreferencesView preferencesMenu = new GamePreferencesView();
         GamePreferencesView.getInput();
-        
+        */
         
         
 
