@@ -88,8 +88,9 @@ public class PlayersList {
         
         return names;
     }
-        
-        private boolean alreadyInList(String[] list, String value) {
+     
+    
+    private boolean alreadyInList(String[] list, String value) {
             for (String valueInList : list){
                 if(value.equals(valueInList)){
                     return true;
