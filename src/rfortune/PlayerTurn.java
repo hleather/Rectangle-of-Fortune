@@ -5,26 +5,32 @@
  */
 
 package rfortune;
-
 /**
  *
  * @author Heather
  */
-public class PlayerTurn {
+public class PlayerTurn {    
     
-
+    /***************************************************************************
+     * playersTurn(). creates the array playerListOrder to store the names of 
+     * the current players (from Player) and uses a FOR loop to determine whose
+     * turn it is and sends which player's turn it is to bankPlayerTurn in Bank.
+     * @param numPlayers from MainMenuView
+     **************************************************************************/
     public static void playersTurn(int numPlayers){
-        String playerListOrder[] = {Player.player1, Player.player2, Player.player3};
-        numPlayers = 3;
+        String playerListOrder[] = {Player.player1, Player.player2, 
+            Player.player3};
+        int playerUp = 0;
         int n = 0;
-        System.out.println("\nFor this test, please just keep entering T ");
-        for (int i = 0; n <= Game.roundNumber; i++){
-            if(3 == i){
-               i = 0;                
-           }
-           n++;
-           System.out.println("\nIt is " + playerListOrder[i] + "'s turn");
-        }
-
-        }
+        int control = 0;
+        for (int i = 0; n <= control; i++){
+            if(numPlayers == i){
+                i = 0;                
+            }
+            n++;
+            System.out.println("\nIt is " + playerListOrder[i] + "'s turn");
+            playerUp = i;
+        }  
+        Bank.bankPlayerTurn(playerUp);        
+    }
 }

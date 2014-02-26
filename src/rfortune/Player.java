@@ -5,48 +5,39 @@
  */
 
 package rfortune;
-
-import java.util.Scanner;
-
 /**
  *
  * @author Heather
  */
 public class Player {
-    public static final String player1 = Rfortune.name;
-    public static String player2 = "player2";
-    public static String player3 = "player3";
-    Board newBoard = new Board();
+    public static String player1 = " ";
+    public static String player2 = " ";
+    public static String player3 = " ";    
+    PlayersList myList = new PlayersList();   
     
-    public Player() {
-}
-    
-    
-    public final int getPlayerNames (int numPlayers) {
-        
+    /***************************************************************************
+     * getPlayerNames(). gets the names of the players from PlayersList. The 
+     * amount of names pulled depends on the number of players that is a
+     * a parameter from MainMenuView.
+     * @param numPlayers
+     * @return 
+     **************************************************************************/
+    public final int getPlayerNames (int numPlayers) {        
         if (numPlayers == 3) 
         {
-                    Scanner input = new Scanner(System.in);
-                    System.out.println("Enter name of Player 2: ");
-                    Player.player2 = input.next();
-                    System.out.println("Enter name of Player 3: ");
-                    Player.player3 = input.next();
-                    //new PlayersListIdeas().getInput(3);
-                    
-         }
+            Player.player1 = myList.listOfPlayerNames[0];
+            Player.player2 = myList.listOfPlayerNames[1];
+            Player.player3 = myList.listOfPlayerNames[2];
+        }
         else if (numPlayers == 2)
         {
-                    Scanner input = new Scanner(System.in);
-                    System.out.println("Enter name of Player 2: ");
-                    Player.player2 = input.next();
-                    //new PlayersListIdeas().getInput(2);
+            Player.player1 = myList.listOfPlayerNames[0];
+            Player.player2 = myList.listOfPlayerNames[1];            
         }
         else 
         {
-                    Scanner input = new Scanner(System.in);
-                    //new PlayersListIdeas().getInput(1);
+            Player.player1 = myList.listOfPlayerNames[0];
         }
-return numPlayers;
-        
-        }     
- }
+        return numPlayers;        
+    }     
+}
