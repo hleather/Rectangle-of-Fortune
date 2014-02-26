@@ -53,9 +53,14 @@ public int spinWorth(){
 }
 
 public int phraseWorth(){
-    
-    
+    int phraseLength = BoardView.charArray.length;
+    int cGuesses = Game.correctGuesses;
     int guessPworth = 100;
+    int openSpaces = phraseLength - cGuesses;
+    for (int i = 0; i <= openSpaces; i++)
+    {
+        guessPworth = guessPworth + 100;
+    }
     
     return guessPworth;
 }

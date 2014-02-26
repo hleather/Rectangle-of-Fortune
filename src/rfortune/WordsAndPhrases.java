@@ -11,11 +11,8 @@ import java.util.Random;
  * @author Heather
  */
 public class WordsAndPhrases {
+
     
-        String easyPhrases;
-        String hardPhrases;
-        Board board;
-       
    
    public WordsAndPhrases(){
    }

@@ -19,6 +19,8 @@ public class Game {
         String status;
         Board board;
     private String guess1;
+       public static int correctGuesses = 0;
+       public static int incorrectGuesses = 0;
         
         
     
@@ -35,8 +37,7 @@ public class Game {
         int y = (int) repeatCheck;
         char inPhrase = 'l';
         int z = (int) inPhrase;
-        int correctGuesses = 0;
-        int incorrectGuesses = 0;
+
         boolean b;
         
         System.out.println("\nPlease enter your guess: ");
