@@ -29,6 +29,8 @@ public class Game {
 }
     
     public int determineUserGuess(){
+        //this all needs to be changed to link it to get input from the user
+        //and check the array for already guessed letters.
         char valid = 'v';
         int v = (int) valid;        
         char userGuess = 'l';
@@ -81,7 +83,13 @@ public class Game {
     }
     
     public void buyAVowel(){
-    
+        //I will include this once we have a current score created.
+        //if(currentScore < 250) {
+            new RfortuneError().displayError("You do not have enough money to"
+                    + "buy a vowel.");
+            //Place code here to return to the playerTurnFunction and stop the 
+            //rest of this code from running.
+       // }
         char vowel1 = 'a';
         int newVowel1 = (int)('a');
         char vowel2 = 'e';
@@ -93,7 +101,7 @@ public class Game {
         char vowel5 = 'u';
         int newVowel5 =(int)('u');
         int currentScore = 500;
-        //int currentScore = Board.guessWorth;
+        //int currentScore = Bank.currentScore;
         
         String newVowel;
         
@@ -130,6 +138,7 @@ public class Game {
             + "\n\t*****************************************************");
     }
     public void displayPlayers(){
+        //Do we still need this?????
         System.out.println("\n\tHere are the three default players.");
            //this.playerName1.displayName();
            // this.playerName2.displayName();
