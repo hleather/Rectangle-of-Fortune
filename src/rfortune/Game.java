@@ -31,6 +31,7 @@ public class Game {
     public int determineUserGuess(){
         //this all needs to be changed to link it to get input from the user
         //and check the array for already guessed letters.
+        //link to searchPhrase()in board class.
         char valid = 'v';
         int v = (int) valid;        
         char userGuess = 'l';
