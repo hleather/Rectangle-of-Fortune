@@ -44,7 +44,7 @@ public class GameMenuView {
                 case "T":
                     PlayerTurn.playersTurn();
                     //gameMenuControl.takeTurn();
-                    // ? Game.roundNumber++;                    
+                    Game.roundNumber++;                    
                     break;
                 case "D":
                     gameMenuControl.displayBoard();

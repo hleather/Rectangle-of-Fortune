@@ -20,11 +20,11 @@ public class PlayerTurn {
     public static void playersTurn(){
         String playerListOrder[] = {Player.player1, Player.player2, 
             Player.player3};
-          //this isn't working anymore and I don't know why. Any Ideas??     
-        for (int i = 0; i <= Game.roundNumber; i++){
-            if(i == MainMenuControl.setNumPlayers){
-               i = 0;             
-           }
+        int n = 0;              
+        for (int i = 0; n <= Game.roundNumber; i++){
+            if(i == MainMenuControl.setNumPlayers)
+               i = 0;
+            n++;
             playerUp = i;
             System.out.println("\nIt is " + playerListOrder[playerUp] + "'s turn");
         }    
