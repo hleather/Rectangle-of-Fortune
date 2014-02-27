@@ -6,15 +6,13 @@
 
 package rfortune;
 
-import java.util.Scanner;
 
 /**
  *
- * @author Heather
+ * @author Heather and Laura
  */
 public class Rfortune {
     // Instance variables
-    static String name = "player1";
     String welcomeMsg = 
               "\n\t************************************************"
             + "\n\t* Welcome to the game, Rectangle of Fortune.    *"
@@ -29,56 +27,52 @@ public class Rfortune {
     public static void main(String[] args) {
         
         //first
-        /*Rfortune myGame = new Rfortune();
-        myGame.getName();
+        Rfortune myGame = new Rfortune();
         myGame.displayHelp(); 
         
         //second
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.getInput();*/
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.getInput();
+        
+        //third
+
+
+        
+        //MainMenuControl mainMenuControl = new MainMenuControl();
+        //mainMenuControl.getInput();
+        
+        //fourth
+        //mainMenuView.setScreen();
+        
+        //PlayersList myList = new PlayersList();
         
         //test
-        Board newBoard = new Board();
+        /*Board newBoard = new Board();
         newBoard.displayBoardView();
         
-        /*
-        PlayersList playersList = new PlayersList();
+        /*PlayersList playersList = new PlayersList();
         playersList.getInput();
         
-        
-        PlayerTurn playerTurn = new PlayerTurn();
+        /*PlayerTurn playerTurn = new PlayerTurn();
         playerTurn.playersTurn(MainMenuControl.numberPlayers);
 
-        GameMenuView mainGameMenu =  new GameMenuView();
-        mainGameMenu.getInput();
-                
+        /*GameMenuView mainGameMenu =  new GameMenuView();
+        mainGameMenu.getInput();               
 
-        
-        BoardView boardView = new BoardView();
+        /*BoardView boardView = new BoardView();
         BoardView.searchPhrase();
         
-        Letters myVowel = new Letters();
-        myVowel.determineVowel();
+        /*Letters myVowel = new Letters();
+        myVowel.determineVowel();       
         
-
-        
-        GamePreferencesView preferencesMenu = new GamePreferencesView();
+        /*GamePreferencesView preferencesMenu = new GamePreferencesView();
         GamePreferencesView.getInput();
         */
-        
-        
-
         
         // TODO code application logic here
     }
     
-    public void getName() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        Rfortune.name = input.next();
-}
     public void displayHelp() {
-        System.out.println("\nHello " + Rfortune.name + "!\n");
         System.out.println(this.welcomeMsg);
     }
     

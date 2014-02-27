@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class PlayersList {
     
-    public String[] listOfPlayerNames = new String[10];
+    public static String[] listOfPlayerNames = new String[10];
     
     public PlayersList(){
         
@@ -31,7 +31,7 @@ public class PlayersList {
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10 && !done){
-            System.out.println("\tPlease enter the name of a player or enter"
+            System.out.println("\tPlease enter the name of a player or enter "
                     + "\"Q\" to quit.");
             String playerName;
             playerName= inFile.nextLine();
@@ -51,11 +51,18 @@ public class PlayersList {
             
             if (playerName.toUpperCase().equals("Q")){
                 done = true;
-                break;
+                break;            
             }
             
             this.listOfPlayerNames[playerIndex] = playerName;
             playerIndex++;
+            
+            if (playerIndex == MainMenuControl.setNumPlayers)
+            {
+                done = true;
+                break;
+            }
+                    
         }
             
             String[] newNameList = new String[playerIndex];
@@ -64,7 +71,7 @@ public class PlayersList {
             }
             
             newNameList = this.sortList(newNameList);
-            this.displayNameList(newNameList);
+            //this.displayNameList(newNameList);
             
             return newNameList;
     }
@@ -75,7 +82,7 @@ public class PlayersList {
         while(notDone){
             
             notDone = false;
-            for (int i = 0; i < names.length-1; i++){
+            for (int i = 0; i < names.length - 1; i++){
                 int compareResult = names[i].compareTo(names[i+1]);
                 if (compareResult > 0){
                     tempName = names[i];
@@ -100,7 +107,7 @@ public class PlayersList {
         }
         
         
-        public void displayNameList(String[] names){
+        /*public void displayNameList(String[] names){
             System.out.println("\n\t=========================================");
             System.out.println("\tHere is the list of players in the game:");
             
@@ -115,7 +122,7 @@ public class PlayersList {
                 }
             System.out.println("\t=========================================");
             
-            }
+            }*/
 }
    
     
