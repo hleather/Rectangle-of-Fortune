@@ -13,6 +13,8 @@ import java.util.Scanner;
  * @author Laura
  */
 public class GameTurnView {
+    private Game game = new Game();
+    private HelpMenuView helpMenuView = new HelpMenuView();
     
     private final static String[][]turnOptions = {
         {"G", "Guess a letter"},
@@ -25,7 +27,9 @@ public class GameTurnView {
     public GameTurnView(){
         
     }
-    
+    /*********************************************************************
+     * Gets input for what player wants to do on their turn.
+     *********************************************************************/
     public void getInput(){
         
         String command;
@@ -39,13 +43,16 @@ public class GameTurnView {
             
             switch (command) {
                 case "G":
-                    Game.determineUserGuess();
+                    this.game.determineUserGuess();
                     break;
                 case "V":
-                    Game.buyAVowel();
+                    this.game.buyAVowel();
                     break;
                 case "P":
+                    //this.game.guessPhrase();
                 case "H":
+                    this.helpMenuView.getInput();
+                    break;
                 case "Q":
                     break;
                 default:
