@@ -28,31 +28,27 @@ public class Bank {
     * numPlayersBank(). sets the starting value (0) to the correct number of 
     * players in the current game. It only sets the starting value to the 
     * specific number of players in order to leave any additional player slots
-    * empty for the MainMenuControl.setScreen().gameDisplay array.
+    * empty for the MainMenuControl.setScreen().gameDisplay array. This function
+    * also converts the bank (variable type long) to a String so it 
+    * can be displayed in the MainMenuControl.setScreen().gameDisplay array.
     ***************************************************************************/    
-    void numPlayersBank(int numPlayers) {
-        if (numPlayers == 3)
+    public static void numPlayersBank() {
+        if (MainMenuControl.setNumPlayers == 3)
         {
             bankNumberPlayer1 = 0;
             bankNumberPlayer2 = 0;
-            bankNumberPlayer3 = 0;            
+            bankNumberPlayer3 = 0;
         }
-        if (numPlayers == 2)
+        if (MainMenuControl.setNumPlayers == 2)
         {
             bankNumberPlayer1 = 0;
-            bankNumberPlayer2 = 0;            
+            bankNumberPlayer2 = 0;
         }
-        if (numPlayers == 1)
+        if (MainMenuControl.setNumPlayers == 1)
         {
-            bankNumberPlayer1 = 0;   
-        }            
-    }    
-    
-    /***************************************************************************
-    * longToString(). converts the bank (variable type long) to a String so it 
-    * can be displayed in the MainMenuControl.setScreen().gameDisplay array.
-    ***************************************************************************/
-    public void longToString(){
+            bankNumberPlayer1 = 0;
+        }
+        
         bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
         bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
         bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);

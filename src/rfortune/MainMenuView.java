@@ -9,7 +9,7 @@ package rfortune;
 import java.util.Scanner;
 
 /**
- *
+ * called from: Rfortune
  * @author Heather
  */
 public class MainMenuView {
@@ -20,7 +20,8 @@ public class MainMenuView {
         {"3", "Three player game"},
         {"H", "Help"},
         {"X", "Exit Tic-Tac-Toe"}
-    };     
+    };       
+    PlayersList myList = new PlayersList();
     MainMenuControl mainMenuControl = new MainMenuControl();
     Player myPlayers = new Player();    
     
@@ -48,26 +49,26 @@ public class MainMenuView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "1":
-                    this.myPlayers.getPlayerNames(1);
-                    this.mainMenuControl.setScreen(1);
-                    PlayerTurn.playersTurn(1);
-                    new Bank().numPlayersBank(1);
+                case "1":  
+                    mainMenuControl.setNumPlayers(1);
+                    myPlayers.getPlayerNames();
+                    Bank.numPlayersBank();
+                    mainMenuControl.setScreen();             
                     break;
                 case "2":
-                    this.myPlayers.getPlayerNames(2);
-                    this.mainMenuControl.setScreen(2);
-                    PlayerTurn.playersTurn(2);
-                    new Bank().numPlayersBank(2);
+                    mainMenuControl.setNumPlayers(2);
+                    myPlayers.getPlayerNames();
+                    Bank.numPlayersBank();
+                    mainMenuControl.setScreen();                    
                     break;
                 case "3":
-                    this.myPlayers.getPlayerNames(3);
-                    this.mainMenuControl.setScreen(3);
-                    PlayerTurn.playersTurn(3);
-                    new Bank().numPlayersBank(3);
+                    mainMenuControl.setNumPlayers(3);
+                    myPlayers.getPlayerNames();
+                    Bank.numPlayersBank();
+                    mainMenuControl.setScreen();
                     break;
                 case "H":
-                    this.mainMenuControl.displayHelpMenu();            
+                    mainMenuControl.displayHelpMenu();            
                     break;
                 case "X":
                     break;
@@ -75,7 +76,9 @@ public class MainMenuView {
                     new RfortuneError().displayError("Invalid command. Please "
                             + "enter a valid command.");
             }
-        } while (!command.equals("X"));
+        } while (!"X".equals(command) || !"H".equals(command) || 
+                !"1".equals(command) || !"2".equals(command) || 
+                !"3".equals(command));
         
         return command;
     }

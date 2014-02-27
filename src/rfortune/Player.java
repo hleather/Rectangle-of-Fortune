@@ -12,32 +12,31 @@ package rfortune;
 public class Player {
     public static String player1 = " ";
     public static String player2 = " ";
-    public static String player3 = " ";    
+    public static String player3 = " ";          
     PlayersList myList = new PlayersList();   
     
     /***************************************************************************
-     * getPlayerNames(). gets the names of the players from PlayersList. The 
-     * amount of names pulled depends on the number of players that is a
-     * a parameter from MainMenuView.
-     * @param numPlayers
-     * @return 
+     * getPlayerNames(). initiates the function getInput() from PlayersList and
+     * gets the names of the players from PlayersList. The amount of players
+     * whose names get defined is determined by the number of players (from
+     * MainMenuControl).
      **************************************************************************/
-    public final int getPlayerNames (int numPlayers) {        
-        if (numPlayers == 3) 
+    public final void getPlayerNames(){
+        myList.getInput();
+        if (MainMenuControl.setNumPlayers == 3) 
         {
-            Player.player1 = myList.listOfPlayerNames[0];
-            Player.player2 = myList.listOfPlayerNames[1];
-            Player.player3 = myList.listOfPlayerNames[2];
+            Player.player1 = PlayersList.listOfPlayerNames[0];
+            Player.player2 = PlayersList.listOfPlayerNames[1];
+            Player.player3 = PlayersList.listOfPlayerNames[2];
         }
-        else if (numPlayers == 2)
+        else if (MainMenuControl.setNumPlayers == 2)
         {
-            Player.player1 = myList.listOfPlayerNames[0];
-            Player.player2 = myList.listOfPlayerNames[1];            
+            Player.player1 = PlayersList.listOfPlayerNames[0];
+            Player.player2 = PlayersList.listOfPlayerNames[1];            
         }
-        else 
+        else if (MainMenuControl.setNumPlayers == 1) 
         {
-            Player.player1 = myList.listOfPlayerNames[0];
-        }
-        return numPlayers;        
+            Player.player1 = PlayersList.listOfPlayerNames[0];
+        }        
     }     
 }

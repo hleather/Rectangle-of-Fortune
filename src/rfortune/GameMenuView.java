@@ -13,9 +13,7 @@ import java.util.Scanner;
  * @author Heather
  */
 public class GameMenuView {
-    private Game game;
     private GameMenuControl gameMenuControl ; 
-
 
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
@@ -44,9 +42,9 @@ public class GameMenuView {
             
             switch (command) {
                 case "T":
+                    PlayerTurn.playersTurn();
                     //gameMenuControl.takeTurn();
-                    Game.roundNumber++;
-                    PlayerTurn.playersTurn(MainMenuControl.numberPlayers);
+                    // ? Game.roundNumber++;                    
                     break;
                 case "D":
                     gameMenuControl.displayBoard();

@@ -27,45 +27,46 @@ public class Rfortune {
     public static void main(String[] args) {
         
         //first
-        /*Rfortune myGame = new Rfortune();
-        myGame.getName();
+        Rfortune myGame = new Rfortune();
         myGame.displayHelp(); 
         
         //second
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.getInput();*/
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.getInput();
+        
+        //third
+
+        
+        //MainMenuControl mainMenuControl = new MainMenuControl();
+        //mainMenuControl.getInput();
+        
+        //fourth
+        //mainMenuView.setScreen();
+        
+        //PlayersList myList = new PlayersList();
         
         //test
-        Board newBoard = new Board();
+        /*Board newBoard = new Board();
         newBoard.displayBoardView();
         
-        /*
-        PlayersList playersList = new PlayersList();
+        /*PlayersList playersList = new PlayersList();
         playersList.getInput();
         
-        
-        PlayerTurn playerTurn = new PlayerTurn();
+        /*PlayerTurn playerTurn = new PlayerTurn();
         playerTurn.playersTurn(MainMenuControl.numberPlayers);
 
-        GameMenuView mainGameMenu =  new GameMenuView();
-        mainGameMenu.getInput();
-                
+        /*GameMenuView mainGameMenu =  new GameMenuView();
+        mainGameMenu.getInput();               
 
-        
-        BoardView boardView = new BoardView();
+        /*BoardView boardView = new BoardView();
         BoardView.searchPhrase();
         
-        Letters myVowel = new Letters();
-        myVowel.determineVowel();
+        /*Letters myVowel = new Letters();
+        myVowel.determineVowel();       
         
-
-        
-        GamePreferencesView preferencesMenu = new GamePreferencesView();
+        /*GamePreferencesView preferencesMenu = new GamePreferencesView();
         GamePreferencesView.getInput();
         */
-        
-        
-
         
         // TODO code application logic here
     }
