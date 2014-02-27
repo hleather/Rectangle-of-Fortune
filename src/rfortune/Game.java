@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Heather
+ * @author Heather and Laura
  */
 public class Game {
     public static int roundNumber = 0;
@@ -27,6 +27,9 @@ public class Game {
     public Game(){
         
 }
+    public void playerTurn(){
+        
+    }
     
     public int determineUserGuess(){
         //this all needs to be changed to link it to get input from the user
