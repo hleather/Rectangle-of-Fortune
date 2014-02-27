@@ -24,9 +24,12 @@ public class Letters {
         
         
   
-        
+  //********************************************************************
+  //This is commented out until we run the other determineVowel function
+  //to ensure it is working properly.
+  //*********************************************************************
  
- public String determineVowel(){
+ /*public String determineVowel(){
      
      String boundaryCheck = "A";
      String vowelGuess = null;
@@ -62,7 +65,7 @@ public class Letters {
         valid = true;
         }
         return vowelGuess;
- }
+ }*/
  
 
 
