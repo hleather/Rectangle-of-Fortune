@@ -76,9 +76,7 @@ public class MainMenuView {
                     new RfortuneError().displayError("Invalid command. Please "
                             + "enter a valid command.");
             }
-        } while (!"X".equals(command) || !"H".equals(command) || 
-                !"1".equals(command) || !"2".equals(command) || 
-                !"3".equals(command));
+        } while (!command.equals("X"));
         
         return command;
     }

@@ -36,6 +36,7 @@ public class Rfortune {
         
         //third
 
+
         
         //MainMenuControl mainMenuControl = new MainMenuControl();
         //mainMenuControl.getInput();

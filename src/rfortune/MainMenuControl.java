@@ -53,6 +53,10 @@ public class MainMenuControl {
         }
         System.out.println("\t============================================="
                 + "==================\n");
+        
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.getInput();
+        
         }
     
     /***************************************************************************

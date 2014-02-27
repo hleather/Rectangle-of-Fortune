@@ -20,6 +20,7 @@ public class Bank {
     public static String bankPlayer1 = " ";
     public static String bankPlayer2 = " ";
     public static String bankPlayer3 = " ";
+    public static long spinWorth;
     
     public Bank(){   
     }
@@ -59,6 +60,8 @@ public class Bank {
     * players turn it currently is.
     ***************************************************************************/
     static void bankPlayerTurn(int playerUp){
+        //Test
+        System.out.println(playerUp);
         if (playerUp == 0)
             bankPlayerUp = bankNumberPlayer1;
         else if (playerUp == 1)
@@ -90,7 +93,7 @@ public class Bank {
      * modes and the function returns that value.
      * @return 
     ***************************************************************************/
-    public int spinWorth(){
+    public void spinWorth(){
         Random spin = new Random();
         String difficulty = GamePreferencesView.setDifficulty;
         int amount = 50;
@@ -102,9 +105,7 @@ public class Bank {
                 amount = 50;
                 break;
         }
-        int guessCworth;
-        guessCworth = amount * (1 + spin.nextInt(8));
-        return guessCworth;
+        spinWorth = amount * (1 + spin.nextInt(8));        
     }
     
     /***************************************************************************

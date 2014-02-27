@@ -21,6 +21,8 @@ public class GameMenuControl {
     
    public void takeTurn() {
         System.out.println("\n\ttakeTurn() called");
+        
+        System.out.println("The next letter guess is worth " + Bank.spinWorth);
     }
    
        
