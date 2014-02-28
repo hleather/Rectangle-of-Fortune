@@ -16,16 +16,44 @@ public class Game {
     public static int roundNumber = 0;
     public static int correctGuesses = 0;   
     public static String guessLetter;
+    public static String guessVowel;
         
     
-    public Game(){
-        
+    public Game(){        
 }
     
     public static String[] listOfLetterGuesses = new String[21];
     public String[] vowel = {"A", "E", "I", "O", "U"};
-
- public String[] getInput(){
+    public static boolean foundMatch = false;  
+    
+    /***************************************************************************
+     * searchPhrase(). goes through the character array of the current phrase
+     * and checks to see if the guessed letter from BoardView is in the phrase.
+     * If it is, foundMatch is set to true and the function displays the 
+     * parallel phrase with the correctly guessed letter instead of the '-'
+     * placeholder. If it is not, foundMatch is set to false and the players
+     * turn is terminated.
+     **************************************************************************/
+    public static void searchPhrase(){
+        //REMEMBER CHECKVOWELGUESS
+        for(int i = 0; i  < BoardView.charArray.length; i++){
+            if(BoardView.charArray[i] == (Game.guessLetter)){
+                BoardView.parallelCharArray[i] = Game.guessLetter;
+                Game.foundMatch = true;
+            }
+        }
+        if(Game.foundMatch)
+            System.out.println("You have a match.");
+        for (int i = 0; i< BoardView.parallelCharArray.length; i++) {
+            System.out.println(BoardView.parallelCharArray[i]);
+        }
+        if(!Game.foundMatch)
+            new RfortuneError().displayError("That is not in the phrase. "
+                    + "Your turn is over.");
+        // *!*Need something here to initiate the next player's turn.*!*
+    }
+    
+    public String[] checkLetterGuess(){
         Scanner inFile = new Scanner(System.in);
         String[] vowel = {"A", "E", "I", "O", "U"};
         

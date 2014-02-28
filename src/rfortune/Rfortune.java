@@ -34,7 +34,7 @@ public class Rfortune {
         WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
         wordsAndPhrases.setPhrase();
         
-        //second
+        //third
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.getInput();
         

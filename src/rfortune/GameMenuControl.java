@@ -20,29 +20,19 @@ public class GameMenuControl {
        
     
    public void takeTurn() {
-       //Would this work to call the getInput function from the GameTurnView class?
+       //ONLY PART THAT NEEDS WORK
         GameTurnView gameTurnView = new GameTurnView();
         gameTurnView.getInput();
         
         System.out.println("The next letter guess is worth " + Bank.spinWorth);
     }
    
-       
-   public void displayBoard() {
+     /*public void displayBoard() {
         System.out.println("\n\tdisplayBoard() called");
-    }
+    }*/
    
-   
-    public void startNewGame() {
-        System.out.println("\n\tstartNewGame() called");
-    }
-    
-    
-            
-    public void displayPreferencesMenu() {
-        //Is this written correctly?
-        GamePreferencesView PreferencesMenu = new GamePreferencesView();
-        GamePreferencesView.getInput();
+    public void displayPreferencesMenu() { 
+       GamePreferencesView.getInput();
     }
     
     public void displayHelpMenu() {

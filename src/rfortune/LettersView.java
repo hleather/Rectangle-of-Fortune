@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Heather
  */
-public class LettersView {
+/*public class LettersView {
     public static String[] listOfLetterGuesses = new String[21];
     public String[] vowel = {"A", "E", "I", "O", "U"};
 
@@ -62,5 +62,5 @@ private boolean alreadyInList(String[] list, String value) {
     }
 return false;
 }
-}
+}*/
 

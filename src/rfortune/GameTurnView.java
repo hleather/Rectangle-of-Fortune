@@ -17,7 +17,7 @@ public class GameTurnView {
     private HelpMenuView helpMenuView = new HelpMenuView();
     
     private final static String[][]turnOptions = {
-        {"G", "Guess a letter"},
+        {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},
         {"H", "Help"},
@@ -29,6 +29,7 @@ public class GameTurnView {
     }
     /*********************************************************************
      * Gets input for what player wants to do on their turn.
+     * LINKING FUNCTION!
      *********************************************************************/
     public void getInput(){
         
