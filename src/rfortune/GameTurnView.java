@@ -48,7 +48,7 @@ public class GameTurnView {
                 case "L":
                     PlayerTurn.playersTurn();
                     Bank.bankPlayerTurn();
-                    //Bank.spinWorth();
+                    Bank.spinWorth();
                     checkGuess.checkLetterGuess();
                     Game.roundNumber++; 
                     break;

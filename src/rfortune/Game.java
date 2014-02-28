@@ -31,6 +31,7 @@ public class Game {
      **************************************************************************/
     public static void searchPhrase(){
         //REMEMBER CHECKVOWELGUESS
+        
         if(CheckGuess.checkRepeat)
         for(int i = 0; i  < BoardView.charArray.length; i++){
             if(BoardView.charArray[i] == (CheckGuess.currentGuess)){
@@ -38,6 +39,7 @@ public class Game {
                 Game.foundMatch = true;
             }
         }
+        
         if(Game.foundMatch)
             System.out.println("You have a match.");
         for (int i = 0; i< BoardView.parallelCharArray.length; i++) {
@@ -46,61 +48,16 @@ public class Game {
         if(!Game.foundMatch)
             new RfortuneError().displayError("That is not in the phrase. "
                     + "Your turn is over.");
+        while(Game.foundMatch = true)
+            System.out.println(GameTurnView.getInput);
         // *!*Need something here to initiate the next player's turn.*!*
     }
     
-   
-    
-    /*public void buyAVowel(){
-        //   *!* VARIABLE = CheckGuess.guessVowel *!*
-        
-        // all that really needs to be done here is to check to see if it is 
-        // in the phrase....I don't think we need this function anymore.
-        char vowel1 = 'a';
-        int newVowel1 = (int)('a');
-        char vowel2 = 'e';
-        int newVowel2 = (int)('e');
-        char vowel3 = 'i';
-        int newVowel3 = (int)('i');
-        char vowel4 = 'o';
-        int newVowel4 = (int)('o');
-        char vowel5 = 'u';
-        int newVowel5 =(int)('u');
-        int currentScore = 500;
-        //int currentScore = Bank.currentScore;
-        
-        String newVowel;
-        
-        
-        Scanner vowelGuess = new Scanner(System.in);
-        System.out.println("Please enter a vowel:");
-        newVowel = vowelGuess.next();
-        char checkVowel = newVowel.charAt(0);
-       
-        if ((checkVowel != newVowel1) & (checkVowel != newVowel2) & 
-                (checkVowel != newVowel3) & (checkVowel != newVowel4) & 
-                (checkVowel != newVowel5)){
-             System.out.println(newVowel + " is invalid. \nPlease enter a vowel.");
-        }else{
-            int newScore = currentScore - 250;
-            //return newScore;
-            System.out.println("\tYour new score is " + newScore);   
-        }
-    }
-    
-   /* public void guessPhrase(){ 
-        //arrays????
-        System.out.println("Please enter your guess: ");
-                
-                Scanner phraseGuess = new Scanner(System.in);
-                newPhrase = phraseGuess.next();
-                
-       // if (new)
-    }*/
+
     
     public void displayEndingMessage (){
         
-        if((Bank.winningOrder[0])==(Bank.winningOrder[1])){
+        if((Bank.playerListOrder[0])==(Bank.playerListOrder[1])){
         }
         //refers to the two top players in the sorted array
             System.out.println("This game was a tie between " + bank.winningOrder[0] 

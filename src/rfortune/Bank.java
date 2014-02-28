@@ -101,7 +101,7 @@ public class Bank {
                 amount = 50;
                 break;
         }
-        spinWorth = amount * (1 + spin.nextInt(8));        
+        spinWorth = amount * (1 + spin.nextInt(8)); 
     }
     
     /***************************************************************************
@@ -120,11 +120,10 @@ public class Bank {
         String playerListOrder[] = {bankPlayer1, bankPlayer2, bankPlayer3};
         String temp;
         boolean notDone = true;
-        WinningOrder(playerListOrder);
         while(notDone){
          
             notDone = false;
-            for (int i = 0; i <playerListOrder.length-1; i++){
+            for (int i = 0; i < playerListOrder.length-1; i++){
                 int compareResult = playerListOrder[i].compareTo(playerListOrder[i+1]);
                 if(compareResult > 0){
                     temp = playerListOrder[i];
