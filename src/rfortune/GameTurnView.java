@@ -43,8 +43,7 @@ public class GameTurnView {
             
             switch (command) {
                 //guess a letter.
-                case "L":
-                    this.game.determineUserGuess();
+                case "L":                    
                     break;
                 //guess a vowel
                 case "V":
