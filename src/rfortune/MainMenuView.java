@@ -25,6 +25,7 @@ public class MainMenuView {
     PlayersList myList = new PlayersList();
     MainMenuControl mainMenuControl = new MainMenuControl();
     Player myPlayers = new Player();    
+    HelpMenuView helpMenuView = new HelpMenuView();
     
     public MainMenuView() {
     }
@@ -72,7 +73,7 @@ public class MainMenuView {
                     GamePreferencesView.getInput();
                     break;
                 case "H":
-                    mainMenuControl.displayHelpMenu();            
+                    helpMenuView.getInput();
                     break;
                 case "X":
                     break;

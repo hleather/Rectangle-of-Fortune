@@ -18,7 +18,7 @@ public class HelpMenuControl  {
 
     public void displayBoardHelp() {
         System.out.println();
-        this.displayHelpBorder();             
+        displayHelpBorder();             
         System.out.println( 
                 "\tThe game board for Rectangle of Fortune. It consists of a "
                 + "\n\tgrid of rectangles. The grid is 4 rows by 4 columns. "
