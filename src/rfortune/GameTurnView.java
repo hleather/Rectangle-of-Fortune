@@ -42,17 +42,22 @@ public class GameTurnView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "G":
+                //guess a letter.
+                case "L":
                     this.game.determineUserGuess();
                     break;
+                //guess a vowel
                 case "V":
                     this.game.buyAVowel();
                     break;
+                //guess the phrase
                 case "P":
                     //this.game.guessPhrase();
+                //help menu
                 case "H":
                     this.helpMenuView.getInput();
                     break;
+                //Quit
                 case "Q":
                     break;
                 default:

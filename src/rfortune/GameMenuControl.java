@@ -20,7 +20,9 @@ public class GameMenuControl {
        
     
    public void takeTurn() {
-        System.out.println("\n\ttakeTurn() called");
+       //Would this work to call the getInput function from the GameTurnView class?
+        GameTurnView gameTurnView = new GameTurnView();
+        gameTurnView.getInput();
         
         System.out.println("The next letter guess is worth " + Bank.spinWorth);
     }
@@ -38,6 +40,7 @@ public class GameMenuControl {
     
             
     public void displayPreferencesMenu() {
+        //Is this written correctly?
         GamePreferencesView PreferencesMenu = new GamePreferencesView();
         GamePreferencesView.getInput();
     }
