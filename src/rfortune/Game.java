@@ -28,60 +28,56 @@ public class Game {
         
 }
     
-    public int determineUserGuess(){
-        //this all needs to be changed to link it to get input from the user
-        //and check the array for already guessed letters.
-        //link to searchPhrase()in board class.
-        char valid = 'v';
-        int v = (int) valid;        
-        char userGuess = 'l';
-        int x = (int) userGuess;
-        char repeatCheck = 'n';
-        int y = (int) repeatCheck;
-        char inPhrase = 'l';
-        int z = (int) inPhrase;
+    public static String[] listOfLetterGuesses = new String[21];
+    public String[] vowel = {"A", "E", "I", "O", "U"};
 
-        boolean b;
+ public String[] getInput(){
+        Scanner inFile = new Scanner(System.in);
+        String[] vowel = {"A", "E", "I", "O", "U"};
         
-        System.out.println("\nPlease enter your guess: ");
+        System.out.println("\n\t-----------------------------------------------");
+        System.out.println("\t You have chosen to guess a consonant!");
+        System.out.println("\t-----------------------------------------------");
         
-        System.out.println("\t(Your guess was 9)");
-         if (userGuess != v) 
-             System.out.println("Sorry, 9 is invalid. Please enter a single "
-             + "lower case consonant: ");
-         
-         System.out.println("\t(Your guess was a)");
-         if (userGuess != v) 
-             System.out.println("Sorry, a is invalid. Please enter a single "
-             + "lower case consonant: ");
-         
-         System.out.println("\t(Your guess was ff)");
-         if (userGuess != v)
-             System.out.println("Sorry, ff is invalid. Please enter a single "
-             + "lower case consonant: ");
-         
-         System.out.println("\t(Your guess was n)");
-         if ((userGuess == x) && (userGuess != y))
-             System.out.println("Sorry, n has already been guessed. Please "
-             + "enter a different letter: ");
-         
-         System.out.println("\t(If your guess was r)");
-         if ((userGuess == x) && (userGuess != 'r'))
-             b = false;
-                System.out.println("Sorry, r is not in the phrase.");
-        
-         System.out.println("\t(If your guess was l)");
-         if ((userGuess == x) && (userGuess == z))
-             b = true;
-                System.out.println("Good job! l is in the phrase.");
-           
-         if (b = true)
-             return correctGuesses++;
-         if (b = false)
-             return incorrectGuesses++;
-         else return 0;
-         
+        int guessIndex = 0;
+        boolean done = false;
+        boolean checkVowel = true;
+        boolean checkRepeat = false;
+        while (guessIndex <= 21 && !done && checkVowel){
+            System.out.println("\tEnter your guess: ");
+            String guessLetter;
+            guessLetter = inFile.nextLine();
+            guessLetter = guessLetter.trim();            
+                            
+            if (alreadyInList(listOfLetterGuesses, guessLetter)){
+                new RfortuneError().displayError("That letter has already been "
+                         + "guessed. Try again.");
+                continue;
+            }
+            
+            for (int vowelCheck = 0; vowelCheck < vowel.length; vowelCheck++)
+            {
+                if (guessLetter.equals(vowel[vowelCheck]))
+                {
+                    new RfortuneError().displayError("\tSorry, you have to buy a "
+                            + " vowel.");
+                    checkVowel = false;
+                }       
+            }
+            
+            this.listOfLetterGuesses[guessIndex] = guessLetter;
+            guessIndex++;
+        }   
+    return null;
+ }
+private boolean alreadyInList(String[] list, String value) {
+    for (String valueInList : list){
+        if(value.equals(valueInList)){
+            return true;
+        }
     }
+return false;
+}
     
     public void buyAVowel(){
         //I will include this once we have a current score created.
