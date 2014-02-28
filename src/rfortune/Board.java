@@ -23,8 +23,8 @@ public class Board {
      **************************************************************************/
     public static void searchPhrase(){
         for(int i = 0; i  < BoardView.charArray.length; i++){
-            if(BoardView.charArray[i] == (BoardView.guess)){
-                BoardView.parallelCharArray[i] = BoardView.guess;
+            if(BoardView.charArray[i] == (Game.guessLetter)){
+                BoardView.parallelCharArray[i] = Game.guessLetter;
                 Board.foundMatch = true;
             }
         }

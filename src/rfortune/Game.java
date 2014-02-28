@@ -14,7 +14,8 @@ import java.util.Scanner;
  */
 public class Game {
     public static int roundNumber = 0;
-    public static int correctGuesses = 0;      
+    public static int correctGuesses = 0;   
+    public static String guessLetter;
         
     
     public Game(){
@@ -38,7 +39,7 @@ public class Game {
         boolean checkRepeat = false;
         while (guessIndex <= 21 && !done && checkVowel){
             System.out.println("\tEnter your guess: ");
-            String guessLetter;
+            
             guessLetter = inFile.nextLine();
             guessLetter = guessLetter.trim();            
                             

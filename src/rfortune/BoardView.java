@@ -15,7 +15,6 @@ import java.util.Scanner;
 public class BoardView {
     static char[] charArray;
     static char[] parallelCharArray;
-    static char guess = 'P';
     
     /***************************************************************************
      * getPhrase(). gets the current random phrase from  *** and translates it
@@ -48,11 +47,11 @@ public class BoardView {
      * players to view.
      * @param setParallelArray
      **************************************************************************/
-    public void defaultDisplayBoard(String setParallelArray){
+   /* public void defaultDisplayBoard(String setParallelArray){
         setParallelArray = "--- -- ---";
         String parallelArray = setParallelArray;
         //System.out.println("Default Display: " + parallelArray);
-    }
+    }*/
     
     /***************************************************************************
      * getCharGuess(). gets the letter guess from the user and stores it as a
