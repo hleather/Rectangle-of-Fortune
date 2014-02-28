@@ -116,13 +116,13 @@ public class Bank {
         guessPhraseWorth = openSpaces * guessOpenSpaceWorth;
     }
     
-    public String[] sortScores(String[]playerListOrder){
-        String 
+    public String[] sortScores(){
+        String playerListOrder[] = {bankPlayer1, bankPlayer2, bankPlayer3};
         String temp;
         boolean notDone = true;
         WinningOrder(playerListOrder);
         while(notDone){
-        
+         
             notDone = false;
             for (int i = 0; i <playerListOrder.length-1; i++){
                 int compareResult = playerListOrder[i].compareTo(playerListOrder[i+1]);

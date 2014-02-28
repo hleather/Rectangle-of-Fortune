@@ -99,16 +99,14 @@ public class Game {
     }*/
     
     public void displayEndingMessage (){
-        Bank bank = new Bank();
-        bank.sortScores(winningOrder);
         
-        if(winningOrder[0]==winningOrder[1]){
+        if((Bank.winningOrder[0])==(Bank.winningOrder[1])){
         }
         //refers to the two top players in the sorted array
-            System.out.println("This game was a tie between " + winningOrder[0] 
-                    +" and " + winningOrder);
+            System.out.println("This game was a tie between " + bank.winningOrder[0] 
+                    +" and " + bank.winningOrder[1]);
             else
             System.out.println("Congratulations "+ playerListOrder[0]+ ". You "
-                    + "are the winner!" );
+                       + "are the winner!" );
         }
 }
