@@ -122,6 +122,16 @@ public class Game {
             System.out.println("\tYour new score is " + newScore);   
         }
     }
+    
+    public void guessPhrase(){ 
+        //arrays????
+        System.out.println("Please enter your guess: ");
+                
+                Scanner phraseGuess = new Scanner(System.in);
+                newPhrase = phraseGuess.next();
+                
+       // if (new)
+    }
                      
     
     //public void displayWinningMessage (){

@@ -40,6 +40,7 @@ public class GameMenuControl {
     
             
     public void displayPreferencesMenu() {
+        //Is this written correctly?
         GamePreferencesView PreferencesMenu = new GamePreferencesView();
         GamePreferencesView.getInput();
     }
