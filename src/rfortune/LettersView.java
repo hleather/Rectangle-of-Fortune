@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class LettersView {
     public static String[] listOfLetterGuesses = new String[21];
-    
+    public String[] vowel = {"A", "E", "I", "O", "U"};
 
  public String[] getInput(){
         Scanner inFile = new Scanner(System.in);
