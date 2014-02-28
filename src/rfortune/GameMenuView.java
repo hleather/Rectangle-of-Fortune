@@ -17,9 +17,7 @@ public class GameMenuView {
 
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
-        {"D", "Display the board"},
-        {"N", "New Game"},
-        {"P", "Change game preferences"},
+        //{"D", "Display the board"},
         {"H", "Help"},
         {"Q", "QUIT"}
     };
@@ -48,12 +46,6 @@ public class GameMenuView {
                     break;
                 case "D":
                     gameMenuControl.displayBoard();
-                    break;
-                case "N":
-                    gameMenuControl.startNewGame();
-                    break;
-                case "P":
-                    GamePreferencesView.getInput();
                     break;
                 case "H":
                     gameMenuControl.displayHelpMenu();

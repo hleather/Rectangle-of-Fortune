@@ -18,6 +18,7 @@ public class MainMenuView {
         {"1", "One player game"},
         {"2", "Two player game"},
         {"3", "Three player game"},
+        {"P", "Change game preferences"},
         {"H", "Help"},
         {"X", "Exit Tic-Tac-Toe"}
     };       
@@ -66,6 +67,9 @@ public class MainMenuView {
                     myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
                     mainMenuControl.setScreen();
+                    break;
+                case "P":
+                    GamePreferencesView.getInput();
                     break;
                 case "H":
                     mainMenuControl.displayHelpMenu();            
