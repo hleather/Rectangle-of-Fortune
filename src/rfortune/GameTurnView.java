@@ -17,7 +17,7 @@ public class GameTurnView {
     private HelpMenuView helpMenuView = new HelpMenuView();
     
     private final static String[][]turnOptions = {
-        {"G", "Guess a letter"},
+        {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},
         {"H", "Help"},
@@ -43,8 +43,7 @@ public class GameTurnView {
             
             switch (command) {
                 //guess a letter.
-                case "L":
-                    this.game.determineUserGuess();
+                case "L":                    
                     break;
                 //guess a vowel
                 case "V":

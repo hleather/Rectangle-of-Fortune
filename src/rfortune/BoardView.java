@@ -25,7 +25,7 @@ public class BoardView {
     public void getPhrase(String setPhrase){  
         String phrase = setPhrase;
         charArray = phrase.toCharArray();
-        System.out.println("Character Array: " + Arrays.toString(charArray));           
+        //System.out.println("Character Array: " + Arrays.toString(charArray));           
     }
     
     /***************************************************************************
@@ -38,8 +38,8 @@ public class BoardView {
         setParallelArray = "--- -- ---";
         String parallelArray = setParallelArray;
         parallelCharArray = parallelArray.toCharArray();
-        System.out.println("Parallel Character Array: " + 
-                Arrays.toString(parallelCharArray));
+        //System.out.println("Parallel Character Array: " + 
+                //Arrays.toString(parallelCharArray));
     }
     
     /***************************************************************************
@@ -51,18 +51,18 @@ public class BoardView {
     public void defaultDisplayBoard(String setParallelArray){
         setParallelArray = "--- -- ---";
         String parallelArray = setParallelArray;
-        System.out.println("Default Display: " + parallelArray);
+        //System.out.println("Default Display: " + parallelArray);
     }
     
     /***************************************************************************
      * getCharGuess(). gets the letter guess from the user and stores it as a
      * char variable. This function will be called from GameMenuControl.
      **************************************************************************/
-    public void getCharGuess(){
+   /* public void getCharGuess(){
         Scanner charGuess = new Scanner(System.in);    
         System.out.println("Please enter your guess.");
         String newGuess = charGuess.next().toUpperCase();
         guess = newGuess.charAt(0);
-    }    
+    }    */
 }
 
