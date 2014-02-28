@@ -15,12 +15,10 @@ import java.util.Scanner;
 public class Game {
     public static int roundNumber = 0;
     
-        String phrase;         
-        String status;
-        Board board;
-    private String guess1;
+       
+    
        public static int correctGuesses = 0;
-       public static int incorrectGuesses = 0;
+       //public static int incorrectGuesses = 0;
         
         
     
