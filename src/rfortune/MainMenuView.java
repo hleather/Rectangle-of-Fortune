@@ -20,7 +20,7 @@ public class MainMenuView {
         {"3", "Three player game"},
         {"P", "Change game preferences"},
         {"H", "Help"},
-        {"X", "Exit Tic-Tac-Toe"}
+        {"X", "Exit Rectangle of Fortune"}
     };       
     PlayersList myList = new PlayersList();
     MainMenuControl mainMenuControl = new MainMenuControl();

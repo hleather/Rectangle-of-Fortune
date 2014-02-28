@@ -21,11 +21,11 @@ import java.util.Scanner;
 public class HelpMenuView  {
         
     private final static String[][] menuItems = {
-        {"B", "The Board"}, 
-        {"R", "The Rectangle of Fortune game"},
-        {"V", "Buy a Vowel"},
-        {"G", "Make a Guess"},
-        {"P", "The Players"},        
+        {"B", "About The Board"}, 
+        {"R", "About The Rectangle of Fortune game"},
+        {"V", "About Buy a Vowel"},
+        {"G", "About Make a Guess"},
+        {"P", "About The Players"},        
         {"Q", "Quit Help"}        
     };
     
