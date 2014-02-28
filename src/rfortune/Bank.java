@@ -115,6 +115,10 @@ public class Bank {
         int openSpaces = phraseLength - cGuesses;
         guessPhraseWorth = openSpaces * guessOpenSpaceWorth;
     }
+    
+    public void determineWinner(){
+        
+    }
 }
 
 
