@@ -22,7 +22,7 @@ public class WordsAndPhrases {
     * it initializes them.
     * @param setDifficulty
     ***************************************************************************/
-   public static void setPhrase(String setDifficulty){    
+   public static void setPhrase(){    
        String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER",
            "MISERYLOVESCOMPANY"};
        String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
@@ -35,17 +35,15 @@ public class WordsAndPhrases {
        
        Random indexLocation = new Random();
        int index = 1 + indexLocation.nextInt(3);
+
        
-       setDifficulty = "H";
-       String difficulty = setDifficulty;
-       
-       if("E".equals(difficulty))
+       if("E".equals(GamePreferencesView.setDifficulty))
        {                
            new BoardView().getPhrase(easyPhrases[index]);
            new BoardView().getParallelPhrase(pEasyPhrases[index]);
            new BoardView().defaultDisplayBoard(pEasyPhrases[index]);
        }
-       if("H".equals(difficulty))
+       if("H".equals(GamePreferencesView.setDifficulty))
        {
            new BoardView().getPhrase(hardPhrases[index]);
            new BoardView().getParallelPhrase(pHardPhrases[index]);

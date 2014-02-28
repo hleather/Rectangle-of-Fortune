@@ -13,13 +13,14 @@ import java.util.Scanner;
  * @author Laura
  */
 public class GamePreferencesView {
-    public static String setDifficulty = "H";
+    public static String setDifficulty = "E";
 
     private final static String[][] menuItems = {
         {"E", "Easy"},
         {"H", "Hard"},
         {"Q", "Return to game menu"}
     };
+            
 
     public GamePreferencesView() {
     }

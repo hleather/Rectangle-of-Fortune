@@ -31,6 +31,10 @@ public class Rfortune {
         myGame.displayHelp(); 
         
         //second
+        WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
+        wordsAndPhrases.setPhrase();
+        
+        //second
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.getInput();
         
