@@ -116,11 +116,28 @@ public class Bank {
         guessPhraseWorth = openSpaces * guessOpenSpaceWorth;
     }
     
-    public void determineWinner(){
+    public String[] sortScores(String[]playerListOrder){
+        String 
+        String temp;
+        boolean notDone = true;
+        WinningOrder(playerListOrder);
+        while(notDone){
+        
+            notDone = false;
+            for (int i = 0; i <playerListOrder.length-1; i++){
+                int compareResult = playerListOrder[i].compareTo(playerListOrder[i+1]);
+                if(compareResult > 0){
+                    temp = playerListOrder[i];
+                    playerListOrder[i] = playerListOrder[i+1];
+                    playerListOrder[i+1] = temp;
+                    notDone =true;
+                  
+                }
+            }
+            
+        }
+         return playerListOrder;
         
     }
+
 }
-
-
-
-    

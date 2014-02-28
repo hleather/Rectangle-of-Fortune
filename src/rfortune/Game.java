@@ -97,20 +97,18 @@ public class Game {
                 
        // if (new)
     }*/
-                     
     
-    //public void displayWinningMessage (){
-        //System.out.println(
-           // "\n\t*****************************************************"
-           // + "\n\t Congratulations" + this.winner.name + "! You won the game."
-            //+ "\n\t You may assume bragging rights for the day!"
-            //+ "\n\t******************************************************");
-    //}
-    
-    public void displayTiedMessage (){
-        System.out.println(
-            "\n\t******************************************************"
-            + "\n\t The game is a tie. Play again if you want bragging rights."
-            + "\n\t*****************************************************");
-    }
+    public void displayEndingMessage (){
+        Bank bank = new Bank();
+        bank.sortScores(winningOrder);
+        
+        if(winningOrder[0]==winningOrder[1]){
+        }
+        //refers to the two top players in the sorted array
+            System.out.println("This game was a tie between " + winningOrder[0] 
+                    +" and " + winningOrder);
+            else
+            System.out.println("Congratulations "+ playerListOrder[0]+ ". You "
+                    + "are the winner!" );
+        }
 }

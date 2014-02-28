@@ -20,11 +20,10 @@ public class HelpMenuControl  {
         System.out.println();
         displayHelpBorder();             
         System.out.println( 
-                "\tThe game board for Rectangle of Fortune. It consists of a "
-                + "\n\tgrid of rectangles. The grid is 4 rows by 4 columns. "
-                + "\n\tEach rectangle holds a different monetary value. Blank "
-                + "\n\tspaces are also displayed. The number of blank spaces "
-                + "\n\tis the amount of letters in the word or phrase."
+                "\tThe game board for Rectangle of Fortune. It consists of  "
+                + "\n\tblanks that associate with the word or phrase that needs "
+                + "\n\tto be guessed. As a letter is guessed it is displayed in "
+                + "\n\tthe board."
                 );
         displayHelpBorder();
     }
