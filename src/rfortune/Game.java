@@ -19,11 +19,7 @@ public class Game {
     
     
     public Game(){        
-}
-    
-    
-    
-  
+} 
     
     /***************************************************************************
      * searchPhrase(). goes through the character array of the current phrase
