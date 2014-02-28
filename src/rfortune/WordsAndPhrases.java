@@ -41,13 +41,13 @@ public class WordsAndPhrases {
        {                
            new BoardView().getPhrase(easyPhrases[index]);
            new BoardView().getParallelPhrase(pEasyPhrases[index]);
-           new BoardView().defaultDisplayBoard(pEasyPhrases[index]);
+           //new BoardView().defaultDisplayBoard(pEasyPhrases[index]);
        }
        if("H".equals(GamePreferencesView.setDifficulty))
        {
            new BoardView().getPhrase(hardPhrases[index]);
            new BoardView().getParallelPhrase(pHardPhrases[index]);
-           new BoardView().defaultDisplayBoard(pHardPhrases[index]);
+          //new BoardView().defaultDisplayBoard(pHardPhrases[index]);
        }             
    }   
 }

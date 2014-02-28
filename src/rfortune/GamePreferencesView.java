@@ -42,12 +42,12 @@ public class GamePreferencesView {
             switch (command) {
                 case "E":
                     System.out.println("You are in Easy mode.");
-                    new GamePreferencesControl().setDifficulty("E");
+                    new GamePreferencesControl().setDifficulty();
                     setDifficulty = "E";
                     break;
                 case "H":
                     System.out.println("You are in Hard mode.");
-                    new GamePreferencesControl().setDifficulty("H");
+                    new GamePreferencesControl().setDifficulty();
                     setDifficulty = "H";
                     break;
                 case "Q":

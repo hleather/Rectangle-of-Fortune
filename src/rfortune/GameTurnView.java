@@ -29,6 +29,7 @@ public class GameTurnView {
     }
     /*********************************************************************
      * Gets input for what player wants to do on their turn.
+     * LINKING FUNCTION!
      *********************************************************************/
     public void getInput(){
         
