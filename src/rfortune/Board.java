@@ -21,7 +21,7 @@ public class Board {
         myBoardView.getPhrase(null);
         myBoardView.getParallelPhrase(null);
         //myBoardView.defaultDisplayBoard(null);
-        // CALL GET CHAR GUESS
+        // ? CALL GET CHAR GUESS ?
     }
 }
     

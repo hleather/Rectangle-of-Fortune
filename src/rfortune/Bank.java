@@ -21,6 +21,8 @@ public class Bank {
     public static String bankPlayer2 = " ";
     public static String bankPlayer3 = " ";
     public static long spinWorth;
+    public static boolean hasEnough = false;
+    public static long guessPhraseWorth;
     
     public Bank(){   
     }
@@ -47,7 +49,7 @@ public class Bank {
         }
         if (MainMenuControl.setNumPlayers == 1)
         {
-            bankNumberPlayer1 = 0;
+            bankNumberPlayer1 = 500;
         }
         
         bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
@@ -59,14 +61,12 @@ public class Bank {
     * bankPlayerTurn(). defines whose bank will be adjusted based on which 
     * players turn it currently is.
     ***************************************************************************/
-    static void bankPlayerTurn(int playerUp){
-        //Test
-        System.out.println(playerUp);
-        if (playerUp == 0)
+    static void bankPlayerTurn(){
+        if (PlayerTurn.playerUp == 0)
             bankPlayerUp = bankNumberPlayer1;
-        else if (playerUp == 1)
+        else if (PlayerTurn.playerUp == 1)
             bankPlayerUp = bankNumberPlayer2;
-        else if (playerUp == 2)
+        else if (PlayerTurn.playerUp == 2)
             bankPlayerUp = bankNumberPlayer3;       
     }    
     
@@ -75,23 +75,19 @@ public class Bank {
      * enough money to purchase a vowel (250). If the player has enough money
      * to purchase a vowel, this function subtracts 250 from bankPlayerUp. It 
      * will return true or false to let the ***vowel*** function know ***?***.
-     * @return 
     ***************************************************************************/
-    public boolean updateBankVowelPurchase() {
-        boolean hasEnough = false;
+    public void updateBankVowelPurchase() {
         if (bankPlayerUp >= 250)
         {
             hasEnough = true;
             bankPlayerUp = bankPlayerUp - 250;
-        }
-        return hasEnough;            
+        }            
     }    
     
     /***************************************************************************
      * spinWorth(). sets the amount the next character guess is worth using a 
      * random number generator. The values will be different for Easy and Hard
      * modes and the function returns that value.
-     * @return 
     ***************************************************************************/
     public void spinWorth(){
         Random spin = new Random();
@@ -111,18 +107,13 @@ public class Bank {
     /***************************************************************************
      * phraseWorth(). calculates how much guessing the remainder of the phrase is
      * worth and returns that value.
-     * @return 
     ***************************************************************************/
-    public int phraseWorth(){
+    public void phraseWorth(){
         int phraseLength = BoardView.charArray.length;
         int cGuesses = Game.correctGuesses;
-        int guessPworth = 100;
+        int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;
-        for (int i = 0; i <= openSpaces; i++)
-        {
-            guessPworth = guessPworth + 100;
-        }
-        return guessPworth;
+        guessPhraseWorth = openSpaces * guessOpenSpaceWorth;
     }
 }
 

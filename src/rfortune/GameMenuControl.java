@@ -13,7 +13,7 @@ package rfortune;
 public class GameMenuControl {
 
     
-    public GameMenuControl(Game game) {
+    public GameMenuControl() {
 
     }
 
@@ -23,26 +23,9 @@ public class GameMenuControl {
        //ONLY PART THAT NEEDS WORK
         GameTurnView gameTurnView = new GameTurnView();
         gameTurnView.getInput();
-        
-        System.out.println("The next letter guess is worth " + Bank.spinWorth);
     }
    
      /*public void displayBoard() {
         System.out.println("\n\tdisplayBoard() called");
-    }*/
-   
-    public void displayPreferencesMenu() { 
-       GamePreferencesView.getInput();
-    }
-    
-    public void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
-    }
-    
-
-    
-    
-    
+   }*/
 }
-

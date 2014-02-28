@@ -13,7 +13,8 @@ import java.util.Scanner;
  * @author Heather
  */
 public class GameMenuView {
-    private GameMenuControl gameMenuControl ; 
+    GameMenuControl gameMenuControl = new GameMenuControl(); 
+    HelpMenuView helpMenuView = new HelpMenuView();
 
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
@@ -31,7 +32,9 @@ public class GameMenuView {
         String command;
         Scanner inFile = new Scanner(System.in);
 
-        do {    
+        do {
+            if (Game.roundNumber == 0)
+                menuItems[0][1] = "Start the Game";
             this.display(); // display the menu
 
             // get commaned entered
@@ -40,15 +43,13 @@ public class GameMenuView {
             
             switch (command) {
                 case "T":
-                    PlayerTurn.playersTurn();
-                    //gameMenuControl.takeTurn();
-                    Game.roundNumber++;                    
+                    gameMenuControl.takeTurn();                   
                     break;
-                case "D":
+               /* case "D":
                     gameMenuControl.displayBoard();
-                    break;
+                    break; */
                 case "H":
-                    gameMenuControl.displayHelpMenu();
+                    helpMenuView.getInput();
                     break;
                 case "Q":                   
                     break;

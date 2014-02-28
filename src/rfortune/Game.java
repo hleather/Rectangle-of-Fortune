@@ -14,17 +14,12 @@ import java.util.Scanner;
  */
 public class Game {
     public static int roundNumber = 0;
-    public static int correctGuesses = 0;   
-    public static String guessLetter;
-    public static String guessVowel;
-        
+    public static int correctGuesses = 0;
+    public static boolean foundMatch = false;
     
-    public Game(){        
+    
+    public Game(){
 }
-    
-    public static String[] listOfLetterGuesses = new String[21];
-    public String[] vowel = {"A", "E", "I", "O", "U"};
-    public static boolean foundMatch = false;  
     
     /***************************************************************************
      * searchPhrase(). goes through the character array of the current phrase
@@ -36,9 +31,10 @@ public class Game {
      **************************************************************************/
     public static void searchPhrase(){
         //REMEMBER CHECKVOWELGUESS
+        if(CheckGuess.checkRepeat)
         for(int i = 0; i  < BoardView.charArray.length; i++){
-            if(BoardView.charArray[i] == (Game.guessLetter)){
-                BoardView.parallelCharArray[i] = Game.guessLetter;
+            if(BoardView.charArray[i] == (CheckGuess.currentGuess)){
+                BoardView.parallelCharArray[i] = CheckGuess.currentGuess;
                 Game.foundMatch = true;
             }
         }
@@ -53,62 +49,13 @@ public class Game {
         // *!*Need something here to initiate the next player's turn.*!*
     }
     
-    public String[] checkLetterGuess(){
-        Scanner inFile = new Scanner(System.in);
-        String[] vowel = {"A", "E", "I", "O", "U"};
-        
-        System.out.println("\n\t-----------------------------------------------");
-        System.out.println("\t You have chosen to guess a consonant!");
-        System.out.println("\t-----------------------------------------------");
-        
-        int guessIndex = 0;
-        boolean done = false;
-        boolean checkVowel = true;
-        boolean checkRepeat = false;
-        while (guessIndex <= 21 && !done && checkVowel){
-            System.out.println("\tEnter your guess: ");
-            
-            guessLetter = inFile.nextLine();
-            guessLetter = guessLetter.trim();            
-                            
-            if (alreadyInList(listOfLetterGuesses, guessLetter)){
-                new RfortuneError().displayError("That letter has already been "
-                         + "guessed. Try again.");
-                continue;
-            }
-            
-            for (int vowelCheck = 0; vowelCheck < vowel.length; vowelCheck++)
-            {
-                if (guessLetter.equals(vowel[vowelCheck]))
-                {
-                    new RfortuneError().displayError("\tSorry, you have to buy a "
-                            + " vowel.");
-                    checkVowel = false;
-                }       
-            }
-            
-            this.listOfLetterGuesses[guessIndex] = guessLetter;
-            guessIndex++;
-        }   
-    return null;
- }
-private boolean alreadyInList(String[] list, String value) {
-    for (String valueInList : list){
-        if(value.equals(valueInList)){
-            return true;
-        }
-    }
-return false;
-}
+   
     
-    public void buyAVowel(){
-        //I will include this once we have a current score created.
-        //if(currentScore < 250) {
-            new RfortuneError().displayError("You do not have enough money to"
-                    + "buy a vowel.");
-            //Place code here to return to the playerTurnFunction and stop the 
-            //rest of this code from running.
-       // }
+    /*public void buyAVowel(){
+        //   *!* VARIABLE = CheckGuess.guessVowel *!*
+        
+        // all that really needs to be done here is to check to see if it is 
+        // in the phrase....I don't think we need this function anymore.
         char vowel1 = 'a';
         int newVowel1 = (int)('a');
         char vowel2 = 'e';
@@ -141,7 +88,7 @@ return false;
         }
     }
     
-    public void guessPhrase(){ 
+   /* public void guessPhrase(){ 
         //arrays????
         System.out.println("Please enter your guess: ");
                 
@@ -149,7 +96,7 @@ return false;
                 newPhrase = phraseGuess.next();
                 
        // if (new)
-    }
+    }*/
                      
     
     //public void displayWinningMessage (){
@@ -165,12 +112,5 @@ return false;
             "\n\t******************************************************"
             + "\n\t The game is a tie. Play again if you want bragging rights."
             + "\n\t*****************************************************");
-    }
-    public void displayPlayers(){
-        //Do we still need this?????
-        System.out.println("\n\tHere are the three default players.");
-           //this.playerName1.displayName();
-           // this.playerName2.displayName();
-           //this.playerName3.displayName();
     }
 }

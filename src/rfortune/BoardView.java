@@ -51,7 +51,7 @@ public class BoardView {
         setParallelArray = "--- -- ---";
         String parallelArray = setParallelArray;
         //System.out.println("Default Display: " + parallelArray);
-
+    }*/
     
     /***************************************************************************
      * getCharGuess(). gets the letter guess from the user and stores it as a

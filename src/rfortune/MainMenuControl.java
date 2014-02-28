@@ -58,14 +58,4 @@ public class MainMenuControl {
         gameMenuView.getInput();
         
         }
-    
-    /***************************************************************************
-     * displayHelpMenu(). creates a new instance of HelpMenuView().getInput() 
-     * and calls the help menu with the appropriate command as issued from the
-     * user.
-     **************************************************************************/
-    public void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
-    }    
 }

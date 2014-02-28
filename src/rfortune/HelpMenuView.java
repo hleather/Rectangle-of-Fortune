@@ -30,7 +30,7 @@ public class HelpMenuView  {
     };
     
     // Create instance of the HelpMenuControl (action) class
-    private HelpMenuControl helpMenuControl = new HelpMenuControl();
+    HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // default constructor
     public HelpMenuView() {
@@ -53,19 +53,19 @@ public class HelpMenuView  {
             
             switch (command) {
                 case "B":
-                    this.helpMenuControl.displayBoardHelp();
+                    helpMenuControl.displayBoardHelp();
                     break;
                 case "R":
-                    this.helpMenuControl.displayGameHelp();
+                    helpMenuControl.displayGameHelp();
                     break;                  
                 case "V":
-                    this.helpMenuControl.displayVowelHelp();
+                    helpMenuControl.displayVowelHelp();
                     break;
                 case "G":
-                    this.helpMenuControl.displayGuessHelp();
+                    helpMenuControl.displayGuessHelp();
                     break;
                  case "P":
-                    this.helpMenuControl.displayPlayerHelp();
+                    helpMenuControl.displayPlayerHelp();
                     break; 
                 case "Q": 
                     break;
