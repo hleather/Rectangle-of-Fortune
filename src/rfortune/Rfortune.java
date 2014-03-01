@@ -25,8 +25,6 @@ public class Rfortune {
             + "\n";
 
     public static void main(String[] args) {
-        Game game = new Game();
-        game.searchPhrase();
         
         //first
         Rfortune myGame = new Rfortune();
