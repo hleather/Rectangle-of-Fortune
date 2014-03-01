@@ -17,7 +17,7 @@ public class GameTurnView {
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
     
-    private final static String[][]turnOptions = {
+    static final String[][]turnOptions = {
         {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},
@@ -48,7 +48,7 @@ public class GameTurnView {
                 case "L":
                     PlayerTurn.playersTurn();
                     Bank.bankPlayerTurn();
-                    Bank.spinWorth();
+                    //Bank.spinWorth();
                     checkGuess.checkLetterGuess();
                     Game.roundNumber++; 
                     break;

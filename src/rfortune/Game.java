@@ -16,6 +16,7 @@ public class Game {
     public static int roundNumber = 0;
     public static int correctGuesses = 0;
     public static boolean foundMatch = false;
+    GameTurnView gameTurnView = new GameTurnView();
     
     
     public Game(){
@@ -40,17 +41,23 @@ public class Game {
             }
         }
         
-        if(Game.foundMatch)
+         if(Game.foundMatch)
             System.out.println("You have a match.");
         for (int i = 0; i< BoardView.parallelCharArray.length; i++) {
             System.out.println(BoardView.parallelCharArray[i]);
+            while (Game.foundMatch = true){
+                System.out.println("\t  " + GameTurnView.turnOptions[0] + "\t" + 
+                     GameTurnView.turnOptions[1]);
+            }
         }
         if(!Game.foundMatch)
             new RfortuneError().displayError("That is not in the phrase. "
                     + "Your turn is over.");
-        while(Game.foundMatch = true)
-            System.out.println(GameTurnView.getInput);
-        // *!*Need something here to initiate the next player's turn.*!*
+                while (Game.foundMatch = false){
+                PlayerTurn playerTurn = new PlayerTurn();
+                playerTurn.playersTurn();
+            }
+       
     }
     
 
