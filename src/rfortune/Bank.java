@@ -121,6 +121,7 @@ public class Bank {
     }
     
     public String[] sortScores(){
+        //Bank.updateBankPlayer();
         String playerListOrder[] = {bankPlayer1, bankPlayer2, bankPlayer3};
         String temp;
         boolean notDone = true;
@@ -133,7 +134,7 @@ public class Bank {
                     temp = playerListOrder[i];
                     playerListOrder[i] = playerListOrder[i+1];
                     playerListOrder[i+1] = temp;
-                    notDone =true;
+                    notDone = true;
                   
                 }
             }

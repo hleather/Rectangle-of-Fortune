@@ -68,8 +68,9 @@ public class Game {
     
 
     
-    public void displayEndingMessage (){
+    /*public void displayEndingMessage (){
         Bank bank = new Bank();
+        
         
         if((Bank.playerListOrder[0])==(Bank.playerListOrder[1])){
         }
@@ -78,5 +79,5 @@ public class Game {
                     +" and " + bank.winningOrder[1]);
             else
             System.out.println("Congratulations "+ playerListOrder[0]+ ". You "
-                       + "are the winner!" );
-        }
+                       + "are the winner!" );*/
+        
