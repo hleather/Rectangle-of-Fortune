@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author Heather
  */
 public class CheckGuess {
-    public static char currentGuess;
+    public static char currentGuess = 'j';
     public static boolean checkRepeat;
     
     public static char guessLetter;

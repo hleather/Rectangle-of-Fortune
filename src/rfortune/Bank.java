@@ -104,6 +104,10 @@ public class Bank {
         spinWorth = amount * (1 + spin.nextInt(8)); 
     }
     
+    public static void printSpinWorth(){
+        System.out.println(Bank.spinWorth);
+    }
+    
     /***************************************************************************
      * phraseWorth(). calculates how much guessing the remainder of the phrase is
      * worth and returns that value.
