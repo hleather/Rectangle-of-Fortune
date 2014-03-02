@@ -43,7 +43,7 @@ public class Game {
         
          if(Game.foundMatch){
             System.out.println("You have a match.");
-        for (int i = 0; i< BoardView.parallelCharArray.length; i++) {
+         for (int i = 0; i< BoardView.parallelCharArray.length; i++) {
             System.out.println(BoardView.parallelCharArray[i]);
             if(Game.foundMatch){
                 GameTurnView gameTurnView = new GameTurnView();
