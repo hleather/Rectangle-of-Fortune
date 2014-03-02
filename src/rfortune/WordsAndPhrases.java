@@ -20,7 +20,6 @@ public class WordsAndPhrases {
     * separate lists, one for easy phrases and one for hard phrases. This 
     * function passes the difficulty into the different BoardView functions as
     * it initializes them.
-    * @param setDifficulty
     ***************************************************************************/
    public static void setPhrase(){    
        String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER",
