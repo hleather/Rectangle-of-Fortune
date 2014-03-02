@@ -17,26 +17,25 @@ import java.util.Scanner;
  * @author Heather
  */
 public class CheckGuess {
-    public static char currentGuess = 'j';
+    public static char currentGuess;
     public static boolean checkRepeat;
     
     public static char guessLetter;
     public static char guessVowel;
     
-    public static char[] listOfLetterGuesses = new char[21];
-    public static char[] listOfVowelGuesses = new char[5];
-    public char[] vowel = {'A', 'E', 'I', 'O', 'U'};
-    public char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
+    public static char[] listOfLetterGuesses = new char[26];
+    public static char[] listOfVowelGuesses = new char[26];
+    public static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
+    public static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
     
     Bank bank = new Bank();
     
     
-    
     public CheckGuess(){
     }
     
-    public String[] checkLetterGuess(){
+    public static char[] checkLetterGuess(){
         Scanner newLetterGuess = new Scanner(System.in);
         
         System.out.println("\n\t-----------------------------------------------");
@@ -45,6 +44,7 @@ public class CheckGuess {
         
         int guessLetterIndex = 0;
         boolean done = false;
+        checkRepeat = false;
         boolean checkLetter = false;
         
         while (guessLetterIndex <= 26 && !done){
@@ -56,8 +56,7 @@ public class CheckGuess {
                     if (guessLetter == vowel[letterCheck])
                     {
                         new RfortuneError().displayError("\tSorry, you "
-                                + "have to buy a vowel.");
-                        System.out.println("\tEnter your guess: ");
+                                + "have to buy a vowel. Try again: ");                        
                     }       
                 }
             }
@@ -68,79 +67,143 @@ public class CheckGuess {
                         + "guessed. Try again.");
                 continue;
             }
+            if (!alreadyInLetterList(listOfLetterGuesses, guessLetter)){
+                Game.searchPhrase();          
+                done = true;
+            }               
+            
             CheckGuess.listOfLetterGuesses[guessLetterIndex] = guessLetter;
             guessLetterIndex++;
-        }
-        
-        CheckGuess.currentGuess = guessLetter;
-        
-        return null;
-    }
-    private boolean alreadyInLetterList(char[] letterList, char letterValue) {
-        for (char valueInLetterList : letterList){
-            if(letterValue == valueInLetterList){
-                return true;
+        }        
+        char[] newLetterGuessList = new char[guessLetterIndex];
+            for (int i = 0; i < guessLetterIndex; i++){
+                newLetterGuessList[i] = CheckGuess.listOfLetterGuesses[i];
             }
-        }
-        return false;
+            
+            newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
+            
+            return newLetterGuessList;
     }
     
-    public String[] checkVowelGuess(){
-        bank.updateBankVowelPurchase();
-        if(Bank.hasEnough){   
-        Scanner newVowelGuess = new Scanner(System.in);
+    public static char[] checkVowelGuess(){
+        Bank.updateBankVowelPurchase();           
         
-        System.out.println("\n\t-----------------------------------------------");
-        System.out.println("\t You have chosen to buy a vowel!");
-        System.out.println("\t-----------------------------------------------");
-        
-        int guessVowelIndex = 0;
-        boolean done = false;
-        boolean checkVowel = false;
-        
-        while (guessVowelIndex <= 26 && !done){
-            System.out.println("\tEnter your guess: ");
-            if (!checkVowel)
-            {
-                for (int vowelCheck = 0; vowelCheck < letter.length; vowelCheck++)
-                {
-                    if (guessVowel == letter[vowelCheck])
-                    {
-                        new RfortuneError().displayError("That is not a "
-                                + "vowel. Please enter a vowel (Y is not a "
-                                + "vowel in this game).");
-                        System.out.println("\tEnter your guess: ");
-                    }       
+        if(Bank.hasEnough)
+        {
+            Scanner newVowelGuess = new Scanner(System.in);
+            
+            System.out.println("\n\t-----------------------------------------------");
+            System.out.println("\t You have chosen to buy a vowel!");
+            System.out.println("\t-----------------------------------------------");
+            
+            int vowelIndex = 0;
+            boolean done = false;
+            while (vowelIndex < 10 && !done){
+                System.out.println("\tEnter your guess: ");
+                char vowelGuess;
+                vowelGuess = newVowelGuess.next().toUpperCase().charAt(0);
+                
+                if (!isVowel(vowel, vowelGuess)){
+                    new RfortuneError().displayError("That is not a vowel. "
+                            + "Please enter a vowel. ");
+                    continue;
                 }
+                
+                if (alreadyInVowelList(listOfVowelGuesses, vowelGuess)){
+                    new RfortuneError().displayError("That vowel has already "
+                            + "been guessed. Try again.");
+                    continue;
+                }
+                
+                CheckGuess.listOfVowelGuesses[vowelIndex] = vowelGuess;
+                vowelIndex++;
+                
+                if (!alreadyInVowelList(listOfVowelGuesses, vowelGuess)){
+                    done = true;
+                    
+                    break;
+            }            
+            }            
+                            
+            char[] newVowelGuessList = new char[vowelIndex];
+            for (int i = 0; i < vowelIndex; i++){
+                newVowelGuessList[i] = CheckGuess.listOfVowelGuesses[i];
             }
-                guessVowel = newVowelGuess.next().toUpperCase().charAt(0);
             
-                      
-            
-            if (alreadyInVowelList(listOfVowelGuesses, guessVowel)){
-                new RfortuneError().displayError("That letter has already been "
-                        + "guessed. Try again.");
-                continue;
-            }
-            CheckGuess.listOfVowelGuesses[guessVowelIndex] = guessVowel;
-            guessVowelIndex++;
-        }
+            newVowelGuessList = CheckGuess.sortVowelList(newVowelGuessList);
+                Game.searchPhrase();
+                        
+            return newVowelGuessList;
         }
         else
             System.out.println("Sorry, you do not have enough money to buy a "
                     + "vowel.");
-        
-        CheckGuess.currentGuess = guessVowel;
-        
         return null;
     }
-    private boolean alreadyInVowelList(char[] vowelList, char vowelValue) {
-        for (char valueInVowelList : vowelList){
-            if(vowelValue == valueInVowelList){
+    
+    public static char[] sortLetterList(char[] letters){
+        char tempLetter;
+        boolean notDone = true;
+        while(notDone){
+            
+            notDone = false;
+            for (int i = 0; i < letters.length - 1; i++){
+               if (letters[i] < letters[i + 1])
+               {
+                   tempLetter = letters[i];
+                   letters[i] = letters[i+1];
+                   letters[i+1] = tempLetter;;
+                   notDone = true;
+               }
+            }
+        }
+        
+        return letters;
+    }
+    public static char[] sortVowelList(char[] vowels){
+        char tempVowel;
+        boolean notDone = true;
+        while(notDone){
+            
+            notDone = false;
+            for (int i = 0; i < vowels.length - 1; i++){
+               if (vowels[i] < vowels[i + 1])
+               {
+                   tempVowel = vowels[i];
+                   vowels[i] = vowels[i+1];
+                   vowels[i+1] = tempVowel;;
+                   notDone = true;
+               }
+            }
+        }
+        
+        return vowels;
+    }
+       
+    private static boolean alreadyInLetterList(char[] list, char value) {
+        for (char valueInList : list){
+            if(value == valueInList){
                 return true;
             }
         }
         return false;
     }
     
+    private static boolean alreadyInVowelList(char[] list, char value) {
+        for (char valueInList : list){
+            if(value == valueInList){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private static boolean isVowel(char[] list, char value) {
+        for (char valueInList : list){
+            if(value == valueInList){
+                return true;
+            }
+        }
+        return false;
+    }
 }

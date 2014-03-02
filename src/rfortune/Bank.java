@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Heather
  */
 public class Bank {
-    static long bankPlayerUp;
+    public static long bankPlayerUp;
     public static long bankNumberPlayer1;
     public static long bankNumberPlayer2;
     public static long bankNumberPlayer3;
@@ -38,30 +38,39 @@ public class Bank {
     public static void numPlayersBank() {
         if (MainMenuControl.setNumPlayers == 3)
         {
-            bankNumberPlayer1 = 0;
-            bankNumberPlayer2 = 0;
-            bankNumberPlayer3 = 0;
+            bankNumberPlayer1 = 1000;
+            bankNumberPlayer2 = 2000;
+            bankNumberPlayer3 = 3000;
         }
         if (MainMenuControl.setNumPlayers == 2)
         {
-            bankNumberPlayer1 = 0;
-            bankNumberPlayer2 = 0;
+            bankNumberPlayer1 = 1000;
+            bankNumberPlayer2 = 2000;
         }
         if (MainMenuControl.setNumPlayers == 1)
         {
-            bankNumberPlayer1 = 500;
+            bankNumberPlayer1 = 1000;
         }
         
         bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
         bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
         bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
+        //Bank.bankPlayerTurn();
     }    
     
+    
+    static void updateBankPlayer()
+    {
+        bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
+        bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
+        bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
+    }
     /***************************************************************************
     * bankPlayerTurn(). defines whose bank will be adjusted based on which 
     * players turn it currently is.
     ***************************************************************************/
-    static void bankPlayerTurn(){
+    public static void bankPlayerTurn(){
+        PlayerTurn.playersTurn();
         if (PlayerTurn.playerUp == 0)
             bankPlayerUp = bankNumberPlayer1;
         else if (PlayerTurn.playerUp == 1)
@@ -76,7 +85,8 @@ public class Bank {
      * to purchase a vowel, this function subtracts 250 from bankPlayerUp. It 
      * will return true or false to let the ***vowel*** function know ***?***.
     ***************************************************************************/
-    public void updateBankVowelPurchase() {
+    public static void updateBankVowelPurchase() {
+        PlayerTurn.playersTurn();
         if (bankPlayerUp >= 250)
         {
             hasEnough = true;
@@ -89,7 +99,7 @@ public class Bank {
      * random number generator. The values will be different for Easy and Hard
      * modes and the function returns that value.
     ***************************************************************************/
-    public void spinWorth(){
+    public static void spinWorth(){
         Random spin = new Random();
         String difficulty = GamePreferencesView.setDifficulty;
         int amount = 50;
@@ -112,7 +122,7 @@ public class Bank {
      * phraseWorth(). calculates how much guessing the remainder of the phrase is
      * worth and returns that value.
     ***************************************************************************/
-    public void phraseWorth(){
+    public static void phraseWorth(){
         int phraseLength = BoardView.charArray.length;
         int cGuesses = Game.correctGuesses;
         int guessOpenSpaceWorth = 100;

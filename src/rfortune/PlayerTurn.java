@@ -11,6 +11,9 @@ package rfortune;
  */
 public class PlayerTurn {
     public static int playerUp;
+    public static String playerUpName;
+    public static String[] playerListOrder = {Player.player1, Player.player2, 
+            Player.player3};
     
     /***************************************************************************
      * playersTurn(). creates the array playerListOrder to store the names of 
@@ -18,15 +21,24 @@ public class PlayerTurn {
      * turn it is and sends which player's turn it is to bankPlayerTurn in Bank.
      **************************************************************************/
     public static void playersTurn(){
-        String playerListOrder[] = {Player.player1, Player.player2, 
-            Player.player3};
         int n = 0;              
         for (int i = 0; n <= Game.roundNumber; i++){
             if(i == MainMenuControl.setNumPlayers)
                i = 0;
             n++;
             playerUp = i;
+        }    
+        
+    }
+    
+    public static void displayPlayerTurn(){
             System.out.println("\nIt is " + playerListOrder[playerUp] + "'s turn");
+        if (playerUp == 0)
+            playerUpName = Player.player1;
+        if (playerUp == 1)
+            playerUpName = Player.player2;
+        if (playerUp == 2)
+            playerUpName = Player.player3;
         }    
     }
-}
+

@@ -11,6 +11,7 @@ package rfortune;
  * @author Heather
  */
 public class GameMenuControl {
+    GameTurnView gameTurnView = new GameTurnView();
 
     
     public GameMenuControl() {
@@ -21,7 +22,6 @@ public class GameMenuControl {
     
    public void takeTurn() {
        //ONLY PART THAT NEEDS WORK
-        GameTurnView gameTurnView = new GameTurnView();
         gameTurnView.getInput();
     }
    

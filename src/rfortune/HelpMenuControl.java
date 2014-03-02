@@ -16,7 +16,7 @@ public class HelpMenuControl  {
         
     } 
 
-    public void displayBoardHelp() {
+    public static void displayBoardHelp() {
         System.out.println();
         displayHelpBorder();             
         System.out.println( 
@@ -30,7 +30,7 @@ public class HelpMenuControl  {
     
     
         
-    public void displayGameHelp() {
+    public static void displayGameHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -45,7 +45,7 @@ public class HelpMenuControl  {
         displayHelpBorder();
     }
             
-    public void displayVowelHelp() {
+    public static void displayVowelHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -57,7 +57,7 @@ public class HelpMenuControl  {
     }
     
                    
-    public void displayGuessHelp() {
+    public static void displayGuessHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -71,7 +71,7 @@ public class HelpMenuControl  {
         displayHelpBorder();
     }
              
-    public void displayPlayerHelp() {
+    public static void displayPlayerHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -82,7 +82,7 @@ public class HelpMenuControl  {
     }
    
     
-    public void displayHelpBorder() {       
+    public static void displayHelpBorder() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }

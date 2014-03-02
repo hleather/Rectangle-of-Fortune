@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package rfortune;
-
-import java.util.Arrays;
-import java.util.Scanner;
-
 /**
  *
  * @author Laura and Heather
@@ -34,7 +30,6 @@ public class BoardView {
      * @param setParallelArray
      **************************************************************************/
     public void getParallelPhrase(String setParallelArray){
-        setParallelArray = "--- -- ---";
         String parallelArray = setParallelArray;
         parallelCharArray = parallelArray.toCharArray();
         //System.out.println("Parallel Character Array: " + 
@@ -47,11 +42,10 @@ public class BoardView {
      * players to view.
      * @param setParallelArray
      **************************************************************************/
-   /* public void defaultDisplayBoard(String setParallelArray){
-        setParallelArray = "--- -- ---";
+    public void defaultDisplayBoard(String setParallelArray){
         String parallelArray = setParallelArray;
         //System.out.println("Default Display: " + parallelArray);
-    }*/
+    }
     
     /***************************************************************************
      * getCharGuess(). gets the letter guess from the user and stores it as a
