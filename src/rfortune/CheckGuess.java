@@ -48,6 +48,7 @@ public class CheckGuess {
                 System.out.println("\tEnter your guess: ");
                 char letterGuess;
                 letterGuess = newLetterGuess.next().toUpperCase().charAt(0);
+                CheckGuess.currentGuess = letterGuess;
                 
                 if (!isVowel(letter, letterGuess)){
                     new RfortuneError().displayError("Sorry, you have to buy "
@@ -65,7 +66,7 @@ public class CheckGuess {
                 letterIndex++;
                 
                 if (!alreadyInLetterList(listOfLetterGuesses, letterGuess)){
-                    done = true;
+                    done = true;                    
                     
                     break;
             }            
@@ -77,7 +78,7 @@ public class CheckGuess {
             }
             
             newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
-                Game.searchPhrase();
+                //Game.searchPhrase();
                         
             return newLetterGuessList;
     }
@@ -128,7 +129,7 @@ public class CheckGuess {
             }
             
             newVowelGuessList = CheckGuess.sortVowelList(newVowelGuessList);
-                Game.searchPhrase();
+                //Game.searchPhrase();
                         
             return newVowelGuessList;
         }
