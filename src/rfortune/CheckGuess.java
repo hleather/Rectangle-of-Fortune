@@ -37,51 +37,48 @@ public class CheckGuess {
     
     public static char[] checkLetterGuess(){
         Scanner newLetterGuess = new Scanner(System.in);
-        
-        System.out.println("\n\t-----------------------------------------------");
-        System.out.println("\t You have chosen to guess a consonant!");
-        System.out.println("\t-----------------------------------------------");
-        
-        int guessLetterIndex = 0;
-        boolean done = false;
-        checkRepeat = false;
-        boolean checkLetter = false;
-        
-        while (guessLetterIndex <= 26 && !done){
-            System.out.println("\tEnter your guess: ");
-            if (!checkLetter)
-            {
-                for (int letterCheck = 0; letterCheck < vowel.length; letterCheck++)
-                {
-                    if (guessLetter == vowel[letterCheck])
-                    {
-                        new RfortuneError().displayError("\tSorry, you "
-                                + "have to buy a vowel. Try again: ");                        
-                    }       
+            
+            System.out.println("\n\t-----------------------------------------------");
+            System.out.println("\t You have chosen to guess a consonant!");
+            System.out.println("\t-----------------------------------------------");
+            
+            int letterIndex = 0;
+            boolean done = false;
+            while (letterIndex <= 26 && !done){
+                System.out.println("\tEnter your guess: ");
+                char letterGuess;
+                letterGuess = newLetterGuess.next().toUpperCase().charAt(0);
+                
+                if (!isVowel(letter, letterGuess)){
+                    new RfortuneError().displayError("Sorry, you have to buy "
+                            + "a vowel. Guess a letter. ");
+                    continue;
                 }
-            }
-            guessLetter = newLetterGuess.next().toUpperCase().charAt(0);
-            
-            if (alreadyInLetterList(listOfLetterGuesses, guessLetter)){
-                new RfortuneError().displayError("That letter has already been "
-                        + "guessed. Try again.");
-                continue;
-            }
-            if (!alreadyInLetterList(listOfLetterGuesses, guessLetter)){
-                Game.searchPhrase();          
-                done = true;
-            }               
-            
-            CheckGuess.listOfLetterGuesses[guessLetterIndex] = guessLetter;
-            guessLetterIndex++;
-        }        
-        char[] newLetterGuessList = new char[guessLetterIndex];
-            for (int i = 0; i < guessLetterIndex; i++){
+                
+                if (alreadyInLetterList(listOfLetterGuesses, letterGuess)){
+                    new RfortuneError().displayError("That letter has already "
+                            + "been guessed. Try again.");
+                    continue;
+                }
+                
+                CheckGuess.listOfLetterGuesses[letterIndex] = letterGuess;
+                letterIndex++;
+                
+                if (!alreadyInLetterList(listOfLetterGuesses, letterGuess)){
+                    done = true;
+                    
+                    break;
+            }            
+            }            
+                            
+            char[] newLetterGuessList = new char[letterIndex];
+            for (int i = 0; i < letterIndex; i++){
                 newLetterGuessList[i] = CheckGuess.listOfLetterGuesses[i];
             }
             
             newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
-            
+                Game.searchPhrase();
+                        
             return newLetterGuessList;
     }
     
