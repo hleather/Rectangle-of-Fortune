@@ -13,7 +13,6 @@ import java.util.Scanner;
  * @author Laura
  */
 public class GameTurnView {
-    Game game = new Game();
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
     
