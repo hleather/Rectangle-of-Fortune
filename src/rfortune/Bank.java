@@ -38,23 +38,23 @@ public class Bank {
     public static void numPlayersBank() {
         if (MainMenuControl.setNumPlayers == 3)
         {
-            bankNumberPlayer1 = 1000;
-            bankNumberPlayer2 = 2000;
-            bankNumberPlayer3 = 3000;
+            bankNumberPlayer1 = 0;
+            bankNumberPlayer2 = 0;
+            bankNumberPlayer3 = 0;
         }
         if (MainMenuControl.setNumPlayers == 2)
         {
-            bankNumberPlayer1 = 1000;
-            bankNumberPlayer2 = 2000;
+            bankNumberPlayer1 = 0;
+            bankNumberPlayer2 = 0;
         }
         if (MainMenuControl.setNumPlayers == 1)
         {
-            bankNumberPlayer1 = 1000;
+            bankNumberPlayer1 = 0;
         }
     }    
     
     
-    static void updateBankPlayer()
+    public static void updateBankPlayer()
     {
         bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
         bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
@@ -73,8 +73,29 @@ public class Bank {
             bankPlayerUp = bankNumberPlayer2;
         else if (PlayerTurn.playerUp == 2)
             bankPlayerUp = bankNumberPlayer3;       
-    }    
+    }   
     
+    /***************************************************************************
+    * display player 1's bank
+    ***************************************************************************/
+    public static void displayBankPlayer1() {
+        System.out.println(bankPlayer1);
+    }
+    
+    /***************************************************************************
+    * display player 2's bank
+    ***************************************************************************/
+    public static void displayBankPlayer2() {
+        System.out.println(bankPlayer2);
+    }
+    
+    /***************************************************************************
+    * display player 3's bank
+    ***************************************************************************/
+    public static void displayBankPlayer3() {
+        System.out.println(bankPlayer3);
+    }
+     
     /***************************************************************************
      * updateBankVowelPurchase(). first checks to see if the current player has 
      * enough money to purchase a vowel (250). If the player has enough money
@@ -119,7 +140,7 @@ public class Bank {
      * worth and returns that value.
     ***************************************************************************/
     public static void phraseWorth(){
-        int phraseLength = BoardView.charArray.length;
+        int phraseLength = WordsAndPhrases.charArray.length;
         int cGuesses = Game.correctGuesses;
         int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;

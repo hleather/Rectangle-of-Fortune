@@ -10,15 +10,13 @@ package rfortune;
  * @author Heather
  */
 public class PlayerTurn {
-    public static int playerUp;
-    public static String playerUpName;
+    public static int playerUp; 
+    public static String playerUpName; 
     private static String[] playerListOrder = {Player.player1, Player.player2, 
             Player.player3};
     
     /***************************************************************************
-     * playersTurn(). creates the array playerListOrder to store the names of 
-     * the current players (from Player) and uses a FOR loop to determine whose
-     * turn it is and sends which player's turn it is to bankPlayerTurn in Bank.
+     * Uses a FOR loop to determine whose turn it is.
      **************************************************************************/
     public static void playersTurn(){
         int n = 0;              
