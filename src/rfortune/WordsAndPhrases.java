@@ -23,7 +23,7 @@ public class WordsAndPhrases {
     * Stores the list of different phrase options. There are two
     * separate lists, one for easy phrases and one for hard phrases.
     ***************************************************************************/
-   public static void Phrases(){    
+   public static void setPhrases(){    
        String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER",
            "MISERYLOVESCOMPANY"};
        String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
