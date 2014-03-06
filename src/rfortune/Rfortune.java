@@ -6,6 +6,8 @@
 
 package rfortune;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -23,6 +25,7 @@ public class Rfortune {
             + "\n\t* or phrase.                                    *"
             + "\n\t*************************************************"
             + "\n";
+    private static Scanner inFile = new Scanner(System.in);
 
     public static void main(String[] args) {
         
@@ -72,6 +75,9 @@ public class Rfortune {
         // TODO code application logic here
     }
     
+    public static Scanner getInputFile() {
+        return Rfortune.inFile;
+    }
     public void displayHelp() {
         System.out.println(this.welcomeMsg);
     }
