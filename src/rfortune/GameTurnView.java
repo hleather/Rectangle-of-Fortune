@@ -32,13 +32,20 @@ public class GameTurnView {
      * LINKING FUNCTION!
      *********************************************************************/
     public void getInput(){
-        WordsAndPhrases.updateParallelArray();
-        WordsAndPhrases.displayParallelArray();
-        String command;
-        Scanner inFile = new Scanner(System.in);
+            String command;
+            Scanner inFile = new Scanner(System.in);
         
         do {
+            WordsAndPhrases.updateParallelArray();
+            WordsAndPhrases.displayParallelArray();
             if (Game.roundNumber == 0) {
+                PlayerTurn.updatePlayersTurn();
+                PlayerTurn.displayPlayerTurn();
+                Bank.bankPlayerTurn();
+                Bank.updateBankPlayer();
+                Bank.displayPlayerUpBank();
+            }
+            if (Game.turnOver) {
                 PlayerTurn.updatePlayersTurn();
                 PlayerTurn.displayPlayerTurn();
                 Bank.bankPlayerTurn();
@@ -54,9 +61,19 @@ public class GameTurnView {
             switch (command) {
                 //guess a letter.
                 case "L":
+                    if (Game.roundNumber != 0) {
+                        PlayerTurn.updatePlayersTurn();
+                        PlayerTurn.displayPlayerTurn();
+                        Bank.bankPlayerTurn();
+                        Bank.updateBankPlayer();
+                        Bank.displayPlayerUpBank();
+                    }
+                    PlayerTurn.updatePlayersTurn();
+                    Bank.updateBankPlayer();
+                    Bank.bankPlayerTurn();
+                    Bank.spin();
                     Bank.spinWorth();
                     Bank.printSpinWorth();
-                    //Game.displaySpinWorth();
                     CheckGuess.checkLetterGuess();
                     WordsAndPhrases.searchPhrase();
                     Game.display();
@@ -67,7 +84,9 @@ public class GameTurnView {
                 //guess a vowel
                 case "V":
                     PlayerTurn.updatePlayersTurn();
+                    Bank.updateBankPlayer();
                     Bank.bankPlayerTurn();
+                    Bank.spin();
                     Bank.spinWorth();
                     CheckGuess.checkVowelGuess();
                     WordsAndPhrases.searchPhrase();

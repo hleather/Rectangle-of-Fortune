@@ -23,6 +23,8 @@ public class Bank {
     public static long spinWorth;
     public static boolean hasEnough = false;
     public static long guessPhraseWorth;
+    private static int randomSpin;
+    private static int random;
     
     public Bank(){   
     }
@@ -139,11 +141,15 @@ public class Bank {
      * random number generator. The values will be different for Easy and Hard
      * modes and the function returns that value.
     ***************************************************************************/
-    public static void spinWorth(){
+    public static void spin(){
         Random spin = new Random();
-        String difficulty = GamePreferencesView.setDifficulty;
-        int amount = 50;
-        switch (difficulty) {
+        random = 1 + spin.nextInt(8);
+        randomSpin = random;
+    }
+    
+    public static void spinWorth(){
+        int amount = 25;
+        switch (GamePreferencesView.setDifficulty) {
             case "E":
                 amount = 25;
                 break;
@@ -151,16 +157,18 @@ public class Bank {
                 amount = 50;
                 break;
         }
-        spinWorth = amount * (1 + spin.nextInt(8));         
+        spinWorth = amount * randomSpin;
     }
     
     public static void printSpinWorth(){
-        System.out.println("Spin Worth: " + Bank.spinWorth);
+        System.out.println("Guess Worth: " + Bank.spinWorth);
     }
     
     public static void updateBankSpinWorth() {
-        if (Game.foundMatch)
+        if (Game.foundMatch) {
             bankPlayerUp += spinWorth;
+            Bank.updateBankPlayer();
+        }
     }
     
     /***************************************************************************

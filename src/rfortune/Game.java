@@ -13,6 +13,7 @@ public class Game {
     public static int roundNumber = 0;
     public static int correctGuesses = 0;
     public static boolean foundMatch = false;
+    public static boolean turnOver = false;
     GameTurnView gameTurnView = new GameTurnView();
     
     
@@ -34,6 +35,7 @@ public class Game {
         else if (!foundMatch) {
             new RfortuneMessage().displayMessage("Sorry, that is not in the "
                     + "phrase. Your turn is over.");
+            turnOver = true;
         }        
     }
     

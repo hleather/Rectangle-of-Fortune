@@ -24,12 +24,12 @@ public class WordsAndPhrases {
     * separate lists, one for easy phrases and one for hard phrases.
     ***************************************************************************/
    public static void setPhrases(){    
-       String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER",
-           "MISERYLOVESCOMPANY"};
+       String easyPhrases[] = {"BETTER LATE THAN NEVER", "BLOOD IS THICKER THAN WATER",
+           "MISERY LOVES COMPANY"};
        String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
                + "---- -----", "------ ----- -------"};
-       String hardPhrases[] = {"EVERYCLOUDHASASILVERLINING", "KNOWLEDGEISPOWER",
-           "MUCHISEXPECTEDWHEREMUCHISGIVEN", "HOPONPOP"};
+       String hardPhrases[] = {"EVERY CLOUD HAS A SILVER LINING", "KNOWLEDGE IS POWER",
+           "MUCH IS EXPECTED WHERE MUCH IS GIVEN", "HOP ON POP"};
        String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- "
                + "-- -----", "---- -- -------- ----- ---- -- -----", 
                "--- -- ---"};   
@@ -75,6 +75,7 @@ public class WordsAndPhrases {
             for(int i = 0; i  < charArray.length; i++){
                 if(charArray[i] == (CheckGuess.currentGuess)){
                     Game.foundMatch = true;
+                    Bank.updateBankSpinWorth();
                 }
             }
         }
