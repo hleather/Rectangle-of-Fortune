@@ -15,13 +15,13 @@ import java.util.Scanner;
 public class Game {
     public static int roundNumber = 0;
     public static int correctGuesses = 0;
-    public static boolean foundMatch = false;
+    private static boolean foundMatch = false;
     GameTurnView gameTurnView = new GameTurnView();
     
     
     public Game(){
 }
-    
+    public static void getPhrase()
     /***************************************************************************
      * searchPhrase(). goes through the character array of the current phrase
      * and checks to see if the guessed letter from BoardView is in the phrase.
@@ -31,7 +31,7 @@ public class Game {
      * turn is terminated.
      **************************************************************************/
     public static void searchPhrase(){
-        //REMEMBER CHECKVOWELGUESS
+        //MOVE TO WORDS AND PHRASES
         
         if(CheckGuess.checkRepeat)
         for(int i = 0; i  < BoardView.charArray.length; i++){

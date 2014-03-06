@@ -51,11 +51,6 @@ public class Bank {
         {
             bankNumberPlayer1 = 1000;
         }
-        
-        bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
-        bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
-        bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
-        //Bank.bankPlayerTurn();
     }    
     
     
@@ -65,6 +60,7 @@ public class Bank {
         bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
         bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
     }
+    
     /***************************************************************************
     * bankPlayerTurn(). defines whose bank will be adjusted based on which 
     * players turn it currently is.

@@ -12,7 +12,7 @@ package rfortune;
 public class PlayerTurn {
     public static int playerUp;
     public static String playerUpName;
-    public static String[] playerListOrder = {Player.player1, Player.player2, 
+    private static String[] playerListOrder = {Player.player1, Player.player2, 
             Player.player3};
     
     /***************************************************************************

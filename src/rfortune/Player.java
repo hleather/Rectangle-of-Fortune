@@ -39,4 +39,8 @@ public class Player {
             Player.player1 = PlayersList.listOfPlayerNames[0];
         }        
     }     
+    
+   /* public static void displayPlayer1Bank() {
+
+    } */
 }

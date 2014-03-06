@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package rfortune;
+
 /**
  *
- * @author Laura and Heather
+ * @author Heather
  */
-public class BoardView {
+public class RfortuneMessage {
     public Object displayMessage(Object object) {
         String message = (String) object;
         System.out.println("\t*******************************************************************************");
@@ -17,4 +19,3 @@ public class BoardView {
         return null; 
     }
 }
-

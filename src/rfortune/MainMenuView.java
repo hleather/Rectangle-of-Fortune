@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Heather
  */
 public class MainMenuView {
-    public static String command;   
+    public static String command;  // double check this is used somewhere else 
     private static final String[][] menuItems = {
         {"1", "One player game"},
         {"2", "Two player game"},

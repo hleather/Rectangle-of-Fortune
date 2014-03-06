@@ -18,15 +18,15 @@ import java.util.Scanner;
  */
 public class CheckGuess {
     public static char currentGuess;
-    public static boolean checkRepeat;
+    private static boolean checkRepeat;
     
-    public static char guessLetter;
-    public static char guessVowel;
+    private static char guessLetter;
+    private static char guessVowel;
     
-    public static char[] listOfLetterGuesses = new char[26];
-    public static char[] listOfVowelGuesses = new char[26];
-    public static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
-    public static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
+    private static char[] listOfLetterGuesses = new char[26];
+    private static char[] listOfVowelGuesses = new char[26];
+    private static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
+    private static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
     
     Bank bank = new Bank();
