@@ -17,21 +17,16 @@ import java.util.Scanner;
  * @author Heather
  */
 public class CheckGuess {
+    public static boolean checkGuess = false;
     public static char currentGuess;
-    private static boolean checkRepeat;
-    
-    private static char guessLetter;
-    private static char guessVowel;
-    
+    private static boolean checkLetterRepeat = true;
+    private static boolean checkVowelRepeat = true;
     private static char[] listOfLetterGuesses = new char[26];
     private static char[] listOfVowelGuesses = new char[26];
     private static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
     private static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
-    
-    Bank bank = new Bank();
-    
-    
+
     public CheckGuess(){
     }
     
@@ -65,11 +60,11 @@ public class CheckGuess {
                 CheckGuess.listOfLetterGuesses[letterIndex] = letterGuess;
                 letterIndex++;
                 
-                if (!alreadyInLetterList(listOfLetterGuesses, letterGuess)){
-                    done = true;                    
-                    
-                    break;
-            }            
+                if (!checkLetterRepeat) {
+                    currentGuess = letterGuess;
+                    checkGuess = true;
+                    done = true;
+                }           
             }            
                             
             char[] newLetterGuessList = new char[letterIndex];
@@ -78,7 +73,6 @@ public class CheckGuess {
             }
             
             newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
-                //Game.searchPhrase();
                         
             return newLetterGuessList;
     }
@@ -116,11 +110,11 @@ public class CheckGuess {
                 CheckGuess.listOfVowelGuesses[vowelIndex] = vowelGuess;
                 vowelIndex++;
                 
-                if (!alreadyInVowelList(listOfVowelGuesses, vowelGuess)){
+                if (!checkVowelRepeat) {
+                    currentGuess = vowelGuess;
+                    checkGuess = true;
                     done = true;
-                    
-                    break;
-            }            
+                }
             }            
                             
             char[] newVowelGuessList = new char[vowelIndex];
@@ -129,7 +123,6 @@ public class CheckGuess {
             }
             
             newVowelGuessList = CheckGuess.sortVowelList(newVowelGuessList);
-                //Game.searchPhrase();
                         
             return newVowelGuessList;
         }
@@ -184,6 +177,7 @@ public class CheckGuess {
                 return true;
             }
         }
+        checkLetterRepeat = false;
         return false;
     }
     
@@ -193,6 +187,7 @@ public class CheckGuess {
                 return true;
             }
         }
+        checkVowelRepeat = false;
         return false;
     }
     

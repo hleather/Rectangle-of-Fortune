@@ -55,18 +55,21 @@ public class MainMenuView {
                     mainMenuControl.setNumPlayers(1);
                     myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
+                    Game.newGame();
                     mainMenuControl.setScreen();             
                     break;
                 case "2":
                     mainMenuControl.setNumPlayers(2);
                     myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
+                    Game.newGame();
                     mainMenuControl.setScreen();                    
                     break;
                 case "3":
                     mainMenuControl.setNumPlayers(3);
                     myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
+                    Game.newGame();
                     mainMenuControl.setScreen();
                     break;
                 case "P":

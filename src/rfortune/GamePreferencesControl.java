@@ -15,8 +15,7 @@ public class GamePreferencesControl {
     public GamePreferencesControl() {
     }
           
-    public void setDifficulty() {
-        new WordsAndPhrases().setPhrase();           
+    public void setDifficulty() {          
     }
     
     

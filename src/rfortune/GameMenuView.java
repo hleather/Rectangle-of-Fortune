@@ -28,7 +28,6 @@ public class GameMenuView {
     
     
     public void getInput() {
-   
         String command;
         Scanner inFile = new Scanner(System.in);
 

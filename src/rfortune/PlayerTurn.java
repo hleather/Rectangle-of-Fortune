@@ -18,7 +18,7 @@ public class PlayerTurn {
     /***************************************************************************
      * Uses a FOR loop to determine whose turn it is.
      **************************************************************************/
-    public static void playersTurn(){
+    public static void updatePlayersTurn(){
         int n = 0;              
         for (int i = 0; n <= Game.roundNumber; i++){
             if(i == MainMenuControl.setNumPlayers)
@@ -30,7 +30,7 @@ public class PlayerTurn {
     }
     
     public static void displayPlayerTurn(){
-            System.out.println("\nIt is " + playerListOrder[playerUp] + "'s turn");
+            System.out.println(playerListOrder[playerUp]);
         if (playerUp == 0)
             playerUpName = Player.player1;
         if (playerUp == 1)

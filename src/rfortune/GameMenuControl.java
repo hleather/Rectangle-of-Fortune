@@ -15,15 +15,15 @@ public class GameMenuControl {
 
     
     public GameMenuControl() {
-
+       
     }
 
        
     
    public void takeTurn() {
        //ONLY PART THAT NEEDS WORK
-        gameTurnView.getInput();
-    }
+       gameTurnView.getInput();
+   }
    
      /*public void displayBoard() {
         System.out.println("\n\tdisplayBoard() called");

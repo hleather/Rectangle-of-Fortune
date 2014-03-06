@@ -38,27 +38,39 @@ public class Bank {
     public static void numPlayersBank() {
         if (MainMenuControl.setNumPlayers == 3)
         {
-            bankNumberPlayer1 = 0;
-            bankNumberPlayer2 = 0;
-            bankNumberPlayer3 = 0;
+            bankNumberPlayer1 = 1000;
+            bankNumberPlayer2 = 2000;
+            bankNumberPlayer3 = 3000;
         }
         if (MainMenuControl.setNumPlayers == 2)
         {
-            bankNumberPlayer1 = 0;
-            bankNumberPlayer2 = 0;
+            bankNumberPlayer1 = 1000;
+            bankNumberPlayer2 = 2000;
         }
         if (MainMenuControl.setNumPlayers == 1)
         {
-            bankNumberPlayer1 = 0;
+            bankNumberPlayer1 = 1000;
         }
     }    
     
     
     public static void updateBankPlayer()
     {
-        bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
-        bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
-        bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
+        if (MainMenuControl.setNumPlayers == 3)
+        {
+            bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
+            bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
+            bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
+        }
+        if (MainMenuControl.setNumPlayers == 2)
+        {
+            bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
+            bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
+        }
+        if (MainMenuControl.setNumPlayers == 1)
+        {
+            bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
+        }
     }
     
     /***************************************************************************
@@ -66,7 +78,6 @@ public class Bank {
     * players turn it currently is.
     ***************************************************************************/
     public static void bankPlayerTurn(){
-        PlayerTurn.playersTurn();
         if (PlayerTurn.playerUp == 0)
             bankPlayerUp = bankNumberPlayer1;
         else if (PlayerTurn.playerUp == 1)
@@ -74,6 +85,18 @@ public class Bank {
         else if (PlayerTurn.playerUp == 2)
             bankPlayerUp = bankNumberPlayer3;       
     }   
+    
+    /***************************************************************************
+    * display the current player's bank amount.
+    ***************************************************************************/
+    public static void displayPlayerUpBank() {
+        if (PlayerTurn.playerUp == 0)
+            System.out.println("Bank: " + bankPlayer1);
+        else if (PlayerTurn.playerUp == 1)
+            System.out.println("Bank: " + bankPlayer2);
+        else if (PlayerTurn.playerUp == 2)
+            System.out.println("Bank: " + bankPlayer3);
+    }
     
     /***************************************************************************
     * display player 1's bank
@@ -103,7 +126,7 @@ public class Bank {
      * will return true or false to let the ***vowel*** function know ***?***.
     ***************************************************************************/
     public static void updateBankVowelPurchase() {
-        PlayerTurn.playersTurn();
+        PlayerTurn.updatePlayersTurn();
         if (bankPlayerUp >= 250)
         {
             hasEnough = true;
@@ -128,11 +151,16 @@ public class Bank {
                 amount = 50;
                 break;
         }
-        spinWorth = amount * (1 + spin.nextInt(8)); 
+        spinWorth = amount * (1 + spin.nextInt(8));         
     }
     
     public static void printSpinWorth(){
-        System.out.println(Bank.spinWorth);
+        System.out.println("Spin Worth: " + Bank.spinWorth);
+    }
+    
+    public static void updateBankSpinWorth() {
+        if (Game.foundMatch)
+            bankPlayerUp += spinWorth;
     }
     
     /***************************************************************************

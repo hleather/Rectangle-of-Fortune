@@ -27,6 +27,8 @@ public class MainMenuControl {
      * their scores (from Bank).
      **************************************************************************/
     public void setScreen() {  
+        Bank.updateBankPlayer();
+        
         String gameDisplay[][] = {
             {Player.player1, Player.player2, Player.player3},
             {Bank.bankPlayer1, Bank.bankPlayer2, Bank.bankPlayer3}

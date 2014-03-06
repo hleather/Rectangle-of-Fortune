@@ -32,11 +32,20 @@ public class GameTurnView {
      * LINKING FUNCTION!
      *********************************************************************/
     public void getInput(){
-        
+        WordsAndPhrases.updateParallelArray();
+        WordsAndPhrases.displayParallelArray();
         String command;
         Scanner inFile = new Scanner(System.in);
         
         do {
+            if (Game.roundNumber == 0) {
+                PlayerTurn.updatePlayersTurn();
+                PlayerTurn.displayPlayerTurn();
+                Bank.bankPlayerTurn();
+                Bank.updateBankPlayer();
+                Bank.displayPlayerUpBank();
+            }
+            
             this.display();
             
             command = inFile.nextLine();
@@ -45,26 +54,36 @@ public class GameTurnView {
             switch (command) {
                 //guess a letter.
                 case "L":
-                    PlayerTurn.playersTurn();
-                    Bank.bankPlayerTurn();
-                    //Bank.spinWorth();
-                    checkGuess.checkLetterGuess();
+                    Bank.spinWorth();
+                    Bank.printSpinWorth();
+                    //Game.displaySpinWorth();
+                    CheckGuess.checkLetterGuess();
+                    WordsAndPhrases.searchPhrase();
+                    Game.display();
                     Game.roundNumber++; 
+                    Bank.updateBankSpinWorth();
+                    Game.gameRound();
                     break;
                 //guess a vowel
                 case "V":
-                    PlayerTurn.playersTurn();
+                    PlayerTurn.updatePlayersTurn();
                     Bank.bankPlayerTurn();
-                    checkGuess.checkVowelGuess();
+                    Bank.spinWorth();
+                    CheckGuess.checkVowelGuess();
+                    WordsAndPhrases.searchPhrase();
+                    Game.display();
                     Game.roundNumber++; 
+                    Game.gameRound();
                     break;
                 //guess the phrase
                 case "P":
-                    PlayerTurn.playersTurn();
+                    PlayerTurn.updatePlayersTurn();
                     Bank.bankPlayerTurn();
+                    Bank.phraseWorth();
                     System.out.println("Guess Phrase Command Entered");
+                    WordsAndPhrases.checkPhrase();
                     Game.roundNumber++; 
-                    //this.game.guessPhrase();
+                    Game.gameRound();
                     break;
                 //help menu
                 case "H":

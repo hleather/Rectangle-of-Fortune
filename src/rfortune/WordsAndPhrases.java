@@ -33,9 +33,12 @@ public class WordsAndPhrases {
        String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- "
                + "-- -----", "---- -- -------- ----- ---- -- -----", 
                "--- -- ---"};   
+       int control = 2;
+       if ("H".equals(GamePreferencesView.setDifficulty))
+           control = 3;
        
        Random indexLocation = new Random();
-       index = 1 + indexLocation.nextInt(3);
+       index = 1 + indexLocation.nextInt(control);
               
        if("E".equals(GamePreferencesView.setDifficulty))
        {                
@@ -46,7 +49,8 @@ public class WordsAndPhrases {
        {
           phrase = hardPhrases[index];
           parallelPhrase = pHardPhrases[index];
-       }             
+       }           
+       System.out.println(phrase);
    }
    
     /***************************************************************************
@@ -61,8 +65,39 @@ public class WordsAndPhrases {
      **************************************************************************/
     public static void translateParallelPhrase(){
         parallelCharArray = parallelPhrase.toCharArray();
-        //System.out.println("Parallel Character Array: " + 
-                //Arrays.toString(parallelCharArray));
+    }
+    
+    /***************************************************************************
+     * Checks to see if the guessed letter is in the phrase.
+     **************************************************************************/
+    public static void searchPhrase() {
+        if (CheckGuess.checkGuess) {
+            for(int i = 0; i  < charArray.length; i++){
+                if(charArray[i] == (CheckGuess.currentGuess)){
+                    Game.foundMatch = true;
+                }
+            }
+        }
+    }
+    
+    /***************************************************************************
+     * replaces the location of the correctly guessed letters in the array with
+     * the letter.
+     **************************************************************************/
+    public static void updateParallelArray() {
+        if (Game.foundMatch) {
+            for(int i = 0; i < charArray.length; i++) {
+                if(charArray[i] == (CheckGuess.currentGuess))
+                    parallelCharArray[i] = CheckGuess.currentGuess;
+            }
+        }
+    }
+    
+    /***************************************************************************
+     * compares two strings to see if they are the same.
+     **************************************************************************/
+    public static void checkPhrase(){
+        
     }
     
     /***************************************************************************
