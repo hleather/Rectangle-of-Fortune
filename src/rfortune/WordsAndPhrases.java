@@ -23,7 +23,7 @@ public class WordsAndPhrases {
     * Stores the list of different phrase options. There are two
     * separate lists, one for easy phrases and one for hard phrases.
     ***************************************************************************/
-   public static void setPhrases(){    
+   public static void Phrases(){    
        String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER",
            "MISERYLOVESCOMPANY"};
        String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
@@ -33,6 +33,7 @@ public class WordsAndPhrases {
        String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- "
                + "-- -----", "---- -- -------- ----- ---- -- -----", 
                "--- -- ---"};   
+       
        Random indexLocation = new Random();
        index = 1 + indexLocation.nextInt(3);
               
