@@ -12,19 +12,18 @@ import java.util.Random;
  */
 public class WordsAndPhrases {   
     private static int index;
-    public static String[] charArray;
-    public static String[] parallelCharArray;    
+    private static String phrase;
+    private static String parallelPhrase;
+    public static char[] charArray;
+    public static char[] parallelCharArray;    
    
    public WordsAndPhrases(){
-   } 
-   
+   }    
    /****************************************************************************
-    * setPhrase(). stores the list of different phrase options. There are two
-    * separate lists, one for easy phrases and one for hard phrases. This 
-    * function passes the difficulty into the different BoardView functions as
-    * it initializes them.
+    * Stores the list of different phrase options. There are two
+    * separate lists, one for easy phrases and one for hard phrases.
     ***************************************************************************/
-   public static void storePhrases(){    
+   public static void setPhrases(){    
        String easyPhrases[] = {"BETTERLATETHANNEVER", "BLOODISTHICKERTHANWATER",
            "MISERYLOVESCOMPANY"};
        String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
@@ -33,78 +32,51 @@ public class WordsAndPhrases {
            "MUCHISEXPECTEDWHEREMUCHISGIVEN", "HOPONPOP"};
        String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- "
                + "-- -----", "---- -- -------- ----- ---- -- -----", 
-               "--- -- ---"};
-   }
-   
-   public static void selectPhrase() {       
+               "--- -- ---"};   
        Random indexLocation = new Random();
        index = 1 + indexLocation.nextInt(3);
-   }
-
-
-       
+              
        if("E".equals(GamePreferencesView.setDifficulty))
        {                
-          charArray[] = easyPhrases[index];
-          = pEasyPhrases[index];
+          phrase = easyPhrases[index];
+          parallelPhrase = pEasyPhrases[index];
        }
        if("H".equals(GamePreferencesView.setDifficulty))
        {
-          charArray = hardPhrases[index];
-          parallelCharArray = pHardPhrases[index];
+          phrase = hardPhrases[index];
+          parallelPhrase = pHardPhrases[index];
        }             
    }
-   static char[] charArray;
-    static char[] parallelCharArray;
-    
+   
     /***************************************************************************
-     * getPhrase(). gets the current random phrase from  *** and translates it
-     * into a character array in order to be used in the game process.
-     * @param setPhrase
+     * Translates phrase into a character array.
      **************************************************************************/
-    public static void getPhrase(String setPhrase){  
-        String phrase = setPhrase;
-        charArray = phrase.toCharArray();
-        //System.out.println("Character Array: " + Arrays.toString(charArray));           
+    public static void translatePhrase(){          
+        charArray = phrase.toCharArray();           
     }
     
     /***************************************************************************
-     * getParallelPhrase(). gets the parallel phrase of the randomly selected
-     * current phrase from WordsAndPhrases and translates it into a character 
-     * array in order to be used in the game process.
-     * @param setParallelArray
+     * Translates parallelPhrase into a character array.
      **************************************************************************/
-    public static void getParallelPhrase(String setParallelArray){
-        String parallelArray = setParallelArray;
-        parallelCharArray = parallelArray.toCharArray();
+    public static void translateParallelPhrase(){
+        parallelCharArray = parallelPhrase.toCharArray();
         //System.out.println("Parallel Character Array: " + 
                 //Arrays.toString(parallelCharArray));
     }
     
     /***************************************************************************
-     * defaultDisplayBoard(). gets the parallel phrase of the randomly selected
-     * current phrase from WordsAndPhrases and displays it on the screen for the 
-     * players to view.
-     * @param setParallelArray
+     * displays the parallelCharArray to the screen.
      **************************************************************************/
-    public static void defaultDisplayBoard(String setParallelArray){
-        String parallelArray = setParallelArray;
-        //System.out.println("Default Display: " + parallelArray);
+    public static void displayParallelArray(){
+        System.out.println(parallelCharArray);
     }
     
     /***************************************************************************
-     * getCharGuess(). gets the letter guess from the user and stores it as a
-     * char variable. This function will be called from GameMenuControl.
+     * displays the charArray to the screen.
      **************************************************************************/
-   /* public void getCharGuess(){
-        Scanner charGuess = new Scanner(System.in);    
-        System.out.println("Please enter your guess.");
-        String newGuess = charGuess.next().toUpperCase();
-        guess = newGuess.charAt(0);
-    }    */
-}
-
-
+    public static void displayCharArray(){
+        System.out.println(charArray);
+    }
 }
 
 
