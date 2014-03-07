@@ -5,15 +5,73 @@
  */
 
 package rfortune;
+
+import java.io.Serializable;
 /**
  *
  * @author Heather and Laura
  */
-public class Game {
-    public static int roundNumber = 0;
-    public static int correctGuesses = 0;
-    public static boolean foundMatch = false;
-    public static boolean turnOver = false;
+public class Game implements Serializable {
+    private static int roundNumber = 0;
+    private static int correctGuesses = 0;
+    private static boolean foundMatch = false;
+    private static boolean turnOver = false;
+
+    /**
+     * @return the roundNumber
+     */
+    public static int getRoundNumber() {
+        return roundNumber;
+    }
+
+    /**
+     * @param aRoundNumber the roundNumber to set
+     */
+    public static void setRoundNumber(int aRoundNumber) {
+        roundNumber = aRoundNumber;
+    }
+
+    /**
+     * @return the correctGuesses
+     */
+    public static int getCorrectGuesses() {
+        return correctGuesses;
+    }
+
+    /**
+     * @param aCorrectGuesses the correctGuesses to set
+     */
+    public static void setCorrectGuesses(int aCorrectGuesses) {
+        correctGuesses = aCorrectGuesses;
+    }
+
+    /**
+     * @return the foundMatch
+     */
+    public static boolean isFoundMatch() {
+        return foundMatch;
+    }
+
+    /**
+     * @param aFoundMatch the foundMatch to set
+     */
+    public static void setFoundMatch(boolean aFoundMatch) {
+        foundMatch = aFoundMatch;
+    }
+
+    /**
+     * @return the turnOver
+     */
+    public static boolean isTurnOver() {
+        return turnOver;
+    }
+
+    /**
+     * @param aTurnOver the turnOver to set
+     */
+    public static void setTurnOver(boolean aTurnOver) {
+        turnOver = aTurnOver;
+    }
     GameTurnView gameTurnView = new GameTurnView();
     
     
@@ -25,17 +83,17 @@ public class Game {
         WordsAndPhrases.translateParallelPhrase();
     }
     public static void gameRound() {
-        if(foundMatch)
-            roundNumber--;
+        if(isFoundMatch())
+            setRoundNumber(getRoundNumber() - 1);
     }
     public static void display() {
-        if (foundMatch) {
+        if (isFoundMatch()) {
             new RfortuneMessage().displayMessage("You have a match!");
         }
-        else if (!foundMatch) {
+        else if (!isFoundMatch()) {
             new RfortuneMessage().displayMessage("Sorry, that is not in the "
                     + "phrase. Your turn is over.");
-            turnOver = true;
+            setTurnOver(true);
         }        
     }
     

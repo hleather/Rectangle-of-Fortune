@@ -18,7 +18,6 @@ public class GameMenuView {
 
     private final static String[][] menuItems = {
         {"T", "Take your turn"},
-        //{"D", "Display the board"},
         {"H", "Help"},
         {"Q", "QUIT"}
     };
@@ -32,7 +31,7 @@ public class GameMenuView {
         Scanner inFile = Rfortune.getInputFile();
 
         do {
-            if (Game.roundNumber == 0)
+            if (Game.getRoundNumber() == 0)
                 menuItems[0][1] = "Start the Game";
             this.display(); // display the menu
 
@@ -44,9 +43,6 @@ public class GameMenuView {
                 case "T":
                     gameMenuControl.takeTurn();                   
                     break;
-               /* case "D":
-                    gameMenuControl.displayBoard();
-                    break; */
                 case "H":
                     helpMenuView.getInput();
                     break;

@@ -165,7 +165,7 @@ public class Bank {
     }
     
     public static void updateBankSpinWorth() {
-        if (Game.foundMatch) {
+        if (Game.isFoundMatch()) {
             bankPlayerUp += spinWorth;
             Bank.updateBankPlayer();
         }
@@ -177,7 +177,7 @@ public class Bank {
     ***************************************************************************/
     public static void phraseWorth(){
         int phraseLength = WordsAndPhrases.charArray.length;
-        int cGuesses = Game.correctGuesses;
+        int cGuesses = Game.getCorrectGuesses();
         int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;
         guessPhraseWorth = openSpaces * guessOpenSpaceWorth;

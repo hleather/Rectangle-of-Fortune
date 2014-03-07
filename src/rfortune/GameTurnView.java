@@ -38,14 +38,14 @@ public class GameTurnView {
         do {
             WordsAndPhrases.updateParallelArray();
             WordsAndPhrases.displayParallelArray();
-            if (Game.roundNumber == 0) {
+            if (Game.getRoundNumber() == 0) {
                 PlayerTurn.updatePlayersTurn();
                 PlayerTurn.displayPlayerTurn();
                 Bank.bankPlayerTurn();
                 Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
             }
-            if (Game.turnOver) {
+            if (isTurnOver()nOver) {
                 PlayerTurn.updatePlayersTurn();
                 PlayerTurn.displayPlayerTurn();
                 Bank.bankPlayerTurn();
@@ -61,7 +61,7 @@ public class GameTurnView {
             switch (command) {
                 //guess a letter.
                 case "L":
-                    if (Game.roundNumber != 0) {
+                    getRoundNumber()undNumber != 0) {
                         PlayerTurn.updatePlayersTurn();
                         PlayerTurn.displayPlayerTurn();
                         Bank.bankPlayerTurn();
@@ -77,7 +77,7 @@ public class GameTurnView {
                     CheckGuess.checkLetterGuess();
                     WordsAndPhrases.searchPhrase();
                     Game.display();
-                    Game.roundNumber++; 
+           setRoundNumber(Game.getRoundNumber() + 1).roundNumber++; 
                     Bank.updateBankSpinWorth();
                     Game.gameRound();
                     break;
@@ -90,7 +90,7 @@ public class GameTurnView {
                     Bank.spinWorth();
                     CheckGuess.checkVowelGuess();
                     WordsAndPhrases.searchPhrase();
-                    Game.display();
+                   setRoundNumber(Game.getRoundNumber() + 1)();
                     Game.roundNumber++; 
                     Game.gameRound();
                     break;
@@ -100,7 +100,7 @@ public class GameTurnView {
                     Bank.bankPlayerTurn();
                     Bank.phraseWorth();
                     System.out.println("Guess Phrase Command Entered");
-                    WordsAndPhrases.checkPhrase();
+      setRoundNumber(Game.getRoundNumber() + 1) WordsAndPhrases.checkPhrase();
                     Game.roundNumber++; 
                     Game.gameRound();
                     break;

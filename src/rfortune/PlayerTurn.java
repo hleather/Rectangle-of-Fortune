@@ -20,7 +20,7 @@ public class PlayerTurn {
      **************************************************************************/
     public static void updatePlayersTurn(){
         int n = 0;              
-        for (int i = 0; n <= Game.roundNumber; i++){
+        for (int i = 0; n <= Game.getRoundNumber(); i++){
             if(i == MainMenuControl.setNumPlayers)
                i = 0;
             n++;

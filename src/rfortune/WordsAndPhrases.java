@@ -74,7 +74,7 @@ public class WordsAndPhrases {
         if (CheckGuess.checkGuess) {
             for(int i = 0; i  < charArray.length; i++){
                 if(charArray[i] == (CheckGuess.currentGuess)){
-                    Game.foundMatch = true;
+                    Game.setFoundMatch(true);
                     Bank.updateBankSpinWorth();
                 }
             }
@@ -86,7 +86,7 @@ public class WordsAndPhrases {
      * the letter.
      **************************************************************************/
     public static void updateParallelArray() {
-        if (Game.foundMatch) {
+        if (Game.isFoundMatch()) {
             for(int i = 0; i < charArray.length; i++) {
                 if(charArray[i] == (CheckGuess.currentGuess))
                     parallelCharArray[i] = CheckGuess.currentGuess;
