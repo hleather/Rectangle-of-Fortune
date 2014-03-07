@@ -21,7 +21,7 @@ public class PlayersList {
     }
     
     public String[] getInput(){
-        Scanner inFile = new Scanner(System.in);
+        Scanner inFile = Rfortune.getInputFile();
         
         System.out.println("\n\t-----------------------------------------------");
         System.out.println("\t Enter a list of names of those who \n\t will be "

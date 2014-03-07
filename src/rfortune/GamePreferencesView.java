@@ -30,7 +30,7 @@ public class GamePreferencesView {
     
     public static void getInput() {       
         String command;
-        Scanner inFile = new Scanner(System.in);
+        Scanner inFile = Rfortune.getInputFile();
         
         do {
             GamePreferencesView.display();

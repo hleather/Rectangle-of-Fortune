@@ -29,7 +29,7 @@ public class GameMenuView {
     
     public void getInput() {
         String command;
-        Scanner inFile = new Scanner(System.in);
+        Scanner inFile = Rfortune.getInputFile();
 
         do {
             if (Game.roundNumber == 0)
