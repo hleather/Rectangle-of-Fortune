@@ -61,7 +61,7 @@ public class GameTurnView {
             switch (command) {
                 //guess a letter.
                 case "L":
-                    getRoundNumber()undNumber != 0) {
+                    if(Game.getRoundNumber() != 0) {
                         PlayerTurn.updatePlayersTurn();
                         PlayerTurn.displayPlayerTurn();
                         Bank.bankPlayerTurn();
@@ -77,7 +77,7 @@ public class GameTurnView {
                     CheckGuess.checkLetterGuess();
                     WordsAndPhrases.searchPhrase();
                     Game.display();
-           setRoundNumber(Game.getRoundNumber() + 1).roundNumber++; 
+           //Game.setRoundNumber();setRoundNumber(Game.getRoundNumber() + 1).roundNumber++; 
                     Bank.updateBankSpinWorth();
                     Game.gameRound();
                     break;
@@ -90,8 +90,8 @@ public class GameTurnView {
                     Bank.spinWorth();
                     CheckGuess.checkVowelGuess();
                     WordsAndPhrases.searchPhrase();
-                   setRoundNumber(Game.getRoundNumber() + 1)();
-                    Game.roundNumber++; 
+                   //setRoundNumber(Game.getRoundNumber() + 1)();
+                    //Game.roundNumber++; 
                     Game.gameRound();
                     break;
                 //guess the phrase
@@ -100,8 +100,8 @@ public class GameTurnView {
                     Bank.bankPlayerTurn();
                     Bank.phraseWorth();
                     System.out.println("Guess Phrase Command Entered");
-      setRoundNumber(Game.getRoundNumber() + 1) WordsAndPhrases.checkPhrase();
-                    Game.roundNumber++; 
+      //setRoundNumber(Game.getRoundNumber() + 1) WordsAndPhrases.checkPhrase();
+                    //Game.roundNumber++; 
                     Game.gameRound();
                     break;
                 //help menu
