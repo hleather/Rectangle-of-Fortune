@@ -45,7 +45,7 @@ public class GameTurnView {
                 Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
             }
-            if (isTurnOver()nOver) {
+            if (Game.isTurnOver()) {
                 PlayerTurn.updatePlayersTurn();
                 PlayerTurn.displayPlayerTurn();
                 Bank.bankPlayerTurn();

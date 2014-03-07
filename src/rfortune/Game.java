@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
     private static int roundNumber = 0;
-    private static int correctGuesses = 0;
+    private static int correctGuesses = 0; 
     private static boolean foundMatch = false;
     private static boolean turnOver = false;
 
