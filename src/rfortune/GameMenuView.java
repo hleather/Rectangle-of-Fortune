@@ -6,17 +6,33 @@
 
 package rfortune;
 
+import java.io.Serializable;
+
 import java.util.Scanner;
 
 /**
  *
  * @author Heather
  */
-public class GameMenuView {
+public class GameMenuView implements Serializable {
+
+    /**
+     * @return the menuItems
+     */
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    /**
+     * @param aMenuItems the menuItems to set
+     */
+    public static void setMenuItems(String[][] aMenuItems) {
+        menuItems = aMenuItems;
+    }
     GameMenuControl gameMenuControl = new GameMenuControl(); 
     HelpMenuView helpMenuView = new HelpMenuView();
 
-    private final static String[][] menuItems = {
+    private static String[][] menuItems = {
         {"T", "Take your turn"},
         {"H", "Help"},
         {"Q", "QUIT"}
@@ -32,7 +48,7 @@ public class GameMenuView {
 
         do {
             if (Game.getRoundNumber() == 0)
-                menuItems[0][1] = "Start the Game";
+                getMenuItems()[0][1] = "Start the Game";
             this.display(); // display the menu
 
             // get commaned entered
@@ -56,13 +72,13 @@ public class GameMenuView {
     
 
 
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-        for (String[] menuItem : GameMenuView.menuItems) {
+    private final void display() {
+        new RfortuneMessage().displayMessage("Enter the letter associated with "
+                + "one of the following commands:");
+        
+        for (String[] menuItem : GameMenuView.getMenuItems()) {
             System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
-        System.out.println("\t===============================================================\n");
     }
   
 }

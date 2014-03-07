@@ -5,15 +5,17 @@
  */
 
 package rfortune;
+
+import java.io.Serializable;
 /**
  *
  * @author Heather
  */
-public class Player {
-    public static String player1 = " ";
-    public static String player2 = " ";
-    public static String player3 = " ";          
-    PlayersList myList = new PlayersList();   
+public class Player implements Serializable {
+    private static String player1 = " ";
+    private static String player2 = " ";
+    private static String player3 = " ";
+    //PlayersList myList = new PlayersList();   
     
     /***************************************************************************
      * getPlayerNames(). initiates the function getInput() from PlayersList and

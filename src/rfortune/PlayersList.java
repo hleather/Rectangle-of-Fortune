@@ -6,15 +6,30 @@
 
 package rfortune;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Heather and Laura
  */
-public class PlayersList {
+public class PlayersList implements Serializable {
     
-    public static String[] listOfPlayerNames = new String[10];
+    private static String[] listOfPlayerNames = new String[10];
+
+    /**
+     * @return the listOfPlayerNames
+     */
+    public static String[] getListOfPlayerNames() {
+        return listOfPlayerNames;
+    }
+
+    /**
+     * @param aListOfPlayerNames the listOfPlayerNames to set
+     */
+    public static void setListOfPlayerNames(String[] aListOfPlayerNames) {
+        listOfPlayerNames = aListOfPlayerNames;
+    }
     
     public PlayersList(){
         
@@ -23,16 +38,14 @@ public class PlayersList {
     public String[] getInput(){
         Scanner inFile = Rfortune.getInputFile();
         
-        System.out.println("\n\t-----------------------------------------------");
-        System.out.println("\t Enter a list of names of those who \n\t will be "
-                + "playing Rectangle of Fortune.");
-        System.out.println("\t-----------------------------------------------");
+        new RfortuneMessage().displayMessage("Enter a list of names of those "
+                + "who will be playing Rectangle of Fortune.");
         
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10 && !done){
-            System.out.println("\tPlease enter the name of a player or enter "
-                    + "\"Q\" to quit.");
+            new RfortuneMessage().displayMessage("Please enter the name of a"
+                    + "player or enter \"Q\" to quit.");
             String playerName;
             playerName= inFile.nextLine();
             playerName = playerName.trim();
@@ -43,7 +56,7 @@ public class PlayersList {
                 continue;
             }
             
-            if (alreadyInList(listOfPlayerNames, playerName)){
+            if (alreadyInList(getListOfPlayerNames(), playerName)){
                 new RfortuneError().displayError("That name has already been "
                         + "entered. Try again or enter \"Q\" to quit.");
                 continue;
@@ -54,7 +67,7 @@ public class PlayersList {
                 break;            
             }
             
-            this.listOfPlayerNames[playerIndex] = playerName;
+            this.getListOfPlayerNames()[playerIndex] = playerName;
             playerIndex++;
             
             if (playerIndex == MainMenuControl.setNumPlayers)
@@ -67,7 +80,7 @@ public class PlayersList {
             
             String[] newNameList = new String[playerIndex];
             for (int i = 0; i < playerIndex; i++){
-                newNameList[i] = this.listOfPlayerNames[i];
+                newNameList[i] = this.getListOfPlayerNames()[i];
             }
             
             newNameList = this.sortList(newNameList);
@@ -76,7 +89,7 @@ public class PlayersList {
             return newNameList;
     }
     
-    public String[] sortList(String[] names){
+    private String[] sortList(String[] names){
         String tempName;
         boolean notDone = true;
         while(notDone){

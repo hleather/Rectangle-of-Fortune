@@ -6,17 +6,33 @@
 
 package rfortune;
 
+import java.io.Serializable;
+
 import java.util.Scanner;
 
 /**
  *
  * @author Laura
  */
-public class GameTurnView {
+public class GameTurnView implements Serializable {
+
+    /**
+     * @return the turnOptions
+     */
+    public static String[][] getTurnOptions() {
+        return turnOptions;
+    }
+
+    /**
+     * @param aTurnOptions the turnOptions to set
+     */
+    public static void setTurnOptions(String[][] aTurnOptions) {
+        turnOptions = aTurnOptions;
+    }
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
     
-    static final String[][]turnOptions = {
+    private static String[][]turnOptions = {
         {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},
@@ -33,7 +49,7 @@ public class GameTurnView {
      *********************************************************************/
     public void getInput(){
             String command;
-            Scanner inFile = new Scanner(System.in);
+            Scanner inFile = Rfortune.getInputFile();
         
         do {
             WordsAndPhrases.updateParallelArray();
@@ -118,16 +134,12 @@ public class GameTurnView {
         } while (!command.equals("Q"));
     }
     
-    public final void display() {
-        System.out.println("\n\t==============================================="
-                + "======");
-        System.out.println("\t Enter the letter associated with one of the "
-                + "options:");
-        for (String[] turnOptions : GameTurnView.turnOptions) {
+    private final void display() {
+        new RfortuneMessage().displayMessage("Enter the letter associated with "
+                + "one of the following options:");
+        for (String[] turnOptions : GameTurnView.getTurnOptions()) {
             System.out.println("\t  " +turnOptions[0] + "\t" + turnOptions[1]);
         }
-        System.out.println("\t================================================="
-                + "=====");
     }
     
 }
