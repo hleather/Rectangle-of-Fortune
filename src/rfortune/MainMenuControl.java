@@ -28,9 +28,12 @@ public class MainMenuControl {
      **************************************************************************/
     public void setScreen() {  
         Bank.updateBankPlayer();
+        String player1 = Player.getPlayer1();
+        String player2 = Player.getPlayer2();
+        String player3 = Player.getPlayer3();
         
         String gameDisplay[][] = {
-            {Player.player1, Player.player2, Player.player3},
+            {player1, player2, player3},
             {Bank.bankPlayer1, Bank.bankPlayer2, Bank.bankPlayer3}
         };
         System.out.println("\n\t==========================================="

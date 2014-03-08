@@ -15,7 +15,49 @@ public class Player implements Serializable {
     private static String player1 = " ";
     private static String player2 = " ";
     private static String player3 = " ";
-    //PlayersList myList = new PlayersList();   
+    PlayersList myList = new PlayersList();   
+
+    /**
+     * @return the player1
+     */
+    public static String getPlayer1() {
+        return player1;
+    }
+
+    /**
+     * @param aPlayer1 the player1 to set
+     */
+    public static void setPlayer1(String aPlayer1) {
+        player1 = aPlayer1;
+    }
+
+    /**
+     * @return the player2
+     */
+    public static String getPlayer2() {
+        return player2;
+    }
+
+    /**
+     * @param aPlayer2 the player2 to set
+     */
+    public static void setPlayer2(String aPlayer2) {
+        player2 = aPlayer2;
+    }
+
+    /**
+     * @return the player3
+     */
+    public static String getPlayer3() {
+        return player3;
+    }
+
+    /**
+     * @param aPlayer3 the player3 to set
+     */
+    public static void setPlayer3(String aPlayer3) {
+        player3 = aPlayer3;
+    }
     
     /***************************************************************************
      * getPlayerNames(). initiates the function getInput() from PlayersList and
@@ -24,21 +66,22 @@ public class Player implements Serializable {
      * MainMenuControl).
      **************************************************************************/
     public final void getPlayerNames(){
+        String[] list = PlayersList.getListOfPlayerNames();
         myList.getInput();
         if (MainMenuControl.setNumPlayers == 3) 
         {
-            Player.player1 = PlayersList.listOfPlayerNames[0];
-            Player.player2 = PlayersList.listOfPlayerNames[1];
-            Player.player3 = PlayersList.listOfPlayerNames[2];
+            Player.setPlayer1(list[0]);
+            Player.setPlayer2(list[1]);
+            Player.setPlayer3(list[2]);
         }
         else if (MainMenuControl.setNumPlayers == 2)
         {
-            Player.player1 = PlayersList.listOfPlayerNames[0];
-            Player.player2 = PlayersList.listOfPlayerNames[1];            
+            Player.setPlayer1(list[0]);
+            Player.setPlayer2(list[1]);            
         }
         else if (MainMenuControl.setNumPlayers == 1) 
         {
-            Player.player1 = PlayersList.listOfPlayerNames[0];
+            Player.setPlayer1(list[0]);
         }        
     }     
     
