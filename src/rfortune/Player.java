@@ -68,18 +68,18 @@ public class Player implements Serializable {
     public final void getPlayerNames(){
         String[] list = PlayersList.getListOfPlayerNames();
         myList.getInput();
-        if (MainMenuControl.setNumPlayers == 3) 
+        if (MainMenuControl.getSetNumPlayers() == 3) 
         {
             Player.setPlayer1(list[0]);
             Player.setPlayer2(list[1]);
             Player.setPlayer3(list[2]);
         }
-        else if (MainMenuControl.setNumPlayers == 2)
+        else if (MainMenuControl.getSetNumPlayers() == 2)
         {
             Player.setPlayer1(list[0]);
             Player.setPlayer2(list[1]);            
         }
-        else if (MainMenuControl.setNumPlayers == 1) 
+        else if (MainMenuControl.getSetNumPlayers() == 1) 
         {
             Player.setPlayer1(list[0]);
         }        

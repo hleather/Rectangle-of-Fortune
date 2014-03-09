@@ -6,6 +6,7 @@
 
 package rfortune;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
@@ -16,9 +17,9 @@ import java.util.Scanner;
  * SEARCHPHRASE().
  * @author Heather
  */
-public class CheckGuess {
-    public static boolean checkGuess = false;
-    public static char currentGuess;
+public class CheckGuess implements Serializable {
+    private static boolean checkGuess = false;
+    private static char currentGuess;
     private static boolean checkLetterRepeat = true;
     private static boolean checkVowelRepeat = true;
     private static char[] listOfLetterGuesses = new char[26];
@@ -26,6 +27,118 @@ public class CheckGuess {
     private static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
     private static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
+
+    /**
+     * @return the checkGuess
+     */
+    public static boolean isCheckGuess() {
+        return checkGuess;
+    }
+
+    /**
+     * @param aCheckGuess the checkGuess to set
+     */
+    public static void setCheckGuess(boolean aCheckGuess) {
+        checkGuess = aCheckGuess;
+    }
+
+    /**
+     * @return the currentGuess
+     */
+    public static char getCurrentGuess() {
+        return currentGuess;
+    }
+
+    /**
+     * @param aCurrentGuess the currentGuess to set
+     */
+    public static void setCurrentGuess(char aCurrentGuess) {
+        currentGuess = aCurrentGuess;
+    }
+
+    /**
+     * @return the checkLetterRepeat
+     */
+    public static boolean isCheckLetterRepeat() {
+        return checkLetterRepeat;
+    }
+
+    /**
+     * @param aCheckLetterRepeat the checkLetterRepeat to set
+     */
+    public static void setCheckLetterRepeat(boolean aCheckLetterRepeat) {
+        checkLetterRepeat = aCheckLetterRepeat;
+    }
+
+    /**
+     * @return the checkVowelRepeat
+     */
+    public static boolean isCheckVowelRepeat() {
+        return checkVowelRepeat;
+    }
+
+    /**
+     * @param aCheckVowelRepeat the checkVowelRepeat to set
+     */
+    public static void setCheckVowelRepeat(boolean aCheckVowelRepeat) {
+        checkVowelRepeat = aCheckVowelRepeat;
+    }
+
+    /**
+     * @return the listOfLetterGuesses
+     */
+    public static char[] getListOfLetterGuesses() {
+        return listOfLetterGuesses;
+    }
+
+    /**
+     * @param aListOfLetterGuesses the listOfLetterGuesses to set
+     */
+    public static void setListOfLetterGuesses(char[] aListOfLetterGuesses) {
+        listOfLetterGuesses = aListOfLetterGuesses;
+    }
+
+    /**
+     * @return the listOfVowelGuesses
+     */
+    public static char[] getListOfVowelGuesses() {
+        return listOfVowelGuesses;
+    }
+
+    /**
+     * @param aListOfVowelGuesses the listOfVowelGuesses to set
+     */
+    public static void setListOfVowelGuesses(char[] aListOfVowelGuesses) {
+        listOfVowelGuesses = aListOfVowelGuesses;
+    }
+
+    /**
+     * @return the vowel
+     */
+    public static char[] getVowel() {
+        return vowel;
+    }
+
+    /**
+     * @param aVowel the vowel to set
+     */
+    public static void setVowel(char[] aVowel) {
+        vowel = aVowel;
+    }
+
+    /**
+     * @return the letter
+     */
+    public static char[] getLetter() {
+        return letter;
+    }
+
+    /**
+     * @param aLetter the letter to set
+     */
+    public static void setLetter(char[] aLetter) {
+        letter = aLetter;
+    }
 
     public CheckGuess(){
     }
@@ -43,7 +156,7 @@ public class CheckGuess {
                 System.out.println("\tEnter your guess: ");
                 char letterGuess;
                 letterGuess = newLetterGuess.next().toUpperCase().charAt(0);
-                CheckGuess.currentGuess = letterGuess;
+                CheckGuess.setCurrentGuess(letterGuess);
                 
                 if (!isVowel(letter, letterGuess)){
                     new RfortuneError().displayError("Sorry, you have to buy "
@@ -51,25 +164,25 @@ public class CheckGuess {
                     continue;
                 }
                 
-                if (alreadyInLetterList(listOfLetterGuesses, letterGuess)){
+                if (alreadyInLetterList(getListOfLetterGuesses(), letterGuess)){
                     new RfortuneError().displayError("That letter has already "
                             + "been guessed. Try again.");
                     continue;
                 }
                 
-                CheckGuess.listOfLetterGuesses[letterIndex] = letterGuess;
+                CheckGuess.getListOfLetterGuesses()[letterIndex] = letterGuess;
                 letterIndex++;
                 
-                if (!checkLetterRepeat) {
-                    currentGuess = letterGuess;
-                    checkGuess = true;
+                if (!isCheckLetterRepeat()) {
+                    setCurrentGuess(letterGuess);
+                    setCheckGuess(true);
                     done = true;
                 }           
             }            
                             
             char[] newLetterGuessList = new char[letterIndex];
             for (int i = 0; i < letterIndex; i++){
-                newLetterGuessList[i] = CheckGuess.listOfLetterGuesses[i];
+                newLetterGuessList[i] = CheckGuess.getListOfLetterGuesses()[i];
             }
             
             newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
@@ -80,7 +193,7 @@ public class CheckGuess {
     public static char[] checkVowelGuess(){
         Bank.updateBankVowelPurchase();           
         
-        if(Bank.hasEnough)
+        if(Bank.isHasEnough())
         {
             Scanner newVowelGuess = new Scanner(System.in);
             
@@ -101,25 +214,25 @@ public class CheckGuess {
                     continue;
                 }
                 
-                if (alreadyInVowelList(listOfVowelGuesses, vowelGuess)){
+                if (alreadyInVowelList(getListOfVowelGuesses(), vowelGuess)){
                     new RfortuneError().displayError("That vowel has already "
                             + "been guessed. Try again.");
                     continue;
                 }
                 
-                CheckGuess.listOfVowelGuesses[vowelIndex] = vowelGuess;
+                CheckGuess.getListOfVowelGuesses()[vowelIndex] = vowelGuess;
                 vowelIndex++;
                 
-                if (!checkVowelRepeat) {
-                    currentGuess = vowelGuess;
-                    checkGuess = true;
+                if (!isCheckVowelRepeat()) {
+                    setCurrentGuess(vowelGuess);
+                    setCheckGuess(true);
                     done = true;
                 }
             }            
                             
             char[] newVowelGuessList = new char[vowelIndex];
             for (int i = 0; i < vowelIndex; i++){
-                newVowelGuessList[i] = CheckGuess.listOfVowelGuesses[i];
+                newVowelGuessList[i] = CheckGuess.getListOfVowelGuesses()[i];
             }
             
             newVowelGuessList = CheckGuess.sortVowelList(newVowelGuessList);
@@ -177,7 +290,7 @@ public class CheckGuess {
                 return true;
             }
         }
-        checkLetterRepeat = false;
+        setCheckLetterRepeat(false);
         return false;
     }
     
@@ -187,7 +300,7 @@ public class CheckGuess {
                 return true;
             }
         }
-        checkVowelRepeat = false;
+        setCheckVowelRepeat(false);
         return false;
     }
     

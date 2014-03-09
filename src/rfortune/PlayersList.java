@@ -70,7 +70,7 @@ public class PlayersList implements Serializable {
             this.getListOfPlayerNames()[playerIndex] = playerName;
             playerIndex++;
             
-            if (playerIndex == MainMenuControl.setNumPlayers)
+            if (playerIndex == MainMenuControl.getSetNumPlayers())
             {
                 done = true;
                 break;

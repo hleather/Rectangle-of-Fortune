@@ -6,25 +6,194 @@
 
 package rfortune;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  *
  * @author Heather
  */
-public class Bank {
-    public static long bankPlayerUp;
-    public static long bankNumberPlayer1;
-    public static long bankNumberPlayer2;
-    public static long bankNumberPlayer3;
-    public static String bankPlayer1 = " ";
-    public static String bankPlayer2 = " ";
-    public static String bankPlayer3 = " ";
-    public static long spinWorth;
-    public static boolean hasEnough = false;
-    public static long guessPhraseWorth;
+public class Bank implements Serializable {
+    private static long bankPlayerUp;
+    private static long bankNumberPlayer1;
+    private static long bankNumberPlayer2;
+    private static long bankNumberPlayer3;
+    private static String bankPlayer1 = " ";
+    private static String bankPlayer2 = " ";
+    private static String bankPlayer3 = " ";
+    private static long spinWorth;
+    private static boolean hasEnough = false;
+    private static long guessPhraseWorth;
     private static int randomSpin;
     private static int random;
+
+    /**
+     * @return the bankPlayerUp
+     */
+    public static long getBankPlayerUp() {
+        return bankPlayerUp;
+    }
+
+    /**
+     * @param aBankPlayerUp the bankPlayerUp to set
+     */
+    public static void setBankPlayerUp(long aBankPlayerUp) {
+        bankPlayerUp = aBankPlayerUp;
+    }
+
+    /**
+     * @return the bankNumberPlayer1
+     */
+    public static long getBankNumberPlayer1() {
+        return bankNumberPlayer1;
+    }
+
+    /**
+     * @param aBankNumberPlayer1 the bankNumberPlayer1 to set
+     */
+    public static void setBankNumberPlayer1(long aBankNumberPlayer1) {
+        bankNumberPlayer1 = aBankNumberPlayer1;
+    }
+
+    /**
+     * @return the bankNumberPlayer2
+     */
+    public static long getBankNumberPlayer2() {
+        return bankNumberPlayer2;
+    }
+
+    /**
+     * @param aBankNumberPlayer2 the bankNumberPlayer2 to set
+     */
+    public static void setBankNumberPlayer2(long aBankNumberPlayer2) {
+        bankNumberPlayer2 = aBankNumberPlayer2;
+    }
+
+    /**
+     * @return the bankNumberPlayer3
+     */
+    public static long getBankNumberPlayer3() {
+        return bankNumberPlayer3;
+    }
+
+    /**
+     * @param aBankNumberPlayer3 the bankNumberPlayer3 to set
+     */
+    public static void setBankNumberPlayer3(long aBankNumberPlayer3) {
+        bankNumberPlayer3 = aBankNumberPlayer3;
+    }
+
+    /**
+     * @return the bankPlayer1
+     */
+    public static String getBankPlayer1() {
+        return bankPlayer1;
+    }
+
+    /**
+     * @param aBankPlayer1 the bankPlayer1 to set
+     */
+    public static void setBankPlayer1(String aBankPlayer1) {
+        bankPlayer1 = aBankPlayer1;
+    }
+
+    /**
+     * @return the bankPlayer2
+     */
+    public static String getBankPlayer2() {
+        return bankPlayer2;
+    }
+
+    /**
+     * @param aBankPlayer2 the bankPlayer2 to set
+     */
+    public static void setBankPlayer2(String aBankPlayer2) {
+        bankPlayer2 = aBankPlayer2;
+    }
+
+    /**
+     * @return the bankPlayer3
+     */
+    public static String getBankPlayer3() {
+        return bankPlayer3;
+    }
+
+    /**
+     * @param aBankPlayer3 the bankPlayer3 to set
+     */
+    public static void setBankPlayer3(String aBankPlayer3) {
+        bankPlayer3 = aBankPlayer3;
+    }
+
+    /**
+     * @return the spinWorth
+     */
+    public static long getSpinWorth() {
+        return spinWorth;
+    }
+
+    /**
+     * @param aSpinWorth the spinWorth to set
+     */
+    public static void setSpinWorth(long aSpinWorth) {
+        spinWorth = aSpinWorth;
+    }
+
+    /**
+     * @return the hasEnough
+     */
+    public static boolean isHasEnough() {
+        return hasEnough;
+    }
+
+    /**
+     * @param aHasEnough the hasEnough to set
+     */
+    public static void setHasEnough(boolean aHasEnough) {
+        hasEnough = aHasEnough;
+    }
+
+    /**
+     * @return the guessPhraseWorth
+     */
+    public static long getGuessPhraseWorth() {
+        return guessPhraseWorth;
+    }
+
+    /**
+     * @param aGuessPhraseWorth the guessPhraseWorth to set
+     */
+    public static void setGuessPhraseWorth(long aGuessPhraseWorth) {
+        guessPhraseWorth = aGuessPhraseWorth;
+    }
+
+    /**
+     * @return the randomSpin
+     */
+    public static int getRandomSpin() {
+        return randomSpin;
+    }
+
+    /**
+     * @param aRandomSpin the randomSpin to set
+     */
+    public static void setRandomSpin(int aRandomSpin) {
+        randomSpin = aRandomSpin;
+    }
+
+    /**
+     * @return the random
+     */
+    public static int getRandom() {
+        return random;
+    }
+
+    /**
+     * @param aRandom the random to set
+     */
+    public static void setRandom(int aRandom) {
+        random = aRandom;
+    }
     
     public Bank(){   
     }
@@ -38,40 +207,40 @@ public class Bank {
     * can be displayed in the MainMenuControl.setScreen().gameDisplay array.
     ***************************************************************************/    
     public static void numPlayersBank() {
-        if (MainMenuControl.setNumPlayers == 3)
+        if (MainMenuControl.getSetNumPlayers() == 3)
         {
-            bankNumberPlayer1 = 1000;
-            bankNumberPlayer2 = 2000;
-            bankNumberPlayer3 = 3000;
+            setBankNumberPlayer1(1000);
+            setBankNumberPlayer2(2000);
+            setBankNumberPlayer3(3000);
         }
-        if (MainMenuControl.setNumPlayers == 2)
+        if (MainMenuControl.getSetNumPlayers() == 2)
         {
-            bankNumberPlayer1 = 1000;
-            bankNumberPlayer2 = 2000;
+            setBankNumberPlayer1(1000);
+            setBankNumberPlayer2(2000);
         }
-        if (MainMenuControl.setNumPlayers == 1)
+        if (MainMenuControl.getSetNumPlayers() == 1)
         {
-            bankNumberPlayer1 = 1000;
+            setBankNumberPlayer1(1000);
         }
     }    
     
     
     public static void updateBankPlayer()
     {
-        if (MainMenuControl.setNumPlayers == 3)
+        if (MainMenuControl.getSetNumPlayers() == 3)
         {
-            bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
-            bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
-            bankPlayer3 = Long.toString(Bank.bankNumberPlayer3);
+            setBankPlayer1(Long.toString(Bank.getBankNumberPlayer1()));
+            setBankPlayer2(Long.toString(Bank.getBankNumberPlayer2()));
+            setBankPlayer3(Long.toString(Bank.getBankNumberPlayer3()));
         }
-        if (MainMenuControl.setNumPlayers == 2)
+        if (MainMenuControl.getSetNumPlayers() == 2)
         {
-            bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
-            bankPlayer2 = Long.toString(Bank.bankNumberPlayer2);
+            setBankPlayer1(Long.toString(Bank.getBankNumberPlayer1()));
+            setBankPlayer2(Long.toString(Bank.getBankNumberPlayer2()));
         }
-        if (MainMenuControl.setNumPlayers == 1)
+        if (MainMenuControl.getSetNumPlayers() == 1)
         {
-            bankPlayer1 = Long.toString(Bank.bankNumberPlayer1);
+            setBankPlayer1(Long.toString(Bank.getBankNumberPlayer1()));
         }
     }
     
@@ -80,45 +249,45 @@ public class Bank {
     * players turn it currently is.
     ***************************************************************************/
     public static void bankPlayerTurn(){
-        if (PlayerTurn.playerUp == 0)
-            bankPlayerUp = bankNumberPlayer1;
-        else if (PlayerTurn.playerUp == 1)
-            bankPlayerUp = bankNumberPlayer2;
-        else if (PlayerTurn.playerUp == 2)
-            bankPlayerUp = bankNumberPlayer3;       
+        if (PlayerTurn.getPlayerUp() == 0)
+            setBankPlayerUp(getBankNumberPlayer1());
+        else if (PlayerTurn.getPlayerUp() == 1)
+            setBankPlayerUp(getBankNumberPlayer2());
+        else if (PlayerTurn.getPlayerUp() == 2)
+            setBankPlayerUp(getBankNumberPlayer3());       
     }   
     
     /***************************************************************************
     * display the current player's bank amount.
     ***************************************************************************/
     public static void displayPlayerUpBank() {
-        if (PlayerTurn.playerUp == 0)
-            System.out.println("Bank: " + bankPlayer1);
-        else if (PlayerTurn.playerUp == 1)
-            System.out.println("Bank: " + bankPlayer2);
-        else if (PlayerTurn.playerUp == 2)
-            System.out.println("Bank: " + bankPlayer3);
+        if (PlayerTurn.getPlayerUp() == 0)
+            System.out.println("Bank: " + getBankPlayer1());
+        else if (PlayerTurn.getPlayerUp() == 1)
+            System.out.println("Bank: " + getBankPlayer2());
+        else if (PlayerTurn.getPlayerUp() == 2)
+            System.out.println("Bank: " + getBankPlayer3());
     }
     
     /***************************************************************************
     * display player 1's bank
     ***************************************************************************/
     public static void displayBankPlayer1() {
-        System.out.println(bankPlayer1);
+        System.out.println(getBankPlayer1());
     }
     
     /***************************************************************************
     * display player 2's bank
     ***************************************************************************/
     public static void displayBankPlayer2() {
-        System.out.println(bankPlayer2);
+        System.out.println(getBankPlayer2());
     }
     
     /***************************************************************************
     * display player 3's bank
     ***************************************************************************/
     public static void displayBankPlayer3() {
-        System.out.println(bankPlayer3);
+        System.out.println(getBankPlayer3());
     }
      
     /***************************************************************************
@@ -129,10 +298,10 @@ public class Bank {
     ***************************************************************************/
     public static void updateBankVowelPurchase() {
         PlayerTurn.updatePlayersTurn();
-        if (bankPlayerUp >= 250)
+        if (getBankPlayerUp() >= 250)
         {
-            hasEnough = true;
-            bankPlayerUp = bankPlayerUp - 250;
+            setHasEnough(true);
+            setBankPlayerUp(getBankPlayerUp() - 250);
         }            
     }    
     
@@ -143,8 +312,8 @@ public class Bank {
     ***************************************************************************/
     public static void spin(){
         Random spin = new Random();
-        random = 1 + spin.nextInt(8);
-        randomSpin = random;
+        setRandom(1 + spin.nextInt(8));
+        setRandomSpin(getRandom());
     }
     
     public static void spinWorth(){
@@ -157,16 +326,16 @@ public class Bank {
                 amount = 50;
                 break;
         }
-        spinWorth = amount * randomSpin;
+        setSpinWorth(amount * getRandomSpin());
     }
     
     public static void printSpinWorth(){
-        System.out.println("Guess Worth: " + Bank.spinWorth);
+        System.out.println("Guess Worth: " + Bank.getSpinWorth());
     }
     
     public static void updateBankSpinWorth() {
         if (Game.isFoundMatch()) {
-            bankPlayerUp += spinWorth;
+            setBankPlayerUp(getBankPlayerUp() + getSpinWorth());
             Bank.updateBankPlayer();
         }
     }
@@ -176,16 +345,16 @@ public class Bank {
      * worth and returns that value.
     ***************************************************************************/
     public static void phraseWorth(){
-        int phraseLength = WordsAndPhrases.charArray.length;
+        int phraseLength = WordsAndPhrases.getCharArray().length;
         int cGuesses = Game.getCorrectGuesses();
         int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;
-        guessPhraseWorth = openSpaces * guessOpenSpaceWorth;
+        setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);
     }
     
     public String[] sortScores(){
         //Bank.updateBankPlayer();
-        String playerListOrder[] = {bankPlayer1, bankPlayer2, bankPlayer3};
+        String playerListOrder[] = {getBankPlayer1(), getBankPlayer2(), getBankPlayer3()};
         String temp;
         boolean notDone = true;
         while(notDone){

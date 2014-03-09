@@ -5,13 +5,16 @@
  */
 
 package rfortune;
+
+import java.io.Serializable;
+
 /**
  *
  * @author Heather
  */
-public class PlayerTurn {
-    public static int playerUp; 
-    public static String playerUpName; 
+public class PlayerTurn implements Serializable {
+    private static int playerUp; 
+    private static String playerUpName; 
     private static String[] playerListOrder;
     
     /***************************************************************************
@@ -19,19 +22,19 @@ public class PlayerTurn {
      **************************************************************************/
     public static void definePlayerListOrder(){
      
-        if (MainMenuControl.setNumPlayers == 3) 
+        if (MainMenuControl.getSetNumPlayers() == 3) 
         {
              String player1 = Player.getPlayer1();
              String player2 = Player.getPlayer2();
              String player3 = Player.getPlayer3();
         }
-        else if (MainMenuControl.setNumPlayers == 2)
+        else if (MainMenuControl.getSetNumPlayers() == 2)
         {
              String player1 = Player.getPlayer1();
              String player2 = Player.getPlayer2();
                  
         }
-        else if (MainMenuControl.setNumPlayers == 1) 
+        else if (MainMenuControl.getSetNumPlayers() == 1) 
         {
              String player1 = Player.getPlayer1();
         }        
@@ -40,22 +43,64 @@ public class PlayerTurn {
     public static void updatePlayersTurn(){
         int n = 0;              
         for (int i = 0; n <= Game.getRoundNumber(); i++){
-            if(i == MainMenuControl.setNumPlayers)
+            if(i == MainMenuControl.getSetNumPlayers())
                i = 0;
             n++;
-            playerUp = i;
+            setPlayerUp(i);
         }    
         
     }
     
     public static void displayPlayerTurn(){
-            System.out.println(playerListOrder[playerUp]);
-        if (playerUp == 0)
-            playerUpName= Player.getPlayer1();
-        if (playerUp == 1)
-            playerUpName = Player.getPlayer2();
-        if (playerUp == 2)
-            playerUpName = Player.getPlayer3();
+            System.out.println(getPlayerListOrder()[getPlayerUp()]);
+        if (getPlayerUp() == 0)
+            setPlayerUpName(Player.getPlayer1());
+        if (getPlayerUp() == 1)
+            setPlayerUpName(Player.getPlayer2());
+        if (getPlayerUp() == 2)
+            setPlayerUpName(Player.getPlayer3());
         }    
+
+    /**
+     * @return the playerUp
+     */
+    public static int getPlayerUp() {
+        return playerUp;
+    }
+
+    /**
+     * @param aPlayerUp the playerUp to set
+     */
+    public static void setPlayerUp(int aPlayerUp) {
+        playerUp = aPlayerUp;
+    }
+
+    /**
+     * @return the playerUpName
+     */
+    public static String getPlayerUpName() {
+        return playerUpName;
+    }
+
+    /**
+     * @param aPlayerUpName the playerUpName to set
+     */
+    public static void setPlayerUpName(String aPlayerUpName) {
+        playerUpName = aPlayerUpName;
+    }
+
+    /**
+     * @return the playerListOrder
+     */
+    public static String[] getPlayerListOrder() {
+        return playerListOrder;
+    }
+
+    /**
+     * @param aPlayerListOrder the playerListOrder to set
+     */
+    public static void setPlayerListOrder(String[] aPlayerListOrder) {
+        playerListOrder = aPlayerListOrder;
+    }
     }
 

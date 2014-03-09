@@ -6,11 +6,13 @@
 
 package rfortune;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Heather and Laura
  */
-public class HelpMenuControl  {
+public class HelpMenuControl implements Serializable {
     
     public HelpMenuControl() {
         

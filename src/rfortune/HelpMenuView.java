@@ -6,21 +6,20 @@
 
 package rfortune;
 
-/**
- *
- * @author Heather and Laura
- */
+import java.io.Serializable;
 import java.util.Scanner;
-
-
-
 /**
  *
  * @author Heather and Laura
  */
-public class HelpMenuView  {
+/**
+ *
+ * @author Heather and Laura
+ */
+public class HelpMenuView  implements Serializable {
+    
         
-    private final static String[][] menuItems = {
+    private static String[][] menuItems = {
         {"B", "About The Board"}, 
         {"R", "About The Rectangle of Fortune game"},
         {"V", "About Buy a Vowel"},
@@ -28,9 +27,20 @@ public class HelpMenuView  {
         {"P", "About The Players"},        
         {"Q", "Quit Help"}        
     };
-    
-    // Create instance of the HelpMenuControl (action) class
-    HelpMenuControl helpMenuControl = new HelpMenuControl();
+
+    /**
+     * @return the menuItems
+     */
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
+
+    /**
+     * @param aMenuItems the menuItems to set
+     */
+    public static void setMenuItems(String[][] aMenuItems) {
+        menuItems = aMenuItems;
+    }
     
     // default constructor
     public HelpMenuView() {
@@ -53,38 +63,34 @@ public class HelpMenuView  {
             
             switch (command) {
                 case "B":
-                    helpMenuControl.displayBoardHelp();
+                    HelpMenuControl.displayBoardHelp();
                     break;
                 case "R":
-                    helpMenuControl.displayGameHelp();
+                    HelpMenuControl.displayGameHelp();
                     break;                  
                 case "V":
-                    helpMenuControl.displayVowelHelp();
+                    HelpMenuControl.displayVowelHelp();
                     break;
                 case "G":
-                    helpMenuControl.displayGuessHelp();
+                    HelpMenuControl.displayGuessHelp();
                     break;
                  case "P":
-                    helpMenuControl.displayPlayerHelp();
+                    HelpMenuControl.displayPlayerHelp();
                     break; 
                 case "Q": 
                     break;
                 default: 
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
-                    continue;
             }
         } while (!command.equals("Q"));  
-        
-         return;
     }
 
         // displays the help menu
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (String[] menuItem : HelpMenuView.getMenuItems()) {
+            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
         }
         System.out.println("\t===============================================================\n");
     }

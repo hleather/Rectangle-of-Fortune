@@ -6,11 +6,13 @@
 
 package rfortune;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Heather
  */
-public class RfortuneMessage {
+public class RfortuneMessage implements Serializable {
     public Object displayMessage(Object object) {
         String message = (String) object;
         System.out.println("\t*******************************************************************************");

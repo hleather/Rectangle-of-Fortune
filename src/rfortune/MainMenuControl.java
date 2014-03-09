@@ -4,12 +4,29 @@
  * and open the template in the editor.
  */
 package rfortune;
+
+import java.io.Serializable;
+
 /**
  *
  * @author Heather
  */
-public class MainMenuControl {
-    public static int setNumPlayers;
+public class MainMenuControl implements Serializable {
+    private static int setNumPlayers;
+
+    /**
+     * @return the setNumPlayers
+     */
+    public static int getSetNumPlayers() {
+        return setNumPlayers;
+    }
+
+    /**
+     * @param aSetNumPlayers the setNumPlayers to set
+     */
+    public static void setSetNumPlayers(int aSetNumPlayers) {
+        setNumPlayers = aSetNumPlayers;
+    }
     
     /***************************************************************************
      * setNumPlayers(). gets the number of players from MainMenuView and stores
@@ -19,7 +36,7 @@ public class MainMenuControl {
      * @param getNumPlayers 
      **************************************************************************/
     public void setNumPlayers(int getNumPlayers){
-        setNumPlayers = getNumPlayers;
+        setSetNumPlayers(getNumPlayers);
     }
 
     /***************************************************************************
@@ -34,22 +51,22 @@ public class MainMenuControl {
         
         String gameDisplay[][] = {
             {player1, player2, player3},
-            {Bank.bankPlayer1, Bank.bankPlayer2, Bank.bankPlayer3}
+            {Bank.getBankPlayer1(), Bank.getBankPlayer2(), Bank.getBankPlayer3()}
         };
         System.out.println("\n\t==========================================="
                 + "===================="); 
-        if (setNumPlayers == 1)
+        if (getSetNumPlayers() == 1)
         {
             System.out.println("\t" + gameDisplay[0][0] + "\n\t" + 
                     gameDisplay[1][0]);
         }
-        if (setNumPlayers == 2)
+        if (getSetNumPlayers() == 2)
         {
             System.out.println("\t" + gameDisplay[0][0] + "\t\t\t" + 
                     gameDisplay[0][1] + "\n\t" + gameDisplay[1][0] + "\t\t\t" 
                     + gameDisplay[1][1]);
         }
-        if (setNumPlayers == 3)
+        if (getSetNumPlayers() == 3)
         {
             System.out.println("\t" + gameDisplay[0][0] + "\t\t\t" + 
                     gameDisplay[0][1] + "\t\t\t" + gameDisplay[0][2] + "\n\t" 
