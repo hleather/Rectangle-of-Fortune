@@ -181,9 +181,7 @@ public class CheckGuess implements Serializable {
             }            
                             
             char[] newLetterGuessList = new char[letterIndex];
-            for (int i = 0; i < letterIndex; i++){
-                newLetterGuessList[i] = CheckGuess.getListOfLetterGuesses()[i];
-            }
+        System.arraycopy(CheckGuess.getListOfLetterGuesses(), 0, newLetterGuessList, 0, letterIndex);
             
             newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
                         
@@ -193,8 +191,10 @@ public class CheckGuess implements Serializable {
     public static char[] checkVowelGuess(){
         Bank.updateBankVowelPurchase();           
         
-        if(Bank.isHasEnough())
-        {
+        if(!Bank.isHasEnough())
+            System.out.println("Sorry, you do not have enough money to buy a "
+                    + "vowel.");
+        else {
             Scanner newVowelGuess = new Scanner(System.in);
             
             System.out.println("\n\t-----------------------------------------------");
@@ -228,23 +228,19 @@ public class CheckGuess implements Serializable {
                     setCheckGuess(true);
                     done = true;
                 }
-            }            
-                            
-            char[] newVowelGuessList = new char[vowelIndex];
-            for (int i = 0; i < vowelIndex; i++){
-                newVowelGuessList[i] = CheckGuess.getListOfVowelGuesses()[i];
             }
+            
+            char[] newVowelGuessList = new char[vowelIndex];
+            System.arraycopy(CheckGuess.getListOfVowelGuesses(), 0, newVowelGuessList, 0, vowelIndex);
             
             newVowelGuessList = CheckGuess.sortVowelList(newVowelGuessList);
                         
             return newVowelGuessList;
         }
-        else
-            System.out.println("Sorry, you do not have enough money to buy a "
-                    + "vowel.");
         return null;
     }
     
+    @SuppressWarnings("empty-statement")
     public static char[] sortLetterList(char[] letters){
         char tempLetter;
         boolean notDone = true;
@@ -264,6 +260,7 @@ public class CheckGuess implements Serializable {
         
         return letters;
     }
+    @SuppressWarnings("empty-statement")
     public static char[] sortVowelList(char[] vowels){
         char tempVowel;
         boolean notDone = true;

@@ -72,9 +72,6 @@ public class Game implements Serializable {
     public static void setTurnOver(boolean aTurnOver) {
         turnOver = aTurnOver;
     }
-    GameTurnView gameTurnView = new GameTurnView();
-    
-    
     public Game(){
 }
     public static void newGame() {

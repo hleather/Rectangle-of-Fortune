@@ -44,7 +44,7 @@ public class PlayersList implements Serializable {
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10 && !done){
-            new RfortuneMessage().displayMessage("Please enter the name of a"
+            new RfortuneMessage().displayMessage("Please enter the name of a "
                     + "player or enter \"Q\" to quit.");
             String playerName;
             playerName= inFile.nextLine();
@@ -67,7 +67,7 @@ public class PlayersList implements Serializable {
                 break;            
             }
             
-            this.getListOfPlayerNames()[playerIndex] = playerName;
+            PlayersList.getListOfPlayerNames()[playerIndex] = playerName;
             playerIndex++;
             
             if (playerIndex == MainMenuControl.getSetNumPlayers())
@@ -79,9 +79,7 @@ public class PlayersList implements Serializable {
         }
             
             String[] newNameList = new String[playerIndex];
-            for (int i = 0; i < playerIndex; i++){
-                newNameList[i] = this.getListOfPlayerNames()[i];
-            }
+        System.arraycopy(PlayersList.getListOfPlayerNames(), 0, newNameList, 0, playerIndex);
             
             newNameList = this.sortList(newNameList);
             //this.displayNameList(newNameList);

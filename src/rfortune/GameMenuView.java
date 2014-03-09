@@ -29,9 +29,6 @@ public class GameMenuView implements Serializable {
     public static void setMenuItems(String[][] aMenuItems) {
         menuItems = aMenuItems;
     }
-    GameMenuControl gameMenuControl = new GameMenuControl(); 
-    HelpMenuView helpMenuView = new HelpMenuView();
-
     private static String[][] menuItems = {
         {"T", "Take your turn"},
         {"H", "Help"},
@@ -42,14 +39,14 @@ public class GameMenuView implements Serializable {
     }
     
     
-    public void getInput() {
+    public static void getInput() {
         String command;
         Scanner inFile = Rfortune.getInputFile();
 
         do {
             if (Game.getRoundNumber() == 0)
                 getMenuItems()[0][1] = "Start the Game";
-            this.display(); // display the menu
+            GameMenuView.display(); // display the menu
 
             // get commaned entered
             command = inFile.nextLine();
@@ -57,10 +54,10 @@ public class GameMenuView implements Serializable {
             
             switch (command) {
                 case "T":
-                    gameMenuControl.takeTurn();                   
+                    GameMenuControl.takeTurn();                   
                     break;
                 case "H":
-                    helpMenuView.getInput();
+                    HelpMenuView.getInput();
                     break;
                 case "Q":                   
                     break;
@@ -72,7 +69,7 @@ public class GameMenuView implements Serializable {
     
 
 
-    private final void display() {
+    private static void display() {
         new RfortuneMessage().displayMessage("Enter the letter associated with "
                 + "one of the following commands:");
         

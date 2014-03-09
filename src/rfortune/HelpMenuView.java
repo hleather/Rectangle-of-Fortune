@@ -48,14 +48,14 @@ public class HelpMenuView  implements Serializable {
     } 
     
     // display the help menu and get the end users input selection
-    public void getInput() {       
+    public static void getInput() {       
               
         String command;
         Scanner inFile = new Scanner(System.in);
         
         do {
             
-            this.display(); // display the menu
+            HelpMenuView.display(); // display the menu
             
             // get commaned entered
             command = inFile.nextLine();
@@ -86,7 +86,7 @@ public class HelpMenuView  implements Serializable {
     }
 
         // displays the help menu
-    public final void display() {
+    private static void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
         for (String[] menuItem : HelpMenuView.getMenuItems()) {

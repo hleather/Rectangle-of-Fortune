@@ -52,7 +52,7 @@ public class PlayerTurn implements Serializable {
     }
     
     public static void displayPlayerTurn(){
-            System.out.println(getPlayerListOrder()[getPlayerUp()]);
+            System.out.println(getPlayerListOrder());
         if (getPlayerUp() == 0)
             setPlayerUpName(Player.getPlayer1());
         if (getPlayerUp() == 1)
