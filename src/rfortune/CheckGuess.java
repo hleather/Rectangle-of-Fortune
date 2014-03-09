@@ -237,7 +237,6 @@ public class CheckGuess implements Serializable {
         return null;
     }
     
-    @SuppressWarnings("empty-statement")
     public static char[] sortLetterList(char[] letters){
         char tempLetter;
         boolean notDone = true;
@@ -257,7 +256,6 @@ public class CheckGuess implements Serializable {
         
         return letters;
     }
-    @SuppressWarnings("empty-statement")
     public static char[] sortVowelList(char[] vowels){
         char tempVowel;
         boolean notDone = true;
