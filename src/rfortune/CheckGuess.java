@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class CheckGuess implements Serializable {
     private static boolean checkGuess = false;
-    private static char currentGuess;
+    public static char currentGuess;
     private static boolean checkLetterRepeat = true;
     private static boolean checkVowelRepeat = true;
     private static char[] listOfLetterGuesses = new char[26];
@@ -144,7 +144,7 @@ public class CheckGuess implements Serializable {
     }
     
     public static char[] checkLetterGuess(){
-        Scanner newLetterGuess = new Scanner(System.in);
+        Scanner newLetterGuess = Rfortune.getInputFile();
             
             System.out.println("\n\t-----------------------------------------------");
             System.out.println("\t You have chosen to guess a consonant!");
@@ -191,11 +191,9 @@ public class CheckGuess implements Serializable {
     public static char[] checkVowelGuess(){
         Bank.updateBankVowelPurchase();           
         
-        if(!Bank.isHasEnough())
-            System.out.println("Sorry, you do not have enough money to buy a "
-                    + "vowel.");
-        else {
-            Scanner newVowelGuess = new Scanner(System.in);
+        if(Bank.isHasEnough())
+        {
+            Scanner newVowelGuess = Rfortune.getInputFile();
             
             System.out.println("\n\t-----------------------------------------------");
             System.out.println("\t You have chosen to buy a vowel!");
@@ -227,7 +225,6 @@ public class CheckGuess implements Serializable {
                     setCurrentGuess(vowelGuess);
                     setCheckGuess(true);
                     done = true;
-                }
             }
             
             char[] newVowelGuessList = new char[vowelIndex];

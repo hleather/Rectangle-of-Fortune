@@ -52,7 +52,7 @@ public class GameTurnView implements Serializable {
         do {
             WordsAndPhrases.updateParallelArray();
             WordsAndPhrases.displayParallelArray();
-            if (Game.getRoundNumber() == 0) {
+            if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
                 PlayerTurn.updatePlayersTurn();
                 PlayerTurn.displayPlayerTurn();
                 Bank.bankPlayerTurn();
@@ -91,7 +91,7 @@ public class GameTurnView implements Serializable {
                     CheckGuess.checkLetterGuess();
                     WordsAndPhrases.searchPhrase();
                     Game.display();
-           //Game.setRoundNumber();setRoundNumber(Game.getRoundNumber() + 1).roundNumber++; 
+                    Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Bank.updateBankSpinWorth();
                     Game.gameRound();
                     break;
@@ -104,8 +104,7 @@ public class GameTurnView implements Serializable {
                     Bank.spinWorth();
                     CheckGuess.checkVowelGuess();
                     WordsAndPhrases.searchPhrase();
-                   //setRoundNumber(Game.getRoundNumber() + 1)();
-                    //Game.roundNumber++; 
+                    Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;
                 //guess the phrase
@@ -114,8 +113,7 @@ public class GameTurnView implements Serializable {
                     Bank.bankPlayerTurn();
                     Bank.phraseWorth();
                     System.out.println("Guess Phrase Command Entered");
-      //setRoundNumber(Game.getRoundNumber() + 1) WordsAndPhrases.checkPhrase();
-                    //Game.roundNumber++; 
+                    Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;
                 //help menu

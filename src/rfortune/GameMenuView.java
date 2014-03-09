@@ -41,7 +41,7 @@ public class GameMenuView implements Serializable {
     
     public static void getInput() {
         String command;
-        Scanner inFile = Rfortune.getInputFile();
+        Scanner inFile = new Rfortune().getInputFile();
 
         do {
             if (Game.getRoundNumber() == 0)
