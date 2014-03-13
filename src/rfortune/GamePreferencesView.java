@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class GamePreferencesView implements Serializable {
     static String setDifficulty = "E";
 
-    private static String[][] menuItems = {
+    private static final String[][] menuItems = {
         {"E", "Easy"},
         {"H", "Hard"},
         {"Q", "Return to game menu"}
@@ -49,14 +49,6 @@ public class GamePreferencesView implements Serializable {
     public static void setMenuItems(String[][] aMenuItems) {
         setMenuItems(aMenuItems);
     }
-
-    /**
-     * @param aMenuItems the menuItems to set
-     */
-    public static void setMenuItems(String[][] aMenuItems) {
-        menuItems = aMenuItems;
-    }
-            
 
     public GamePreferencesView() {
     }
