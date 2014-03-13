@@ -6,31 +6,17 @@
 
 package rfortune;
 
-import java.io.Serializable;
-
 import java.util.Scanner;
 
 /**
  *
  * @author Laura
  */
-public class GameTurnView implements Serializable {
-
-    /**
-     * @return the turnOptions
-     */
-    public static String[][] getTurnOptions() {
-        return turnOptions;
-    }
-
-    /**
-     * @param aTurnOptions the turnOptions to set
-     */
-    public static void setTurnOptions(String[][] aTurnOptions) {
-        turnOptions = aTurnOptions;
-    }
+public class GameTurnView extends Menu {
+    HelpMenuView helpMenuView = new HelpMenuView();
+    CheckGuess checkGuess = new CheckGuess();
     
-    private static String[][]turnOptions = {
+    static final String[][]turnOptions = {
         {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},
@@ -39,15 +25,16 @@ public class GameTurnView implements Serializable {
     };
     
     public GameTurnView(){
-        
+        super(GameTurnView.turnOptions);
     }
     /*********************************************************************
      * Gets input for what player wants to do on their turn.
      * LINKING FUNCTION!
      *********************************************************************/
+    @Override
     public static void getInput(){
             String command;
-            Scanner inFile = Rfortune.getInputFile();
+            Scanner inFile = new Scanner(System.in);
         
         do {
             WordsAndPhrases.updateParallelArray();
@@ -67,7 +54,7 @@ public class GameTurnView implements Serializable {
                 Bank.displayPlayerUpBank();
             }
             
-            GameTurnView.display();
+            this.display();
             
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
@@ -118,7 +105,7 @@ public class GameTurnView implements Serializable {
                     break;
                 //help menu
                 case "H":
-                    HelpMenuView.getInput();
+                    helpMenuView.getInput();
                     break;
                 //Quit
                 case "Q":
@@ -129,15 +116,6 @@ public class GameTurnView implements Serializable {
             }
         } while (!command.equals("Q"));
     }
-    
-    private static void display() {
-        new RfortuneMessage().displayMessage("Enter the letter associated with "
-                + "one of the following options:");
-        for (String[] turnOptions : GameTurnView.getTurnOptions()) {
-            System.out.println("\t  " +turnOptions[0] + "\t" + turnOptions[1]);
-        }
-    }
-    
 }
 
 

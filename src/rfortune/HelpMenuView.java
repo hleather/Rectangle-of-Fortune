@@ -6,20 +6,21 @@
 
 package rfortune;
 
-import java.io.Serializable;
+/**
+ *
+ * @author Heather and Laura
+ */
 import java.util.Scanner;
+
+
+
 /**
  *
  * @author Heather and Laura
  */
-/**
- *
- * @author Heather and Laura
- */
-public class HelpMenuView  implements Serializable {
-    
+public class HelpMenuView extends Menu {
         
-    private static String[][] menuItems = {
+    private final static String[][] menuItems = {
         {"B", "About The Board"}, 
         {"R", "About The Rectangle of Fortune game"},
         {"V", "About Buy a Vowel"},
@@ -27,35 +28,25 @@ public class HelpMenuView  implements Serializable {
         {"P", "About The Players"},        
         {"Q", "Quit Help"}        
     };
-
-    /**
-     * @return the menuItems
-     */
-    public static String[][] getMenuItems() {
-        return menuItems;
-    }
-
-    /**
-     * @param aMenuItems the menuItems to set
-     */
-    public static void setMenuItems(String[][] aMenuItems) {
-        menuItems = aMenuItems;
-    }
+    
+    // Create instance of the HelpMenuControl (action) class
+    HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // default constructor
     public HelpMenuView() {
-        
+        super(HelpMenuView.menuItems);
     } 
     
     // display the help menu and get the end users input selection
-    public static void getInput() {       
+    @Override
+    public void getInput() {       
               
         String command;
         Scanner inFile = new Scanner(System.in);
         
         do {
             
-            HelpMenuView.display(); // display the menu
+            this.display(); // display the menu
             
             // get commaned entered
             command = inFile.nextLine();
@@ -85,14 +76,4 @@ public class HelpMenuView  implements Serializable {
         } while (!command.equals("Q"));  
     }
 
-        // displays the help menu
-    private static void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-        for (String[] menuItem : HelpMenuView.getMenuItems()) {
-            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
-  
 }

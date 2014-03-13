@@ -6,57 +6,29 @@
 
 package rfortune;
 
-import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  * called from: Rfortune
  * @author Heather
  */
-public class MainMenuView implements Serializable {
-    private static String command;  // double check this is used somewhere else 
-    private static String[][] menuItems = {
+public class MainMenuView extends Menu {
+    public static String command;  // double check this is used somewhere else 
+    private static final String[][] menuItems = {
         {"1", "One player game"},
         {"2", "Two player game"},
         {"3", "Three player game"},
         {"P", "Change game preferences"},
         {"H", "Help"},
         {"X", "Exit Rectangle of Fortune"}
-    };
-
-    /**
-     * @return the command
-     */
-    public static String getCommand() {
-        return command;
-    }
-
-    /**
-     * @param aCommand the command to set
-     */
-    public static void setCommand(String aCommand) {
-        command = aCommand;
-    }
-
-    /**
-     * @return the menuItems
-     */
-    public static String[][] getMenuItems() {
-        return menuItems;
-    }
-
-    /**
-     * @param aMenuItems the menuItems to set
-     */
-    public static void setMenuItems(String[][] aMenuItems) {
-        menuItems = aMenuItems;
-    }
-    private PlayersList myList = new PlayersList();
-    private MainMenuControl mainMenuControl = new MainMenuControl();
-    private Player myPlayers = new Player();    
-    private HelpMenuView helpMenuView = new HelpMenuView();
+    };       
+    PlayersList myList = new PlayersList();
+    MainMenuControl mainMenuControl = new MainMenuControl();
+    Player myPlayers = new Player();    
+    HelpMenuView helpMenuView = new HelpMenuView();
     
     public MainMenuView() {
+        super(MainMenuView.menuItems);
     }
     
     /***************************************************************************
@@ -68,6 +40,7 @@ public class MainMenuView implements Serializable {
      * and error message if the input is invalid.
      * @return command
      **************************************************************************/
+    @Override
     public String getInput() {       
         
         Scanner inFile = new Scanner(System.in);
@@ -76,36 +49,36 @@ public class MainMenuView implements Serializable {
             this.display(); // display the menu
             
             // get commaned entered
-            setCommand(inFile.nextLine());
-            setCommand(getCommand().trim().toUpperCase());
+            command = inFile.nextLine();
+            command = command.trim().toUpperCase();
             
-            switch (getCommand()) {
+            switch (command) {
                 case "1":  
-                    getMainMenuControl().setNumPlayers(1);
-                    getMyPlayers().getPlayerNames();
+                    mainMenuControl.setNumPlayers(1);
+                    myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
                     Game.newGame();
-                    getMainMenuControl().setScreen();             
+                    mainMenuControl.setScreen();             
                     break;
                 case "2":
-                    getMainMenuControl().setNumPlayers(2);
-                    getMyPlayers().getPlayerNames();
+                    mainMenuControl.setNumPlayers(2);
+                    myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
                     Game.newGame();
-                    getMainMenuControl().setScreen();                    
+                    mainMenuControl.setScreen();                    
                     break;
                 case "3":
-                    getMainMenuControl().setNumPlayers(3);
-                    getMyPlayers().getPlayerNames();
+                    mainMenuControl.setNumPlayers(3);
+                    myPlayers.getPlayerNames();
                     Bank.numPlayersBank();
                     Game.newGame();
-                    getMainMenuControl().setScreen();
+                    mainMenuControl.setScreen();
                     break;
                 case "P":
                     GamePreferencesView.getInput();
                     break;
                 case "H":
-                    getHelpMenuView().getInput();
+                    helpMenuView.getInput();
                     break;
                 case "X":
                     break;
@@ -115,79 +88,8 @@ public class MainMenuView implements Serializable {
             }
         } while (!command.equals("X"));
         
-        return getCommand();
-    }
-    
-    
-    /***************************************************************************
-     * display(). puts the instructions/prompt on the screen for the user.
-     **************************************************************************/ 
-    public final void display() {
-        System.out.println("\n\t==============================================="
-                + "================");
-        System.out.println("\tEnter the letter associated with one of the "
-                + "following commands:");
-        for (String[] menuItem : MainMenuView.getMenuItems()) {
-            System.out.println("\t   " + menuItem[0] + "\t" + menuItem[1]);
-        }
-        System.out.println("\t================================================="
-                + "==============\n");
-    }   
-
-    /**
-     * @return the myList
-     */
-    public PlayersList getMyList() {
-        return myList;
+        return command;
     }
 
-    /**
-     * @param myList the myList to set
-     */
-    public void setMyList(PlayersList myList) {
-        this.myList = myList;
-    }
-
-    /**
-     * @return the mainMenuControl
-     */
-    public MainMenuControl getMainMenuControl() {
-        return mainMenuControl;
-    }
-
-    /**
-     * @param mainMenuControl the mainMenuControl to set
-     */
-    public void setMainMenuControl(MainMenuControl mainMenuControl) {
-        this.mainMenuControl = mainMenuControl;
-    }
-
-    /**
-     * @return the myPlayers
-     */
-    public Player getMyPlayers() {
-        return myPlayers;
-    }
-
-    /**
-     * @param myPlayers the myPlayers to set
-     */
-    public void setMyPlayers(Player myPlayers) {
-        this.myPlayers = myPlayers;
-    }
-
-    /**
-     * @return the helpMenuView
-     */
-    public HelpMenuView getHelpMenuView() {
-        return helpMenuView;
-    }
-
-    /**
-     * @param helpMenuView the helpMenuView to set
-     */
-    public void setHelpMenuView(HelpMenuView helpMenuView) {
-        this.helpMenuView = helpMenuView;
-    }
     
 }
