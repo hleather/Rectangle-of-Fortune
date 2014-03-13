@@ -16,7 +16,7 @@ public class GameTurnView extends Menu {
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
     
-    static final String[][]turnOptions = {
+    private static final String[][]turnOptions = {
         {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},

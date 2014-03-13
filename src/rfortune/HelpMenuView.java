@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class HelpMenuView extends Menu {
         
-    public static String[][] menuItems = {
+    private final static String[][] menuItems = {
         {"B", "About The Board"}, 
         {"R", "About The Rectangle of Fortune game"},
         {"V", "About Buy a Vowel"},

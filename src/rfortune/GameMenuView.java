@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class GameMenuView extends Menu {
 
-    public static String[][] menuItems = {
+    private static final String[][] menuItems = {
         {"T", "Take your turn"},
         {"H", "Help"},
         {"Q", "QUIT"}
