@@ -318,7 +318,7 @@ public class Bank implements Serializable {
     
     public static void spinWorth(){
         int amount = 25;
-        switch (GamePreferencesView.getSetDifficulty()) {
+        switch (GamePreferencesView.setDifficulty) {
             case "E":
                 amount = 25;
                 break;
