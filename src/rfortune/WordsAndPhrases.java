@@ -105,18 +105,18 @@ public class WordsAndPhrases implements Serializable {
                + "-- -----", "---- -- -------- ----- ---- -- -----", 
                "--- -- ---"};   
        int control = 2;
-       if ("H".equals(GamePreferencesView.setDifficulty))
+       if ("H".equals(GamePreferencesView.getSetDifficulty()))
            control = 3;
        
        Random indexLocation = new Random();
         setIndex(1 + indexLocation.nextInt(control));
               
-       if("E".equals(GamePreferencesView.setDifficulty))
+       if("E".equals(GamePreferencesgetSetDifficulty()culty))
        {                
             setPhrase(easyPhrases[getIndex()]);
             setParallelPhrase(pEasyPhrases[getIndex()]);
        }
-       if("H".equals(GamePreferencesView.setDifficulty))
+       if("H".equals(GamePrefergetSetDifficulty()Difficulty))
        {
             setPhrase(hardPhrases[getIndex()]);
             setParallelPhrase(pHardPhrases[getIndex()]);
