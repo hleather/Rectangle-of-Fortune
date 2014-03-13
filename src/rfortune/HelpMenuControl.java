@@ -18,7 +18,7 @@ public class HelpMenuControl implements Serializable {
         
     } 
 
-    public static void displayBoardHelp() {
+    public void displayBoardHelp() {
         System.out.println();
         displayHelpBorder();             
         System.out.println( 
@@ -32,7 +32,7 @@ public class HelpMenuControl implements Serializable {
     
     
         
-    public static void displayGameHelp() {
+    public void displayGameHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -47,7 +47,7 @@ public class HelpMenuControl implements Serializable {
         displayHelpBorder();
     }
             
-    public static void displayVowelHelp() {
+    public void displayVowelHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -59,7 +59,7 @@ public class HelpMenuControl implements Serializable {
     }
     
                    
-    public static void displayGuessHelp() {
+    public void displayGuessHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -73,7 +73,7 @@ public class HelpMenuControl implements Serializable {
         displayHelpBorder();
     }
              
-    public static void displayPlayerHelp() {
+    public void displayPlayerHelp() {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
@@ -84,7 +84,7 @@ public class HelpMenuControl implements Serializable {
     }
    
     
-    public static void displayHelpBorder() {       
+    public void displayHelpBorder() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
