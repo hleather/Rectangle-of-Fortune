@@ -6,14 +6,15 @@
 
 package rfortune;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Laura
  */
-public class GamePreferencesView {
-    private static String setDifficulty = "E";
+public class GamePreferencesView implements Serializable {
+    static String setDifficulty = "E";
 
     private static String[][] menuItems = {
         {"E", "Easy"},
@@ -40,6 +41,13 @@ public class GamePreferencesView {
      */
     public static String[][] getMenuItems() {
         return menuItems;
+    }
+
+    /**
+     * @param aMenuItems the menuItems to set
+     */
+    public static void setMenuItems(String[][] aMenuItems) {
+        setMenuItems(aMenuItems);
     }
 
     /**

@@ -105,18 +105,18 @@ public class WordsAndPhrases implements Serializable {
                + "-- -----", "---- -- -------- ----- ---- -- -----", 
                "--- -- ---"};   
        int control = 2;
-       if ("H".equals(GamePreferencesView.getSetDifficulty()))
+       if ("H".equals(GamePreferencesView.setDifficulty))
            control = 3;
        
        Random indexLocation = new Random();
         setIndex(1 + indexLocation.nextInt(control));
               
-       if("E".equals(GamePreferencesgetSetDifficulty()culty))
+       if("E".equals(GamePreferencesView.setDifficulty))
        {                
             setPhrase(easyPhrases[getIndex()]);
             setParallelPhrase(pEasyPhrases[getIndex()]);
        }
-       if("H".equals(GamePrefergetSetDifficulty()Difficulty))
+       if("H".equals(GamePreferencesView.setDifficulty))
        {
             setPhrase(hardPhrases[getIndex()]);
             setParallelPhrase(pHardPhrases[getIndex()]);
@@ -144,7 +144,7 @@ public class WordsAndPhrases implements Serializable {
     public static void searchPhrase() {
         if (CheckGuess.isCheckGuess()) {
             for(int i = 0; i  < getCharArray().length; i++){
-                if(getCharArray()[i] == (CheckGuess.getCurrentGuess())){
+                if(getCharArray()[i] == (CheckGuess.currentGuess)){
                     Game.setFoundMatch(true);
                     Bank.updateBankSpinWorth();
                 }

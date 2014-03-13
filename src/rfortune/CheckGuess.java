@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class CheckGuess implements Serializable {
 
     private static boolean checkGuess = false;
-    private static char currentGuess;
+    static char currentGuess;
     private static boolean checkLetterRepeat = true;
     private static boolean checkVowelRepeat = true;
     private static char[] listOfLetterGuesses = new char[26];
