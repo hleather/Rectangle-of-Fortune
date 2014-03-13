@@ -57,6 +57,7 @@ public class GamePreferencesView extends Menu {
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
             }
         } while (!command.equals("Q"));
+        return null;
        
     }
     

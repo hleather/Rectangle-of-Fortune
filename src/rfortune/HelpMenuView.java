@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class HelpMenuView extends Menu {
         
-    private final static String[][] menuItems = {
+    public static String[][] menuItems = {
         {"B", "About The Board"}, 
         {"R", "About The Rectangle of Fortune game"},
         {"V", "About Buy a Vowel"},
@@ -74,6 +74,7 @@ public class HelpMenuView extends Menu {
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
             }
         } while (!command.equals("Q"));  
+        return null;
     }
 
 }

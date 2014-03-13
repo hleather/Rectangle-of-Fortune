@@ -115,6 +115,7 @@ public class GameTurnView extends Menu {
                             + "enter a valid command.");
             }
         } while (!command.equals("Q"));
+        return null;
     }
 }
 

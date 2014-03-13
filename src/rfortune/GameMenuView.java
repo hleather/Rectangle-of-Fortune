@@ -14,18 +14,20 @@ import java.util.Scanner;
  */
 public class GameMenuView extends Menu {
 
-    public final static String[][] menuItems = {
+    public static String[][] menuItems = {
         {"T", "Take your turn"},
         {"H", "Help"},
         {"Q", "QUIT"}
     };
+    HelpMenuView helpMenuView = new HelpMenuView();
+    GameMenuControl gameMenuControl = new GameMenuControl();
 
     public GameMenuView() {      
         super(GameMenuView.menuItems);
     }
     
     @Override
-    public static void getInput() {
+        public String getInput() {
         String command;
         Scanner inFile = Rfortune.getInputFile();
 
@@ -40,10 +42,10 @@ public class GameMenuView extends Menu {
             
             switch (command) {
                 case "T":
-                    GameMenuControl.takeTurn();                   
+                    gameMenuControl.takeTurn();                   
                     break;
                 case "H":
-                    HelpMenuView.getInput();
+                    helpMenuView.getInput();
                     break;
                 case "Q":                   
                     break;
@@ -51,6 +53,7 @@ public class GameMenuView extends Menu {
                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
             }
         } while (!command.equals("Q"));
+        return null;
     }
 
 }

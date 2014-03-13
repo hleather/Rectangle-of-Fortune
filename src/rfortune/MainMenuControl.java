@@ -77,7 +77,7 @@ public class MainMenuControl implements Serializable {
                 + "==================\n");
         
         GameMenuView gameMenuView = new GameMenuView();
-        GameMenuView.getInput();
+        gameMenuView.getInput();
         
         }
 }
