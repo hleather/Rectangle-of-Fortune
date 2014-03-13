@@ -26,6 +26,7 @@ public class MainMenuView extends Menu {
     MainMenuControl mainMenuControl = new MainMenuControl();
     Player myPlayers = new Player();    
     HelpMenuView helpMenuView = new HelpMenuView();
+    GamePreferencesView myPrefs = new GamePreferencesView();
     
     public MainMenuView() {
         super(MainMenuView.menuItems);
@@ -75,7 +76,7 @@ public class MainMenuView extends Menu {
                     mainMenuControl.setScreen();
                     break;
                 case "P":
-                    GamePreferencesView.getInput();
+                    myPrefs.getInput();
                     break;
                 case "H":
                     helpMenuView.getInput();

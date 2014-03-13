@@ -32,7 +32,7 @@ public class GameTurnView extends Menu {
      * LINKING FUNCTION!
      *********************************************************************/
     @Override
-    public static void getInput(){
+    public String getInput(){
             String command;
             Scanner inFile = new Scanner(System.in);
         

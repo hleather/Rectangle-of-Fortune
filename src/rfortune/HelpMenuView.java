@@ -39,10 +39,10 @@ public class HelpMenuView extends Menu {
     
     // display the help menu and get the end users input selection
     @Override
-    public void getInput() {       
+    public String getInput() {       
               
-        String command;
-        Scanner inFile = new Scanner(System.in);
+       String command;
+       Scanner inFile = new Scanner(System.in);
         
         do {
             
@@ -54,19 +54,19 @@ public class HelpMenuView extends Menu {
             
             switch (command) {
                 case "B":
-                    HelpMenuControl.displayBoardHelp();
+                    helpMenuControl.displayBoardHelp();
                     break;
                 case "R":
-                    HelpMenuControl.displayGameHelp();
+                    helpMenuControl.displayGameHelp();
                     break;                  
                 case "V":
-                    HelpMenuControl.displayVowelHelp();
+                    helpMenuControl.displayVowelHelp();
                     break;
                 case "G":
-                    HelpMenuControl.displayGuessHelp();
+                    helpMenuControl.displayGuessHelp();
                     break;
                  case "P":
-                    HelpMenuControl.displayPlayerHelp();
+                    helpMenuControl.displayPlayerHelp();
                     break; 
                 case "Q": 
                     break;

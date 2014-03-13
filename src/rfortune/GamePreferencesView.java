@@ -29,7 +29,7 @@ public class GamePreferencesView extends Menu {
    
 
     @Override
-    public static void getInput() {       
+    public String getInput() {       
         String command;
         Scanner inFile = Rfortune.getInputFile();
         
