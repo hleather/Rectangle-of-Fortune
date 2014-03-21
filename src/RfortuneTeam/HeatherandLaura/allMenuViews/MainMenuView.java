@@ -4,8 +4,15 @@
  * and open the template in the editor.
  */
 
-package rfortune;
+package RfortuneTeam.HeatherandLaura.allMenuViews;
 
+import rfortune.Bank;
+import rfortune.Game;
+import rfortune.MainMenuControl;
+import rfortune.Menu;
+import rfortune.Player;
+import rfortune.PlayersList;
+import rfortune.RfortuneError;
 import java.util.Scanner;
 
 /**
@@ -41,8 +48,7 @@ public class MainMenuView extends Menu {
      * and error message if the input is invalid.
      * @return command
      **************************************************************************/
-    @Override
-    public String getInput() {       
+        public String getInput() {       
         
         Scanner inFile = new Scanner(System.in);
         

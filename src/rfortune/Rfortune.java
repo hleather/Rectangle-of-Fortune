@@ -6,6 +6,7 @@
 
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
 import java.util.Scanner;
 
 
@@ -44,6 +45,7 @@ public class Rfortune {
     public static Scanner getInputFile() {
         return Rfortune.inFile;
     }
+    
     public void displayHelp() {
         System.out.println(this.welcomeMsg);
     }

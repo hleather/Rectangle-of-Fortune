@@ -5,6 +5,7 @@
  */
 
 package rfortune;
+import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import java.io.Serializable;
 import java.util.Random;
 /**

@@ -4,9 +4,17 @@
  * and open the template in the editor.
  */
 
-package rfortune;
+package RfortuneTeam.HeatherandLaura.allMenuViews;
 
+import rfortune.Bank;
+import rfortune.CheckGuess;
+import rfortune.Game;
+import rfortune.Menu;
+import rfortune.PlayerTurn;
+import rfortune.RfortuneError;
+import rfortune.WordsAndPhrases;
 import java.util.Scanner;
+import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 
 /**
  *
@@ -30,9 +38,9 @@ public class GameTurnView extends Menu {
     /*********************************************************************
      * Gets input for what player wants to do on their turn.
      * LINKING FUNCTION!
+     * @return 
      *********************************************************************/
-    @Override
-    public String getInput(){
+        public String getInput(){
             String command;
             Scanner inFile = new Scanner(System.in);
         

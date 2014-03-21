@@ -6,6 +6,7 @@
 
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.interfaces.DisplayInfo;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Scanner;
  * @author Heather and Laura
  */
 
-public abstract class Menu {
+public class Menu implements DisplayInfo {
 
     private String[][] menuItems = null;
 
@@ -27,8 +28,11 @@ public abstract class Menu {
     
     // This is an abstract function. It specifies that all sub-classes must
     // implement this function.
-    public abstract String getInput();
-    
+    public String pullInput() {
+        return null;      
+        
+    }
+        
     public String[][] getMenuItems() {
         return menuItems;
     }
@@ -38,7 +42,8 @@ public abstract class Menu {
     }
 
     
-    public final void display() {
+    @Override
+    public void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
         for (int i = 0; i < this.menuItems.length; i++) {

@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 
-package rfortune;
+package RfortuneTeam.HeatherandLaura.allMenuViews;
 
+import rfortune.Game;
+import rfortune.GameMenuControl;
+import rfortune.Menu;
+import rfortune.Rfortune;
+import rfortune.RfortuneError;
 import java.util.Scanner;
 
 /**
@@ -26,8 +31,7 @@ public class GameMenuView extends Menu {
         super(GameMenuView.menuItems);
     }
     
-    @Override
-        public String getInput() {
+            public String getInput() {
         String command;
         Scanner inFile = Rfortune.getInputFile();
 

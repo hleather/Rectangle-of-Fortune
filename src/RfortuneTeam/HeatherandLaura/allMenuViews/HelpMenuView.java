@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 
-package rfortune;
+package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 /**
  *
  * @author Heather and Laura
  */
+import rfortune.HelpMenuControl;
+import rfortune.Menu;
+import rfortune.RfortuneError;
 import java.util.Scanner;
 
 
@@ -38,7 +41,6 @@ public class HelpMenuView extends Menu {
     } 
     
     // display the help menu and get the end users input selection
-    @Override
     public String getInput() {       
               
        String command;

@@ -5,6 +5,7 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.allMenuViews.GameMenuView;
 import java.io.Serializable;
 
 /**

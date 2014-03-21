@@ -6,6 +6,8 @@
 
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
+
 /**
  *
  * @author Heather
