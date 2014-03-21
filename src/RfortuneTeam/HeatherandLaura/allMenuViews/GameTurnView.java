@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 import rfortune.Bank;
@@ -14,36 +13,39 @@ import rfortune.PlayerTurn;
 import rfortune.RfortuneError;
 import rfortune.WordsAndPhrases;
 import java.util.Scanner;
-import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 
 /**
  *
  * @author Laura
  */
 public class GameTurnView extends Menu {
+
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
-    
-    private static final String[][]turnOptions = {
+
+    private static final String[][] turnOptions = {
         {"L", "Guess a letter"},
         {"V", "Buy a vowel"},
         {"P", "Guess the phrase"},
         {"H", "Help"},
         {"Q", "QUIT"}
     };
-    
-    public GameTurnView(){
+
+    public GameTurnView() {
         super(GameTurnView.turnOptions);
     }
-    /*********************************************************************
-     * Gets input for what player wants to do on their turn.
-     * LINKING FUNCTION!
-     * @return 
-     *********************************************************************/
-        public String getInput(){
-            String command;
-            Scanner inFile = new Scanner(System.in);
-        
+
+    /**
+     * *******************************************************************
+     * Gets input for what player wants to do on their turn. LINKING FUNCTION!
+     *
+     * @return
+     * *******************************************************************
+     */
+    public String getInput() {
+        String command;
+        Scanner inFile = new Scanner(System.in);
+
         do {
             WordsAndPhrases.updateParallelArray();
             WordsAndPhrases.displayParallelArray();
@@ -61,16 +63,16 @@ public class GameTurnView extends Menu {
                 Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
             }
-            
+
             this.display();
-            
+
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
-            
+
             switch (command) {
                 //guess a letter.
                 case "L":
-                    if(Game.getRoundNumber() != 0) {
+                    if (Game.getRoundNumber() != 0) {
                         PlayerTurn.updatePlayersTurn();
                         PlayerTurn.displayPlayerTurn();
                         Bank.bankPlayerTurn();
@@ -126,5 +128,3 @@ public class GameTurnView extends Menu {
         return null;
     }
 }
-
-

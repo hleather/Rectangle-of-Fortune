@@ -39,9 +39,59 @@ public class HelpMenuView extends Menu {
     public HelpMenuView() {
         super(HelpMenuView.menuItems);
     } 
-    
+        public enum displayCommand {
+        BOARDHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            + "\n\tThe game board for Rectangle of Fortune. It consists of  "
+                + "\n\tblanks that associate with the word or phrase that needs "
+                + "\n\tto be guessed. As a letter is guessed it is displayed in "
+                + "\n\tthe board."
+    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
+        GAMEHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            + "\n\tThe objective of the game is to be the player with the most "
+                + "\n\tmoney when the word or phrase is completed. Each player "
+                + "\n\ttakes a turn by guessing letters to see if it is in the "
+                + "\n\tphrase. If it is in the phrase, they will earn money  "
+                + "\n\tand get another turn. If not, it is the next player's "
+                + "\n\tturn. The person with the most money at the end of the "
+                + "\n\tgame wins! "
+    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
+        VOWELHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" 
+            + "\n\tBuying a Vowel. If a player wants to guess a vowel, then "
+               + "\n\tthey must purchase that vowel by selecting the 'buy a "
+               + "\n\tvowel' button. A vowel costs $250." 
+    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
+        GUESSHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+            + "\n\tMaking a Guess. To make a guess on your turn, the player "
+                + "\n\twill press the 'Guess a Consonant' button. The board  "
+                + "\n\twill display the value of money earned if the player "
+                + "\n\tguesses a correct letter. The player will then enter "
+                + "\n\ta consonant. If it is in the phrase, it will appear "
+                + "\n\ton the board where it is located in the phrase. "
+    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
+        PLAYERHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" +
+                "\n\tA player takes their turn by selecting the'Guess a Consonant' "
+                + "\n\tbutton or the 'Buy a Vowel' button." + 
+                "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        
+        String message;
+        
+        private displayCommand(String message) {
+            this.message = message;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+        public void display() {
+            System.out.println(this.message);
+        }
+    }
     // display the help menu and get the end users input selection
-    public String getInput() {       
+
+
+    public String getInput() {
+        
+
               
        String command;
        Scanner inFile = new Scanner(System.in);
@@ -54,29 +104,31 @@ public class HelpMenuView extends Menu {
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             
+            
+            
             switch (command) {
                 case "B":
-                    helpMenuControl.displayBoardHelp();
+                    displayCommand.BOARDHELP.display();
                     break;
                 case "R":
-                    helpMenuControl.displayGameHelp();
+                   displayCommand.GAMEHELP.display();
                     break;                  
                 case "V":
-                    helpMenuControl.displayVowelHelp();
+                    displayCommand.VOWELHELP.display();
                     break;
                 case "G":
-                    helpMenuControl.displayGuessHelp();
+                    displayCommand.GUESSHELP.display();
                     break;
                  case "P":
-                    helpMenuControl.displayPlayerHelp();
-                    break; 
-                case "Q": 
+                    displayCommand.PLAYERHELP.display();
                     break;
-                default: 
-                    new RfortuneError().displayError("Invalid command. Please enter a valid command.");
+                 case "Q": 
+                    break;
+                 default: 
+                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
             }
+            
         } while (!command.equals("Q"));  
         return null;
     }
-
 }
