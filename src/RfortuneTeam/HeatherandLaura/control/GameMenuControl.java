@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package rfortune;
+package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 

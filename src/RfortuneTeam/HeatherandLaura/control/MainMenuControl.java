@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rfortune;
+package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameMenuView;
+import rfortune.Bank;
+import rfortune.Player;
 import java.io.Serializable;
 
 /**

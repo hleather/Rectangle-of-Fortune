@@ -7,7 +7,7 @@
 package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 import java.util.Scanner;
-import rfortune.GamePreferencesControl;
+import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
 import rfortune.Menu;
 import rfortune.Rfortune;
 import rfortune.RfortuneError;

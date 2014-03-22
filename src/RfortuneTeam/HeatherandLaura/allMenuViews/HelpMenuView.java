@@ -10,7 +10,7 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
  *
  * @author Heather and Laura
  */
-import rfortune.HelpMenuControl;
+import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
 import rfortune.Menu;
 import rfortune.RfortuneError;
 import java.util.Scanner;

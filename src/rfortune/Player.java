@@ -6,6 +6,7 @@
 
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import java.io.Serializable;
 /**
  *

@@ -8,7 +8,7 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 import rfortune.Bank;
 import rfortune.Game;
-import rfortune.MainMenuControl;
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.Menu;
 import rfortune.Player;
 import rfortune.PlayersList;

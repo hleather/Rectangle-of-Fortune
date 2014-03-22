@@ -7,7 +7,7 @@
 package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 import rfortune.Game;
-import rfortune.GameMenuControl;
+import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import rfortune.Menu;
 import rfortune.Rfortune;
 import rfortune.RfortuneError;
