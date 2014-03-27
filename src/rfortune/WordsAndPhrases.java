@@ -17,7 +17,8 @@ public class WordsAndPhrases implements Serializable {
     private static String phrase;
     private static String parallelPhrase;
     private static char[] charArray;
-    private static char[] parallelCharArray;    
+    private static char[] parallelCharArray;  
+    private static int woots;
 
     /**
      * @return the index
@@ -88,6 +89,14 @@ public class WordsAndPhrases implements Serializable {
     public static void setParallelCharArray(char[] aParallelCharArray) {
         parallelCharArray = aParallelCharArray;
     }
+    
+    public static int getWoots(){
+        return woots;
+    }
+    
+    public static void setWoots(int aWoots){
+        woots = aWoots;
+    }
    
    public WordsAndPhrases(){
    }    
@@ -141,20 +150,24 @@ public class WordsAndPhrases implements Serializable {
     
     /***************************************************************************
      * Checks to see if the guessed letter is in the phrase.
+     * @param typeGuess
      **************************************************************************/
-    public static void searchPhrase() {
+    public static void searchPhrase(int typeGuess) {
         int control = 0;
         if (CheckGuess.isCheckGuess()) {
             for(int i = 0; i  < getCharArray().length; i++){
                 if(getCharArray()[i] == (CheckGuess.currentGuess)){
                     Game.setFoundMatch(true);
-                    Bank.updateBankSpinWorth();
                     control++;                    
                 }
             }
             if (control == 0){
                 Game.setFoundMatch(false);
             }
+        }
+        setWoots(control);
+        if (typeGuess == 1){
+            Bank.updateBankSpinWorth();
         }
     }
     

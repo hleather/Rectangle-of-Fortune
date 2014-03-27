@@ -86,10 +86,9 @@ public class GameTurnView extends Menu {
                     Bank.spinWorth();
                     Bank.printSpinWorth();
                     CheckGuess.checkLetterGuess();
-                    WordsAndPhrases.searchPhrase();
+                    WordsAndPhrases.searchPhrase(1);
                     Game.display();
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
-                    Bank.updateBankSpinWorth();
                     Game.gameRound();
                     break;
                 //guess a vowel
@@ -100,7 +99,7 @@ public class GameTurnView extends Menu {
                     Bank.spin();
                     Bank.spinWorth();
                     CheckGuess.checkVowelGuess();
-                    WordsAndPhrases.searchPhrase();
+                    WordsAndPhrases.searchPhrase(2);
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;

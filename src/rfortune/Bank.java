@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
@@ -16,6 +15,7 @@ import java.util.Random;
  * @author Heather
  */
 public class Bank implements Serializable {
+
     private static long bankPlayerUp;
     private static long bankNumberPlayer1;
     private static long bankNumberPlayer2;
@@ -196,129 +196,162 @@ public class Bank implements Serializable {
     public static void setRandom(int aRandom) {
         random = aRandom;
     }
-    
-    public Bank(){   
+
+    public Bank() {
     }
-    
-    /***************************************************************************
-    * numPlayersBank(). sets the starting value (0) to the correct number of 
-    * players in the current game. It only sets the starting value to the 
-    * specific number of players in order to leave any additional player slots
-    * empty for the MainMenuControl.setScreen().gameDisplay array. This function
-    * also converts the bank (variable type long) to a String so it 
-    * can be displayed in the MainMenuControl.setScreen().gameDisplay array.
-    ***************************************************************************/    
+
+    /**
+     * *************************************************************************
+     * numPlayersBank(). sets the starting value (0) to the correct number of
+     * players in the current game. It only sets the starting value to the
+     * specific number of players in order to leave any additional player slots
+     * empty for the MainMenuControl.setScreen().gameDisplay array. This
+     * function also converts the bank (variable type long) to a String so it
+     * can be displayed in the MainMenuControl.setScreen().gameDisplay array.
+    **************************************************************************
+     */
     public static void numPlayersBank() {
-        if (MainMenuControl.getSetNumPlayers() == 3)
-        {
-            setBankNumberPlayer1(1000);
-            setBankNumberPlayer2(2000);
-            setBankNumberPlayer3(3000);
+        if (MainMenuControl.getSetNumPlayers() == 3) {
+            setBankNumberPlayer1(0);
+            setBankNumberPlayer2(0);
+            setBankNumberPlayer3(0);
         }
-        if (MainMenuControl.getSetNumPlayers() == 2)
-        {
-            setBankNumberPlayer1(1000);
-            setBankNumberPlayer2(2000);
+        if (MainMenuControl.getSetNumPlayers() == 2) {
+            setBankNumberPlayer1(0);
+            setBankNumberPlayer2(0);
         }
-        if (MainMenuControl.getSetNumPlayers() == 1)
-        {
-            setBankNumberPlayer1(1000);
+        if (MainMenuControl.getSetNumPlayers() == 1) {
+            setBankNumberPlayer1(0);
         }
-    }    
-    
-    
-    public static void updateBankPlayer()
-    {
-        if (MainMenuControl.getSetNumPlayers() == 3)
-        {
+    }
+
+    public static void updateBankPlayer() {
+        if (MainMenuControl.getSetNumPlayers() == 3) {
             setBankPlayer1(Long.toString(Bank.getBankNumberPlayer1()));
             setBankPlayer2(Long.toString(Bank.getBankNumberPlayer2()));
             setBankPlayer3(Long.toString(Bank.getBankNumberPlayer3()));
         }
-        if (MainMenuControl.getSetNumPlayers() == 2)
-        {
+        if (MainMenuControl.getSetNumPlayers() == 2) {
             setBankPlayer1(Long.toString(Bank.getBankNumberPlayer1()));
             setBankPlayer2(Long.toString(Bank.getBankNumberPlayer2()));
         }
-        if (MainMenuControl.getSetNumPlayers() == 1)
-        {
+        if (MainMenuControl.getSetNumPlayers() == 1) {
             setBankPlayer1(Long.toString(Bank.getBankNumberPlayer1()));
         }
     }
-    
-    /***************************************************************************
-    * bankPlayerTurn(). defines whose bank will be adjusted based on which 
-    * players turn it currently is.
-    ***************************************************************************/
-    public static void bankPlayerTurn(){
-        if (PlayerTurn.getPlayerUp() == 0)
+
+    /**
+     * *************************************************************************
+     * bankPlayerTurn(). defines whose bank will be adjusted based on which
+     * players turn it currently is.
+    **************************************************************************
+     */
+    public static void bankPlayerTurn() {
+        if (PlayerTurn.getPlayerUp() == 0) {
             setBankPlayerUp(getBankNumberPlayer1());
-        else if (PlayerTurn.getPlayerUp() == 1)
+        } else if (PlayerTurn.getPlayerUp() == 1) {
             setBankPlayerUp(getBankNumberPlayer2());
-        else if (PlayerTurn.getPlayerUp() == 2)
-            setBankPlayerUp(getBankNumberPlayer3());       
-    }   
-    
-    /***************************************************************************
-    * display the current player's bank amount.
-    ***************************************************************************/
-    public static void displayPlayerUpBank() {
-        if (PlayerTurn.getPlayerUp() == 0)
-            System.out.println("Bank: " + getBankPlayer1());
-        else if (PlayerTurn.getPlayerUp() == 1)
-            System.out.println("Bank: " + getBankPlayer2());
-        else if (PlayerTurn.getPlayerUp() == 2)
-            System.out.println("Bank: " + getBankPlayer3());
+        } else if (PlayerTurn.getPlayerUp() == 2) {
+            setBankPlayerUp(getBankNumberPlayer3());
+        }
     }
-    
-    /***************************************************************************
-    * display player 1's bank
-    ***************************************************************************/
+
+    /**
+     * *************************************************************************
+     * display the current player's bank amount.
+    **************************************************************************
+     */
+    public static void displayPlayerUpBank() {
+        if (PlayerTurn.getPlayerUp() == 0) {
+            System.out.println("Bank: " + getBankPlayer1());
+        } else if (PlayerTurn.getPlayerUp() == 1) {
+            System.out.println("Bank: " + getBankPlayer2());
+        } else if (PlayerTurn.getPlayerUp() == 2) {
+            System.out.println("Bank: " + getBankPlayer3());
+        }
+    }
+
+    /**
+     * *************************************************************************
+     * display player 1's bank
+    **************************************************************************
+     */
     public static void displayBankPlayer1() {
         System.out.println(getBankPlayer1());
     }
-    
-    /***************************************************************************
-    * display player 2's bank
-    ***************************************************************************/
+
+    /**
+     * *************************************************************************
+     * display player 2's bank
+    **************************************************************************
+     */
     public static void displayBankPlayer2() {
         System.out.println(getBankPlayer2());
     }
-    
-    /***************************************************************************
-    * display player 3's bank
-    ***************************************************************************/
+
+    /**
+     * *************************************************************************
+     * display player 3's bank
+    **************************************************************************
+     */
     public static void displayBankPlayer3() {
         System.out.println(getBankPlayer3());
     }
-     
-    /***************************************************************************
-     * updateBankVowelPurchase(). first checks to see if the current player has 
-     * enough money to purchase a vowel (250). If the player has enough money
-     * to purchase a vowel, this function subtracts 250 from bankPlayerUp. It 
-     * will return true or false to let the ***vowel*** function know ***?***.
-    ***************************************************************************/
+
+    /**
+     * *************************************************************************
+     * updateBankVowelPurchase(). first checks to see if the current player has
+     * enough money to purchase a vowel (250). If the player has enough money to
+     * purchase a vowel, this function subtracts 250 from bankPlayerUp. It will
+     * return true or false to let the ***vowel*** function know ***?***.
+    **************************************************************************
+     */
     public static void updateBankVowelPurchase() {
         PlayerTurn.updatePlayersTurn();
-        if (getBankPlayerUp() >= 250)
-        {
+        if (getBankPlayerUp() >= 250) {
             setHasEnough(true);
-            setBankPlayerUp(getBankPlayerUp() - 250);
-        }            
-    }    
-    
-    /***************************************************************************
-     * spinWorth(). sets the amount the next character guess is worth using a 
+            long bank = 0;
+            long updateBank;
+            int control = 0;
+            if (PlayerTurn.getPlayerUp() == 0) {
+                bank = getBankNumberPlayer1();
+                control = 1;
+            } else if (PlayerTurn.getPlayerUp() == 1) {
+                bank = getBankNumberPlayer2();
+                control = 2;
+            } else if (PlayerTurn.getPlayerUp() == 2) {
+                bank = getBankNumberPlayer3();
+                control = 3;
+            }
+            updateBank = bank - 250;
+            if (control == 1) {
+                setBankNumberPlayer1(updateBank);
+            } else if (control == 2) {
+                setBankNumberPlayer2(updateBank);
+            } else if (control == 3) {
+                setBankNumberPlayer3(updateBank);
+            } else if (control == 0) {
+                new RfortuneError().displayError("Sorry, there is a problem in Bank "
+                        + "Class, updateBankVowelPurchase.");
+            }
+            Bank.updateBankPlayer();
+        }
+    }
+
+    /**
+     * *************************************************************************
+     * spinWorth(). sets the amount the next character guess is worth using a
      * random number generator. The values will be different for Easy and Hard
      * modes and the function returns that value.
-    ***************************************************************************/
-    public static void spin(){
+    **************************************************************************
+     */
+    public static void spin() {
         Random spin = new Random();
         setRandom(1 + spin.nextInt(8));
         setRandomSpin(getRandom());
     }
-    
-    public static void spinWorth(){
+
+    public static void spinWorth() {
         int amount = 25;
         switch (GamePreferencesView.setDifficulty) {
             case "E":
@@ -330,52 +363,76 @@ public class Bank implements Serializable {
         }
         setSpinWorth(amount * getRandomSpin());
     }
-    
-    public static void printSpinWorth(){
+
+    public static void printSpinWorth() {
         System.out.println("Guess Worth: " + Bank.getSpinWorth());
     }
-    
+
     public static void updateBankSpinWorth() {
-        if (Game.isFoundMatch()) {
-            setBankPlayerUp(getBankPlayerUp() + getSpinWorth());
-            Bank.updateBankPlayer();
+        int woot = WordsAndPhrases.getWoots();
+        long bank = 0;
+        long updateBank;
+        int control = 0;
+        if (PlayerTurn.getPlayerUp() == 0) {
+            bank = getBankNumberPlayer1();
+            control = 1;
+        } else if (PlayerTurn.getPlayerUp() == 1) {
+            bank = getBankNumberPlayer2();
+            control = 2;
+        } else if (PlayerTurn.getPlayerUp() == 2) {
+            bank = getBankNumberPlayer3();
+            control = 3;
         }
+        updateBank = bank + (getSpinWorth() * woot);
+        if (control == 1) {
+            setBankNumberPlayer1(updateBank);
+        } else if (control == 2) {
+            setBankNumberPlayer2(updateBank);
+        } else if (control == 3) {
+            setBankNumberPlayer3(updateBank);
+        } else if (control == 0) {
+            new RfortuneError().displayError("Sorry, there is a problem in Bank "
+                    + "Class, updateBankSpinWorth.");
+        }
+        Bank.updateBankPlayer();
     }
-    
-    /***************************************************************************
-     * phraseWorth(). calculates how much guessing the remainder of the phrase is
-     * worth and returns that value.
-    ***************************************************************************/
-    public static void phraseWorth(){
+
+    /**
+     * *************************************************************************
+     * phraseWorth(). calculates how much guessing the remainder of the phrase
+     * is worth and returns that value.
+    **************************************************************************
+     */
+    public static void phraseWorth() {
         int phraseLength = WordsAndPhrases.getCharArray().length;
         int cGuesses = Game.getCorrectGuesses();
         int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;
         setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);
     }
-    
-    public String[] sortScores(){
+
+    public String[] sortScores() {
         //Bank.updateBankPlayer();
         String playerListOrder[] = {getBankPlayer1(), getBankPlayer2(), getBankPlayer3()};
         String temp;
         boolean notDone = true;
-        while(notDone){
-         
+        while (notDone) {
+
             notDone = false;
-            for (int i = 0; i < playerListOrder.length-1; i++){
-                int compareResult = playerListOrder[i].compareTo(playerListOrder[i+1]);
-                if(compareResult > 0){
+            for (int i = 0; i < playerListOrder.length - 1; i++) {
+                int compareResult = playerListOrder[i].compareTo(playerListOrder[i + 1]);
+                if (compareResult > 0) {
                     temp = playerListOrder[i];
-                    playerListOrder[i] = playerListOrder[i+1];
-                    playerListOrder[i+1] = temp;
+                    playerListOrder[i] = playerListOrder[i + 1];
+                    playerListOrder[i + 1] = temp;
                     notDone = true;
-                  
+
                 }
             }
-            
+
         }
-         return playerListOrder;
-        
+        return playerListOrder;
+
     }
 
 }
