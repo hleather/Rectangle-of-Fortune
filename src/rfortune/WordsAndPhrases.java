@@ -143,12 +143,17 @@ public class WordsAndPhrases implements Serializable {
      * Checks to see if the guessed letter is in the phrase.
      **************************************************************************/
     public static void searchPhrase() {
+        int control = 0;
         if (CheckGuess.isCheckGuess()) {
             for(int i = 0; i  < getCharArray().length; i++){
                 if(getCharArray()[i] == (CheckGuess.currentGuess)){
                     Game.setFoundMatch(true);
                     Bank.updateBankSpinWorth();
+                    control++;                    
                 }
+            }
+            if (control == 0){
+                Game.setFoundMatch(false);
             }
         }
     }
