@@ -9,9 +9,11 @@ import rfortune.Bank;
 import rfortune.Game;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
+import java.util.Scanner;
 import rfortune.Player;
 import rfortune.PlayersList;
-//import rfortune.Rfortune;
+import rfortune.Rfortune;
+
 /**
  * called from: Rfortune
  *
@@ -48,9 +50,8 @@ public class MainMenuView extends Menu {
      *
      * @param object
      * @return command
-     *************************************************************************
+     * ************************************************************************
      */
-    
     public String getInput(Object object) {
         do {
             try {
@@ -87,8 +88,7 @@ public class MainMenuView extends Menu {
                         helpMenuView.getInput();
                         break;
                     case "X":
-                       // quitGame();
-                        break;
+                        throw new MenuException();
                 }
             } catch (MenuException e) {
                 System.out.println("\n" + e.getMessage());
@@ -96,18 +96,4 @@ public class MainMenuView extends Menu {
         } while (!command.equals("X"));
         return command;
     }
-    /*private String quitGame() throws MenuException {
-        System.out.println("\n\tAre you sure you want to quit? (Y or N)");
-        String answer = this.getCommand();
-        switch (answer) {
-            case "Y":
-                Rfortune.inFile.close();;
-            case "N":
-                getInput();
-            default:
-                throw new MenuException("MainMenuView, quitGame - invalid entry.");
-        }*/
-    }
-
-
-//}
+}
