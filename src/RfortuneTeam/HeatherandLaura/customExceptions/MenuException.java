@@ -10,6 +10,7 @@ package RfortuneTeam.HeatherandLaura.customExceptions;
  *
  * @author Laura
  */
-public class MenuException {
+public class MenuException{
+   
     
 }
