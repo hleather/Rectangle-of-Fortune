@@ -11,13 +11,14 @@ import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import rfortune.Rfortune;
 import rfortune.RfortuneError;
 import java.util.Scanner;
+import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 
 /**
  *
  * @author Heather
  */
 public class GameMenuView extends Menu {
-
+    public static String command;
     private static final String[][] menuItems = {
         {"T", "Take your turn"},
         {"H", "Help"},
@@ -30,19 +31,16 @@ public class GameMenuView extends Menu {
         super(GameMenuView.menuItems);
     }
     
-            public String getInput() {
-        String command;
-        Scanner inFile = Rfortune.getInputFile();
-
-        do {
+     public String getInput(Object object) {
+         do {
+            try {
             if (Game.getRoundNumber() == 0)
                 menuItems[0][1] = "Start the Game";
+           
             this.display(); // display the menu
 
             // get commaned entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            
+            command = this.getCommand();
             switch (command) {
                 case "T":
                     gameMenuControl.takeTurn();                   
@@ -52,11 +50,12 @@ public class GameMenuView extends Menu {
                     break;
                 case "Q":                   
                     break;
-                default: 
-                    new RfortuneError().displayError("Invalid command. Please enter a valid command.");
+            }
+            }catch (MenuException e) {
+                System.out.println("\n" + e.getMessage());
             }
         } while (!command.equals("Q"));
-        return null;
+        return command;
     }
-
 }
+

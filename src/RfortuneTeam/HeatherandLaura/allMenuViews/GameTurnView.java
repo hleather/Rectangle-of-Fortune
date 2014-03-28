@@ -12,13 +12,14 @@ import rfortune.PlayerTurn;
 import rfortune.RfortuneError;
 import rfortune.WordsAndPhrases;
 import java.util.Scanner;
+import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 
 /**
  *
  * @author Laura
  */
 public class GameTurnView extends Menu {
-
+    public static String command;
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
 
@@ -41,11 +42,10 @@ public class GameTurnView extends Menu {
      * @return
      * *******************************************************************
      */
-    public String getInput() {
-        String command;
-        Scanner inFile = new Scanner(System.in);
+    public String getInput(Object object) {
 
         do {
+            try {
             WordsAndPhrases.updateParallelArray();
             WordsAndPhrases.displayParallelArray();
             if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
@@ -65,9 +65,7 @@ public class GameTurnView extends Menu {
 
             this.display();
 
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-
+            command = this.getCommand();
             switch (command) {
                 //guess a letter.
                 case "L":
@@ -119,9 +117,10 @@ public class GameTurnView extends Menu {
                 //Quit
                 case "Q":
                     break;
-                default:
-                    new RfortuneError().displayError("Invalid command. Please "
-                            + "enter a valid command.");
+                
+            }
+            }catch (MenuException e) {
+                System.out.println("\n" + e.getMessage());
             }
         } while (!command.equals("Q"));
         return null;

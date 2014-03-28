@@ -11,6 +11,7 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
  * @author Heather and Laura
  */
 import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
+import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 import rfortune.RfortuneError;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ import java.util.Scanner;
  * @author Heather and Laura
  */
 public class HelpMenuView extends Menu {
-        
+    public static String command;
     private final static String[][] menuItems = {
         {"B", "About The Board"}, 
         {"R", "About The Rectangle of Fortune game"},
@@ -88,23 +89,14 @@ public class HelpMenuView extends Menu {
     // display the help menu and get the end users input selection
 
 
-    public String getInput() {
-        
-
-              
-       String command;
-       Scanner inFile = new Scanner(System.in);
-        
+    public String getInput(Object object) {       
         do {
+            try {
             
             this.display(); // display the menu
             
             // get commaned entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            
-            
-            
+            command = this.getCommand();
             switch (command) {
                 case "B":
                     displayCommand.BOARDHELP.display();
@@ -123,11 +115,12 @@ public class HelpMenuView extends Menu {
                     break;
                  case "Q": 
                     break;
-                 default: 
-                     new RfortuneError().displayError("Invalid command. Please enter a valid command.");
+            }
+            } catch (MenuException e) {
+                System.out.println("\n" + e.getMessage());
             }
             
         } while (!command.equals("Q"));  
-        return null;
+        return command;
     }
 }

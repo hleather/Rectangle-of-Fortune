@@ -18,7 +18,7 @@ import rfortune.PlayersList;
  * @author Heather
  */
 public class MainMenuView extends Menu {
-    public static String command;  // double check this is used somewhere else 
+    public static String command;
     private static final String[][] menuItems = {
         {"1", "One player game"},
         {"2", "Two player game"},
