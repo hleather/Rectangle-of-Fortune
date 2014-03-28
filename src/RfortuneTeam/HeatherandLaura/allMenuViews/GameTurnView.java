@@ -108,7 +108,8 @@ public class GameTurnView extends Menu {
                     PlayerTurn.updatePlayersTurn();
                     Bank.bankPlayerTurn();
                     Bank.phraseWorth();
-                    System.out.println("Guess Phrase Command Entered");
+                    Game.setGuessedPhrase();
+                    
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;

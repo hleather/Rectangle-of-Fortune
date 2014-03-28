@@ -7,6 +7,7 @@
 package rfortune;
 
 import java.io.Serializable;
+import java.util.Scanner;
 /**
  *
  * @author Heather and Laura
@@ -16,6 +17,7 @@ public class Game implements Serializable {
     private static int correctGuesses = 0; 
     private static boolean foundMatch = false;
     private static boolean turnOver = false;
+    private static String guessedPhrase;
 
     /**
      * @return the roundNumber
@@ -103,6 +105,19 @@ public class Game implements Serializable {
         }        
     }
     
+    public static void setGuessedPhrase(){
+        new RfortuneMessage().displayMessage("You have chosen to guess the "
+                + "phrase! Please enter your guess: ");
+        String guess;
+        Scanner inFile = new Scanner(System.in);
+        guess = inFile.nextLine();
+        guess = guess.trim().toUpperCase();
+        guessedPhrase = guess;
+    }
+    
+    public static String getGuessedPhrase() {
+        return guessedPhrase;
+    }
 }
        
    

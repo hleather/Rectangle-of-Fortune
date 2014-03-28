@@ -188,6 +188,11 @@ public class WordsAndPhrases implements Serializable {
      * compares two strings to see if they are the same.
      **************************************************************************/
     public static void checkPhrase(){
+        if (getPhrase().equals(Game.getGuessedPhrase())){
+            CheckGuess.setCheckPhraseGuess(true);
+        }
+        else 
+            CheckGuess.setCheckGuess(false);
         
     }
     

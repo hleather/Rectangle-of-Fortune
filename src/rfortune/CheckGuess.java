@@ -27,6 +27,7 @@ public class CheckGuess implements Serializable {
     private static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
     private static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
+    private static boolean checkPhraseGuess = false;
 
     /**
      * @return the checkGuess
@@ -138,6 +139,13 @@ public class CheckGuess implements Serializable {
      */
     public static void setLetter(char[] aLetter) {
         letter = aLetter;
+    }
+    
+    public static boolean getCheckPhraseGuess(){
+        return checkPhraseGuess;
+    }
+    public static void setCheckPhraseGuess(boolean checkedGuess){
+        checkPhraseGuess = checkedGuess;
     }
 
     public CheckGuess() {
