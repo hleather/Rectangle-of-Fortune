@@ -130,8 +130,7 @@ public class WordsAndPhrases implements Serializable {
        {
             setPhrase(hardPhrases[getIndex()]);
             setParallelPhrase(pHardPhrases[getIndex()]);
-       }           
-       System.out.println(getPhrase());
+       }        
    }
    
     /***************************************************************************
