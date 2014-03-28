@@ -8,7 +8,6 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 import rfortune.Game;
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
-import rfortune.Menu;
 import rfortune.Rfortune;
 import rfortune.RfortuneError;
 import java.util.Scanner;

@@ -3,26 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package RfortuneTeam.HeatherandLaura.customExceptions;
 
 /**
  *
- * @author Laura
+ * @author Heather
  */
-public class MenuException extends Exception {
+public class RfortuneException extends Exception {
 
-    public MenuException() {
+    public RfortuneException() {
     }
 
-    public MenuException(String message) {
+    public RfortuneException(String message) {
         super(message);
     }
 
-    public MenuException(String message, Throwable cause) {
+    public RfortuneException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public MenuException(Throwable cause) {
+    public RfortuneException(Throwable cause) {
         super(cause);
     }
+    
 }

@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
-package rfortune;
+package RfortuneTeam.HeatherandLaura.allMenuViews;
 
+import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
+import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import RfortuneTeam.HeatherandLaura.interfaces.DisplayInfo;
 import java.util.Scanner;
+import rfortune.Rfortune;
 
 /**
  *
@@ -63,7 +66,7 @@ public class Menu implements DisplayInfo {
         return false;
     }
 
-    protected final String getCommand() {
+    protected final String getCommand() throws MenuException {
 
         Scanner inFile = Rfortune.getInputFile();
         String command;
@@ -73,12 +76,11 @@ public class Menu implements DisplayInfo {
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                new RfortuneError().displayError("Invalid command. Please enter a valid command.");
+                throw new MenuException(ErrorType.ERROR105.getMessage());  
             }
+            return command;
                 
         } while (!valid);
-        
-        return command;
     }
 
 

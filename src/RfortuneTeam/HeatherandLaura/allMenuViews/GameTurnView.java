@@ -8,7 +8,6 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
 import rfortune.Bank;
 import rfortune.CheckGuess;
 import rfortune.Game;
-import rfortune.Menu;
 import rfortune.PlayerTurn;
 import rfortune.RfortuneError;
 import rfortune.WordsAndPhrases;

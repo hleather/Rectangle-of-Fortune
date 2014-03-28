@@ -7,6 +7,8 @@
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
+import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
+import RfortuneTeam.HeatherandLaura.customExceptions.RfortuneException;
 import java.util.Scanner;
 
 
@@ -26,7 +28,7 @@ public class Rfortune {
             + "\n\t* or phrase.                                    *"
             + "\n\t*************************************************"
             + "\n";
-    private static Scanner inFile = new Scanner(System.in);
+    public static Scanner inFile = new Scanner(System.in);
 
     public static void main(String[] args) {
         
@@ -36,9 +38,15 @@ public class Rfortune {
         
         //second
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.getInput();
-        
-        //third
+         try {
+            mainMenuView.getInput(null);
+        } catch (MenuException ex) {
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            Rfortune.inFile.close();
+        }
+    
 
     }
     

@@ -8,15 +8,17 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
 
 import java.util.Scanner;
 import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
-import rfortune.Menu;
+import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import rfortune.Rfortune;
-import rfortune.RfortuneError;
 
 /**
  *
  * @author Laura
  */
 public class GamePreferencesView extends Menu {
+    public static String command;
     public static String setDifficulty = "E";
 
     private final static String[][] menuItems = {
@@ -24,7 +26,7 @@ public class GamePreferencesView extends Menu {
         {"H", "Hard"},
         {"Q", "Return to game menu"}
     };
-            
+    
 
     public GamePreferencesView() {
         super(GamePreferencesView.menuItems);
@@ -32,36 +34,44 @@ public class GamePreferencesView extends Menu {
 
    
 
-        public String getInput() {       
-        String command;
-        Scanner inFile = Rfortune.getInputFile();
-        
+        public String getInput() throws MenuException {  
+            
         do {
             this.display();
-
-            // get commaned entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            
-            switch (command) {
-                case "E":
-                    System.out.println("You are in Easy mode.");
-                    new GamePreferencesControl().setDifficulty();
-                    setDifficulty = "E";
-                    break;
-                case "H":
-                    System.out.println("You are in Hard mode.");
-                    new GamePreferencesControl().setDifficulty();
-                    setDifficulty = "H";
-                    break;
-                case "Q":
-                    break;
-                default: 
-                    new RfortuneError().displayError("Invalid command. Please enter a valid command.");
-            }
-        } while (!command.equals("Q"));
+            command = this.getCommand();
+                switch (command) {
+                    case "E":
+                        setDifficulty = "E";
+                        determineDifficultyLevel(1);
+                        break;
+                    case "H":
+                        setDifficulty = "H";
+                        determineDifficultyLevel(2);
+                        break;
+                    case "Q":
+                        break;
+                }
+            } 
+         while (!command.equals("Q"));
         return null;
-       
+
     }
     
+       private void determineDifficultyLevel(int levelNumber) throws MenuException {
+        
+        if (levelNumber != 1  &&  levelNumber != 2) {
+            throw new MenuException("determineDifficultyLevel - invalid number "
+                    + "of players specified.");
+        }
+        
+        if (levelNumber == 1) {
+            System.out.println("You are in Easy mode.");
+            new GamePreferencesControl().setDifficulty();
+        }
+        else if (levelNumber == 2) {
+            System.out.println("You are in Hard mode.");
+            new GamePreferencesControl().setDifficulty();
+        }
+       }
+        
 }
