@@ -37,7 +37,7 @@ public class Rfortune {
         myGame.displayHelp(); 
         
         //second
-        MainMenuView mainMenuView = new MainMenuView();
+        /*MainMenuView mainMenuView = new MainMenuView();
          try {
             mainMenuView.getInput(null);
         } catch (MenuException ex) {
@@ -46,7 +46,7 @@ public class Rfortune {
         finally {
             Rfortune.inFile.close();
         }
-    
+    */
 
     }
     
