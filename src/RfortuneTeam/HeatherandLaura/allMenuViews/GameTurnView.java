@@ -112,7 +112,7 @@ public class GameTurnView extends Menu {
                     break;
                 //help menu
                 case "H":
-                    helpMenuView.getInput();
+                    helpMenuView.getInput(null);
                     break;
                 //Quit
                 case "Q":

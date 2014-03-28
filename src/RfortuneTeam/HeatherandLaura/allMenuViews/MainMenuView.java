@@ -85,7 +85,7 @@ public class MainMenuView extends Menu {
                         myPrefs.getInput();
                         break;
                     case "H":
-                        helpMenuView.getInput();
+                        helpMenuView.getInput(null);
                         break;
                     case "X":
                         throw new MenuException();

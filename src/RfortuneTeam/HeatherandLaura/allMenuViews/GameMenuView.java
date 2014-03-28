@@ -46,7 +46,7 @@ public class GameMenuView extends Menu {
                     gameMenuControl.takeTurn();                   
                     break;
                 case "H":
-                    helpMenuView.getInput();
+                    helpMenuView.getInput(null);
                     break;
                 case "Q":                   
                     break;

@@ -23,7 +23,7 @@ public class GameMenuControl {
     
    public void takeTurn() {
        //ONLY PART THAT NEEDS WORK
-       gameTurnView.getInput();
+       gameTurnView.getInput(null);
    }
    
      /*public void displayBoard() {
