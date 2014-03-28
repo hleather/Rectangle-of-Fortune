@@ -6,12 +6,8 @@
 
 package RfortuneTeam.HeatherandLaura.allMenuViews;
 
-import java.util.Scanner;
 import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import rfortune.Rfortune;
 
 /**
  *
