@@ -7,6 +7,7 @@ package rfortune;
 
 import java.io.Serializable;
 import java.util.Scanner;
+import RfortuneTeam.HeatherandLaura.customExceptions.letterCheckException;
 
 /**
  * THESE (FUNCTIONS) ONLY CHECK TO SEE IF THE CONSONANT OR VOWEL IS A REPEAT AND
@@ -17,7 +18,7 @@ import java.util.Scanner;
  * @author Heather
  */
 public class CheckGuess implements Serializable {
-
+    
     private static boolean checkGuess = false;
     static char currentGuess;
     private static boolean checkLetterRepeat = true;
@@ -161,6 +162,7 @@ public class CheckGuess implements Serializable {
         int letterIndex = 0;
         boolean done = false;
         while (letterIndex <= 26 && !done) {
+            try{
             System.out.println("\tEnter your guess: ");
             char letterGuess;
             letterGuess = newLetterGuess.next().toUpperCase().charAt(0);
@@ -185,6 +187,9 @@ public class CheckGuess implements Serializable {
                 setCurrentGuess(letterGuess);
                 setCheckGuess(true);
                 done = true;
+            }
+            }catch(letterCheckException e){
+                System.out.println("\n" + e.getMessage());
             }
         }
 
@@ -212,6 +217,7 @@ public class CheckGuess implements Serializable {
             int vowelIndex = 0;
             boolean done = false;
             while (vowelIndex < 10 && !done) {
+                try{
                 System.out.println("\tEnter your guess: ");
                 char vowelGuess;
                 vowelGuess = newVowelGuess.next().toUpperCase().charAt(0);
@@ -235,6 +241,9 @@ public class CheckGuess implements Serializable {
                     setCurrentGuess(vowelGuess);
                     setCheckGuess(true);
                     done = true;
+                }
+                }catch(letterCheckException e){
+                     System.out.println("\n" + e.getMessage());
                 }
             }
 
@@ -286,20 +295,22 @@ public class CheckGuess implements Serializable {
         return vowels;
     }
 
-    private static boolean alreadyInLetterList(char[] list, char value) {
+    private static boolean alreadyInLetterList(char[] list, char value) throws letterCheckException{
         for (char valueInList : list) {
             if (value == valueInList) {
-                return true;
+                throw new letterCheckException("That letter is already in the list.");
+                //return true;
             }
         }
         setCheckLetterRepeat(false);
         return false;
     }
 
-    private static boolean alreadyInVowelList(char[] list, char value) {
+    private static boolean alreadyInVowelList(char[] list, char value) throws letterCheckException{
         for (char valueInList : list) {
             if (value == valueInList) {
-                return true;
+                throw new letterCheckException("That letter is already in the list.");
+                //return true;
             }
         }
         setCheckVowelRepeat(false);
