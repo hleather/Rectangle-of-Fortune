@@ -9,9 +9,7 @@ import rfortune.Bank;
 import rfortune.CheckGuess;
 import rfortune.Game;
 import rfortune.PlayerTurn;
-import rfortune.RfortuneError;
 import rfortune.WordsAndPhrases;
-import java.util.Scanner;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 
 /**
@@ -39,6 +37,7 @@ public class GameTurnView extends Menu {
      * *******************************************************************
      * Gets input for what player wants to do on their turn. LINKING FUNCTION!
      *
+     * @param object
      * @return
      * *******************************************************************
      */
