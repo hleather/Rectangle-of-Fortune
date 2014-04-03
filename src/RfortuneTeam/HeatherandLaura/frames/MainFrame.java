@@ -52,11 +52,11 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItems.setLayout(jpMenuItemsLayout);
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 103, Short.MAX_VALUE)
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 199, Short.MAX_VALUE)
+            .addGap(0, 225, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
@@ -64,9 +64,9 @@ public class MainFrame extends javax.swing.JFrame {
         jpTitleLayout.setHorizontalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTitleLayout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
+                .addContainerGap(98, Short.MAX_VALUE)
                 .addComponent(jlTitle)
-                .addGap(74, 74, 74))
+                .addGap(82, 82, 82))
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -77,7 +77,8 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addComponent(jlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
