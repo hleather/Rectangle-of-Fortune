@@ -412,7 +412,7 @@ public class Bank implements Serializable {
     }
 
     public String[] sortScores() {
-        //Bank.updateBankPlayer();
+        Bank.updateBankPlayer();
         String playerListOrder[] = {getBankPlayer1(), getBankPlayer2(), getBankPlayer3()};
         String temp;
         boolean notDone = true;

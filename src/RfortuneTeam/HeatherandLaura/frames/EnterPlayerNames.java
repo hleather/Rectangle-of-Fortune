@@ -32,6 +32,13 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jpBody = new javax.swing.JPanel();
         jpTitle = new javax.swing.JPanel();
         jlInstructions = new javax.swing.JLabel();
+        jtfPlayer1 = new javax.swing.JTextField();
+        jlPlayer1 = new javax.swing.JLabel();
+        jtfPlayer2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jlPlayer3 = new javax.swing.JLabel();
+        jtfPlayer3 = new javax.swing.JTextField();
+        jbContinue = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,6 +61,14 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jlInstructions.setFont(new java.awt.Font("Dotum", 1, 14)); // NOI18N
         jlInstructions.setText("Enter player names below:");
 
+        jtfPlayer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfPlayer1ActionPerformed(evt);
+            }
+        });
+
+        jlPlayer1.setText("Players Name");
+
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
         jpTitle.setLayout(jpTitleLayout);
         jpTitleLayout.setHorizontalGroup(
@@ -61,27 +76,64 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlInstructions)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTitleLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jlPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jtfPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jlInstructions)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtfPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlPlayer1))
+                .addContainerGap())
         );
+
+        jLabel1.setText("Players Name");
+
+        jlPlayer3.setText("Players Name");
+
+        jbContinue.setText("Continue");
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jlPlayer3, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbContinue)
+                    .addComponent(jtfPlayer3, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(jtfPlayer2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(50, 50, 50))
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBodyLayout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 88, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlPlayer3)
+                    .addComponent(jtfPlayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jbContinue)
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -103,6 +155,10 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtfPlayer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPlayer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfPlayer1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,9 +196,16 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbContinue;
     private javax.swing.JLabel jlInstructions;
+    private javax.swing.JLabel jlPlayer1;
+    private javax.swing.JLabel jlPlayer3;
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpTitle;
+    private javax.swing.JTextField jtfPlayer1;
+    private javax.swing.JTextField jtfPlayer2;
+    private javax.swing.JTextField jtfPlayer3;
     // End of variables declaration//GEN-END:variables
 }
