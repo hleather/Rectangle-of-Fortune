@@ -55,7 +55,7 @@ public class MainMenuView extends Menu {
     public String getInput(Object object) {
         do {
             try {
-                this.display(); // display the menu
+                //this.display(); // display the menu
 
                 // get commaned entered
                 command = this.getCommand();

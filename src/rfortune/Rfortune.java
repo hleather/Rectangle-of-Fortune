@@ -7,6 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
+import RfortuneTeam.HeatherandLaura.frames.MainFrame;
 import java.util.Scanner;
 
 /**
@@ -27,22 +28,37 @@ public class Rfortune {
             + "\n\t*************************************************"
             + "\n";
     public static Scanner inFile = new Scanner(System.in);
+    MainFrame mainFrame = new MainFrame();
 
     public static void main(String[] args) {
+        Rfortune rFortune = null;
+        
 
         //first
-        Rfortune myGame = new Rfortune();
-        myGame.displayHelp();
+       // Rfortune myGame = new Rfortune();
+        //myGame.displayHelp();
 
         //second
         try {
-            MainMenuView mainMenuView = new MainMenuView();
-            mainMenuView.getInput(null);
+            rFortune = new Rfortune();
+            
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    MainFrame mainFrame = new MainFrame();
+                    
+                    mainFrame.setVisible(true);
+                }
+            });
+
+
+
         } finally {
             Rfortune.inFile.close();
+          //  if(Rfortune.mainFrame != null) {
+            //    Rfortune.mainFrame.dispose();
+            }
+            
         }
-
-    }
 
     public static Scanner getInputFile() {
         return Rfortune.inFile;
