@@ -7,6 +7,10 @@
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import static RfortuneTeam.HeatherandLaura.control.MainMenuControl.getSetNumPlayers;
+import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames1;
+import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames2;
+import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames3;
 import java.io.Serializable;
 /**
  *
@@ -17,6 +21,10 @@ public class Player implements Serializable {
     private static String player2 = " ";
     private static String player3 = " ";
     PlayersList myList = new PlayersList();   
+    Player myPlayer = null;
+    static EnterPlayerNames1 enterPlayerNames1 = new EnterPlayerNames1();
+    static EnterPlayerNames2 enterPlayerNames2 = new EnterPlayerNames2();
+    static EnterPlayerNames3 enterPlayerNames3 = new EnterPlayerNames3();
 
     /**
      * @return the player1
@@ -86,6 +94,51 @@ public class Player implements Serializable {
         }        
     }     
     
+    public final void getPlayerFrames(){
+        myPlayer = new Player();
+        if (getSetNumPlayers() == 1) {
+            try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    enterPlayerNames1.setVisible(true);  
+                }
+            });
+        }
+        finally {
+            if (Player.enterPlayerNames1 != null) {
+                Player.enterPlayerNames1.dispose();
+            }
+        }
+        }
+        if (getSetNumPlayers() == 2) {
+            try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    enterPlayerNames2.setVisible(true);  
+                }
+            });
+        }
+        finally {
+            if (Player.enterPlayerNames2 != null) {
+                Player.enterPlayerNames2.dispose();
+            }
+        }
+        }
+        if (getSetNumPlayers() == 3) {
+            try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    enterPlayerNames3.setVisible(true);  
+                }
+            });
+        }
+        finally {
+            if (Player.enterPlayerNames3 != null) {
+                Player.enterPlayerNames3.dispose();
+            }
+        }
+        }
+    }
    /* public static void displayPlayer1Bank() {
 
     } */

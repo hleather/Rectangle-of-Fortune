@@ -20,6 +20,7 @@ import rfortune.Rfortune;
  * @author Heather
  */
 public class MainMenuView extends Menu {
+
     public static String command;
     private static final String[][] menuItems = {
         {"1", "One player game"},
@@ -34,6 +35,7 @@ public class MainMenuView extends Menu {
     Player myPlayers = new Player();
     HelpMenuView helpMenuView = new HelpMenuView();
     GamePreferencesView myPrefs = new GamePreferencesView();
+    
 
     public MainMenuView() {
         super(MainMenuView.menuItems);
@@ -61,25 +63,16 @@ public class MainMenuView extends Menu {
                 command = this.getCommand();
                 switch (command) {
                     case "1":
-                        mainMenuControl.setNumPlayers(1);
-                        myPlayers.getPlayerNames();
-                        Bank.numPlayersBank();
-                        Game.newGame();
-                        mainMenuControl.setScreen();
+                        mainMenuControl.setNumPlayers(1);    
+                        this.initiate();
                         break;
                     case "2":
                         mainMenuControl.setNumPlayers(2);
-                        myPlayers.getPlayerNames();
-                        Bank.numPlayersBank();
-                        Game.newGame();
-                        mainMenuControl.setScreen();
+                        this.initiate();
                         break;
                     case "3":
                         mainMenuControl.setNumPlayers(3);
-                        myPlayers.getPlayerNames();
-                        Bank.numPlayersBank();
-                        Game.newGame();
-                        mainMenuControl.setScreen();
+                        this.initiate();
                         break;
                     case "P":
                         myPrefs.getInput();
@@ -95,5 +88,12 @@ public class MainMenuView extends Menu {
             }
         } while (!command.equals("X"));
         return command;
+    }
+    
+    public void initiate() {
+        Game.newGame();
+        myPlayers.getPlayerFrames();
+        Bank.numPlayersBank();
+        mainMenuControl.setScreen();
     }
 }

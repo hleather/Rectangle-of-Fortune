@@ -10,12 +10,12 @@ package RfortuneTeam.HeatherandLaura.frames;
  *
  * @author Laura
  */
-public class EnterPlayerNames extends javax.swing.JFrame {
+public class EnterPlayerNames3 extends javax.swing.JFrame {
 
     /**
      * Creates new form EnterPlayerNames
      */
-    public EnterPlayerNames() {
+    public EnterPlayerNames3() {
         initComponents();
     }
 
