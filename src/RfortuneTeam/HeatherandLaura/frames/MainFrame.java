@@ -8,11 +8,13 @@ package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
 
+
 /**
  *
  * @author Laura
  */
 public class MainFrame extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form MainFrame

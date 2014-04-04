@@ -28,7 +28,7 @@ public class Rfortune {
             + "\n\t*************************************************"
             + "\n";
     public static Scanner inFile = new Scanner(System.in);
-    MainFrame mainFrame = new MainFrame();
+    static MainFrame mainFrame = new MainFrame();
 
     public static void main(String[] args) {
         Rfortune rFortune = null;
@@ -54,8 +54,8 @@ public class Rfortune {
 
         } finally {
             Rfortune.inFile.close();
-          //  if(Rfortune.mainFrame != null) {
-            //    Rfortune.mainFrame.dispose();
+             if(Rfortune.mainFrame != null) {
+             Rfortune.mainFrame.dispose();
             }
             
         }
