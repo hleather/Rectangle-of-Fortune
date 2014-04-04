@@ -49,6 +49,7 @@ public class Rfortune {
                     mainFrame.setVisible(true);
                 }
             });
+        
 
 
 
@@ -59,6 +60,7 @@ public class Rfortune {
             }
             
         }
+    }
 
     public static Scanner getInputFile() {
         return Rfortune.inFile;
