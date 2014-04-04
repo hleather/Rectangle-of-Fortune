@@ -37,18 +37,14 @@ public class PlayersList implements Serializable {
     }
     
     public String[] getInput(){
-        Scanner inFile = Rfortune.getInputFile();
         
-        new RfortuneMessage().displayMessage("Enter a list of names of those "
-                + "who will be playing Rectangle of Fortune.");
-        
+
+        String inFile = "alex";
         int playerIndex = 0;
         boolean done = false;
         while (playerIndex < 10 && !done){
-            new RfortuneMessage().displayMessage("Please enter the name of a "
-                    + "player or enter \"Q\" to quit.");
             String playerName;
-            playerName= inFile.nextLine();
+            playerName = inFile;
             playerName = playerName.trim();
             
             if (playerName.length()< 1){
@@ -117,24 +113,7 @@ public class PlayersList implements Serializable {
             }
             return false;
         }
-        
-        
-        /*public void displayNameList(String[] names){
-            System.out.println("\n\t=========================================");
-            System.out.println("\tHere is the list of players in the game:");
-            
-            for (int i = 0; i <names.length; i++){
-                if (names[i] == null){
-                    break;
-                }
-                
-                int namePosition = i+1;
-                System.out.println("\t   " + namePosition + "\t" + names[i]);
-                
-                }
-            System.out.println("\t=========================================");
-            
-            }*/
+
 }
    
     
