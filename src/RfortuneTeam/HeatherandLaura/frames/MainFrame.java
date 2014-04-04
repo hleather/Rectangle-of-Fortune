@@ -6,7 +6,12 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
+import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Player;
+import rfortune.PlayersList;
 
 
 /**
@@ -14,6 +19,13 @@ import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
  * @author Laura
  */
 public class MainFrame extends javax.swing.JFrame {
+    
+    PlayersList myList = new PlayersList();
+    MainMenuControl mainMenuControl = new MainMenuControl();
+    Player myPlayers = new Player();
+    HelpMenuView helpMenuView = new HelpMenuView();
+    GamePreferencesView myPrefs = new GamePreferencesView();
+    MainMenuView mainMenuView = new MainMenuView();
     
 
     /**
@@ -236,15 +248,18 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here: return 1;
-        MainMenuView.command = "1";
+        mainMenuControl.setNumPlayers(1);    
+        mainMenuView.initiate();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        MainMenuView.command = "2";
+        mainMenuControl.setNumPlayers(2);    
+        mainMenuView.initiate();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        MainMenuView.command = "3";
+        mainMenuControl.setNumPlayers(3);    
+        mainMenuView.initiate();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jbPreferencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPreferencesActionPerformed
