@@ -10,7 +10,7 @@ import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import static RfortuneTeam.HeatherandLaura.control.MainMenuControl.getSetNumPlayers;
 import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames1;
 import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames2;
-import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames3;
+import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames;
 import java.io.Serializable;
 /**
  *
@@ -24,7 +24,7 @@ public class Player implements Serializable {
     Player player = null;
     static EnterPlayerNames1 enterPlayerNames1 = new EnterPlayerNames1();
     static EnterPlayerNames2 enterPlayerNames2 = new EnterPlayerNames2();
-    static EnterPlayerNames3 enterPlayerNames3 = new EnterPlayerNames3();
+    static EnterPlayerNames enterPlayerNames3 = new EnterPlayerNames();
 
     /**
      * @return the player1
