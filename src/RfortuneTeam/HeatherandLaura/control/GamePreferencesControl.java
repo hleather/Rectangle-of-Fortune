@@ -11,16 +11,16 @@ package RfortuneTeam.HeatherandLaura.control;
  * @author Laura
  */
 public class GamePreferencesControl {
-    private String difficultyMode = "E";
+    private int difficultyMode;
 
     public GamePreferencesControl() {
     }
           
-    public void setDifficulty(String mode) {    
+    public void setDifficulty(int mode) {    
         difficultyMode = mode;
     }
     
-    public String getDifficulty() {
+    public int getDifficulty() {
         return difficultyMode;        
     }
     

@@ -6,11 +6,15 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
+
 /**
  *
  * @author Heather
  */
 public class GamePrefs extends javax.swing.JFrame {
+    
+    GamePreferencesControl gamePrefsControl = new GamePreferencesControl();
 
     /**
      * Creates new form GamePrefs
@@ -132,15 +136,15 @@ public class GamePrefs extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSubmitPrefsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitPrefsActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jbSubmitPrefsActionPerformed
 
     private void jrbEasyModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbEasyModeActionPerformed
-        // TODO add your handling code here:
+        gamePrefsControl.setDifficulty(1);
     }//GEN-LAST:event_jrbEasyModeActionPerformed
 
     private void jrbHardModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbHardModeActionPerformed
-        // TODO add your handling code here:
+        gamePrefsControl.setDifficulty(2);
     }//GEN-LAST:event_jrbHardModeActionPerformed
 
     /**
