@@ -30,12 +30,17 @@ public class HelpMenu extends javax.swing.JFrame {
 
         jpBody = new javax.swing.JPanel();
         jpTitle = new javax.swing.JPanel();
-        jcbMenu = new javax.swing.JComboBox();
         jlTitle = new javax.swing.JLabel();
         jlSubtitle = new javax.swing.JLabel();
-        jlHowto = new javax.swing.JLabel();
-        jbOkay = new javax.swing.JButton();
+        jpBorder = new javax.swing.JPanel();
+        jbObjective = new javax.swing.JButton();
+        jbBoard = new javax.swing.JButton();
+        jbPlayer = new javax.swing.JButton();
+        jbVowel = new javax.swing.JButton();
+        jbGuess = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Help Menu");
@@ -48,16 +53,12 @@ public class HelpMenu extends javax.swing.JFrame {
         jpTitle.setLayout(jpTitleLayout);
         jpTitleLayout.setHorizontalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
+            .addGap(0, 109, Short.MAX_VALUE)
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 98, Short.MAX_VALUE)
         );
-
-        jcbMenu.setBackground(new java.awt.Color(0, 102, 102));
-        jcbMenu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jcbMenu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Use the board", "Play the game", "Buy a vowel", "Guess a Consonant", "Take Your Turn" }));
 
         jlTitle.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
         jlTitle.setForeground(new java.awt.Color(153, 153, 153));
@@ -67,44 +68,99 @@ public class HelpMenu extends javax.swing.JFrame {
         jlSubtitle.setForeground(new java.awt.Color(153, 153, 153));
         jlSubtitle.setText("Help Menu");
 
-        jlHowto.setBackground(new java.awt.Color(0, 102, 102));
-        jlHowto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jlHowto.setForeground(new java.awt.Color(153, 153, 153));
-        jlHowto.setText("How to:");
+        jpBorder.setBackground(new java.awt.Color(0, 102, 102));
+        jpBorder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 3));
 
-        jbOkay.setBackground(new java.awt.Color(153, 153, 153));
-        jbOkay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbOkay.setText("Okay");
+        jbObjective.setBackground(new java.awt.Color(153, 153, 153));
+        jbObjective.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbObjective.setText("Rectangle of Fortune Game");
+
+        jbBoard.setBackground(new java.awt.Color(153, 153, 153));
+        jbBoard.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbBoard.setText("The Board");
+
+        jbPlayer.setBackground(new java.awt.Color(153, 153, 153));
+        jbPlayer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbPlayer.setText("The Players");
+
+        jbVowel.setBackground(new java.awt.Color(153, 153, 153));
+        jbVowel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbVowel.setText("Buying a Vowel");
+
+        jbGuess.setBackground(new java.awt.Color(153, 153, 153));
+        jbGuess.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbGuess.setText("Making a Guess");
 
         jbClose.setBackground(new java.awt.Color(153, 153, 153));
         jbClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbClose.setText("Close");
+        jbClose.setText("Quit");
+
+        javax.swing.GroupLayout jpBorderLayout = new javax.swing.GroupLayout(jpBorder);
+        jpBorder.setLayout(jpBorderLayout);
+        jpBorderLayout.setHorizontalGroup(
+            jpBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBorderLayout.createSequentialGroup()
+                .addGroup(jpBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpBorderLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jpBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jbVowel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbBoard, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbObjective)))
+                    .addGroup(jpBorderLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jbClose)))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        jpBorderLayout.setVerticalGroup(
+            jpBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBorderLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jbObjective)
+                .addGap(18, 18, 18)
+                .addComponent(jbBoard)
+                .addGap(18, 18, 18)
+                .addComponent(jbPlayer)
+                .addGap(18, 18, 18)
+                .addComponent(jbVowel)
+                .addGap(18, 18, 18)
+                .addComponent(jbGuess)
+                .addGap(18, 18, 18)
+                .addComponent(jbClose)
+                .addGap(19, 19, 19))
+        );
+
+        jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
         jpBodyLayout.setHorizontalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBodyLayout.createSequentialGroup()
-                .addGap(81, 81, 81)
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jlSubtitle)
+                        .addGap(124, 124, 124))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jlTitle)
-                        .addGap(35, 35, 35))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
-                        .addComponent(jlHowto)
-                        .addGap(189, 189, 189))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
-                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jcbMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlSubtitle))
-                        .addGap(145, 145, 145)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jpBodyLayout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(jbOkay)
-                .addGap(27, 27, 27)
-                .addComponent(jbClose)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jpBorder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpBodyLayout.setVerticalGroup(
             jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,16 +171,12 @@ public class HelpMenu extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jlTitle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jlSubtitle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jlHowto)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jcbMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbOkay)
-                    .addComponent(jbClose))
-                .addContainerGap(39, Short.MAX_VALUE))
+                        .addComponent(jlSubtitle)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jpBorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addGap(39, 39, 39))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,13 +205,18 @@ public class HelpMenu extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton jbBoard;
     private javax.swing.JButton jbClose;
-    private javax.swing.JButton jbOkay;
-    private javax.swing.JComboBox jcbMenu;
-    private javax.swing.JLabel jlHowto;
+    private javax.swing.JButton jbGuess;
+    private javax.swing.JButton jbObjective;
+    private javax.swing.JButton jbPlayer;
+    private javax.swing.JButton jbVowel;
     private javax.swing.JLabel jlSubtitle;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpBody;
+    private javax.swing.JPanel jpBorder;
     private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
 }
