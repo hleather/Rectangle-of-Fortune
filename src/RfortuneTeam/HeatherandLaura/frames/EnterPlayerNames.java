@@ -6,11 +6,18 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Player;
+import rfortune.PlayersList;
+
 /**
  *
  * @author Laura
  */
 public class EnterPlayerNames extends javax.swing.JFrame {
+    
+    MainMenuControl mainMenuControl = new MainMenuControl();
+    PlayersList playersList = new PlayersList();
 
     /**
      * Creates new form EnterPlayerNames
@@ -37,7 +44,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jcb1PlayerG = new javax.swing.JCheckBox();
         jcb2PlayerG = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jcb3PlayerG = new javax.swing.JCheckBox();
         jtfPlayer1 = new javax.swing.JTextField();
         jtfPlayer2 = new javax.swing.JTextField();
         jtfPlayer3 = new javax.swing.JTextField();
@@ -47,7 +54,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jbContinuePlayerNames = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,20 +98,45 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         buttonGroup1.add(jcb2PlayerG);
         jcb2PlayerG.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jcb2PlayerG.setText("2 Player Game");
+        jcb2PlayerG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb2PlayerGActionPerformed(evt);
+            }
+        });
 
-        jCheckBox1.setBackground(new java.awt.Color(0, 102, 102));
-        buttonGroup1.add(jCheckBox1);
-        jCheckBox1.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-        jCheckBox1.setText("3 Player Game");
+        jcb3PlayerG.setBackground(new java.awt.Color(0, 102, 102));
+        buttonGroup1.add(jcb3PlayerG);
+        jcb3PlayerG.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jcb3PlayerG.setText("3 Player Game");
+        jcb3PlayerG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb3PlayerGActionPerformed(evt);
+            }
+        });
 
         jbValidate1.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbValidate1.setText("Validate");
+        jbValidate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbValidate1ActionPerformed(evt);
+            }
+        });
 
         jbValidate2.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbValidate2.setText("Validate");
+        jbValidate2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbValidate2ActionPerformed(evt);
+            }
+        });
 
         jbValidate3.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbValidate3.setText("Validate");
+        jbValidate3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbValidate3ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jLabel4.setText("Players Name");
@@ -115,8 +147,13 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jLabel6.setText("Players Name");
 
-        jButton2.setFont(new java.awt.Font("David", 0, 16)); // NOI18N
-        jButton2.setText("Continue");
+        jbContinuePlayerNames.setFont(new java.awt.Font("David", 0, 16)); // NOI18N
+        jbContinuePlayerNames.setText("Continue");
+        jbContinuePlayerNames.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbContinuePlayerNamesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -133,7 +170,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
+                                .addComponent(jcb3PlayerG)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -150,7 +187,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                                     .addComponent(jtfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtfPlayer3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtfPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jbContinuePlayerNames, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jbValidate1, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -184,12 +221,12 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCheckBox1)
+                        .addComponent(jcb3PlayerG)
                         .addComponent(jtfPlayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jbValidate3))
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(jbContinuePlayerNames)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -211,8 +248,41 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jcb1PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb1PlayerGActionPerformed
-        // TODO add your handling code here:
+        mainMenuControl.setNumPlayers(1);
     }//GEN-LAST:event_jcb1PlayerGActionPerformed
+
+    private void jcb2PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb2PlayerGActionPerformed
+        mainMenuControl.setNumPlayers(2);
+    }//GEN-LAST:event_jcb2PlayerGActionPerformed
+
+    private void jcb3PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb3PlayerGActionPerformed
+        mainMenuControl.setNumPlayers(3);
+    }//GEN-LAST:event_jcb3PlayerGActionPerformed
+
+    private void jbValidate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate1ActionPerformed
+        String playerO = jtfPlayer1.getText();
+        String player1 = playerO.trim();
+        playersList.checkInput(player1);
+        Player.setPlayer1(player1);
+    }//GEN-LAST:event_jbValidate1ActionPerformed
+
+    private void jbValidate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate2ActionPerformed
+        String playerW = jtfPlayer2.getText();
+        String player2 = playerW.trim();
+        playersList.checkInput(player2);
+        Player.setPlayer2(player2);
+    }//GEN-LAST:event_jbValidate2ActionPerformed
+
+    private void jbValidate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate3ActionPerformed
+        String playerH = jtfPlayer3.getText();
+        String player3 = playerH.trim();
+        playersList.checkInput(player3);
+        Player.setPlayer3(player3);
+    }//GEN-LAST:event_jbValidate3ActionPerformed
+
+    private void jbContinuePlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinuePlayerNamesActionPerformed
+        mainMenuControl.setScreen();
+    }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,8 +292,6 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -232,11 +300,13 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jbContinuePlayerNames;
     private javax.swing.JButton jbValidate1;
     private javax.swing.JButton jbValidate2;
     private javax.swing.JButton jbValidate3;
     private javax.swing.JCheckBox jcb1PlayerG;
     private javax.swing.JCheckBox jcb2PlayerG;
+    private javax.swing.JCheckBox jcb3PlayerG;
     private javax.swing.JTextField jtfPlayer1;
     private javax.swing.JTextField jtfPlayer2;
     private javax.swing.JTextField jtfPlayer3;
