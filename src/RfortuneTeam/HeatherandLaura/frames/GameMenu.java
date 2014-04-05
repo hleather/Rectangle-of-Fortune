@@ -58,8 +58,8 @@ public class GameMenu extends javax.swing.JFrame {
             .addGap(0, 118, Short.MAX_VALUE)
         );
 
-        jButtonT.setBackground(new java.awt.Color(51, 51, 51));
-        jButtonT.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jButtonT.setBackground(new java.awt.Color(153, 153, 153));
+        jButtonT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonT.setForeground(new java.awt.Color(51, 51, 51));
         jButtonT.setText("Take Turn");
         jButtonT.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,7 @@ public class GameMenu extends javax.swing.JFrame {
         });
 
         jButtonH.setBackground(new java.awt.Color(153, 153, 153));
-        jButtonH.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jButtonH.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonH.setForeground(new java.awt.Color(51, 51, 51));
         jButtonH.setText("Help");
         jButtonH.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class GameMenu extends javax.swing.JFrame {
         });
 
         jButtonQ.setBackground(new java.awt.Color(153, 153, 153));
-        jButtonQ.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jButtonQ.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButtonQ.setForeground(new java.awt.Color(51, 51, 51));
         jButtonQ.setText("Quit");
         jButtonQ.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +167,7 @@ public class GameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonHActionPerformed
 
     private void jButtonQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQActionPerformed
-        // TODO add your handling code here:
+       this.dispose();
     }//GEN-LAST:event_jButtonQActionPerformed
 
     /**

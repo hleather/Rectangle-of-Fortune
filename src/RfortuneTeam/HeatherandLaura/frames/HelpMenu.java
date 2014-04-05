@@ -28,17 +28,120 @@ public class HelpMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpBody = new javax.swing.JPanel();
+        jpTitle = new javax.swing.JPanel();
+        jcbMenu = new javax.swing.JComboBox();
+        jlTitle = new javax.swing.JLabel();
+        jlSubtitle = new javax.swing.JLabel();
+        jlHowto = new javax.swing.JLabel();
+        jbOkay = new javax.swing.JButton();
+        jbClose = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Help Menu");
+
+        jpBody.setBackground(new java.awt.Color(0, 102, 102));
+
+        jpTitle.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
+        jpTitle.setLayout(jpTitleLayout);
+        jpTitleLayout.setHorizontalGroup(
+            jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 34, Short.MAX_VALUE)
+        );
+        jpTitleLayout.setVerticalGroup(
+            jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 98, Short.MAX_VALUE)
+        );
+
+        jcbMenu.setBackground(new java.awt.Color(0, 102, 102));
+        jcbMenu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jcbMenu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Use the board", "Play the game", "Buy a vowel", "Guess a Consonant", "Take Your Turn" }));
+
+        jlTitle.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
+        jlTitle.setForeground(new java.awt.Color(153, 153, 153));
+        jlTitle.setText("Rectangle of Fortune");
+
+        jlSubtitle.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        jlSubtitle.setForeground(new java.awt.Color(153, 153, 153));
+        jlSubtitle.setText("Help Menu");
+
+        jlHowto.setBackground(new java.awt.Color(0, 102, 102));
+        jlHowto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jlHowto.setForeground(new java.awt.Color(153, 153, 153));
+        jlHowto.setText("How to:");
+
+        jbOkay.setBackground(new java.awt.Color(153, 153, 153));
+        jbOkay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbOkay.setText("Okay");
+
+        jbClose.setBackground(new java.awt.Color(153, 153, 153));
+        jbClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbClose.setText("Close");
+
+        javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
+        jpBody.setLayout(jpBodyLayout);
+        jpBodyLayout.setHorizontalGroup(
+            jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBodyLayout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
+                        .addComponent(jlTitle)
+                        .addGap(35, 35, 35))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
+                        .addComponent(jlHowto)
+                        .addGap(189, 189, 189))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
+                        .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jcbMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlSubtitle))
+                        .addGap(145, 145, 145)))
+                .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jpBodyLayout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(jbOkay)
+                .addGap(27, 27, 27)
+                .addComponent(jbClose)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jpBodyLayout.setVerticalGroup(
+            jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpBodyLayout.createSequentialGroup()
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpBodyLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jlTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jlSubtitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jlHowto)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcbMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbOkay)
+                    .addComponent(jbClose))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -50,5 +153,13 @@ public class HelpMenu extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jbClose;
+    private javax.swing.JButton jbOkay;
+    private javax.swing.JComboBox jcbMenu;
+    private javax.swing.JLabel jlHowto;
+    private javax.swing.JLabel jlSubtitle;
+    private javax.swing.JLabel jlTitle;
+    private javax.swing.JPanel jpBody;
+    private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
 }
