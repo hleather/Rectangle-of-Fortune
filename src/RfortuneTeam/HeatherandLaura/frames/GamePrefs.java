@@ -32,8 +32,8 @@ public class GamePrefs extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jrbEasyMode = new javax.swing.JRadioButton();
+        jrbHardMode = new javax.swing.JRadioButton();
         jbSubmitPrefs = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,16 +47,26 @@ public class GamePrefs extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jLabel2.setText("Select Game Mode: ");
 
-        jRadioButton1.setBackground(new java.awt.Color(0, 102, 102));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Easy");
+        jrbEasyMode.setBackground(new java.awt.Color(0, 102, 102));
+        buttonGroup1.add(jrbEasyMode);
+        jrbEasyMode.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jrbEasyMode.setSelected(true);
+        jrbEasyMode.setText("Easy");
+        jrbEasyMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbEasyModeActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setBackground(new java.awt.Color(0, 102, 102));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jRadioButton2.setText("Hard");
+        jrbHardMode.setBackground(new java.awt.Color(0, 102, 102));
+        buttonGroup1.add(jrbHardMode);
+        jrbHardMode.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jrbHardMode.setText("Hard");
+        jrbHardMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbHardModeActionPerformed(evt);
+            }
+        });
 
         jbSubmitPrefs.setText("Submit");
         jbSubmitPrefs.addActionListener(new java.awt.event.ActionListener() {
@@ -76,8 +86,8 @@ public class GamePrefs extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1))
+                            .addComponent(jrbHardMode)
+                            .addComponent(jrbEasyMode))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -93,9 +103,9 @@ public class GamePrefs extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton1)
+                .addComponent(jrbEasyMode)
                 .addGap(18, 18, 18)
-                .addComponent(jRadioButton2)
+                .addComponent(jrbHardMode)
                 .addGap(18, 18, 18)
                 .addComponent(jbSubmitPrefs)
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -125,6 +135,14 @@ public class GamePrefs extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbSubmitPrefsActionPerformed
 
+    private void jrbEasyModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbEasyModeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrbEasyModeActionPerformed
+
+    private void jrbHardModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbHardModeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrbHardModeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -134,8 +152,8 @@ public class GamePrefs extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JRadioButton jRadioButton1;
-    public javax.swing.JRadioButton jRadioButton2;
     public javax.swing.JButton jbSubmitPrefs;
+    public javax.swing.JRadioButton jrbEasyMode;
+    public javax.swing.JRadioButton jrbHardMode;
     // End of variables declaration//GEN-END:variables
 }
