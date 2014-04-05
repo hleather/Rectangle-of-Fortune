@@ -81,6 +81,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         buttonGroup1.add(jcb1PlayerG);
         jcb1PlayerG.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jcb1PlayerG.setText("1 Player Game");
+        jcb1PlayerG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb1PlayerGActionPerformed(evt);
+            }
+        });
 
         jcb2PlayerG.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(jcb2PlayerG);
@@ -204,6 +209,10 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jcb1PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb1PlayerGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb1PlayerGActionPerformed
 
     /**
      * @param args the command line arguments
