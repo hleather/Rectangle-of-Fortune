@@ -6,6 +6,10 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
+import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
+import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
+
 /**
  *
  * @author Laura
@@ -64,15 +68,25 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
-        jButtonH.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonH.setBackground(new java.awt.Color(153, 153, 153));
         jButtonH.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
         jButtonH.setForeground(new java.awt.Color(51, 51, 51));
         jButtonH.setText("Help");
+        jButtonH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHActionPerformed(evt);
+            }
+        });
 
-        jButtonQ.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonQ.setBackground(new java.awt.Color(153, 153, 153));
         jButtonQ.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
         jButtonQ.setForeground(new java.awt.Color(51, 51, 51));
         jButtonQ.setText("Quit");
+        jButtonQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonQActionPerformed(evt);
+            }
+        });
 
         jlSubtitle.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
         jlSubtitle.setForeground(new java.awt.Color(153, 153, 153));
@@ -143,8 +157,18 @@ public class GameMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTActionPerformed
-        // TODO add your handling code here:
+        GameMenuControl gameMenuControl = new GameMenuControl();
+        gameMenuControl.takeTurn();
     }//GEN-LAST:event_jButtonTActionPerformed
+
+    private void jButtonHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHActionPerformed
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.getInput(null);
+    }//GEN-LAST:event_jButtonHActionPerformed
+
+    private void jButtonQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonQActionPerformed
 
     /**
      * @param args the command line arguments
