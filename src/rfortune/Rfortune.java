@@ -34,17 +34,26 @@ public class Rfortune {
         Rfortune rFortune = null;
         
 
-        
+        //first
+       // Rfortune myGame = new Rfortune();
+        //myGame.displayHelp();
+
+        //second
         try {
             rFortune = new Rfortune();
             
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
+                    MainFrame mainFrame = new MainFrame();
+                    
                     mainFrame.setVisible(true);
                 }
             });
-        }
-        finally {
+        
+
+
+
+        } finally {
             Rfortune.inFile.close();
              if(Rfortune.mainFrame != null) {
              Rfortune.mainFrame.dispose();
