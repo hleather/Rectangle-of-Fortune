@@ -81,7 +81,6 @@ public class Game implements Serializable {
         WordsAndPhrases.translatePhrase();
         WordsAndPhrases.translateParallelPhrase();
     }
-    
     public static void gameRound() {
         if(isFoundMatch())
             setRoundNumber(getRoundNumber() - 1);
