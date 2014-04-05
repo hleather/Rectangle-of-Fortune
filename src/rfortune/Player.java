@@ -142,4 +142,7 @@ public class Player implements Serializable {
    /* public static void displayPlayer1Bank() {
 
     } */
+    public void nothing(){
+        
+    }
 }
