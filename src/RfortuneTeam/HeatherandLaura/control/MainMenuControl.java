@@ -19,6 +19,7 @@ public class MainMenuControl implements Serializable {
     private static int setNumPlayers;
     MainMenuControl mainMenuControl = null;
     static GamePrefs gamePrefs = new GamePrefs();
+    
 
     /**
      * @return the setNumPlayers

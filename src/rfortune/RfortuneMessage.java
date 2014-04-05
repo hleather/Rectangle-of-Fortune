@@ -6,18 +6,15 @@
 
 package rfortune;
 
-import java.io.Serializable;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Heather
  */
-public class RfortuneMessage implements Serializable {
+public class RfortuneMessage  {
     public Object displayMessage(Object object) {
-        String message = (String) object;
-        System.out.println("\t*******************************************************************************");
-        System.out.println("\t" + message);
-        System.out.println("\t*******************************************************************************");
-        return null; 
+        JOptionPane.showMessageDialog(null, object);
+        return null;
     }
 }

@@ -24,7 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
     MainMenuControl mainMenuControl = new MainMenuControl();
     Player myPlayers = new Player();
     HelpMenuView helpMenuView = new HelpMenuView();
-    GamePreferencesView myPrefs = new GamePreferencesView();
+    GamePrefs myPrefs = new GamePrefs();
     MainMenuView mainMenuView = new MainMenuView();
     
 
@@ -218,13 +218,12 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartGameActionPerformed
-        // TODO add your handling code here: return 1;
         mainMenuView.initiate();
         this.dispose();
     }//GEN-LAST:event_jbStartGameActionPerformed
 
     private void jbPreferencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPreferencesActionPerformed
-        // TODO add your handling code here: (**Game Preferences View**)
+        mainMenuControl.startGamePrefs();
     }//GEN-LAST:event_jbPreferencesActionPerformed
 
     private void jbtnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHelpActionPerformed
