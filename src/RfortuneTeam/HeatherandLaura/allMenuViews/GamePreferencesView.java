@@ -16,6 +16,7 @@ import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 public class GamePreferencesView extends Menu {
     public static String command;
     public static String setDifficulty = "E";
+    GamePreferencesControl gamePrefs = new GamePreferencesControl();
 
     private final static String[][] menuItems = {
         {"E", "Easy"},
@@ -32,9 +33,8 @@ public class GamePreferencesView extends Menu {
 
         public String getInput() throws MenuException {  
             
-        do {
-            this.display();
-            command = this.getCommand();
+        
+            command = gamePrefs.getDifficulty();
                 switch (command) {
                     case "E":
                         setDifficulty = "E";
@@ -47,8 +47,7 @@ public class GamePreferencesView extends Menu {
                     case "Q":
                         break;
                 }
-            } 
-         while (!command.equals("Q"));
+            
         return null;
 
     }
@@ -62,11 +61,9 @@ public class GamePreferencesView extends Menu {
         
         if (levelNumber == 1) {
             System.out.println("You are in Easy mode.");
-            new GamePreferencesControl().setDifficulty();
         }
         else if (levelNumber == 2) {
             System.out.println("You are in Hard mode.");
-            new GamePreferencesControl().setDifficulty();
         }
        }
         

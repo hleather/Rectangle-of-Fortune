@@ -26,7 +26,4 @@ public class GameMenuControl {
        gameTurnView.getInput(null);
    }
    
-     /*public void displayBoard() {
-        System.out.println("\n\tdisplayBoard() called");
-   }*/
 }

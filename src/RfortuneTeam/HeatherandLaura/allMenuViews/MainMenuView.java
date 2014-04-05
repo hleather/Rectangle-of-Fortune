@@ -9,10 +9,8 @@ import rfortune.Bank;
 import rfortune.Game;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
-import java.util.Scanner;
 import rfortune.Player;
 import rfortune.PlayersList;
-import rfortune.Rfortune;
 
 /**
  * called from: Rfortune
@@ -93,7 +91,8 @@ public class MainMenuView extends Menu {
     public void initiate() {
         Game.newGame();
         myPlayers.getPlayerFrames();
-        Bank.numPlayersBank();
-        mainMenuControl.setScreen();
+        //myList.getInput();
+        //Bank.numPlayersBank();
+       // mainMenuControl.setScreen();
     }
 }
