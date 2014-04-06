@@ -6,6 +6,7 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
+import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
 /**
  *
  * @author Laura
@@ -234,7 +235,7 @@ public class HelpMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbObjectiveActionPerformed
 
     private void jbBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBoardActionPerformed
-        HelpMenuView.displayCommand.BOARDHELP.display();
+       HelpMenuView.displayCommand.BOARDHELP.display();
     }//GEN-LAST:event_jbBoardActionPerformed
 
     private void jbPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPlayerActionPerformed
