@@ -210,6 +210,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Rectangle of Fortune Game"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbObjectiveActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbBoard">
               <Properties>
@@ -221,6 +224,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="The Board"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbBoardActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbPlayer">
               <Properties>
@@ -232,6 +238,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="The Players"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbPlayerActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbVowel">
               <Properties>
@@ -243,6 +252,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Buying a Vowel"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbVowelActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbGuess">
               <Properties>
@@ -254,6 +266,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Making a Guess"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbGuessActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jbClose">
               <Properties>
@@ -265,6 +280,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Quit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbCloseActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -275,7 +293,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="jtaDisplayHelp">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>

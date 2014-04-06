@@ -5,7 +5,7 @@
  */
 
 package RfortuneTeam.HeatherandLaura.frames;
-
+import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 /**
  *
  * @author Laura
@@ -40,7 +40,7 @@ public class HelpMenu extends javax.swing.JFrame {
         jbGuess = new javax.swing.JButton();
         jbClose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtaDisplayHelp = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Help Menu");
@@ -74,26 +74,56 @@ public class HelpMenu extends javax.swing.JFrame {
         jbObjective.setBackground(new java.awt.Color(153, 153, 153));
         jbObjective.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbObjective.setText("Rectangle of Fortune Game");
+        jbObjective.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbObjectiveActionPerformed(evt);
+            }
+        });
 
         jbBoard.setBackground(new java.awt.Color(153, 153, 153));
         jbBoard.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbBoard.setText("The Board");
+        jbBoard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBoardActionPerformed(evt);
+            }
+        });
 
         jbPlayer.setBackground(new java.awt.Color(153, 153, 153));
         jbPlayer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbPlayer.setText("The Players");
+        jbPlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbPlayerActionPerformed(evt);
+            }
+        });
 
         jbVowel.setBackground(new java.awt.Color(153, 153, 153));
         jbVowel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbVowel.setText("Buying a Vowel");
+        jbVowel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVowelActionPerformed(evt);
+            }
+        });
 
         jbGuess.setBackground(new java.awt.Color(153, 153, 153));
         jbGuess.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbGuess.setText("Making a Guess");
+        jbGuess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuessActionPerformed(evt);
+            }
+        });
 
         jbClose.setBackground(new java.awt.Color(153, 153, 153));
         jbClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbClose.setText("Quit");
+        jbClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpBorderLayout = new javax.swing.GroupLayout(jpBorder);
         jpBorder.setLayout(jpBorderLayout);
@@ -132,13 +162,13 @@ public class HelpMenu extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtaDisplayHelp.setBackground(new java.awt.Color(153, 153, 153));
+        jtaDisplayHelp.setColumns(20);
+        jtaDisplayHelp.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jtaDisplayHelp.setLineWrap(true);
+        jtaDisplayHelp.setRows(5);
+        jtaDisplayHelp.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jtaDisplayHelp);
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);
         jpBody.setLayout(jpBodyLayout);
@@ -199,6 +229,30 @@ public class HelpMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbObjectiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbObjectiveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbObjectiveActionPerformed
+
+    private void jbBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBoardActionPerformed
+        HelpMenuView.displayCommand.BOARDHELP.display();
+    }//GEN-LAST:event_jbBoardActionPerformed
+
+    private void jbPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPlayerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbPlayerActionPerformed
+
+    private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbVowelActionPerformed
+
+    private void jbGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuessActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbGuessActionPerformed
+
+    private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbCloseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,7 +260,6 @@ public class HelpMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbBoard;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbGuess;
@@ -218,5 +271,6 @@ public class HelpMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpBorder;
     private javax.swing.JPanel jpTitle;
+    private javax.swing.JTextArea jtaDisplayHelp;
     // End of variables declaration//GEN-END:variables
 }
