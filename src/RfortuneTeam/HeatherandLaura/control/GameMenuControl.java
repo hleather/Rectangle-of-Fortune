@@ -33,7 +33,6 @@ public class GameMenuControl {
    
    public void startGameTurn() {
        gameMenuControl = new GameMenuControl();
-       gameBoardView.updateBoardView();
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {

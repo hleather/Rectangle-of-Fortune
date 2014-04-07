@@ -7,8 +7,8 @@
 package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
-import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
+import rfortune.GameBoardView;
 
 /**
  *
@@ -16,6 +16,9 @@ import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
  */
 public class GameMenu extends javax.swing.JFrame {
 
+    GameBoardView gameBoardView = new GameBoardView();
+    GameMenuControl gameMenuControl = new GameMenuControl();
+    HelpMenuView helpMenuView = new HelpMenuView();
     /**
      * Creates new form GameMenu
      */
@@ -34,9 +37,9 @@ public class GameMenu extends javax.swing.JFrame {
 
         jpBody = new javax.swing.JPanel();
         jpTitle = new javax.swing.JPanel();
-        jButtonT = new javax.swing.JButton();
-        jButtonH = new javax.swing.JButton();
-        jButtonQ = new javax.swing.JButton();
+        jbTakeTurn = new javax.swing.JButton();
+        jbHelp = new javax.swing.JButton();
+        jbQuit = new javax.swing.JButton();
         jlSubtitle = new javax.swing.JLabel();
         jlTitle = new javax.swing.JLabel();
         jlPlayer1Head = new javax.swing.JLabel();
@@ -69,33 +72,33 @@ public class GameMenu extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jButtonT.setBackground(new java.awt.Color(153, 153, 153));
-        jButtonT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButtonT.setForeground(new java.awt.Color(51, 51, 51));
-        jButtonT.setText("Take Turn");
-        jButtonT.addActionListener(new java.awt.event.ActionListener() {
+        jbTakeTurn.setBackground(new java.awt.Color(153, 153, 153));
+        jbTakeTurn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbTakeTurn.setForeground(new java.awt.Color(51, 51, 51));
+        jbTakeTurn.setText("Take Turn");
+        jbTakeTurn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTActionPerformed(evt);
+                jbTakeTurnActionPerformed(evt);
             }
         });
 
-        jButtonH.setBackground(new java.awt.Color(153, 153, 153));
-        jButtonH.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButtonH.setForeground(new java.awt.Color(51, 51, 51));
-        jButtonH.setText("Help");
-        jButtonH.addActionListener(new java.awt.event.ActionListener() {
+        jbHelp.setBackground(new java.awt.Color(153, 153, 153));
+        jbHelp.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbHelp.setForeground(new java.awt.Color(51, 51, 51));
+        jbHelp.setText("Help");
+        jbHelp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonHActionPerformed(evt);
+                jbHelpActionPerformed(evt);
             }
         });
 
-        jButtonQ.setBackground(new java.awt.Color(153, 153, 153));
-        jButtonQ.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButtonQ.setForeground(new java.awt.Color(51, 51, 51));
-        jButtonQ.setText("Quit");
-        jButtonQ.addActionListener(new java.awt.event.ActionListener() {
+        jbQuit.setBackground(new java.awt.Color(153, 153, 153));
+        jbQuit.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbQuit.setForeground(new java.awt.Color(51, 51, 51));
+        jbQuit.setText("Quit");
+        jbQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonQActionPerformed(evt);
+                jbQuitActionPerformed(evt);
             }
         });
 
@@ -172,9 +175,9 @@ public class GameMenu extends javax.swing.JFrame {
                             .addGroup(jpBodyLayout.createSequentialGroup()
                                 .addGap(83, 83, 83)
                                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonH, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonT)
-                                    .addComponent(jButtonQ, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jbHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jbTakeTurn)
+                                    .addComponent(jbQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jpBodyLayout.createSequentialGroup()
                                 .addGap(69, 69, 69)
                                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,11 +226,11 @@ public class GameMenu extends javax.swing.JFrame {
                     .addComponent(jtlPlayerTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfPlayerTurnName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(jButtonT)
+                .addComponent(jbTakeTurn)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonH)
+                .addComponent(jbHelp)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonQ)
+                .addComponent(jbQuit)
                 .addGap(54, 54, 54))
         );
 
@@ -248,19 +251,18 @@ public class GameMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTActionPerformed
-        GameMenuControl gameMenuControl = new GameMenuControl();
+    private void jbTakeTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTakeTurnActionPerformed
+        gameBoardView.updateBoardView();
         gameMenuControl.takeTurn();
-    }//GEN-LAST:event_jButtonTActionPerformed
+    }//GEN-LAST:event_jbTakeTurnActionPerformed
 
-    private void jButtonHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHActionPerformed
-        HelpMenuView helpMenuView = new HelpMenuView();
+    private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
         helpMenuView.getInput(null);
-    }//GEN-LAST:event_jButtonHActionPerformed
+    }//GEN-LAST:event_jbHelpActionPerformed
 
-    private void jButtonQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQActionPerformed
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
        this.dispose();
-    }//GEN-LAST:event_jButtonQActionPerformed
+    }//GEN-LAST:event_jbQuitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,9 +270,9 @@ public class GameMenu extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonH;
-    private javax.swing.JButton jButtonQ;
-    private javax.swing.JButton jButtonT;
+    private javax.swing.JButton jbHelp;
+    private javax.swing.JButton jbQuit;
+    private javax.swing.JButton jbTakeTurn;
     private javax.swing.JLabel jlPlayer1Head;
     private javax.swing.JLabel jlPlayer2Head;
     private javax.swing.JLabel jlPlayer3Head1;

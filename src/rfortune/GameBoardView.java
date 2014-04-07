@@ -19,10 +19,11 @@ public class GameBoardView {
     Game game = new Game();
     
     public void updateBoardView() {
-        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+        //gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
         gameTurn.jtfBankDisplay.setText(playerTurn.updatePlayersTurn());
-        game.updateAllBank();
+        game.updateAllBank(); 
+        System.out.println(WordsAndPhrases.updateAndTranslateParallelArrayToString());
     }
     
     

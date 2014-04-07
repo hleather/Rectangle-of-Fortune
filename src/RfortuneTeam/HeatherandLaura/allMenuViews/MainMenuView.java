@@ -91,8 +91,5 @@ public class MainMenuView extends Menu {
     public void initiate() {
         Game.newGame();
         myPlayers.getPlayerFrames();
-        //myList.getInput();
-        //Bank.numPlayersBank();
-       // mainMenuControl.setScreen();
     }
 }

@@ -14,7 +14,7 @@ import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
  * @author Laura
  */
 public class GamePreferencesView extends Menu {
-    public static String command;
+    public static int command;
     public static String setDifficulty = "E";
     GamePreferencesControl gamePrefsControl = new GamePreferencesControl();
 
@@ -34,15 +34,13 @@ public class GamePreferencesView extends Menu {
         public String getInput() throws MenuException {  
             
         
-            command = null;
+            command = gamePrefsControl.getDifficulty();
                 switch (command) {
-                    case "E":
+                    case 1:
                         setDifficulty = "E";
                         break;
-                    case "H":
+                    case 2:
                         setDifficulty = "H";
-                        break;
-                    case "Q":
                         break;
                 }
             
