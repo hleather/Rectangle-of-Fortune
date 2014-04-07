@@ -124,4 +124,16 @@ public class GameTurnView extends Menu {
         } while (!command.equals("Q"));
         return null;
     }
+    
+    public void guessLetter() {
+        
+    }
+    
+    public void guessVowel() {
+        
+    }
+    
+    public void guessPhrase() {
+        
+    }
 }
