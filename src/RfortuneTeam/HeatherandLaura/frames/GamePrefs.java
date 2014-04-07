@@ -141,12 +141,10 @@ public class GamePrefs extends javax.swing.JFrame {
 
     private void jrbEasyModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbEasyModeActionPerformed
         gamePrefsControl.setDifficulty(1);
-        //gamePrefsControl.determineDifficultyLevel();
     }//GEN-LAST:event_jrbEasyModeActionPerformed
 
     private void jrbHardModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbHardModeActionPerformed
         gamePrefsControl.setDifficulty(2);
-        //gamePrefsControl.determineDifficultyLevel();
     }//GEN-LAST:event_jrbHardModeActionPerformed
 
     /**

@@ -227,7 +227,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbPreferencesActionPerformed
 
     private void jbtnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHelpActionPerformed
-        // TODO add your handling code here: (**Help Menu View**)
+        mainMenuControl.startHelpMenu();
     }//GEN-LAST:event_jbtnHelpActionPerformed
 
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed

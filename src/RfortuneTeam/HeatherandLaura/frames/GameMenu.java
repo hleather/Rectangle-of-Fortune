@@ -8,6 +8,7 @@ package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.GameBoardView;
 
 /**
@@ -19,6 +20,7 @@ public class GameMenu extends javax.swing.JFrame {
     GameBoardView gameBoardView = new GameBoardView();
     GameMenuControl gameMenuControl = new GameMenuControl();
     HelpMenuView helpMenuView = new HelpMenuView();
+    MainMenuControl mainMenuControl = new MainMenuControl();
     /**
      * Creates new form GameMenu
      */
@@ -257,7 +259,7 @@ public class GameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbTakeTurnActionPerformed
 
     private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
-        helpMenuView.getInput(null);
+        mainMenuControl.startHelpMenu();
     }//GEN-LAST:event_jbHelpActionPerformed
 
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed

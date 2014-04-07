@@ -8,6 +8,7 @@ package RfortuneTeam.HeatherandLaura.control;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameMenuView;
 import RfortuneTeam.HeatherandLaura.frames.GameMenu;
 import RfortuneTeam.HeatherandLaura.frames.GamePrefs;
+import RfortuneTeam.HeatherandLaura.frames.HelpMenu;
 import rfortune.Bank;
 import rfortune.Player;
 import java.io.Serializable;
@@ -24,6 +25,7 @@ public class MainMenuControl implements Serializable {
     static GamePrefs gamePrefs = new GamePrefs();
     static GameMenu gameMenu = new GameMenu();
     PlayerTurn playerTurn = new PlayerTurn();
+    static HelpMenu helpMenu = new HelpMenu();
 
     /**
      * @return the setNumPlayers
@@ -114,6 +116,21 @@ public class MainMenuControl implements Serializable {
         } finally {
             if (MainMenuControl.gameMenu != null) {
                 MainMenuControl.gameMenu.dispose();
+            }
+        }
+    }
+    
+     public void startHelpMenu() {
+        mainMenuControl = new MainMenuControl();
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    helpMenu.setVisible(true);
+                }
+            });
+        } finally {
+            if (MainMenuControl.helpMenu != null) {
+                MainMenuControl.helpMenu.dispose();
             }
         }
     }

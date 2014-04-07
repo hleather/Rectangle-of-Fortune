@@ -6,14 +6,14 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
-import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 
 /**
  *
  * @author Laura
  */
 public class GameTurn extends javax.swing.JFrame {
-    HelpMenuView helpMenuView = new HelpMenuView();
+    MainMenuControl mainMenuControl = new MainMenuControl();
 
     /**
      * Creates new form GameTurn
@@ -313,7 +313,7 @@ public class GameTurn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
-        helpMenuView.getInput(null);
+        mainMenuControl.startHelpMenu();
     }//GEN-LAST:event_jbHelpActionPerformed
 
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
