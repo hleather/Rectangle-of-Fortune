@@ -10,6 +10,7 @@ import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.Player;
 import rfortune.PlayerTurn;
 import rfortune.PlayersList;
+import rfortune.WordsAndPhrases;
 
 /**
  *
@@ -20,6 +21,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     MainMenuControl mainMenuControl = new MainMenuControl();
     PlayersList playersList = new PlayersList();
     PlayerTurn playerTurn = new PlayerTurn();
+    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
 
     /**
      * Creates new form EnterPlayerNames
@@ -284,6 +286,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
     private void jbContinuePlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinuePlayerNamesActionPerformed
         mainMenuControl.setScreen();
+        WordsAndPhrases.setPhrases();
         mainMenuControl.startGameMenu();
     }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed
 

@@ -34,22 +34,23 @@ public class GameTurn extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jtfPlayerTurn = new javax.swing.JTextField();
-        jtfBank = new javax.swing.JTextField();
+        jtfPlayerTurnDisplay = new javax.swing.JTextField();
+        jtfBankDisplay = new javax.swing.JTextField();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jTextField1 = new javax.swing.JTextField();
+        jtfPhraseDisplay = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jTextField2 = new javax.swing.JTextField();
+        jtfGuessVowel = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jtfGuessLetter = new javax.swing.JTextField();
+        jtfGuessPhrase = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -78,15 +79,15 @@ public class GameTurn extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jLabel4.setText("Bank:");
 
-        jtfPlayerTurn.setEditable(false);
-        jtfPlayerTurn.setBackground(new java.awt.Color(0, 153, 153));
-        jtfPlayerTurn.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jtfPlayerTurn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtfPlayerTurnDisplay.setEditable(false);
+        jtfPlayerTurnDisplay.setBackground(new java.awt.Color(0, 153, 153));
+        jtfPlayerTurnDisplay.setFont(new java.awt.Font("David", 0, 30)); // NOI18N
+        jtfPlayerTurnDisplay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jtfBank.setEditable(false);
-        jtfBank.setBackground(new java.awt.Color(0, 153, 153));
-        jtfBank.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jtfBank.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtfBankDisplay.setEditable(false);
+        jtfBankDisplay.setBackground(new java.awt.Color(0, 153, 153));
+        jtfBankDisplay.setFont(new java.awt.Font("David", 0, 30)); // NOI18N
+        jtfBankDisplay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jInternalFrame1.setBackground(new java.awt.Color(0, 153, 204));
         jInternalFrame1.setBorder(null);
@@ -108,10 +109,11 @@ public class GameTurn extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField1.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
+        jtfPhraseDisplay.setEditable(false);
+        jtfPhraseDisplay.setBackground(new java.awt.Color(0, 153, 153));
+        jtfPhraseDisplay.setFont(new java.awt.Font("David", 0, 48)); // NOI18N
+        jtfPhraseDisplay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtfPhraseDisplay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
@@ -131,6 +133,8 @@ public class GameTurn extends javax.swing.JFrame {
         jRadioButton3.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jRadioButton3.setText("Guess the phrase");
 
+        jtfGuessVowel.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+
         jButton1.setText("Submit");
 
         jRadioButton4.setBackground(new java.awt.Color(0, 153, 153));
@@ -143,9 +147,17 @@ public class GameTurn extends javax.swing.JFrame {
         jRadioButton5.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jRadioButton5.setText("Quit");
 
+        jtfGuessLetter.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+
+        jtfGuessPhrase.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+
         jButton2.setText("Submit");
 
         jButton3.setText("Submit");
+
+        jLabel2.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel2.setFont(new java.awt.Font("David", 0, 11)); // NOI18N
+        jLabel2.setText("(Costs 250)");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -156,17 +168,19 @@ public class GameTurn extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jTextField4)
+                        .addComponent(jtfGuessPhrase, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1))
+                            .addComponent(jRadioButton1)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jRadioButton2)))
                         .addGap(70, 70, 70)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtfGuessLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfGuessVowel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(78, 78, 78)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -185,20 +199,22 @@ public class GameTurn extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtfGuessLetter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jRadioButton1)))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2)
+                    .addComponent(jtfGuessVowel)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton2))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
                 .addComponent(jRadioButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4)
+                    .addComponent(jtfGuessPhrase)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jRadioButton4)
@@ -219,13 +235,13 @@ public class GameTurn extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jtfPlayerTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtfPlayerTurnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(29, 29, 29)
-                        .addComponent(jtfBank, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtfBankDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
+                    .addComponent(jtfPhraseDisplay)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -235,15 +251,15 @@ public class GameTurn extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtfPhraseDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jtfPlayerTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtfPlayerTurnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)
-                        .addComponent(jtfBank, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jtfBankDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -261,9 +277,9 @@ public class GameTurn extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,6 +298,7 @@ public class GameTurn extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
@@ -291,11 +308,11 @@ public class GameTurn extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jtfBank;
-    private javax.swing.JTextField jtfPlayerTurn;
+    public javax.swing.JTextField jtfBankDisplay;
+    private javax.swing.JTextField jtfGuessLetter;
+    private javax.swing.JTextField jtfGuessPhrase;
+    private javax.swing.JTextField jtfGuessVowel;
+    public javax.swing.JTextField jtfPhraseDisplay;
+    public javax.swing.JTextField jtfPlayerTurnDisplay;
     // End of variables declaration//GEN-END:variables
 }

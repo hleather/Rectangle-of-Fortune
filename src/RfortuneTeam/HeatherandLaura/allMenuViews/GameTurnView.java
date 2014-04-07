@@ -50,8 +50,6 @@ public class GameTurnView extends Menu {
             WordsAndPhrases.displayParallelArray();
             if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
                 playerTurn.updatePlayersTurn();
-                Bank.bankPlayerTurn();
-                Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
             }
             if (Game.isTurnOver()) {
@@ -68,14 +66,9 @@ public class GameTurnView extends Menu {
                 //guess a letter.
                 case "L":
                     if (Game.getRoundNumber() != 0) {
-                        playerTurn.updatePlayersTurn();
-                        Bank.bankPlayerTurn();
-                        Bank.updateBankPlayer();
                         Bank.displayPlayerUpBank();
                     }
                     playerTurn.updatePlayersTurn();
-                    Bank.updateBankPlayer();
-                    Bank.bankPlayerTurn();
                     Bank.spin();
                     Bank.spinWorth();
                     Bank.printSpinWorth();
@@ -123,15 +116,5 @@ public class GameTurnView extends Menu {
         return null;
     }
     
-    public void guessLetter() {
-        
-    }
     
-    public void guessVowel() {
-        
-    }
-    
-    public void guessPhrase() {
-        
-    }
 }

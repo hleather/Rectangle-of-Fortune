@@ -6,10 +6,24 @@
 
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.frames.GameTurn;
+
 /**
  *
  * @author Heather
  */
 public class GameBoardView {
+    GameBoardView gameBoardView = null;
+    static GameTurn gameTurn = new GameTurn();
+    PlayerTurn playerTurn = new PlayerTurn();
+    Game game = new Game();
+    
+    public void updateBoardView() {
+        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
+        gameTurn.jtfBankDisplay.setText(playerTurn.updatePlayersTurn());
+        game.updateAllBank();
+    }
+    
     
 }

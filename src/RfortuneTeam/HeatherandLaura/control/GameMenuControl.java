@@ -7,13 +7,18 @@
 package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
+import RfortuneTeam.HeatherandLaura.frames.GameTurn;
+import rfortune.GameBoardView;
 
 /**
  *
  * @author Heather
  */
 public class GameMenuControl {
+    GameMenuControl gameMenuControl = null;
     GameTurnView gameTurnView = new GameTurnView();
+    static GameTurn gameTurn = new GameTurn();
+    GameBoardView gameBoardView = new GameBoardView();
     
     public GameMenuControl() {
        
@@ -22,8 +27,36 @@ public class GameMenuControl {
        
     
    public void takeTurn() {
-       //ONLY PART THAT NEEDS WORK
-       gameTurnView.getInput(null);
+       gameMenuControl = new GameMenuControl();
+       gameMenuControl.startGameTurn();
    }
+   
+   public void startGameTurn() {
+       gameMenuControl = new GameMenuControl();
+       gameBoardView.updateBoardView();
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    gameTurn.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.gameTurn != null) {
+                GameMenuControl.gameTurn.dispose();
+            }
+        }
+    }
+   
+   public void guessLetter() {
+        
+    }
+    
+    public void guessVowel() {
+        
+    }
+    
+    public void guessPhrase() {
+        
+    }
    
 }

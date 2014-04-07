@@ -6,6 +6,7 @@
 
 package rfortune;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
+import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
 import java.util.Random;
 /**
@@ -13,6 +14,7 @@ import java.util.Random;
  * @author Heather
  */
 public class WordsAndPhrases implements Serializable {   
+    static GameTurn gameTurn = new GameTurn();
     private static int index;
     private static String phrase;
     private static String parallelPhrase;
@@ -136,14 +138,14 @@ public class WordsAndPhrases implements Serializable {
     /***************************************************************************
      * Translates phrase into a character array.
      **************************************************************************/
-    public static void translatePhrase(){          
+    public static void translatePhraseToChar(){          
         setCharArray(getPhrase().toCharArray());           
     }
     
     /***************************************************************************
      * Translates parallelPhrase into a character array.
      **************************************************************************/
-    public static void translateParallelPhrase(){
+    public static void translateParallelPhraseToChar(){
         setParallelCharArray(getParallelPhrase().toCharArray());
     }
     
@@ -207,6 +209,11 @@ public class WordsAndPhrases implements Serializable {
      **************************************************************************/
     public static void displayCharArray(){
         System.out.println(getCharArray());
+}
+    public static String updateAndTranslateParallelArrayToString(){
+        WordsAndPhrases.updateParallelArray();
+        String pArray = WordsAndPhrases.getCharArray().toString();
+        return pArray;
     }
 }
 

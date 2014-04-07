@@ -260,15 +260,18 @@ public class Bank implements Serializable {
      * *************************************************************************
      * display the current player's bank amount.
     **************************************************************************
+     * @return 
      */
-    public static void displayPlayerUpBank() {
+    public static String displayPlayerUpBank() {
+        String control = null;
         if (PlayerTurn.getPlayerUp() == 0) {
-            System.out.println("Bank: " + getBankPlayer1());
+            control = getBankPlayer1();
         } else if (PlayerTurn.getPlayerUp() == 1) {
-            System.out.println("Bank: " + getBankPlayer2());
+            control = getBankPlayer2();
         } else if (PlayerTurn.getPlayerUp() == 2) {
-            System.out.println("Bank: " + getBankPlayer3());
+            control = getBankPlayer3();
         }
+        return control;
     }
 
     /**
