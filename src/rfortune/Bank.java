@@ -307,7 +307,8 @@ public class Bank implements Serializable {
     **************************************************************************
      */
     public static void updateBankVowelPurchase() {
-        PlayerTurn.updatePlayersTurn();
+    PlayerTurn playerTurn = new PlayerTurn();
+        playerTurn.updatePlayersTurn();
         if (getBankPlayerUp() >= 250) {
             setHasEnough(true);
             long bank = 0;

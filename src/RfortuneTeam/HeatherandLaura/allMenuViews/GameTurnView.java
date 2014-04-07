@@ -20,6 +20,7 @@ public class GameTurnView extends Menu {
     public static String command;
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
+    PlayerTurn playerTurn = new PlayerTurn();
 
     private static final String[][] turnOptions = {
         {"L", "Guess a letter"},
@@ -48,15 +49,13 @@ public class GameTurnView extends Menu {
             WordsAndPhrases.updateParallelArray();
             WordsAndPhrases.displayParallelArray();
             if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
-                PlayerTurn.updatePlayersTurn();
-                PlayerTurn.displayPlayerTurn();
+                playerTurn.updatePlayersTurn();
                 Bank.bankPlayerTurn();
                 Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
             }
             if (Game.isTurnOver()) {
-                PlayerTurn.updatePlayersTurn();
-                PlayerTurn.displayPlayerTurn();
+                playerTurn.updatePlayersTurn();
                 Bank.bankPlayerTurn();
                 Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
@@ -69,13 +68,12 @@ public class GameTurnView extends Menu {
                 //guess a letter.
                 case "L":
                     if (Game.getRoundNumber() != 0) {
-                        PlayerTurn.updatePlayersTurn();
-                        PlayerTurn.displayPlayerTurn();
+                        playerTurn.updatePlayersTurn();
                         Bank.bankPlayerTurn();
                         Bank.updateBankPlayer();
                         Bank.displayPlayerUpBank();
                     }
-                    PlayerTurn.updatePlayersTurn();
+                    playerTurn.updatePlayersTurn();
                     Bank.updateBankPlayer();
                     Bank.bankPlayerTurn();
                     Bank.spin();
@@ -89,7 +87,7 @@ public class GameTurnView extends Menu {
                     break;
                 //guess a vowel
                 case "V":
-                    PlayerTurn.updatePlayersTurn();
+                    playerTurn.updatePlayersTurn();
                     Bank.updateBankPlayer();
                     Bank.bankPlayerTurn();
                     Bank.spin();
@@ -101,7 +99,7 @@ public class GameTurnView extends Menu {
                     break;
                 //guess the phrase
                 case "P":
-                    PlayerTurn.updatePlayersTurn();
+                    playerTurn.updatePlayersTurn();
                     Bank.bankPlayerTurn();
                     Bank.phraseWorth();
                     Game.setGuessedPhrase();
