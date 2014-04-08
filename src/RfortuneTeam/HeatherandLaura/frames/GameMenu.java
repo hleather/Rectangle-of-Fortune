@@ -129,34 +129,34 @@ public class GameMenu extends javax.swing.JFrame {
         jlPlayer2Head.setText("Player Two");
 
         jtfPlayer3Name.setEditable(false);
-        jtfPlayer3Name.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayer3Name.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer3Name.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
         jtfPlayer1Name.setEditable(false);
-        jtfPlayer1Name.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayer1Name.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer1Name.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
         jtfPlayer2Name.setEditable(false);
-        jtfPlayer2Name.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayer2Name.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer2Name.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
         jtfPlayer1Bank.setEditable(false);
-        jtfPlayer1Bank.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayer1Bank.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer1Bank.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
         jtfPlayer2Bank.setEditable(false);
-        jtfPlayer2Bank.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayer2Bank.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer2Bank.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
         jtfPlayer3Bank.setEditable(false);
-        jtfPlayer3Bank.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayer3Bank.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer3Bank.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
         jlPlayer3Head1.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jlPlayer3Head1.setText("Player Three");
 
         jtfPlayerTurnName.setEditable(false);
-        jtfPlayerTurnName.setBackground(new java.awt.Color(0, 102, 102));
+        jtfPlayerTurnName.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayerTurnName.setFont(new java.awt.Font("David", 0, 30)); // NOI18N
 
         javax.swing.GroupLayout jpBodyLayout = new javax.swing.GroupLayout(jpBody);

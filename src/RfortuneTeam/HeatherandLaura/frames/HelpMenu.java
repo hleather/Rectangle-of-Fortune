@@ -231,23 +231,23 @@ public class HelpMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbObjectiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbObjectiveActionPerformed
-        // TODO add your handling code here:
+        this.jtaDisplayHelp.setText("test");
     }//GEN-LAST:event_jbObjectiveActionPerformed
 
     private void jbBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBoardActionPerformed
-       HelpMenuView.displayCommand.BOARDHELP.display();
+       //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.BOARDHELP.display());
     }//GEN-LAST:event_jbBoardActionPerformed
 
     private void jbPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPlayerActionPerformed
-        // TODO add your handling code here:
+        //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.PLAYERHELP.display());
     }//GEN-LAST:event_jbPlayerActionPerformed
 
     private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
-        // TODO add your handling code here:
+        //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.VOWELHELP.display());
     }//GEN-LAST:event_jbVowelActionPerformed
 
     private void jbGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuessActionPerformed
-        // TODO add your handling code here:
+        //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.GUESSHELP.display());
     }//GEN-LAST:event_jbGuessActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
