@@ -11,11 +11,16 @@ import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
 import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
+import rfortune.Game;
+import rfortune.PlayerTurn;
+import rfortune.WordsAndPhrases;
 /**
  *
  * @author Heather
  */
 public class GameMenuControl {
+    Game game = new Game();
+    PlayerTurn playerTurn = new PlayerTurn();
     GameMenuControl gameMenuControl = null;
     GameTurnView gameTurnView = new GameTurnView();
     static GameTurn gameTurn = new GameTurn();
@@ -46,6 +51,26 @@ public class GameMenuControl {
             }
         }
     }
+   
+   public void contGameTurn() {
+        game.updateAllBank();
+        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
+        gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
+        gameTurn.jtfSpinWorth.setText(null);
+        GameTurn.controlSpin = 0;
+       try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    gameTurn.setVisible(true);
+                }
+            });
+        } finally {
+            if (gameTurn != null) {
+                gameTurn.dispose();
+            }
+        }
+   }
    
    public void guessLetter() {
        gameMenuControl = new GameMenuControl();
@@ -94,5 +119,5 @@ public class GameMenuControl {
             }
         }
     }
-
-}
+    
+    }

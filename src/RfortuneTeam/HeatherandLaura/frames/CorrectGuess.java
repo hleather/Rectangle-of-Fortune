@@ -5,6 +5,7 @@
  */
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import rfortune.Game;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
@@ -14,6 +15,7 @@ import rfortune.WordsAndPhrases;
  * @author Heather
  */
 public class CorrectGuess extends javax.swing.JFrame {
+    GameMenuControl gameMenuControl = new GameMenuControl();
 
     static GameTurn gameTurn = new GameTurn();
     Game game = new Game();
@@ -122,22 +124,7 @@ public class CorrectGuess extends javax.swing.JFrame {
 
     private void jbCorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCorrectContinueActionPerformed
         Game.setRoundNumber(Game.getRoundNumber() - 1);
-        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
-        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
-        game.updateAllBank();
-        gameTurn.jtfBankDisplay.setText(game.displayPlayerUpBank());
-        GameTurn.controlSpin = 0;
-        try {
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    gameTurn.setVisible(true);
-                }
-            });
-        } finally {
-            if (gameTurn != null) {
-                gameTurn.dispose();
-            }
-        }
+        gameMenuControl.contGameTurn();
         this.dispose();
     }//GEN-LAST:event_jbCorrectContinueActionPerformed
 

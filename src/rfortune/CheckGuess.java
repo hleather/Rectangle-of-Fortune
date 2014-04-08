@@ -19,6 +19,7 @@ import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
  * @author Heather
  */
 public class CheckGuess implements Serializable {
+
     static GuessLetter guessLetter = new GuessLetter();
     private static boolean checkGuess = false;
     public static char currentGuess;
@@ -30,6 +31,8 @@ public class CheckGuess implements Serializable {
     private static char[] letter = {'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
         'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'};
     private static boolean checkPhraseGuess = false;
+    private static int letterIndex = 0;
+    private static int vowelIndex = 0;
 
     /**
      * @return the checkGuess
@@ -155,7 +158,7 @@ public class CheckGuess implements Serializable {
     }
 
     public char[] checkLetterGuess(char letterGuess) {
-        int letterIndex = 0;
+        letterIndex = 0;
         boolean done = false;
         while (letterIndex <= 26 && !done) {
             try {
@@ -191,13 +194,12 @@ public class CheckGuess implements Serializable {
         char[] newLetterGuessList = new char[letterIndex];
         System.arraycopy(CheckGuess.getListOfLetterGuesses(), 0, newLetterGuessList, 0, letterIndex);
 
-        newLetterGuessList = CheckGuess.sortLetterList(newLetterGuessList);
+        newLetterGuessList = CheckGuess.searchAndUpdateLetterList(newLetterGuessList);
 
         return newLetterGuessList;
     }
 
     public char[] checkVowelGuess(char vowelGuess) {
-        int vowelIndex = 0;
         boolean done = false;
         while (vowelIndex < 10 && !done) {
             try {
@@ -231,22 +233,19 @@ public class CheckGuess implements Serializable {
         return newVowelGuessList;
     }
 
-    public static char[] sortLetterList(char[] letters) {
+    public static char[] searchAndUpdateLetterList(char[] letters) {
         new RfortuneError().displayError("4");
-        char tempLetter;
-        boolean notDone = true;
-        while (notDone) {
-
-            notDone = false;
-            for (int i = 0; i < letters.length - 1; i++) {
-                if (letters[i] < letters[i + 1]) {
-                    tempLetter = letters[i];
-                    letters[i] = letters[i + 1];
-                    letters[i + 1] = tempLetter;;
-                    notDone = true;
-                }
-            }
+        int oldGuessesIndex = 0;
+        char newGuess;
+        char[26] oldGuesses;
+        
+        for(int i = 0; i <= oldGuessesIndex; i++) {
+            if (newGuess == char[i]) {
+            
         }
+        }
+        char newGuess = char[oldGuessesIndex + 1];
+        
 
         return letters;
     }
@@ -271,9 +270,7 @@ public class CheckGuess implements Serializable {
     }
 
     private static boolean alreadyInLetterList(char[] list, char value) throws letterCheckException {
-        new RfortuneError().displayError("5");
         for (char valueInList : list) {
-            new RfortuneError().displayError("6");
             if (value == valueInList) {
                 new RfortuneError().displayError("7");
                 GuessLetter.controlGuess = false;
