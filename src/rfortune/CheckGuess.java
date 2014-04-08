@@ -18,7 +18,7 @@ import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
  * @author Heather
  */
 public class CheckGuess implements Serializable {
-
+    static GuessLetter guessLetter = new GuessLetter();
     private static boolean checkGuess = false;
     public static char currentGuess;
     private static boolean checkLetterRepeat = true;
@@ -153,21 +153,18 @@ public class CheckGuess implements Serializable {
     public CheckGuess() {
     }
 
-    public static char[] checkLetterGuess(char letterGuess) {
+    public char[] checkLetterGuess(char letterGuess) {
         int letterIndex = 0;
         boolean done = false;
         while (letterIndex <= 26 && !done) {
             try {
                 if (!isVowel(letter, letterGuess)) {
                     new RfortuneError().displayError("Sorry, you have to buy "
-                            + "a vowel. Guess a letter. ");
-                    GuessLetter.controlGuess = false;
+                            + "a vowel. Guess a letter.");
                     break;
                 }
 
                 if (alreadyInLetterList(getListOfLetterGuesses(), letterGuess)) {
-                    new RfortuneError().displayError("That letter has already "
-                            + "been guessed. Try again.");
                     GuessLetter.controlGuess = false;
                     break;
                 }
@@ -178,7 +175,6 @@ public class CheckGuess implements Serializable {
                 if (!isCheckLetterRepeat()) {
                     setCurrentGuess(letterGuess);
                     setCheckGuess(true);
-                    GuessLetter.controlGuess = true;
                     done = true;
 
                 }
@@ -195,22 +191,16 @@ public class CheckGuess implements Serializable {
         return newLetterGuessList;
     }
 
-    public static char[] checkVowelGuess(char vowelGuess) {
+    public char[] checkVowelGuess(char vowelGuess) {
         int vowelIndex = 0;
         boolean done = false;
         while (vowelIndex < 10 && !done) {
             try {
                 if (isVowel(vowel, vowelGuess)) {
-                    new RfortuneError().displayError("That is not a vowel. "
-                            + "Please enter a vowel. ");
-                    GuessLetter.controlGuess = false;
                     break;
                 }
 
                 if (alreadyInVowelList(getListOfVowelGuesses(), vowelGuess)) {
-                    new RfortuneError().displayError("That vowel has already "
-                            + "been guessed. Try again.");
-                    GuessLetter.controlGuess = false;
                     break;
                 }
 
@@ -220,7 +210,6 @@ public class CheckGuess implements Serializable {
                 if (!isCheckVowelRepeat()) {
                     setCurrentGuess(vowelGuess);
                     setCheckGuess(true);
-                    GuessLetter.controlGuess = true;
                     done = true;
                 }
             } catch (letterCheckException e) {
@@ -280,7 +269,9 @@ public class CheckGuess implements Serializable {
                 CheckGuess.setCheckLetterRepeat(true);
                 new RfortuneError().displayError("That letter has already been "
                         + "guessed. Guess a different letter.");
-            } else {
+                return true;
+            } else if (value != valueInList) {
+                GuessLetter.controlGuess = true;
                 setCheckLetterRepeat(false);
 
                 return false;
@@ -295,6 +286,7 @@ public class CheckGuess implements Serializable {
                 CheckGuess.setCheckVowelRepeat(true);
                 new RfortuneError().displayError("That letter has already been "
                         + "guessed. Guess a different letter.");
+                return true;
             }
         }
         setCheckVowelRepeat(false);

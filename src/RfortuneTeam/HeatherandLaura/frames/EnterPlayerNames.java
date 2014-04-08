@@ -293,6 +293,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         mainMenuControl.setScreen();
         WordsAndPhrases.setPhrases();
         mainMenuControl.startGameMenu();
+        this.dispose();
     }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed
 
     /**

@@ -88,6 +88,7 @@ public class Game implements Serializable {
     }
 
     public static void gameRound() {
+        GameTurn.controlSpin = 0;
         if (isFoundMatch()) {
             setRoundNumber(getRoundNumber() - 1);
         }

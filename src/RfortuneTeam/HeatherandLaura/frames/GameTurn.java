@@ -292,11 +292,13 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLetterActionPerformed
-        if (Bank.getSpinWorth() == 0) {
+        if (controlSpin == 0) {
             new RfortuneError().displayError("You must spin before guessing");
         } else {
             gameMenuControl.guessLetter();
+            this.dispose();
         }
+        
     }//GEN-LAST:event_jbLetterActionPerformed
 
     private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed

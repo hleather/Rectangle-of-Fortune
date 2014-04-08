@@ -168,7 +168,7 @@ public class WordsAndPhrases implements Serializable {
      * @param typeGuess
      *************************************************************************
      */
-    public static void searchPhrase(int typeGuess) {
+    public void searchPhrase(int typeGuess) {
         correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
         incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
         int control = 0;
@@ -181,12 +181,12 @@ public class WordsAndPhrases implements Serializable {
                         java.awt.EventQueue.invokeLater(new Runnable() {
                             public void run() {
                                 correctGuess.setVisible(true);
-                            }
+                }
                         });
                     } finally {
                         if (WordsAndPhrases.correctGuess != null) {
                             WordsAndPhrases.correctGuess.dispose();
-                        }
+            }
                     }
                 }
             }
@@ -196,12 +196,12 @@ public class WordsAndPhrases implements Serializable {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
                             incorrectGuess.setVisible(true);
-                        }
+            }
                     });
                 } finally {
                     if (WordsAndPhrases.incorrectGuess != null) {
                         WordsAndPhrases.incorrectGuess.dispose();
-                    }
+        }
                 }
             }
         }

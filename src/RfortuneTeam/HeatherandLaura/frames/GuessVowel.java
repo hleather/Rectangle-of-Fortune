@@ -14,6 +14,7 @@ import rfortune.RfortuneError;
  * @author Heather
  */
 public class GuessVowel extends javax.swing.JFrame {
+    CheckGuess checkGuess = new CheckGuess();
 
     /**
      * Creates new form GuessPhrase
@@ -121,7 +122,7 @@ public class GuessVowel extends javax.swing.JFrame {
             new RfortuneError().displayError("A guess must be one letter");
         } else {
             char control = jtfVowelGuess.getText().trim().charAt(0);
-            CheckGuess.checkVowelGuess(control);
+            checkGuess.checkVowelGuess(control);
         }
     }//GEN-LAST:event_jbSubmitVowelActionPerformed
 

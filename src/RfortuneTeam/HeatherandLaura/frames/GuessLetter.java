@@ -15,6 +15,7 @@ import rfortune.WordsAndPhrases;
  */
 public class GuessLetter extends javax.swing.JFrame {
 
+    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
     CheckGuess checkGuess = new CheckGuess();
     public static boolean controlGuess = false;
 
@@ -120,16 +121,19 @@ public class GuessLetter extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfLetterGuessActionPerformed
 
     private void jbSubmitLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitLetterActionPerformed
-        if (jtfLetterGuess.getText().length() != 1) {
-            new RfortuneError().displayError("A guess must be one letter");
-        } else {
+        if (jtfLetterGuess.getText().length() == 1) {
             String control = jtfLetterGuess.getText().toUpperCase();
             char guess = control.charAt(0);
-            CheckGuess.checkLetterGuess(guess);
+            checkGuess.checkLetterGuess(guess);
+            if (GuessLetter.controlGuess) {
+                wordsAndPhrases.searchPhrase(1);
+                this.dispose();
+            }
+        } else {
+            new RfortuneError().displayError("A guess must be one letter");
         }
-        if (GuessLetter.controlGuess) {
-            WordsAndPhrases.searchPhrase(1);
-        }
+
+
     }//GEN-LAST:event_jbSubmitLetterActionPerformed
 
     /**

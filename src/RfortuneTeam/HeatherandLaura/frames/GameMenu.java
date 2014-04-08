@@ -272,6 +272,7 @@ public class GameMenu extends javax.swing.JFrame {
                 gameTurn.dispose();
             }
         }
+        this.dispose();
         
     }//GEN-LAST:event_jbTakeTurnActionPerformed
 

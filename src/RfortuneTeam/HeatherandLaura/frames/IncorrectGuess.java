@@ -3,14 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package RfortuneTeam.HeatherandLaura.frames;
+
+import static RfortuneTeam.HeatherandLaura.frames.GameMenu.gameTurn;
+import rfortune.Game;
+import rfortune.PlayerTurn;
+import rfortune.WordsAndPhrases;
 
 /**
  *
  * @author Heather
  */
 public class IncorrectGuess extends javax.swing.JFrame {
+
+    static GameTurn gameTurn = new GameTurn();
+    PlayerTurn playerTurn = new PlayerTurn();
+    Game game = new Game();
 
     /**
      * Creates new form IncorrectGuess
@@ -116,13 +124,27 @@ public class IncorrectGuess extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncorrectContinueActionPerformed
-        // TODO add your handling code here:
+        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
+        game.updateAllBank();
+        gameTurn.jtfBankDisplay.setText(game.displayPlayerUpBank());
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    gameTurn.setVisible(true);
+                }
+            });
+        } finally {
+            if (gameTurn != null) {
+                gameTurn.dispose();
+            }
+        }
+        this.dispose();
     }//GEN-LAST:event_jbIncorrectContinueActionPerformed
 
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;

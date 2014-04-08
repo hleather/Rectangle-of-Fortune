@@ -22,6 +22,7 @@ public class GameTurnView extends Menu {
     CheckGuess checkGuess = new CheckGuess();
     PlayerTurn playerTurn = new PlayerTurn();
     static GameTurn gameTurn = new GameTurn();
+    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
 
     private static final String[][] turnOptions = {
         {"L", "Guess a letter"},
@@ -62,18 +63,18 @@ public class GameTurnView extends Menu {
             switch (command) {
                 //guess a letter.
                 case "L":
-                    if (Game.getRoundNumber() != 0) {
-                        Bank.displayPlayerUpBank();
-                    }
-                    playerTurn.updatePlayersTurn();
-                    Bank.spin();
-                    Bank.spinWorth();
-                    Bank.printSpinWorth();
+                    //if (Game.getRoundNumber() != 0) {
+                    //    Bank.displayPlayerUpBank();
+                   // }
+                   // playerTurn.updatePlayersTurn();
+                    //Bank.spin();
+                   // Bank.spinWorth();
+                   // Bank.printSpinWorth();
                     //CheckGuess.checkLetterGuess();
-                    WordsAndPhrases.searchPhrase(1);
-                    Game.display();
-                    Game.setRoundNumber(Game.getRoundNumber() + 1);
-                    Game.gameRound();
+                  //  WordsAndPhrases.searchPhrase(1);
+                    //Game.display();
+                   // Game.setRoundNumber(Game.getRoundNumber() + 1);
+                    //Game.gameRound();
                     break;
                     //guess a vowel
                 case "V":
@@ -83,7 +84,7 @@ public class GameTurnView extends Menu {
                     Bank.spin();
                     Bank.spinWorth();
                    // CheckGuess.checkVowelGuess();
-                    WordsAndPhrases.searchPhrase(2);
+                    wordsAndPhrases.searchPhrase(2);
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;
