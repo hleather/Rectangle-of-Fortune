@@ -11,6 +11,7 @@ import rfortune.Game;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
+import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 
 /**
  *
@@ -21,6 +22,7 @@ public class GameTurnView extends Menu {
     HelpMenuView helpMenuView = new HelpMenuView();
     CheckGuess checkGuess = new CheckGuess();
     PlayerTurn playerTurn = new PlayerTurn();
+    static GameTurn gameTurn = new GameTurn();
 
     private static final String[][] turnOptions = {
         {"L", "Guess a letter"},
@@ -45,7 +47,6 @@ public class GameTurnView extends Menu {
     public String getInput(Object object) {
 
         do {
-            try {
             WordsAndPhrases.updateParallelArray();
             WordsAndPhrases.displayParallelArray();
             if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
@@ -58,10 +59,7 @@ public class GameTurnView extends Menu {
                 Bank.updateBankPlayer();
                 Bank.displayPlayerUpBank();
             }
-
             this.display();
-
-            command = this.getCommand();
             switch (command) {
                 //guess a letter.
                 case "L":
@@ -78,7 +76,7 @@ public class GameTurnView extends Menu {
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;
-                //guess a vowel
+                    //guess a vowel
                 case "V":
                     playerTurn.updatePlayersTurn();
                     Bank.updateBankPlayer();
@@ -90,7 +88,7 @@ public class GameTurnView extends Menu {
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;
-                //guess the phrase
+                    //guess the phrase
                 case "P":
                     playerTurn.updatePlayersTurn();
                     Bank.bankPlayerTurn();
@@ -100,17 +98,14 @@ public class GameTurnView extends Menu {
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     Game.gameRound();
                     break;
-                //help menu
+                    //help menu
                 case "H":
                     helpMenuView.getInput(null);
                     break;
-                //Quit
+                    //Quit
                 case "Q":
                     break;
-                
-            }
-            }catch (MenuException e) {
-                System.out.println("\n" + e.getMessage());
+
             }
         } while (!command.equals("Q"));
         return null;
