@@ -95,7 +95,7 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jlPlayer3Head1" alignment="1" pref="132" max="32767" attributes="0"/>
+                                              <Component id="jlPlayer3Head1" alignment="1" max="32767" attributes="0"/>
                                               <Component id="jtfPlayer3Name" alignment="1" max="32767" attributes="0"/>
                                               <Component id="jtfPlayer3Bank" max="32767" attributes="0"/>
                                           </Group>
@@ -105,7 +105,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="79" pref="87" max="32767" attributes="0"/>
+                  <EmptySpace min="79" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -145,7 +145,7 @@
                       <Component id="jtlPlayerTurn" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jtfPlayerTurnName" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Component id="jbTakeTurn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jbHelp" min="-2" max="-2" attributes="0"/>
@@ -231,7 +231,7 @@
         <Component class="javax.swing.JLabel" name="jlSubtitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Franklin Gothic Demi" size="24" style="0"/>
+              <Font name="Franklin Gothic Demi" size="30" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -254,7 +254,7 @@
         <Component class="javax.swing.JLabel" name="jlPlayer1Head">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="24" style="0"/>
+              <Font name="Lucida Sans" size="24" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Player One"/>
           </Properties>
@@ -262,7 +262,7 @@
         <Component class="javax.swing.JLabel" name="jtlPlayerTurn">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="24" style="0"/>
+              <Font name="Lucida Sans" size="22" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Player Turn:"/>
           </Properties>
@@ -270,7 +270,7 @@
         <Component class="javax.swing.JLabel" name="jlPlayer2Head">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="24" style="0"/>
+              <Font name="Lucida Sans" size="24" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Player Two"/>
           </Properties>
@@ -362,7 +362,7 @@
         <Component class="javax.swing.JLabel" name="jlPlayer3Head1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="24" style="0"/>
+              <Font name="Lucida Sans" size="24" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Player Three"/>
           </Properties>

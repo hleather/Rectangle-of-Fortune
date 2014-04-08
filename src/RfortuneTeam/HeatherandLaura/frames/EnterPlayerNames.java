@@ -78,19 +78,20 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("David", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Enter Player Names");
 
-        jLabel2.setFont(new java.awt.Font("David", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
         jLabel2.setText("First select appropriate box:");
 
-        jLabel3.setFont(new java.awt.Font("David", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Lucida Sans", 0, 14)); // NOI18N
         jLabel3.setText("Then validate each name before clicking Continue ");
 
         jcb1PlayerG.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(jcb1PlayerG);
-        jcb1PlayerG.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jcb1PlayerG.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jcb1PlayerG.setText("1 Player Game");
         jcb1PlayerG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +101,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         jcb2PlayerG.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(jcb2PlayerG);
-        jcb2PlayerG.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jcb2PlayerG.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jcb2PlayerG.setText("2 Player Game");
         jcb2PlayerG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +111,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         jcb3PlayerG.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(jcb3PlayerG);
-        jcb3PlayerG.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jcb3PlayerG.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jcb3PlayerG.setText("3 Player Game");
         jcb3PlayerG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +119,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
-        jbValidate1.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jbValidate1.setBackground(new java.awt.Color(153, 153, 153));
+        jbValidate1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbValidate1.setText("Validate");
         jbValidate1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +128,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
-        jbValidate2.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jbValidate2.setBackground(new java.awt.Color(153, 153, 153));
+        jbValidate2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbValidate2.setText("Validate");
         jbValidate2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +137,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
-        jbValidate3.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jbValidate3.setBackground(new java.awt.Color(153, 153, 153));
+        jbValidate3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbValidate3.setText("Validate");
         jbValidate3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,16 +146,17 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jLabel4.setText("Players Name");
 
-        jLabel5.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jLabel5.setText("Players Name");
 
-        jLabel6.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jLabel6.setText("Players Name");
 
-        jbContinuePlayerNames.setFont(new java.awt.Font("David", 0, 16)); // NOI18N
+        jbContinuePlayerNames.setBackground(new java.awt.Color(153, 153, 153));
+        jbContinuePlayerNames.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jbContinuePlayerNames.setText("Continue");
         jbContinuePlayerNames.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,7 +176,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jcb1PlayerG)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jcb3PlayerG)
@@ -198,7 +203,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                                     .addComponent(jbValidate2, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jbValidate3, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addComponent(jLabel3))
-                        .addGap(0, 36, Short.MAX_VALUE)))
+                        .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(

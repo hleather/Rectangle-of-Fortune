@@ -80,7 +80,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jcb1PlayerG" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                                  <EmptySpace pref="22" max="32767" attributes="0"/>
                                   <Component id="jLabel4" min="-2" pref="87" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -116,7 +116,7 @@
                               </Group>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="22" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -167,7 +167,10 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="36" style="1"/>
+              <Font name="Franklin Gothic Demi" size="36" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Enter Player Names"/>
@@ -176,7 +179,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="16" style="0"/>
+              <Font name="Lucida Sans" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="First select appropriate box:"/>
           </Properties>
@@ -184,7 +187,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="16" style="0"/>
+              <Font name="Lucida Sans" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Then validate each name before clicking Continue "/>
           </Properties>
@@ -198,7 +201,7 @@
               <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Lucida Sans" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="1 Player Game"/>
           </Properties>
@@ -215,7 +218,7 @@
               <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Lucida Sans" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="2 Player Game"/>
           </Properties>
@@ -232,7 +235,7 @@
               <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Lucida Sans" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="3 Player Game"/>
           </Properties>
@@ -248,8 +251,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jbValidate1">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Validate"/>
           </Properties>
@@ -259,8 +265,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jbValidate2">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Validate"/>
           </Properties>
@@ -270,8 +279,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jbValidate3">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Validate"/>
           </Properties>
@@ -282,7 +294,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Lucida Sans" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Players Name"/>
           </Properties>
@@ -290,7 +302,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Lucida Sans" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Players Name"/>
           </Properties>
@@ -298,15 +310,18 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="14" style="0"/>
+              <Font name="Lucida Sans" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Players Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jbContinuePlayerNames">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="David" size="16" style="0"/>
+              <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Continue"/>
           </Properties>

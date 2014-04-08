@@ -107,7 +107,7 @@ public class GameMenu extends javax.swing.JFrame {
             }
         });
 
-        jlSubtitle.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 24)); // NOI18N
+        jlSubtitle.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 30)); // NOI18N
         jlSubtitle.setForeground(new java.awt.Color(153, 153, 153));
         jlSubtitle.setText("Game Menu");
 
@@ -116,13 +116,13 @@ public class GameMenu extends javax.swing.JFrame {
         jlTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlTitle.setText("Rectangle of Fortune");
 
-        jlPlayer1Head.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jlPlayer1Head.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
         jlPlayer1Head.setText("Player One");
 
-        jtlPlayerTurn.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jtlPlayerTurn.setFont(new java.awt.Font("Lucida Sans", 0, 22)); // NOI18N
         jtlPlayerTurn.setText("Player Turn:");
 
-        jlPlayer2Head.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jlPlayer2Head.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
         jlPlayer2Head.setText("Player Two");
 
         jtfPlayer3Name.setEditable(false);
@@ -149,7 +149,7 @@ public class GameMenu extends javax.swing.JFrame {
         jtfPlayer3Bank.setBackground(new java.awt.Color(255, 255, 255));
         jtfPlayer3Bank.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
 
-        jlPlayer3Head1.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jlPlayer3Head1.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
         jlPlayer3Head1.setText("Player Three");
 
         jtfPlayerTurnName.setEditable(false);
@@ -194,10 +194,10 @@ public class GameMenu extends javax.swing.JFrame {
                                             .addComponent(jtfPlayer2Bank, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
                                         .addGap(70, 70, 70)
                                         .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jlPlayer3Head1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                            .addComponent(jlPlayer3Head1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jtfPlayer3Name)
                                             .addComponent(jtfPlayer3Bank))))))))
-                .addGap(79, 87, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBodyLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,7 +230,7 @@ public class GameMenu extends javax.swing.JFrame {
                 .addGroup(jpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtlPlayerTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfPlayerTurnName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jbTakeTurn)
                 .addGap(18, 18, 18)
                 .addComponent(jbHelp)

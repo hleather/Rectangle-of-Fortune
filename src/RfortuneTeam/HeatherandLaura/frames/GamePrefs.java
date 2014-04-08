@@ -44,16 +44,17 @@ public class GamePrefs extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("David", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Game Preferences");
 
-        jLabel2.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Sans", 0, 24)); // NOI18N
         jLabel2.setText("Select Game Mode: ");
 
         jrbEasyMode.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(jrbEasyMode);
-        jrbEasyMode.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jrbEasyMode.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jrbEasyMode.setSelected(true);
         jrbEasyMode.setText("Easy");
         jrbEasyMode.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +65,7 @@ public class GamePrefs extends javax.swing.JFrame {
 
         jrbHardMode.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup1.add(jrbHardMode);
-        jrbHardMode.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jrbHardMode.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jrbHardMode.setText("Hard");
         jrbHardMode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +73,8 @@ public class GamePrefs extends javax.swing.JFrame {
             }
         });
 
+        jbSubmitPrefs.setBackground(new java.awt.Color(153, 153, 153));
+        jbSubmitPrefs.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbSubmitPrefs.setText("Submit");
         jbSubmitPrefs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +115,7 @@ public class GamePrefs extends javax.swing.JFrame {
                 .addComponent(jrbHardMode)
                 .addGap(18, 18, 18)
                 .addComponent(jbSubmitPrefs)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
