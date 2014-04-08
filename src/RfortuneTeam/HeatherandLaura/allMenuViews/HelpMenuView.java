@@ -82,8 +82,8 @@ public class HelpMenuView extends Menu {
         public String getMessage() {
             return message;
         }
-        public void display() {
-            System.out.println(this.message);
+        public String display() {
+            return this.message;
         }
     }
     // display the help menu and get the end users input selection
