@@ -71,7 +71,7 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItems.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 3));
 
         jbStartGame.setBackground(new java.awt.Color(153, 153, 153));
-        jbStartGame.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jbStartGame.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbStartGame.setForeground(new java.awt.Color(51, 51, 51));
         jbStartGame.setText("Start Game");
         jbStartGame.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +81,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbPreferences.setBackground(new java.awt.Color(153, 153, 153));
-        jbPreferences.setFont(new java.awt.Font("Dotum", 0, 11)); // NOI18N
+        jbPreferences.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbPreferences.setForeground(new java.awt.Color(51, 51, 51));
         jbPreferences.setText("Change Game Preferences");
         jbPreferences.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +91,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbtnHelp.setBackground(new java.awt.Color(153, 153, 153));
-        jbtnHelp.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jbtnHelp.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jbtnHelp.setForeground(new java.awt.Color(51, 51, 51));
         jbtnHelp.setText("Help");
         jbtnHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +101,6 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jbtnExit.setBackground(new java.awt.Color(153, 153, 153));
-        jbtnExit.setFont(new java.awt.Font("Dotum", 0, 11)); // NOI18N
         jbtnExit.setForeground(new java.awt.Color(51, 51, 51));
         jbtnExit.setText("Exit Rectangle of Fortune");
         jbtnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -114,15 +113,6 @@ public class MainFrame extends javax.swing.JFrame {
         jpMenuItems.setLayout(jpMenuItemsLayout);
         jpMenuItemsLayout.setHorizontalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
-                        .addComponent(jbStartGame)
-                        .addGap(65, 65, 65))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
-                        .addComponent(jbtnExit)
-                        .addContainerGap())))
             .addGroup(jpMenuItemsLayout.createSequentialGroup()
                 .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMenuItemsLayout.createSequentialGroup()
@@ -132,6 +122,15 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(jbtnHelp)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
+                        .addComponent(jbtnExit)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMenuItemsLayout.createSequentialGroup()
+                        .addComponent(jbStartGame)
+                        .addGap(54, 54, 54))))
         );
         jpMenuItemsLayout.setVerticalGroup(
             jpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +170,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jtWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

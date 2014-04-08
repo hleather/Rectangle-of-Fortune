@@ -167,7 +167,7 @@ public class HelpMenu extends javax.swing.JFrame {
         jtaDisplayHelp.setEditable(false);
         jtaDisplayHelp.setBackground(new java.awt.Color(153, 153, 153));
         jtaDisplayHelp.setColumns(20);
-        jtaDisplayHelp.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
+        jtaDisplayHelp.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jtaDisplayHelp.setLineWrap(true);
         jtaDisplayHelp.setRows(5);
         jtaDisplayHelp.setWrapStyleWord(true);
