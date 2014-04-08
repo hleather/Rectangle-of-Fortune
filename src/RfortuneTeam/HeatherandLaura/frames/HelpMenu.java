@@ -7,7 +7,6 @@
 package RfortuneTeam.HeatherandLaura.frames;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView.displayCommand;
-import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
 /**
  *
  * @author Laura

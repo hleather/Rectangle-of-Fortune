@@ -12,8 +12,6 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
  */
 import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
-import rfortune.RfortuneError;
-import java.util.Scanner;
 
 
 
