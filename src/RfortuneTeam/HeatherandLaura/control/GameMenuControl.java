@@ -8,8 +8,9 @@ package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
-import rfortune.GameBoardView;
-
+import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
+import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
+import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
 /**
  *
  * @author Heather
@@ -18,7 +19,9 @@ public class GameMenuControl {
     GameMenuControl gameMenuControl = null;
     GameTurnView gameTurnView = new GameTurnView();
     static GameTurn gameTurn = new GameTurn();
-    GameBoardView gameBoardView = new GameBoardView();
+    static GuessLetter guessLetter = new GuessLetter();
+    static GuessVowel guessVowel = new GuessVowel();
+    static GuessPhrase guessPhrase = new GuessPhrase();
     
     public GameMenuControl() {
        
@@ -45,15 +48,45 @@ public class GameMenuControl {
     }
    
    public void guessLetter() {
-        
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    guessLetter.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.guessLetter != null) {
+                GameMenuControl.guessLetter.dispose();
+            }
+        }
     }
     
     public void guessVowel() {
-        
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    guessVowel.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.guessVowel != null) {
+                GameMenuControl.guessVowel.dispose();
+            }
+        }
     }
     
     public void guessPhrase() {
-        
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    guessPhrase.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.guessPhrase != null) {
+                GameMenuControl.guessPhrase.dispose();
+            }
+        }
     }
 
 }

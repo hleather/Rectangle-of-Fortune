@@ -24,7 +24,7 @@ public class Bank implements Serializable {
     private static String bankPlayer1 = " ";
     private static String bankPlayer2 = " ";
     private static String bankPlayer3 = " ";
-    private static long spinWorth;
+    private static long spinWorth = 0;
     private static boolean hasEnough = false;
     private static long guessPhraseWorth;
     private static int randomSpin;
@@ -341,6 +341,9 @@ public class Bank implements Serializable {
             }
             Bank.updateBankPlayer();
         }
+        else
+            new RfortuneError().displayError("Sorry, you need $250 to purchase "
+                    + "a vowel");
     }
 
     /**

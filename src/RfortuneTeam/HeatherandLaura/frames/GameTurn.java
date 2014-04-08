@@ -5,8 +5,10 @@
  */
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.Bank;
+import rfortune.RfortuneError;
 
 /**
  *
@@ -15,6 +17,7 @@ import rfortune.Bank;
 public class GameTurn extends javax.swing.JFrame {
 
     MainMenuControl mainMenuControl = new MainMenuControl();
+    GameMenuControl gameMenuControl = new GameMenuControl();
     public static int controlSpin;
 
     /**
@@ -277,10 +280,10 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbHelpActionPerformed
 
     private void jbSpinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSpinActionPerformed
-        Bank.spin();
-        Bank.spinWorth();
         if (controlSpin == 0) {
-            this.jtfSpinWorth.setText(Bank.printSpinWorth());
+            Bank.spin();
+            Bank.spinWorth();
+            this.jtfSpinWorth.setText("$ " + Bank.printSpinWorth());
         }
     }//GEN-LAST:event_jbSpinActionPerformed
 
@@ -289,11 +292,15 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLetterActionPerformed
-        // TODO add your handling code here:
+        if (Bank.getSpinWorth() == 0) {
+            new RfortuneError().displayError("You must spin before guessing");
+        } else {
+            gameMenuControl.guessLetter();
+        }
     }//GEN-LAST:event_jbLetterActionPerformed
 
     private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
-        // TODO add your handling code here:
+        Bank.updateBankVowelPurchase();
     }//GEN-LAST:event_jbVowelActionPerformed
 
     private void jbPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPhraseActionPerformed
