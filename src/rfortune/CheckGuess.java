@@ -160,6 +160,7 @@ public class CheckGuess implements Serializable {
         while (letterIndex <= 26 && !done) {
             try {
                 if (!isVowel(letter, letterGuess)) {
+                    new RfortuneError().displayError("1");
                     new RfortuneError().displayError("Sorry, you have to buy "
                             + "a vowel. Guess a letter.");
                     GuessLetter.controlGuess = false;
@@ -167,6 +168,7 @@ public class CheckGuess implements Serializable {
                 }
 
                 if (alreadyInLetterList(getListOfLetterGuesses(), letterGuess)) {
+                    new RfortuneError().displayError("2");
                     GuessLetter.controlGuess = false;
                     break;
                 }
@@ -175,6 +177,7 @@ public class CheckGuess implements Serializable {
                 letterIndex++;
 
                 if (!isCheckLetterRepeat()) {
+                    new RfortuneError().displayError("3");
                     setCurrentGuess(letterGuess);
                     setCheckGuess(true);
                     done = true;
@@ -229,6 +232,7 @@ public class CheckGuess implements Serializable {
     }
 
     public static char[] sortLetterList(char[] letters) {
+        new RfortuneError().displayError("4");
         char tempLetter;
         boolean notDone = true;
         while (notDone) {
@@ -267,13 +271,18 @@ public class CheckGuess implements Serializable {
     }
 
     private static boolean alreadyInLetterList(char[] list, char value) throws letterCheckException {
+        new RfortuneError().displayError("5");
         for (char valueInList : list) {
+            new RfortuneError().displayError("6");
             if (value == valueInList) {
+                new RfortuneError().displayError("7");
+                GuessLetter.controlGuess = false;
                 CheckGuess.setCheckLetterRepeat(true);
                 new RfortuneError().displayError("That letter has already been "
                         + "guessed. Guess a different letter.");
                 return true;
             } else if (value != valueInList) {
+                new RfortuneError().displayError("8");
                 GuessLetter.controlGuess = true;
                 setCheckLetterRepeat(false);
 
@@ -286,6 +295,7 @@ public class CheckGuess implements Serializable {
     private static boolean alreadyInVowelList(char[] list, char value) throws letterCheckException {
         for (char valueInList : list) {
             if (value == valueInList) {
+                GuessVowel.controlGuess = false;
                 CheckGuess.setCheckVowelRepeat(true);
                 new RfortuneError().displayError("That letter has already been "
                         + "guessed. Guess a different letter.");

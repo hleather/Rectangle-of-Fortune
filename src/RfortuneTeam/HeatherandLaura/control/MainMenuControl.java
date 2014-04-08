@@ -66,24 +66,24 @@ public class MainMenuControl implements Serializable {
         if (getSetNumPlayers() == 1) {
             gameMenu.jtfPlayer1Name.setText(Player.getPlayer1());
             
-            gameMenu.jtfPlayer1Bank.setText(Bank.getBankPlayer1());
+            gameMenu.jtfPlayer1Bank.setText("$ " + Bank.getBankPlayer1());
 
         }
         if (getSetNumPlayers() == 2) {
             gameMenu.jtfPlayer1Name.setText(Player.getPlayer1());
             gameMenu.jtfPlayer2Name.setText(Player.getPlayer2());
             
-            gameMenu.jtfPlayer1Bank.setText(Bank.getBankPlayer1());
-            gameMenu.jtfPlayer2Bank.setText(Bank.getBankPlayer2());
+            gameMenu.jtfPlayer1Bank.setText("$ " + Bank.getBankPlayer1());
+            gameMenu.jtfPlayer2Bank.setText("$ " + Bank.getBankPlayer2());
         }
         if (getSetNumPlayers() == 3) {
             gameMenu.jtfPlayer1Name.setText(Player.getPlayer1());
             gameMenu.jtfPlayer2Name.setText(Player.getPlayer2());
             gameMenu.jtfPlayer3Name.setText(Player.getPlayer3());
             
-            gameMenu.jtfPlayer1Bank.setText(Bank.getBankPlayer1());
-            gameMenu.jtfPlayer2Bank.setText(Bank.getBankPlayer2());
-            gameMenu.jtfPlayer3Bank.setText(Bank.getBankPlayer3());
+            gameMenu.jtfPlayer1Bank.setText("$ " + Bank.getBankPlayer1());
+            gameMenu.jtfPlayer2Bank.setText("$ " + Bank.getBankPlayer2());
+            gameMenu.jtfPlayer3Bank.setText("$ " + Bank.getBankPlayer3());
         }
         
         gameMenu.jtfPlayerTurnName.setText(playerTurn.updatePlayersTurn());
