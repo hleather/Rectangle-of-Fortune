@@ -45,22 +45,14 @@ public class GameTurn extends javax.swing.JFrame {
         jtfBankDisplay = new javax.swing.JTextField();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jtfPhraseDisplay = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jtfGuessVowel = new javax.swing.JTextField();
-        jbSubmitLetterGuess = new javax.swing.JButton();
-        jtfGuessLetter = new javax.swing.JTextField();
-        jtfGuessPhrase = new javax.swing.JTextField();
-        jbSubmitPhraseGuess = new javax.swing.JButton();
-        jbSubmitVowelGuess = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jbHelp = new javax.swing.JButton();
-        jbQuit = new javax.swing.JButton();
         jbSpin = new javax.swing.JButton();
         jtfSpinWorth = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jbLetter = new javax.swing.JButton();
+        jbVowel = new javax.swing.JButton();
+        jbPhrase = new javax.swing.JButton();
+        jbHelp = new javax.swing.JButton();
+        jbQuit = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -125,138 +117,6 @@ public class GameTurn extends javax.swing.JFrame {
         jtfPhraseDisplay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfPhraseDisplay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel2.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-
-        jRadioButton1.setBackground(new java.awt.Color(0, 153, 153));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jRadioButton1.setText("Guess a letter");
-
-        jRadioButton2.setBackground(new java.awt.Color(0, 153, 153));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jRadioButton2.setText("Buy a vowel");
-
-        jRadioButton3.setBackground(new java.awt.Color(0, 153, 153));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jRadioButton3.setText("Guess the phrase");
-
-        jtfGuessVowel.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-
-        jbSubmitLetterGuess.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-        jbSubmitLetterGuess.setText("Submit");
-        jbSubmitLetterGuess.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSubmitLetterGuessActionPerformed(evt);
-            }
-        });
-
-        jtfGuessLetter.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-
-        jtfGuessPhrase.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-
-        jbSubmitPhraseGuess.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-        jbSubmitPhraseGuess.setText("Submit");
-        jbSubmitPhraseGuess.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSubmitPhraseGuessActionPerformed(evt);
-            }
-        });
-
-        jbSubmitVowelGuess.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
-        jbSubmitVowelGuess.setText("Submit");
-        jbSubmitVowelGuess.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbSubmitVowelGuessActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setBackground(new java.awt.Color(0, 153, 153));
-        jLabel2.setFont(new java.awt.Font("David", 0, 11)); // NOI18N
-        jLabel2.setText("(Costs 250)");
-
-        jbHelp.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jbHelp.setText("Help");
-        jbHelp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbHelpActionPerformed(evt);
-            }
-        });
-
-        jbQuit.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jbQuit.setText("Quit");
-        jbQuit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbQuitActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jtfGuessPhrase, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbSubmitPhraseGuess))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton1)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jRadioButton2)))
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jtfGuessLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtfGuessVowel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbSubmitVowelGuess, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jbSubmitLetterGuess)))
-                    .addComponent(jRadioButton3, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(68, 68, 68))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbQuit)
-                    .addComponent(jbHelp))
-                .addGap(319, 319, 319))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtfGuessLetter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbSubmitLetterGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jRadioButton1)))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfGuessVowel)
-                    .addComponent(jbSubmitVowelGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfGuessPhrase)
-                    .addComponent(jbSubmitPhraseGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jbHelp)
-                .addGap(18, 18, 18)
-                .addComponent(jbQuit)
-                .addGap(18, 18, 18))
-        );
-
         jbSpin.setBackground(new java.awt.Color(255, 255, 51));
         jbSpin.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jbSpin.setText("SPIN");
@@ -277,6 +137,46 @@ public class GameTurn extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Spin Worth:");
 
+        jbLetter.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbLetter.setText("Guess a Letter");
+        jbLetter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbLetterActionPerformed(evt);
+            }
+        });
+
+        jbVowel.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbVowel.setText("Buy a Vowel ");
+        jbVowel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbVowelActionPerformed(evt);
+            }
+        });
+
+        jbPhrase.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbPhrase.setText("Guess Phrase");
+        jbPhrase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbPhraseActionPerformed(evt);
+            }
+        });
+
+        jbHelp.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbHelp.setText("Help");
+        jbHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpActionPerformed(evt);
+            }
+        });
+
+        jbQuit.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbQuit.setText("Quit");
+        jbQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbQuitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -284,7 +184,6 @@ public class GameTurn extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jtfPhraseDisplay)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -305,8 +204,14 @@ public class GameTurn extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jbSpin, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                    .addComponent(jtfSpinWorth))))))
+                                    .addComponent(jbPhrase, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbVowel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbLetter, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                    .addComponent(jbSpin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jtfSpinWorth)
+                                    .addComponent(jbHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbQuit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -330,9 +235,17 @@ public class GameTurn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfSpinWorth, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(37, 37, 37)
+                .addComponent(jbLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbVowel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbPhrase, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbQuit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,22 +272,6 @@ public class GameTurn extends javax.swing.JFrame {
         mainMenuControl.startHelpMenu();
     }//GEN-LAST:event_jbHelpActionPerformed
 
-    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jbQuitActionPerformed
-
-    private void jbSubmitLetterGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitLetterGuessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbSubmitLetterGuessActionPerformed
-
-    private void jbSubmitVowelGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitVowelGuessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbSubmitVowelGuessActionPerformed
-
-    private void jbSubmitPhraseGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitPhraseGuessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbSubmitPhraseGuessActionPerformed
-
     private void jbSpinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSpinActionPerformed
         Bank.spin();
         Bank.spinWorth();
@@ -382,6 +279,22 @@ public class GameTurn extends javax.swing.JFrame {
             this.jtfSpinWorth.setText(Bank.printSpinWorth());
         }
     }//GEN-LAST:event_jbSpinActionPerformed
+
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbQuitActionPerformed
+
+    private void jbLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLetterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbLetterActionPerformed
+
+    private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbVowelActionPerformed
+
+    private void jbPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPhraseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbPhraseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,25 +306,17 @@ public class GameTurn extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JButton jbHelp;
+    private javax.swing.JButton jbLetter;
+    private javax.swing.JButton jbPhrase;
     private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbSpin;
-    private javax.swing.JButton jbSubmitLetterGuess;
-    private javax.swing.JButton jbSubmitPhraseGuess;
-    private javax.swing.JButton jbSubmitVowelGuess;
+    private javax.swing.JButton jbVowel;
     public javax.swing.JTextField jtfBankDisplay;
-    private javax.swing.JTextField jtfGuessLetter;
-    private javax.swing.JTextField jtfGuessPhrase;
-    private javax.swing.JTextField jtfGuessVowel;
     public javax.swing.JTextField jtfPhraseDisplay;
     public javax.swing.JTextField jtfPlayerTurnDisplay;
     public javax.swing.JTextField jtfSpinWorth;
