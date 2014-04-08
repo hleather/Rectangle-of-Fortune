@@ -35,6 +35,7 @@ public class GuessLetter extends javax.swing.JFrame {
         jbGuessLetter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Guess a Letter");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -57,6 +58,7 @@ public class GuessLetter extends javax.swing.JFrame {
             }
         });
 
+        jbGuessLetter.setBackground(new java.awt.Color(153, 153, 153));
         jbGuessLetter.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbGuessLetter.setText("Submit");
 

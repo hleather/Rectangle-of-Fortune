@@ -35,6 +35,7 @@ public class GuessPhrase extends javax.swing.JFrame {
         jbPhraseGuess = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Guess the Phrase");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -49,6 +50,7 @@ public class GuessPhrase extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Enter Guess:");
 
+        jbPhraseGuess.setBackground(new java.awt.Color(153, 153, 153));
         jbPhraseGuess.setFont(new java.awt.Font("David", 0, 21)); // NOI18N
         jbPhraseGuess.setText("Submit");
 

@@ -136,6 +136,7 @@ public class GameTurn extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Spin Worth:");
 
+        jbLetter.setBackground(new java.awt.Color(153, 153, 153));
         jbLetter.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbLetter.setText("Guess a Letter");
         jbLetter.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +145,7 @@ public class GameTurn extends javax.swing.JFrame {
             }
         });
 
+        jbVowel.setBackground(new java.awt.Color(153, 153, 153));
         jbVowel.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbVowel.setText("Buy a Vowel ");
         jbVowel.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +154,7 @@ public class GameTurn extends javax.swing.JFrame {
             }
         });
 
+        jbPhrase.setBackground(new java.awt.Color(153, 153, 153));
         jbPhrase.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbPhrase.setText("Guess Phrase");
         jbPhrase.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +163,7 @@ public class GameTurn extends javax.swing.JFrame {
             }
         });
 
+        jbHelp.setBackground(new java.awt.Color(153, 153, 153));
         jbHelp.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbHelp.setText("Help");
         jbHelp.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +172,7 @@ public class GameTurn extends javax.swing.JFrame {
             }
         });
 
+        jbQuit.setBackground(new java.awt.Color(153, 153, 153));
         jbQuit.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbQuit.setText("Quit");
         jbQuit.addActionListener(new java.awt.event.ActionListener() {

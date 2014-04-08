@@ -44,7 +44,8 @@ public class GamePrefs extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("David", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Game Preferences");
 
@@ -72,6 +73,7 @@ public class GamePrefs extends javax.swing.JFrame {
             }
         });
 
+        jbSubmitPrefs.setBackground(new java.awt.Color(153, 153, 153));
         jbSubmitPrefs.setText("Submit");
         jbSubmitPrefs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

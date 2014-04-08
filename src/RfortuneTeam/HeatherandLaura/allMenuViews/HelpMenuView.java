@@ -38,38 +38,32 @@ public class HelpMenuView extends Menu {
         super(HelpMenuView.menuItems);
     } 
         public enum displayCommand {
-        BOARDHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-            + "\n\tThe game board for Rectangle of Fortune. It consists of  "
-                + "\n\tblanks that associate with the word or phrase that needs "
-                + "\n\tto be guessed. As a letter is guessed it is displayed in "
-                + "\n\tthe board."
-    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
-        GAMEHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-            + "\n\tThe objective of the game is to be the player with the most "
-                + "\n\tmoney when the word or phrase is completed. Each player "
-                + "\n\ttakes a turn by guessing letters to see if it is in the "
-                + "\n\tphrase. If it is in the phrase, they will earn money  "
-                + "\n\tand get another turn. If not, it is the next player's "
-                + "\n\tturn. The person with the most money at the end of the "
-                + "\n\tgame wins! "
-    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
-        VOWELHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" 
-            + "\n\tBuying a Vowel. If a player wants to guess a vowel, then "
-               + "\n\tthey must purchase that vowel by selecting the 'buy a "
-               + "\n\tvowel' button. A vowel costs $250." 
-    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
-        GUESSHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-            + "\n\tMaking a Guess. To make a guess on your turn, the player "
-                + "\n\twill press the 'Guess a Consonant' button. The board  "
-                + "\n\twill display the value of money earned if the player "
-                + "\n\tguesses a correct letter. The player will then enter "
-                + "\n\ta consonant. If it is in the phrase, it will appear "
-                + "\n\ton the board where it is located in the phrase. "
-    + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"),
-        PLAYERHELP ("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" +
-                "\n\tA player takes their turn by selecting the'Guess a Consonant' "
-                + "\n\tbutton or the 'Buy a Vowel' button." + 
-                "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        BOARDHELP ("The game board for Rectangle of Fortune consists of  "
+                + "blank spaces that associate with the word or phrase that needs "
+                + "to be guessed. When a correct letter is guessed it is displayed on "
+                + "the board in it's appropriate location."),
+        GAMEHELP ("The objective of the game is to be the player with the most "
+                + "money when the word or phrase is completed. Each player "
+                + "takes a turn by guessing letters to see if it is in the "
+                + "phrase. If it is in the phrase, they will earn money  "
+                + "and get another turn. If not, it is the next player's "
+                + "turn. The person with the most money at the end of the "
+                + "game wins! "),
+        VOWELHELP ("If a player wants to guess a vowel on thier turn, then "
+               + "they must purchase that vowel by selecting the 'buy a "
+               + "vowel' button. A vowel costs $250. If they do not have enough" 
+               + " money, they cannot buy a vowel."),
+        GUESSHELP ("To make a guess on your turn, the player "
+                + "will press the 'Guess a Consonant' button. The board  "
+                + "will display the value of money earned if the player "
+                + "guesses a correct letter. The player will then enter "
+                + "a consonant. If it is in the phrase, it will appear "
+                + "on the board where it is located in the phrase. "
+                + "A player may also guess the entire phrase on their turn if "
+                + "they think they know the answer. To do this the player selects"
+                + "the 'Guess the phrase' button and enters their guess."),
+        PLAYERHELP ("A player takes their turn by selecting the'Guess a Consonant' "
+                +"button, the 'Buy a Vowel' button, or 'Guess the Phrase' button.");
         
         String message;
         

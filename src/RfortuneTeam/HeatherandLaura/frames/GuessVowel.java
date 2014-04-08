@@ -35,6 +35,7 @@ public class GuessVowel extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Buy a Vowel");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
@@ -47,6 +48,7 @@ public class GuessVowel extends javax.swing.JFrame {
         jtfVowelGuess.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jtfVowelGuess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jButton1.setText("Submit");
 

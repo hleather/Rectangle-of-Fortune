@@ -78,7 +78,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("David", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Demi", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Enter Player Names");
 
@@ -118,6 +119,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
+        jbValidate1.setBackground(new java.awt.Color(153, 153, 153));
         jbValidate1.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbValidate1.setText("Validate");
         jbValidate1.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +128,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
+        jbValidate2.setBackground(new java.awt.Color(153, 153, 153));
         jbValidate2.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbValidate2.setText("Validate");
         jbValidate2.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +137,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
+        jbValidate3.setBackground(new java.awt.Color(153, 153, 153));
         jbValidate3.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbValidate3.setText("Validate");
         jbValidate3.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +155,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jLabel6.setText("Players Name");
 
+        jbContinuePlayerNames.setBackground(new java.awt.Color(153, 153, 153));
         jbContinuePlayerNames.setFont(new java.awt.Font("David", 0, 16)); // NOI18N
         jbContinuePlayerNames.setText("Continue");
         jbContinuePlayerNames.addActionListener(new java.awt.event.ActionListener() {

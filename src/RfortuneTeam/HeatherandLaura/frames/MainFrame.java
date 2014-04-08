@@ -150,7 +150,7 @@ public class MainFrame extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(153, 153, 153));
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Leelawadee", 0, 13)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Lucida Sans", 0, 13)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("Welcome to the Rectangle of Fortune Game. The object of the game is to earn the most money by the end of the game. The game ends when the entire phrase is guessed correctly.  Good Luck! ");

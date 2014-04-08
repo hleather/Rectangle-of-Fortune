@@ -233,23 +233,23 @@ public class HelpMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbObjectiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbObjectiveActionPerformed
-        this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.GAMEHELP);
+        this.jtaDisplayHelp.setText(displayCommand.GAMEHELP.display());
     }//GEN-LAST:event_jbObjectiveActionPerformed
 
     private void jbBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBoardActionPerformed
-       this.jtaDisplayHelp.setText(displayCommand.BOARDHELP.display());
+        this.jtaDisplayHelp.setText(displayCommand.BOARDHELP.display());
     }//GEN-LAST:event_jbBoardActionPerformed
 
     private void jbPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPlayerActionPerformed
-        //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.PLAYERHELP.display());
+        this.jtaDisplayHelp.setText(displayCommand.PLAYERHELP.display());
     }//GEN-LAST:event_jbPlayerActionPerformed
 
     private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
-        //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.VOWELHELP.display());
+        this.jtaDisplayHelp.setText(displayCommand.VOWELHELP.display());
     }//GEN-LAST:event_jbVowelActionPerformed
 
     private void jbGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuessActionPerformed
-        //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.GUESSHELP.display());
+        this.jtaDisplayHelp.setText(displayCommand.GUESSHELP.display());
     }//GEN-LAST:event_jbGuessActionPerformed
 
     private void jbCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCloseActionPerformed
