@@ -231,7 +231,7 @@ public class HelpMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbObjectiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbObjectiveActionPerformed
-        this.jtaDisplayHelp.setText("test");
+        this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.GAMEHELP);
     }//GEN-LAST:event_jbObjectiveActionPerformed
 
     private void jbBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBoardActionPerformed
