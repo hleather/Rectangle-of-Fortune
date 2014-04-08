@@ -10,7 +10,6 @@ import rfortune.CheckGuess;
 import rfortune.Game;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
-import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 
 /**

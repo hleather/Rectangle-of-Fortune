@@ -6,12 +6,13 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
-import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
+import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView.displayCommand;
 /**
  *
  * @author Laura
  */
 public class HelpMenu extends javax.swing.JFrame {
+    HelpMenuView helpMenuView = new HelpMenuView();
 
     /**
      * Creates new form HelpMenu
@@ -163,6 +164,7 @@ public class HelpMenu extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        jtaDisplayHelp.setEditable(false);
         jtaDisplayHelp.setBackground(new java.awt.Color(153, 153, 153));
         jtaDisplayHelp.setColumns(20);
         jtaDisplayHelp.setFont(new java.awt.Font("Dotum", 0, 12)); // NOI18N
@@ -235,7 +237,7 @@ public class HelpMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbObjectiveActionPerformed
 
     private void jbBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBoardActionPerformed
-       //this.jtaDisplayHelp.setText(HelpMenuView.displayCommand.BOARDHELP.display());
+       this.jtaDisplayHelp.setText(displayCommand.BOARDHELP.display());
     }//GEN-LAST:event_jbBoardActionPerformed
 
     private void jbPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPlayerActionPerformed
@@ -261,7 +263,7 @@ public class HelpMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbBoard;
+    public javax.swing.JButton jbBoard;
     private javax.swing.JButton jbClose;
     private javax.swing.JButton jbGuess;
     private javax.swing.JButton jbObjective;
@@ -272,6 +274,6 @@ public class HelpMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jpBody;
     private javax.swing.JPanel jpBorder;
     private javax.swing.JPanel jpTitle;
-    private javax.swing.JTextArea jtaDisplayHelp;
+    public javax.swing.JTextArea jtaDisplayHelp;
     // End of variables declaration//GEN-END:variables
 }

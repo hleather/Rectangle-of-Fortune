@@ -12,8 +12,6 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
  */
 import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
-import rfortune.RfortuneError;
-import java.util.Scanner;
 
 
 
@@ -82,8 +80,8 @@ public class HelpMenuView extends Menu {
         public String getMessage() {
             return message;
         }
-        public void display() {
-            System.out.println(this.message);
+        public String display() {
+            return this.message;
         }
     }
     // display the help menu and get the end users input selection
