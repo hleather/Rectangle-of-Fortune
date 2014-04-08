@@ -8,8 +8,6 @@ package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
-import rfortune.GameBoardView;
-
 /**
  *
  * @author Heather
@@ -18,7 +16,6 @@ public class GameMenuControl {
     GameMenuControl gameMenuControl = null;
     GameTurnView gameTurnView = new GameTurnView();
     static GameTurn gameTurn = new GameTurn();
-    GameBoardView gameBoardView = new GameBoardView();
     
     public GameMenuControl() {
        
@@ -45,15 +42,15 @@ public class GameMenuControl {
     }
    
    public void guessLetter() {
-        
+        System.out.println("Test Letter");
     }
     
     public void guessVowel() {
-        
+        System.out.println("Test Vowel");
     }
     
     public void guessPhrase() {
-        
+        System.out.println("Test Phrase");
     }
 
 }

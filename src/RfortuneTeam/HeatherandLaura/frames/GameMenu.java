@@ -10,7 +10,6 @@ import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.Game;
-import rfortune.GameBoardView;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
 
@@ -19,8 +18,6 @@ import rfortune.WordsAndPhrases;
  * @author Laura
  */
 public class GameMenu extends javax.swing.JFrame {
-
-    GameBoardView gameBoardView = new GameBoardView();
     GameMenuControl gameMenuControl = new GameMenuControl();
     HelpMenuView helpMenuView = new HelpMenuView();
     MainMenuControl mainMenuControl = new MainMenuControl();
