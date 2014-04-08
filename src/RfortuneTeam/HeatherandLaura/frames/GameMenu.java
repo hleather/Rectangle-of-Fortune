@@ -9,7 +9,10 @@ package RfortuneTeam.HeatherandLaura.frames;
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Game;
 import rfortune.GameBoardView;
+import rfortune.PlayerTurn;
+import rfortune.WordsAndPhrases;
 
 /**
  *
@@ -21,6 +24,9 @@ public class GameMenu extends javax.swing.JFrame {
     GameMenuControl gameMenuControl = new GameMenuControl();
     HelpMenuView helpMenuView = new HelpMenuView();
     MainMenuControl mainMenuControl = new MainMenuControl();
+    static GameTurn gameTurn = new GameTurn();
+    PlayerTurn playerTurn = new PlayerTurn();
+    Game game = new Game();
     /**
      * Creates new form GameMenu
      */
@@ -254,8 +260,21 @@ public class GameMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbTakeTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTakeTurnActionPerformed
-        gameBoardView.updateBoardView();
-        gameMenuControl.takeTurn();
+        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
+        gameTurn.jtfBankDisplay.setText(game.updateAllBank());
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    gameTurn.setVisible(true);
+                }
+            });
+        } finally {
+            if (gameTurn != null) {
+                gameTurn.dispose();
+            }
+        }
+        
     }//GEN-LAST:event_jbTakeTurnActionPerformed
 
     private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed

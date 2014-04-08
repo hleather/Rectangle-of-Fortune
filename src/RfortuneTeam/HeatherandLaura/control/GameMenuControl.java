@@ -27,12 +27,10 @@ public class GameMenuControl {
        
     
    public void takeTurn() {
-       gameMenuControl = new GameMenuControl();
        gameMenuControl.startGameTurn();
    }
    
    public void startGameTurn() {
-       gameMenuControl = new GameMenuControl();
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
@@ -40,8 +38,8 @@ public class GameMenuControl {
                 }
             });
         } finally {
-            if (GameMenuControl.gameTurn != null) {
-                GameMenuControl.gameTurn.dispose();
+            if (gameTurn != null) {
+                gameTurn.dispose();
             }
         }
     }
@@ -57,5 +55,5 @@ public class GameMenuControl {
     public void guessPhrase() {
         
     }
-   
+
 }

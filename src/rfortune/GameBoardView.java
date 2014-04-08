@@ -18,13 +18,12 @@ public class GameBoardView {
     PlayerTurn playerTurn = new PlayerTurn();
     Game game = new Game();
     
-    public void updateBoardView() {
-        //gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+     /*public void updateBoardView() {
+        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
         gameTurn.jtfBankDisplay.setText(playerTurn.updatePlayersTurn());
         game.updateAllBank(); 
-        System.out.println(WordsAndPhrases.updateAndTranslateParallelArrayToString());
-    }
+    }*/
     
     
 }

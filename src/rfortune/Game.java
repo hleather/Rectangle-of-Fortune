@@ -125,12 +125,11 @@ public class Game implements Serializable {
         return guessedPhrase;
     }
 
-    public void updateAllBank() {
+    public String updateAllBank() {
         playerTurn.updatePlayersTurn();
         Bank.bankPlayerTurn();
         Bank.updateBankPlayer();
-        gameTurn.jtfBankDisplay.setText(Bank.displayPlayerUpBank());
-
+        return Bank.displayPlayerUpBank();
     }
 }
 

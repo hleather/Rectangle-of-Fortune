@@ -212,8 +212,8 @@ public class WordsAndPhrases implements Serializable {
 }
     public static String updateAndTranslateParallelArrayToString(){
         WordsAndPhrases.updateParallelArray();
-        String pArray = WordsAndPhrases.getCharArray().toString();
-        return pArray;
+        String control = String.copyValueOf(WordsAndPhrases.getParallelCharArray());
+        return control;
     }
 }
 

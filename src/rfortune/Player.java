@@ -6,7 +6,6 @@
 
 package rfortune;
 
-import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames;
 import java.io.Serializable;
 /**
