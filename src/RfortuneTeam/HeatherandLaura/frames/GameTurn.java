@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Bank;
 
 /**
  *
  * @author Laura
  */
 public class GameTurn extends javax.swing.JFrame {
+
     MainMenuControl mainMenuControl = new MainMenuControl();
+    static GameTurn gameTurn = new GameTurn();
+    public static int controlSpin;
 
     /**
      * Creates new form GameTurn
@@ -258,6 +261,11 @@ public class GameTurn extends javax.swing.JFrame {
         jbSpin.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jbSpin.setText("SPIN");
         jbSpin.setBorderPainted(false);
+        jbSpin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSpinActionPerformed(evt);
+            }
+        });
 
         jtfSpinWorth.setEditable(false);
         jtfSpinWorth.setBackground(new java.awt.Color(0, 153, 153));
@@ -352,7 +360,7 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbHelpActionPerformed
 
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
-       this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbSubmitLetterGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitLetterGuessActionPerformed
@@ -367,10 +375,17 @@ public class GameTurn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbSubmitPhraseGuessActionPerformed
 
+    private void jbSpinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSpinActionPerformed
+        Bank.spin();
+        Bank.spinWorth();
+        if (controlSpin == 0) {
+            this.jtfSpinWorth.setText(Bank.printSpinWorth());
+        }
+    }//GEN-LAST:event_jbSpinActionPerformed
+
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;

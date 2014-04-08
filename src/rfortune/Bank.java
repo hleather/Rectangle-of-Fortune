@@ -7,6 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
+import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
 import java.util.Random;
 
@@ -368,8 +369,10 @@ public class Bank implements Serializable {
         setSpinWorth(amount * getRandomSpin());
     }
 
-    public static void printSpinWorth() {
-        System.out.println("Guess Worth: " + Bank.getSpinWorth());
+    public static String printSpinWorth() {
+        GameTurn.controlSpin++;
+        String control = String.valueOf(Bank.getSpinWorth());
+        return control;
     }
 
     public static void updateBankSpinWorth() {
