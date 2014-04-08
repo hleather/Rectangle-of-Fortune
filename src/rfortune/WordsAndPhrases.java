@@ -168,7 +168,7 @@ public class WordsAndPhrases implements Serializable {
      * @param typeGuess
      *************************************************************************
      */
-    public void searchPhrase(int typeGuess) {
+    public static void searchPhrase(int typeGuess) {
         correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
         incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
         int control = 0;

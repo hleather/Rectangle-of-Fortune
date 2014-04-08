@@ -8,6 +8,7 @@ package rfortune;
 import java.io.Serializable;
 import RfortuneTeam.HeatherandLaura.customExceptions.letterCheckException;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
+import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
 
 /**
  * THESE (FUNCTIONS) ONLY CHECK TO SEE IF THE CONSONANT OR VOWEL IS A REPEAT AND
@@ -161,6 +162,7 @@ public class CheckGuess implements Serializable {
                 if (!isVowel(letter, letterGuess)) {
                     new RfortuneError().displayError("Sorry, you have to buy "
                             + "a vowel. Guess a letter.");
+                    GuessLetter.controlGuess = false;
                     break;
                 }
 
@@ -201,6 +203,7 @@ public class CheckGuess implements Serializable {
                 }
 
                 if (alreadyInVowelList(getListOfVowelGuesses(), vowelGuess)) {
+                    GuessVowel.controlGuess = false;
                     break;
                 }
 
@@ -287,9 +290,12 @@ public class CheckGuess implements Serializable {
                 new RfortuneError().displayError("That letter has already been "
                         + "guessed. Guess a different letter.");
                 return true;
+            } else if (value != valueInList) {
+                GuessVowel.controlGuess = true;
+                setCheckVowelRepeat(false);
+                return false;
             }
         }
-        setCheckVowelRepeat(false);
         return false;
     }
 

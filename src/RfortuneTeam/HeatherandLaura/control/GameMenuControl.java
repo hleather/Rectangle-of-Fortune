@@ -48,7 +48,9 @@ public class GameMenuControl {
     }
    
    public void guessLetter() {
+       gameMenuControl = new GameMenuControl();
         try {
+            guessLetter.jtfLetterGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     guessLetter.setVisible(true);
@@ -62,7 +64,9 @@ public class GameMenuControl {
     }
     
     public void guessVowel() {
+        gameMenuControl = new GameMenuControl();
         try {
+            guessVowel.jtfVowelGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     guessVowel.setVisible(true);
@@ -76,7 +80,9 @@ public class GameMenuControl {
     }
     
     public void guessPhrase() {
+        gameMenuControl = new GameMenuControl();
         try {
+            guessPhrase.jtfPhraseGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     guessPhrase.setVisible(true);

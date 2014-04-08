@@ -8,6 +8,7 @@ package RfortuneTeam.HeatherandLaura.frames;
 
 import rfortune.CheckGuess;
 import rfortune.RfortuneError;
+import rfortune.WordsAndPhrases;
 
 /**
  *
@@ -15,6 +16,8 @@ import rfortune.RfortuneError;
  */
 public class GuessVowel extends javax.swing.JFrame {
     CheckGuess checkGuess = new CheckGuess();
+    public static boolean controlGuess = false;
+    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
 
     /**
      * Creates new form GuessPhrase
@@ -50,8 +53,8 @@ public class GuessVowel extends javax.swing.JFrame {
         jLabel1.setText("Buy a Vowel");
 
         jtfVowelGuess.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
-        jtfVowelGuess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jbSubmitVowel.setBackground(new java.awt.Color(153, 153, 153));
         jbSubmitVowel.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbSubmitVowel.setText("Submit");
         jbSubmitVowel.addActionListener(new java.awt.event.ActionListener() {
@@ -118,11 +121,16 @@ public class GuessVowel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSubmitVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitVowelActionPerformed
-        if (jtfVowelGuess.getText().length() != 1) {
-            new RfortuneError().displayError("A guess must be one letter");
+        if (jtfVowelGuess.getText().length() == 1) {
+            String control = jtfVowelGuess.getText().toUpperCase();
+            char guess = control.charAt(0);
+            checkGuess.checkVowelGuess(guess);
+            if (GuessVowel.controlGuess) {
+                wordsAndPhrases.searchPhrase(2);
+                this.dispose();
+            }
         } else {
-            char control = jtfVowelGuess.getText().trim().charAt(0);
-            checkGuess.checkVowelGuess(control);
+            new RfortuneError().displayError("A guess must be one letter");
         }
     }//GEN-LAST:event_jbSubmitVowelActionPerformed
 

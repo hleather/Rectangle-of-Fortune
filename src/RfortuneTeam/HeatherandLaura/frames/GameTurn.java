@@ -115,7 +115,7 @@ public class GameTurn extends javax.swing.JFrame {
 
         jtfPhraseDisplay.setEditable(false);
         jtfPhraseDisplay.setBackground(new java.awt.Color(0, 153, 153));
-        jtfPhraseDisplay.setFont(new java.awt.Font("David", 0, 60)); // NOI18N
+        jtfPhraseDisplay.setFont(new java.awt.Font("David", 0, 50)); // NOI18N
         jtfPhraseDisplay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfPhraseDisplay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
@@ -292,17 +292,14 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLetterActionPerformed
-        if (controlSpin == 0) {
-            new RfortuneError().displayError("You must spin before guessing");
-        } else {
-            gameMenuControl.guessLetter();
-            this.dispose();
-        }
-        
+        gameMenuControl.guessLetter();
+        this.dispose();
     }//GEN-LAST:event_jbLetterActionPerformed
 
     private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
+        gameMenuControl.guessVowel();
         Bank.updateBankVowelPurchase();
+        this.dispose();
     }//GEN-LAST:event_jbVowelActionPerformed
 
     private void jbPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPhraseActionPerformed
