@@ -154,8 +154,9 @@ public class WordsAndPhrases implements Serializable {
      * @param typeGuess
      **************************************************************************/
     public static void searchPhrase(int typeGuess) {
+        new RfortuneError().displayError("Test Successful");
         int control = 0;
-        if (CheckGuess.isCheckGuess()) {
+        if (CheckGuess.getCheckGuess()) {
             for(int i = 0; i  < getCharArray().length; i++){
                 if(getCharArray()[i] == (CheckGuess.currentGuess)){
                     Game.setFoundMatch(true);

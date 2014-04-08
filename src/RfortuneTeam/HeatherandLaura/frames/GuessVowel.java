@@ -6,6 +6,9 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import rfortune.CheckGuess;
+import rfortune.RfortuneError;
+
 /**
  *
  * @author Heather
@@ -31,7 +34,7 @@ public class GuessVowel extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jtfVowelGuess = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jbSubmitVowel = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,11 +47,16 @@ public class GuessVowel extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Buy a Vowel");
 
-        jtfVowelGuess.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jtfVowelGuess.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jtfVowelGuess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton1.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jButton1.setText("Submit");
+        jbSubmitVowel.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbSubmitVowel.setText("Submit");
+        jbSubmitVowel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSubmitVowelActionPerformed(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(0, 153, 153));
         jLabel2.setFont(new java.awt.Font("David", 0, 21)); // NOI18N
@@ -70,7 +78,7 @@ public class GuessVowel extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbSubmitVowel, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -83,7 +91,7 @@ public class GuessVowel extends javax.swing.JFrame {
                     .addComponent(jtfVowelGuess, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(41, 41, 41)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbSubmitVowel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
@@ -107,15 +115,24 @@ public class GuessVowel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbSubmitVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitVowelActionPerformed
+        if (jtfVowelGuess.getText().length() != 1) {
+            new RfortuneError().displayError("A guess must be one letter");
+        } else {
+            char control = jtfVowelGuess.getText().trim().charAt(0);
+            CheckGuess.checkVowelGuess(control);
+        }
+    }//GEN-LAST:event_jbSubmitVowelActionPerformed
+
     /**
      * @param args the command line arguments
      */
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
+    public javax.swing.JButton jbSubmitVowel;
     public javax.swing.JTextField jtfVowelGuess;
     // End of variables declaration//GEN-END:variables
 }

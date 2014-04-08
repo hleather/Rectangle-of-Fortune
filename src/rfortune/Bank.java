@@ -213,16 +213,16 @@ public class Bank implements Serializable {
      */
     public static void numPlayersBank() {
         if (MainMenuControl.getSetNumPlayers() == 3) {
-            setBankNumberPlayer1(0);
-            setBankNumberPlayer2(0);
-            setBankNumberPlayer3(0);
+            setBankNumberPlayer1(1000);
+            setBankNumberPlayer2(2000);
+            setBankNumberPlayer3(3000);
         }
         if (MainMenuControl.getSetNumPlayers() == 2) {
-            setBankNumberPlayer1(0);
-            setBankNumberPlayer2(0);
+            setBankNumberPlayer1(1000);
+            setBankNumberPlayer2(2000);
         }
         if (MainMenuControl.getSetNumPlayers() == 1) {
-            setBankNumberPlayer1(0);
+            setBankNumberPlayer1(1000);
         }
     }
 

@@ -32,7 +32,7 @@ public class GuessPhrase extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jtfPhraseGuess = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jbPhraseGuess = new javax.swing.JButton();
+        jbSubmitPhrase = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,13 +44,20 @@ public class GuessPhrase extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Guess the Phrase");
 
+        jtfPhraseGuess.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+
         jLabel2.setBackground(new java.awt.Color(0, 153, 153));
         jLabel2.setFont(new java.awt.Font("David", 0, 21)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Enter Guess:");
 
-        jbPhraseGuess.setFont(new java.awt.Font("David", 0, 21)); // NOI18N
-        jbPhraseGuess.setText("Submit");
+        jbSubmitPhrase.setFont(new java.awt.Font("David", 0, 21)); // NOI18N
+        jbSubmitPhrase.setText("Submit");
+        jbSubmitPhrase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSubmitPhraseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -67,7 +74,7 @@ public class GuessPhrase extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(185, 185, 185)
-                        .addComponent(jbPhraseGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jbSubmitPhrase, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -79,7 +86,7 @@ public class GuessPhrase extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jtfPhraseGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jbPhraseGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbSubmitPhrase, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 31, Short.MAX_VALUE))
         );
 
@@ -103,6 +110,10 @@ public class GuessPhrase extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbSubmitPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitPhraseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbSubmitPhraseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -112,7 +123,7 @@ public class GuessPhrase extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JButton jbPhraseGuess;
+    public javax.swing.JButton jbSubmitPhrase;
     public javax.swing.JTextField jtfPhraseGuess;
     // End of variables declaration//GEN-END:variables
 }

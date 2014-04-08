@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package RfortuneTeam.HeatherandLaura.frames;
+
+import rfortune.CheckGuess;
+import rfortune.RfortuneError;
 
 /**
  *
  * @author Heather
  */
 public class GuessLetter extends javax.swing.JFrame {
+
+    CheckGuess checkGuess = new CheckGuess();
 
     /**
      * Creates new form GuessLetter
@@ -32,7 +36,7 @@ public class GuessLetter extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jtfLetterGuess = new javax.swing.JTextField();
-        jbGuessLetter = new javax.swing.JButton();
+        jbSubmitLetter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,14 +55,20 @@ public class GuessLetter extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Enter Guess:");
 
+        jtfLetterGuess.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jtfLetterGuess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfLetterGuessActionPerformed(evt);
             }
         });
 
-        jbGuessLetter.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
-        jbGuessLetter.setText("Submit");
+        jbSubmitLetter.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
+        jbSubmitLetter.setText("Submit");
+        jbSubmitLetter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSubmitLetterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,7 +88,7 @@ public class GuessLetter extends javax.swing.JFrame {
                         .addGap(62, 62, 62))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbGuessLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbSubmitLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,7 +103,7 @@ public class GuessLetter extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(jtfLetterGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(40, 40, 40)
-                .addComponent(jbGuessLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbSubmitLetter, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
@@ -106,15 +116,27 @@ public class GuessLetter extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfLetterGuessActionPerformed
 
+    private void jbSubmitLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitLetterActionPerformed
+        if (jtfLetterGuess.getText().length() != 1) {
+            new RfortuneError().displayError("A guess must be one letter");
+        } else {
+            char control = jtfLetterGuess.getText().trim().charAt(0);
+            CheckGuess.checkLetterGuess(control);
+        }
+        if (CheckGuess.getCheckGuess()) {
+            new RfortuneError().displayError("Test Successful in GuessLetter");
+        }
+    }//GEN-LAST:event_jbSubmitLetterActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JButton jbGuessLetter;
+    public javax.swing.JButton jbSubmitLetter;
     public javax.swing.JTextField jtfLetterGuess;
     // End of variables declaration//GEN-END:variables
 }
