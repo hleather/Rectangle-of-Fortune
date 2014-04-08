@@ -123,8 +123,8 @@ public class IncorrectGuess extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbIncorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIncorrectContinueActionPerformed
+        GameTurn.controlSpin = 0;
         Game.setRoundNumber(Game.getRoundNumber() + 1);
-        Game.gameRound();
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
         game.updateAllBank();

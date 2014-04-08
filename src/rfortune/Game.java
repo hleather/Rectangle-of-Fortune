@@ -86,23 +86,8 @@ public class Game implements Serializable {
         WordsAndPhrases.translatePhraseToChar();
         WordsAndPhrases.translateParallelPhraseToChar();
     }
-
-    public static void gameRound() {
-        GameTurn.controlSpin = 0;
-        if (isFoundMatch()) {
-            setRoundNumber(getRoundNumber() - 1);
-        }
-    }
-
-    public static void updateFoundMatchTrue() {
-        Game.foundMatch = true;
-    }
-
-    public static void updateFoundMatchFalse() {
-        Game.foundMatch = false;
-    }
-
-    public static void display() {
+    
+  public static void display() {
         if (isFoundMatch()) {
             new RfortuneMessage().displayMessage("You have a match!");
         } else if (!isFoundMatch()) {

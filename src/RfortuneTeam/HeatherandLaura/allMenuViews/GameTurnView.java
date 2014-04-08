@@ -84,9 +84,8 @@ public class GameTurnView extends Menu {
                     Bank.spin();
                     Bank.spinWorth();
                    // CheckGuess.checkVowelGuess();
-                    wordsAndPhrases.searchPhrase(2);
+                    WordsAndPhrases.searchPhrase(2);
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
-                    Game.gameRound();
                     break;
                     //guess the phrase
                 case "P":
@@ -96,7 +95,6 @@ public class GameTurnView extends Menu {
                     Game.setGuessedPhrase();
                     
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
-                    Game.gameRound();
                     break;
                     //help menu
                 case "H":

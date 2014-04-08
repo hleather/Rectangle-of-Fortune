@@ -121,8 +121,7 @@ public class CorrectGuess extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCorrectContinueActionPerformed
-        Game.setRoundNumber(Game.getRoundNumber() + 1);
-        Game.gameRound();
+        Game.setRoundNumber(Game.getRoundNumber() - 1);
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
         game.updateAllBank();
