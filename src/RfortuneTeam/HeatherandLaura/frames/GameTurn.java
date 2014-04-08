@@ -15,7 +15,6 @@ import rfortune.Bank;
 public class GameTurn extends javax.swing.JFrame {
 
     MainMenuControl mainMenuControl = new MainMenuControl();
-    static GameTurn gameTurn = new GameTurn();
     public static int controlSpin;
 
     /**
