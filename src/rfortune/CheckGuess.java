@@ -6,8 +6,8 @@
 package rfortune;
 
 import java.io.Serializable;
-import java.util.Scanner;
 import RfortuneTeam.HeatherandLaura.customExceptions.letterCheckException;
+import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 
 /**
  * THESE (FUNCTIONS) ONLY CHECK TO SEE IF THE CONSONANT OR VOWEL IS A REPEAT AND
@@ -20,7 +20,7 @@ import RfortuneTeam.HeatherandLaura.customExceptions.letterCheckException;
 public class CheckGuess implements Serializable {
 
     private static boolean checkGuess = false;
-    static char currentGuess;
+    public static char currentGuess;
     private static boolean checkLetterRepeat = true;
     private static boolean checkVowelRepeat = true;
     private static char[] listOfLetterGuesses = new char[26];
@@ -158,15 +158,17 @@ public class CheckGuess implements Serializable {
         boolean done = false;
         while (letterIndex <= 26 && !done) {
             try {
-                if (isVowel(letter, letterGuess)) {
+                if (!isVowel(letter, letterGuess)) {
                     new RfortuneError().displayError("Sorry, you have to buy "
                             + "a vowel. Guess a letter. ");
+                    GuessLetter.controlGuess = false;
                     break;
                 }
 
                 if (alreadyInLetterList(getListOfLetterGuesses(), letterGuess)) {
                     new RfortuneError().displayError("That letter has already "
                             + "been guessed. Try again.");
+                    GuessLetter.controlGuess = false;
                     break;
                 }
 
@@ -176,6 +178,7 @@ public class CheckGuess implements Serializable {
                 if (!isCheckLetterRepeat()) {
                     setCurrentGuess(letterGuess);
                     setCheckGuess(true);
+                    GuessLetter.controlGuess = true;
                     done = true;
 
                 }
@@ -197,16 +200,18 @@ public class CheckGuess implements Serializable {
         boolean done = false;
         while (vowelIndex < 10 && !done) {
             try {
-                if (!isVowel(vowel, vowelGuess)) {
+                if (isVowel(vowel, vowelGuess)) {
                     new RfortuneError().displayError("That is not a vowel. "
                             + "Please enter a vowel. ");
-                    continue;
+                    GuessLetter.controlGuess = false;
+                    break;
                 }
 
                 if (alreadyInVowelList(getListOfVowelGuesses(), vowelGuess)) {
                     new RfortuneError().displayError("That vowel has already "
                             + "been guessed. Try again.");
-                    continue;
+                    GuessLetter.controlGuess = false;
+                    break;
                 }
 
                 CheckGuess.getListOfVowelGuesses()[vowelIndex] = vowelGuess;
@@ -215,6 +220,7 @@ public class CheckGuess implements Serializable {
                 if (!isCheckVowelRepeat()) {
                     setCurrentGuess(vowelGuess);
                     setCheckGuess(true);
+                    GuessLetter.controlGuess = true;
                     done = true;
                 }
             } catch (letterCheckException e) {

@@ -7,6 +7,7 @@ package RfortuneTeam.HeatherandLaura.frames;
 
 import rfortune.CheckGuess;
 import rfortune.RfortuneError;
+import rfortune.WordsAndPhrases;
 
 /**
  *
@@ -15,6 +16,7 @@ import rfortune.RfortuneError;
 public class GuessLetter extends javax.swing.JFrame {
 
     CheckGuess checkGuess = new CheckGuess();
+    public static boolean controlGuess = false;
 
     /**
      * Creates new form GuessLetter
@@ -121,11 +123,12 @@ public class GuessLetter extends javax.swing.JFrame {
         if (jtfLetterGuess.getText().length() != 1) {
             new RfortuneError().displayError("A guess must be one letter");
         } else {
-            char control = jtfLetterGuess.getText().trim().charAt(0);
-            CheckGuess.checkLetterGuess(control);
+            String control = jtfLetterGuess.getText().toUpperCase();
+            char guess = control.charAt(0);
+            CheckGuess.checkLetterGuess(guess);
         }
-        if (CheckGuess.getCheckGuess()) {
-            new RfortuneError().displayError("Test Successful in GuessLetter");
+        if (GuessLetter.controlGuess) {
+            WordsAndPhrases.searchPhrase(1);
         }
     }//GEN-LAST:event_jbSubmitLetterActionPerformed
 

@@ -3,23 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package rfortune;
+
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
+import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
+import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
 import java.io.Serializable;
 import java.util.Random;
+
 /**
  *
  * @author Heather
  */
-public class WordsAndPhrases implements Serializable {   
+public class WordsAndPhrases implements Serializable {
+
+    static CorrectGuess correctGuess = new CorrectGuess();
+    static IncorrectGuess incorrectGuess = new IncorrectGuess();
     static GameTurn gameTurn = new GameTurn();
     private static int index;
     private static String phrase;
     private static String parallelPhrase;
     private static char[] charArray;
-    private static char[] parallelCharArray;  
+    private static char[] parallelCharArray;
     private static int woots;
 
     /**
@@ -91,136 +97,171 @@ public class WordsAndPhrases implements Serializable {
     public static void setParallelCharArray(char[] aParallelCharArray) {
         parallelCharArray = aParallelCharArray;
     }
-    
-    public static int getWoots(){
+
+    public static int getWoots() {
         return woots;
     }
-    
-    public static void setWoots(int aWoots){
+
+    public static void setWoots(int aWoots) {
         woots = aWoots;
     }
-   
-   public WordsAndPhrases(){
-   }    
-   /****************************************************************************
-    * Stores the list of different phrase options. There are two
-    * separate lists, one for easy phrases and one for hard phrases.
-    ***************************************************************************/
-   public static void setPhrases(){    
-       String easyPhrases[] = {"BETTER LATE THAN NEVER", "BLOOD IS THICKER THAN WATER",
-           "MISERY LOVES COMPANY"};
-       String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
-               + "---- -----", "------ ----- -------"};
-       String hardPhrases[] = {"EVERY CLOUD HAS A SILVER LINING", "KNOWLEDGE IS POWER",
-           "MUCH IS EXPECTED WHERE MUCH IS GIVEN", "HOP ON POP"};
-       String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- "
-               + "-- -----", "---- -- -------- ----- ---- -- -----", 
-               "--- -- ---"};   
-       int control = 2;
-       if ("H".equals(GamePreferencesView.setDifficulty))
-           control = 3;
-       
-       Random indexLocation = new Random();
+
+    public WordsAndPhrases() {
+    }
+
+    /**
+     * **************************************************************************
+     * Stores the list of different phrase options. There are two separate
+     * lists, one for easy phrases and one for hard phrases.
+    **************************************************************************
+     */
+    public static void setPhrases() {
+        String easyPhrases[] = {"BETTER LATE THAN NEVER", "BLOOD IS THICKER THAN WATER",
+            "MISERY LOVES COMPANY"};
+        String pEasyPhrases[] = {"------ ---- ---- -----", "----- -- ------- "
+            + "---- -----", "------ ----- -------"};
+        String hardPhrases[] = {"EVERY CLOUD HAS A SILVER LINING", "KNOWLEDGE IS POWER",
+            "MUCH IS EXPECTED WHERE MUCH IS GIVEN", "HOP ON POP"};
+        String pHardPhrases[] = {"----- ----- --- - ------ ------", "--------- "
+            + "-- -----", "---- -- -------- ----- ---- -- -----",
+            "--- -- ---"};
+        int control = 2;
+        if ("H".equals(GamePreferencesView.setDifficulty)) {
+            control = 3;
+        }
+
+        Random indexLocation = new Random();
         setIndex(1 + indexLocation.nextInt(control));
-              
-       if("E".equals(GamePreferencesView.setDifficulty))
-       {                
+
+        if ("E".equals(GamePreferencesView.setDifficulty)) {
             setPhrase(easyPhrases[getIndex()]);
             setParallelPhrase(pEasyPhrases[getIndex()]);
-       }
-       if("H".equals(GamePreferencesView.setDifficulty))
-       {
+        }
+        if ("H".equals(GamePreferencesView.setDifficulty)) {
             setPhrase(hardPhrases[getIndex()]);
             setParallelPhrase(pHardPhrases[getIndex()]);
-       }        
-   }
-   
-    /***************************************************************************
-     * Translates phrase into a character array.
-     **************************************************************************/
-    public static void translatePhraseToChar(){          
-        setCharArray(getPhrase().toCharArray());           
+        }
     }
-    
-    /***************************************************************************
+
+    /**
+     * *************************************************************************
+     * Translates phrase into a character array.
+     *************************************************************************
+     */
+    public static void translatePhraseToChar() {
+        setCharArray(getPhrase().toCharArray());
+    }
+
+    /**
+     * *************************************************************************
      * Translates parallelPhrase into a character array.
-     **************************************************************************/
-    public static void translateParallelPhraseToChar(){
+     *************************************************************************
+     */
+    public static void translateParallelPhraseToChar() {
         setParallelCharArray(getParallelPhrase().toCharArray());
     }
-    
-    /***************************************************************************
+
+    /**
+     * *************************************************************************
      * Checks to see if the guessed letter is in the phrase.
+     *
      * @param typeGuess
-     **************************************************************************/
+     *************************************************************************
+     */
     public static void searchPhrase(int typeGuess) {
-        new RfortuneError().displayError("Test Successful");
+        correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
+        incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
         int control = 0;
         if (CheckGuess.getCheckGuess()) {
-            for(int i = 0; i  < getCharArray().length; i++){
-                if(getCharArray()[i] == (CheckGuess.currentGuess)){
+            for (int i = 0; i < getCharArray().length; i++) {
+                if (getCharArray()[i] == (CheckGuess.currentGuess)) {
                     Game.setFoundMatch(true);
-                    control++;                    
+                    control++;
+                    try {
+                        java.awt.EventQueue.invokeLater(new Runnable() {
+                            public void run() {
+                                correctGuess.setVisible(true);
+                            }
+                        });
+                    } finally {
+                        if (WordsAndPhrases.correctGuess != null) {
+                            WordsAndPhrases.correctGuess.dispose();
+                        }
+                    }
                 }
             }
-            if (control == 0){
+            if (control == 0) {
                 Game.setFoundMatch(false);
+                try {
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            incorrectGuess.setVisible(true);
+                        }
+                    });
+                } finally {
+                    if (WordsAndPhrases.incorrectGuess != null) {
+                        WordsAndPhrases.incorrectGuess.dispose();
+                    }
+                }
             }
         }
         setWoots(control);
-        if (typeGuess == 1){
+        if (typeGuess == 1) {
             Bank.updateBankSpinWorth();
         }
     }
-    
-    /***************************************************************************
+
+    /**
+     * *************************************************************************
      * replaces the location of the correctly guessed letters in the array with
      * the letter.
-     **************************************************************************/
+     *************************************************************************
+     */
     public static void updateParallelArray() {
         if (Game.isFoundMatch()) {
-            for(int i = 0; i < getCharArray().length; i++) {
-                if(getCharArray()[i] == (CheckGuess.getCurrentGuess()))
+            for (int i = 0; i < getCharArray().length; i++) {
+                if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
                     getParallelCharArray()[i] = CheckGuess.getCurrentGuess();
+                }
             }
         }
     }
-    
-    /***************************************************************************
+
+    /**
+     * *************************************************************************
      * compares two strings to see if they are the same.
-     **************************************************************************/
-    public static void checkPhrase(){
-        if (getPhrase().equals(Game.getGuessedPhrase())){
+     *************************************************************************
+     */
+    public static void checkPhrase() {
+        if (getPhrase().equals(Game.getGuessedPhrase())) {
             CheckGuess.setCheckPhraseGuess(true);
-        }
-        else 
+        } else {
             CheckGuess.setCheckGuess(false);
-        
+        }
+
     }
-    
-    /***************************************************************************
+
+    /**
+     * *************************************************************************
      * displays the parallelCharArray to the screen.
-     **************************************************************************/
-    public static void displayParallelArray(){
+     *************************************************************************
+     */
+    public static void displayParallelArray() {
         System.out.println(getParallelCharArray());
     }
-    
-    /***************************************************************************
+
+    /**
+     * *************************************************************************
      * displays the charArray to the screen.
-     **************************************************************************/
-    public static void displayCharArray(){
+     *************************************************************************
+     */
+    public static void displayCharArray() {
         System.out.println(getCharArray());
-}
-    public static String updateAndTranslateParallelArrayToString(){
+    }
+
+    public static String updateAndTranslateParallelArrayToString() {
         WordsAndPhrases.updateParallelArray();
         String control = String.copyValueOf(WordsAndPhrases.getParallelCharArray());
         return control;
     }
 }
-
-
-
-    
-    
-
-

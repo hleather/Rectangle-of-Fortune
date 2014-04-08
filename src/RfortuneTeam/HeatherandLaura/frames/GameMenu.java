@@ -259,7 +259,8 @@ public class GameMenu extends javax.swing.JFrame {
     private void jbTakeTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTakeTurnActionPerformed
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
-        gameTurn.jtfBankDisplay.setText(game.updateAllBank());
+        game.updateAllBank();
+        gameTurn.jtfBankDisplay.setText(game.displayPlayerUpBank());
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
