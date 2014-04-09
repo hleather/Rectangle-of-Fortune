@@ -6,10 +6,8 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
-import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
-import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
-import rfortune.Game;
+import rfortune.Bank;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
 
@@ -18,12 +16,8 @@ import rfortune.WordsAndPhrases;
  * @author Laura
  */
 public class GameMenu extends javax.swing.JFrame {
-    GameMenuControl gameMenuControl = new GameMenuControl();
-    HelpMenuView helpMenuView = new HelpMenuView();
     MainMenuControl mainMenuControl = new MainMenuControl();
     static GameTurn gameTurn = new GameTurn();
-    PlayerTurn playerTurn = new PlayerTurn();
-    Game game = new Game();
     /**
      * Creates new form GameMenu
      */
@@ -258,9 +252,9 @@ public class GameMenu extends javax.swing.JFrame {
 
     private void jbTakeTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTakeTurnActionPerformed
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
-        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
-        game.updateAllBank();
-        gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
+        gameTurn.jtfPlayerTurnDisplay.setText(PlayerTurn.updatePlayersTurn());
+        Bank.updateAllBank();
+        gameTurn.jtfBankDisplay.setText("$ " + Bank.displayPlayerUpBank());
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {

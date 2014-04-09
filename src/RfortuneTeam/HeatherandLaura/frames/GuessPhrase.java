@@ -6,12 +6,15 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import rfortune.CheckGuess;
+import rfortune.WordsAndPhrases;
+
 /**
  *
  * @author Heather
  */
 public class GuessPhrase extends javax.swing.JFrame {
-
+CheckGuess checkGuess = new CheckGuess();
     /**
      * Creates new form GuessVowel
      */
@@ -112,7 +115,10 @@ public class GuessPhrase extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSubmitPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitPhraseActionPerformed
-        // TODO add your handling code here:
+        CheckGuess.setGuessType(3);
+        String phrase = jtfPhraseGuess.getText().toUpperCase();
+        WordsAndPhrases.checkPhrase(phrase);
+        this.dispose();
     }//GEN-LAST:event_jbSubmitPhraseActionPerformed
 
     /**

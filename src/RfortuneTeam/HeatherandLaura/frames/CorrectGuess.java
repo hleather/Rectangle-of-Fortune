@@ -6,9 +6,11 @@
 package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
-import rfortune.Game;
+import rfortune.Bank;
+import rfortune.CheckGuess;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
+import rfortune.Game;
 
 /**
  *
@@ -19,8 +21,6 @@ public class CorrectGuess extends javax.swing.JFrame {
     GameMenuControl gameMenuControl = new GameMenuControl();
 
     static GameTurn gameTurn = new GameTurn();
-    Game game = new Game();
-    PlayerTurn playerTurn = new PlayerTurn();
 
     /**
      * Creates new form CorrectGuess
@@ -64,7 +64,7 @@ public class CorrectGuess extends javax.swing.JFrame {
         jtfCorrectMessage.setBackground(new java.awt.Color(0, 255, 153));
         jtfCorrectMessage.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
         jtfCorrectMessage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtfCorrectMessage.setText("is in the Phrase");
+        jtfCorrectMessage.setBorder(null);
 
         jbCorrectContinue.setFont(new java.awt.Font("David", 0, 18)); // NOI18N
         jbCorrectContinue.setText("Continue");
@@ -78,17 +78,17 @@ public class CorrectGuess extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlCongrats, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+            .addComponent(jlCongrats, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtfCorrectGuess)
                     .addComponent(jtfCorrectMessage))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(133, 133, 133)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jbCorrectContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(231, 231, 231))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,7 +100,7 @@ public class CorrectGuess extends javax.swing.JFrame {
                 .addComponent(jtfCorrectMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jbCorrectContinue)
-                .addGap(0, 24, Short.MAX_VALUE))
+                .addGap(0, 63, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,10 +124,10 @@ public class CorrectGuess extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCorrectContinueActionPerformed
-        game.updateAllBank();
+        Bank.updateAllBank();
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
-        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
-        gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
+        gameTurn.jtfPlayerTurnDisplay.setText(PlayerTurn.updatePlayersTurn());
+        gameTurn.jtfBankDisplay.setText("$ " + Bank.displayPlayerUpBank());
         gameTurn.jtfSpinWorth.setText(null);
         GameTurn.controlSpin = 0;
         try {
@@ -140,6 +140,9 @@ public class CorrectGuess extends javax.swing.JFrame {
             if (gameTurn != null) {
                 gameTurn.dispose();
             }
+        }
+        if(CheckGuess.getGuessType() == 3){
+            Game.displayEndingMessage();
         }
         this.dispose();
     }//GEN-LAST:event_jbCorrectContinueActionPerformed

@@ -12,7 +12,6 @@ import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
 import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
 import rfortune.Game;
 import rfortune.PlayerTurn;
-import rfortune.WordsAndPhrases;
 
 /**
  *

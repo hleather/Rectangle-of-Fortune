@@ -81,7 +81,7 @@ public class CheckGuess implements Serializable {
     }
 
     public void checkGuess(int type, char guess) {
-        // 1 is letter 2 is vowel
+        // 1 is letter 2 is vowel 3 is phrase
         CheckGuess.setGuessType(type);
         CheckGuess.setCurrentGuess(guess);
         checkVowel();

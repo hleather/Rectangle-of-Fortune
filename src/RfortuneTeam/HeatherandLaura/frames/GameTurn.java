@@ -303,7 +303,8 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbVowelActionPerformed
 
     private void jbPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPhraseActionPerformed
-        // TODO add your handling code here:
+        gameMenuControl.guessPhrase();
+        this.dispose();
     }//GEN-LAST:event_jbPhraseActionPerformed
 
     /**

@@ -5,6 +5,7 @@
  */
 package RfortuneTeam.HeatherandLaura.frames;
 
+import rfortune.Bank;
 import rfortune.Game;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
@@ -16,8 +17,7 @@ import rfortune.WordsAndPhrases;
 public class IncorrectGuess extends javax.swing.JFrame {
 
     static GameTurn gameTurn = new GameTurn();
-    PlayerTurn playerTurn = new PlayerTurn();
-    Game game = new Game();
+    Bank bank = new Bank();
 
     /**
      * Creates new form IncorrectGuess
@@ -38,7 +38,7 @@ public class IncorrectGuess extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jtfIncorrectGuess = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        jtfIncorrectMessage = new javax.swing.JTextField();
         jbIncorrectContinue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,12 +57,11 @@ public class IncorrectGuess extends javax.swing.JFrame {
         jtfIncorrectGuess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfIncorrectGuess.setBorder(null);
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(153, 0, 0));
-        jTextField1.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("is not in the phrase. Your turn is over.");
-        jTextField1.setBorder(null);
+        jtfIncorrectMessage.setEditable(false);
+        jtfIncorrectMessage.setBackground(new java.awt.Color(153, 0, 0));
+        jtfIncorrectMessage.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jtfIncorrectMessage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtfIncorrectMessage.setBorder(null);
 
         jbIncorrectContinue.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbIncorrectContinue.setText("Continue");
@@ -82,11 +81,11 @@ public class IncorrectGuess extends javax.swing.JFrame {
                     .addComponent(jtfIncorrectGuess)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jtfIncorrectMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(278, 278, 278)
                 .addComponent(jbIncorrectContinue)
-                .addGap(142, 142, 142))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,10 +95,10 @@ public class IncorrectGuess extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jtfIncorrectGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jtfIncorrectMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(jbIncorrectContinue)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,9 +125,9 @@ public class IncorrectGuess extends javax.swing.JFrame {
         GameTurn.controlSpin = 0;
         Game.setRoundNumber(Game.getRoundNumber() + 1);
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
-        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
-        game.updateAllBank();
-        gameTurn.jtfBankDisplay.setText(game.displayPlayerUpBank());
+        gameTurn.jtfPlayerTurnDisplay.setText(PlayerTurn.updatePlayersTurn());
+        Bank.updateAllBank();
+        gameTurn.jtfBankDisplay.setText(Bank.displayPlayerUpBank());
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
@@ -150,8 +149,8 @@ public class IncorrectGuess extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField jTextField1;
     public javax.swing.JButton jbIncorrectContinue;
     public javax.swing.JTextField jtfIncorrectGuess;
+    public javax.swing.JTextField jtfIncorrectMessage;
     // End of variables declaration//GEN-END:variables
 }
