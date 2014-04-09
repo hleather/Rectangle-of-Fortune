@@ -225,12 +225,6 @@ public class Bank implements Serializable {
             setBankNumberPlayer1(1000);
         }
     }
-    
-    public static void updateAllBank() {
-        PlayerTurn.updatePlayersTurn();
-        Bank.updateBankPlayer();
-        Bank.bankPlayerTurn();        
-    }
 
     public static void updateBankPlayer() {
         if (MainMenuControl.getSetNumPlayers() == 3) {
@@ -263,6 +257,12 @@ public class Bank implements Serializable {
         }
     }
 
+    /**
+     * *************************************************************************
+     * display the current player's bank amount.
+    **************************************************************************
+     * @return 
+     */
     public static String displayPlayerUpBank() {
         String control = null;
         if (PlayerTurn.getPlayerUp() == 0) {
@@ -274,8 +274,42 @@ public class Bank implements Serializable {
         }
         return control;
     }
-    
 
+    /**
+     * *************************************************************************
+     * display player 1's bank
+    **************************************************************************
+     */
+    public static void displayBankPlayer1() {
+        System.out.println(getBankPlayer1());
+    }
+
+    /**
+     * *************************************************************************
+     * display player 2's bank
+    **************************************************************************
+     */
+    public static void displayBankPlayer2() {
+        System.out.println(getBankPlayer2());
+    }
+
+    /**
+     * *************************************************************************
+     * display player 3's bank
+    **************************************************************************
+     */
+    public static void displayBankPlayer3() {
+        System.out.println(getBankPlayer3());
+    }
+
+    /**
+     * *************************************************************************
+     * updateBankVowelPurchase(). first checks to see if the current player has
+     * enough money to purchase a vowel (250). If the player has enough money to
+     * purchase a vowel, this function subtracts 250 from bankPlayerUp. It will
+     * return true or false to let the ***vowel*** function know ***?***.
+    **************************************************************************
+     */
     public static void updateBankVowelPurchase() {
     PlayerTurn playerTurn = new PlayerTurn();
         playerTurn.updatePlayersTurn();

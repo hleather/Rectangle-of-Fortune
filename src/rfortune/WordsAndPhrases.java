@@ -8,7 +8,6 @@ package rfortune;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
-import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
 import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
 import java.io.Serializable;
 import java.util.Random;
@@ -19,7 +18,6 @@ import java.util.Random;
  */
 public class WordsAndPhrases implements Serializable {
 
-    static GuessPhrase guessPhrase = new GuessPhrase();
     static CorrectGuess correctGuess = new CorrectGuess();
     static IncorrectGuess incorrectGuess = new IncorrectGuess();
     static GameTurn gameTurn = new GameTurn();
@@ -108,11 +106,11 @@ public class WordsAndPhrases implements Serializable {
     public static void setWoots(int aWoots) {
         woots = aWoots;
     }
-
+    
     public static void setFoundMatch(boolean match) {
         foundMatch = match;
     }
-
+    
     public static boolean getFoundMatch() {
         return foundMatch;
     }
@@ -162,7 +160,6 @@ public class WordsAndPhrases implements Serializable {
             if (getCharArray()[i] == guess) {
                 control++;
                 correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
-                correctGuess.jtfCorrectMessage.setText("is in the phrase!");
                 try {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         @Override
@@ -179,7 +176,6 @@ public class WordsAndPhrases implements Serializable {
         }
         if (control == 0) {
             incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
-            incorrectGuess.jtfIncorrectMessage.setText("is not in the phrase. Your turn is over.");
             try {
                 java.awt.EventQueue.invokeLater(new Runnable() {
                     @Override
@@ -200,51 +196,19 @@ public class WordsAndPhrases implements Serializable {
     }
 
     public static void updateParallelArray() {
-        for (int i = 0; i < getCharArray().length; i++) {
-            if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
-                getParallelCharArray()[i] = CheckGuess.getCurrentGuess();
-            }
-        }
-    }
-
-    public static void checkPhrase(String guess) {
-        if (getPhrase().equals(guess)) {
-            correctGuess.jtfCorrectGuess.setText(guess);
-            correctGuess.jtfCorrectMessage.setText("is the correct phrase!");
-            Bank.phraseWorth();
-            Bank.updateAllBank();
-            try {
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        correctGuess.setVisible(true);
-                    }
-                });
-            } finally {
-                if (WordsAndPhrases.correctGuess != null) {
-                    WordsAndPhrases.correctGuess.dispose();
+            for (int i = 0; i < getCharArray().length; i++) {
+                if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
+                    getParallelCharArray()[i] = CheckGuess.getCurrentGuess();
                 }
             }
+    }
 
+    public static void checkPhrase() {
+        if (getPhrase().equals(Game.getGuessedPhrase())) {
         } else {
-            incorrectGuess.jtfIncorrectGuess.setText(guess);
-            incorrectGuess.jtfIncorrectMessage.setText("is not the phrase. Your turn is over.");
-            try {
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        incorrectGuess.setVisible(true);
-                    }
-                });
-            } finally {
-                if (WordsAndPhrases.incorrectGuess != null) {
-                    WordsAndPhrases.incorrectGuess.dispose();
-                }
-            }
         }
 
     }
-
     public static String updateAndTranslateParallelArrayToString() {
         WordsAndPhrases.updateParallelArray();
         String control = String.copyValueOf(WordsAndPhrases.getParallelCharArray());

@@ -14,7 +14,6 @@ import java.util.Scanner;
  * @author Heather and Laura
  */
 public class Game implements Serializable {
-
     PlayerTurn playerTurn = new PlayerTurn();
     static GameTurn gameTurn = new GameTurn();
     private static int roundNumber = 0;
@@ -87,8 +86,8 @@ public class Game implements Serializable {
         WordsAndPhrases.translatePhraseToChar();
         WordsAndPhrases.translateParallelPhraseToChar();
     }
-
-    public static void display() {
+    
+  public static void display() {
         if (isFoundMatch()) {
             new RfortuneMessage().displayMessage("You have a match!");
         } else if (!isFoundMatch()) {
@@ -112,15 +111,26 @@ public class Game implements Serializable {
         return guessedPhrase;
     }
 
-    public static void displayEndingMessage() {
-
-        /* if((Bank.playerListOrder[0])==(Bank.playerListOrder[1])){
-         }
-         //refers to the two top players in the sorted array
-         System.out.println("This game was a tie between " + bank.winningOrder[0] 
-         +" and " + bank.winningOrder[1]);
-         else
-         System.out.println("Congratulations "+ playerListOrder[0]+ ". You "
-         + "are the winner!" ); */
+    public void updateAllBank() {
+        playerTurn.updatePlayersTurn();
+        Bank.updateBankPlayer();
+        Bank.bankPlayerTurn();        
+    }
+    
+    public String displayPlayerUpBank() {
+        return Bank.displayPlayerUpBank();
     }
 }
+
+/*public void displayEndingMessage (){
+ Bank bank = new Bank();
+        
+        
+ if((Bank.playerListOrder[0])==(Bank.playerListOrder[1])){
+ }
+ //refers to the two top players in the sorted array
+ System.out.println("This game was a tie between " + bank.winningOrder[0] 
+ +" and " + bank.winningOrder[1]);
+ else
+ System.out.println("Congratulations "+ playerListOrder[0]+ ". You "
+ + "are the winner!" );*/

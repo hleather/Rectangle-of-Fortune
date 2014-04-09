@@ -66,11 +66,11 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Component id="jtfIncorrectMessage" alignment="0" pref="643" max="32767" attributes="0"/>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-                  <Component id="jbIncorrectContinue" min="-2" max="-2" attributes="0"/>
+              <Component id="jTextField1" alignment="0" pref="374" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="jbIncorrectContinue" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -82,10 +82,10 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jtfIncorrectGuess" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jtfIncorrectMessage" min="-2" pref="59" max="-2" attributes="0"/>
-                  <EmptySpace pref="93" max="32767" attributes="0"/>
+                  <Component id="jTextField1" min="-2" pref="59" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jbIncorrectContinue" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,7 +118,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtfIncorrectMessage">
+        <Component class="javax.swing.JTextField" name="jTextField1">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -128,6 +128,7 @@
               <Font name="David" size="24" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="is not in the phrase. Your turn is over."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

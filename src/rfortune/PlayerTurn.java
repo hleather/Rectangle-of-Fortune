@@ -41,7 +41,7 @@ public class PlayerTurn implements Serializable {
         }
     }
 
-    public static String updatePlayersTurn() {
+    public String updatePlayersTurn() {
         int n = 0;
         for (int i = 0; n <= Game.getRoundNumber(); i++) {
             if (i == MainMenuControl.getSetNumPlayers()) {
