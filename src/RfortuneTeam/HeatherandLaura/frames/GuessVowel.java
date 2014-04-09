@@ -123,7 +123,7 @@ public class GuessVowel extends javax.swing.JFrame {
         if (jtfVowelGuess.getText().length() == 1) {
             String control = jtfVowelGuess.getText().toUpperCase();
             char guess = control.charAt(0);
-            CheckGuess.checkGuess(2, guess);
+            checkGuess.checkGuess(2, guess);
             if (!CheckGuess.getCheckGuessRepeat()) {
                 WordsAndPhrases.searchPhrase(2);
                 this.dispose();

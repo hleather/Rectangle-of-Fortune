@@ -123,11 +123,7 @@ public class GuessLetter extends javax.swing.JFrame {
         if (jtfLetterGuess.getText().length() == 1) {
             String control = jtfLetterGuess.getText().toUpperCase();
             char guess = control.charAt(0);
-            CheckGuess.checkGuess(1, guess);
-            if (!CheckGuess.getCheckGuessRepeat()) {
-                WordsAndPhrases.searchPhrase(1);
-                this.dispose();
-            }
+            checkGuess.checkGuess(1, guess);
         } else {
             new RfortuneError().displayError("A guess must be one letter");
         }

@@ -7,6 +7,7 @@ package rfortune;
 
 import java.io.Serializable;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
+import java.util.ArrayList;
 
 /**
  * THESE (FUNCTIONS) ONLY CHECK TO SEE IF THE CONSONANT OR VOWEL IS A REPEAT AND
@@ -21,22 +22,13 @@ public class CheckGuess implements Serializable {
     static GuessLetter guessLetter = new GuessLetter();
     private static char currentGuess;
     private static boolean checkGuessRepeat;
-    private static char[] listOfGuesses = new char[26];
     private static final char[] vowel = {'A', 'E', 'I', 'O', 'U'};
     private static boolean checkPhraseRepeat;
-    private static int guessIndex = 0;
     private static boolean isVowel;
     private static int guessType = 0;
     private static boolean correctGuessType;
-
-    public static void setGuessIndex(int index) {
-        guessIndex = index;
-    }
-
-    public static int getGuessIndex() {
-        return guessIndex;
-    }
-
+    ArrayList guessList = new ArrayList();
+    
     public static void setCurrentGuess(char guess) {
         currentGuess = guess;
     }
@@ -59,14 +51,6 @@ public class CheckGuess implements Serializable {
 
     public static boolean getCheckPhraseRepeat() {
         return checkPhraseRepeat;
-    }
-
-    public static void setListOfGuesses(char[] list) {
-        listOfGuesses = list;
-    }
-
-    public static char[] getListOfGuesses() {
-        return listOfGuesses;
     }
 
     public static void setIsVowel(boolean vowel) {
@@ -96,21 +80,15 @@ public class CheckGuess implements Serializable {
     public CheckGuess() {
     }
 
-    public static void checkGuess(int type, char guess) {
+    public void checkGuess(int type, char guess) {
         // 1 is letter 2 is vowel
         CheckGuess.setGuessType(type);
         CheckGuess.setCurrentGuess(guess);
-        CheckGuess.checkVowel();
-        CheckGuess.checkGuessType();
-        if (CheckGuess.correctGuessType) {
-            CheckGuess.checkRepeat();
-        }
-        if (!CheckGuess.checkGuessRepeat) {
-            CheckGuess.updateGuessList(CheckGuess.getListOfGuesses(), CheckGuess.getGuessIndex(), CheckGuess.getCurrentGuess());
-        }
+        checkVowel();
+        checkGuessType();
     }
 
-    public static void checkVowel() {
+    private void checkVowel() {
         int control = 0;
         char value = CheckGuess.getCurrentGuess();
         for (char valueInList : vowel) {
@@ -125,7 +103,7 @@ public class CheckGuess implements Serializable {
         }
     }
 
-    public static void checkGuessType() {
+    private void checkGuessType() {
         int control = 0;
         if (CheckGuess.getIsVowel()) {
             control = 2;
@@ -133,51 +111,29 @@ public class CheckGuess implements Serializable {
             control = 1;
         }
 
-        if (CheckGuess.guessType == control) {
+        if (CheckGuess.getGuessType() == control) {
             CheckGuess.setCorrectGuessType(true);
+            checkRepeat(CheckGuess.getCurrentGuess());
         } else if (CheckGuess.guessType != control) {
             CheckGuess.setCorrectGuessType(false);
             new RfortuneMessage().displayMessage("Failed @ CheckGuess.determine"
                     + "CorrectGuessType");
         }
     }
-
-    public static void checkRepeat() {
-        int control = 0;
-        char value = CheckGuess.getCurrentGuess();
-        for (char valueInList : CheckGuess.getListOfGuesses()) {
-            if (value == valueInList) {
-                control++;
-            }
-        }
-        if (control == 0) {
-            CheckGuess.setCheckGuessRepeat(false);
-            new RfortuneMessage().displayMessage("CheckRepeat.control == 0");
-        } else if (control > 0) {
+   
+    private void checkRepeat(char guess) {
+        if(guessList.contains(guess)) {
             CheckGuess.setCheckGuessRepeat(true);
-            new RfortuneMessage().displayMessage("CheckRepeat.control > 0");
+            new RfortuneError().displayError("CheckGues.checkRepeat.true");
+        }
+        else {
+            CheckGuess.setCheckGuessRepeat(false);
+            updateGuessList(guess);
         }
     }
 
-    public static void updateGuessList(char[] oldList, int index, char guess) {
-        char[] newList = new char[oldList.length + 1];
-        for (int i = 0; i < newList.length; i++) {
-            if (i == index) {
-                newList[index] = guess;
-            }
-            if (i < index) {
-                oldList[i] = newList[i];
-            }
-            if (i > index) {
-                oldList[i - 1] = newList[i];
-            }
-        }
-        CheckGuess.setListOfGuesses(newList);
-        new RfortuneError().displayError("Test: " + CheckGuess.getGuessIndex());
-        CheckGuess.setGuessIndex(CheckGuess.getGuessIndex() + 1);
-        new RfortuneError().displayError(" Test: " + CheckGuess.getGuessIndex());
-        
+    private void updateGuessList(char guess) {
+        guessList.add(guess);
+        new RfortuneError().displayError("Guess Added");
     }
-
 }
-
