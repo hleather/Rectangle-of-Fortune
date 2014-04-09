@@ -17,7 +17,6 @@ public class GuessLetter extends javax.swing.JFrame {
 
     WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
     CheckGuess checkGuess = new CheckGuess();
-    public static boolean controlGuess = false;
 
     /**
      * Creates new form GuessLetter
@@ -124,9 +123,9 @@ public class GuessLetter extends javax.swing.JFrame {
         if (jtfLetterGuess.getText().length() == 1) {
             String control = jtfLetterGuess.getText().toUpperCase();
             char guess = control.charAt(0);
-            checkGuess.checkLetterGuess(guess);
-            if (GuessLetter.controlGuess) {
-                wordsAndPhrases.searchPhrase(1);
+            CheckGuess.checkGuess(1, guess);
+            if (!CheckGuess.getCheckGuessRepeat()) {
+                WordsAndPhrases.searchPhrase(1);
                 this.dispose();
             }
         } else {

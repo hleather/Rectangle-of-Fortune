@@ -113,7 +113,7 @@ public class WordsAndPhrases implements Serializable {
      * **************************************************************************
      * Stores the list of different phrase options. There are two separate
      * lists, one for easy phrases and one for hard phrases.
-    **************************************************************************
+     * *************************************************************************
      */
     public static void setPhrases() {
         String easyPhrases[] = {"BETTER LATE THAN NEVER", "BLOOD IS THICKER THAN WATER",
@@ -146,7 +146,7 @@ public class WordsAndPhrases implements Serializable {
     /**
      * *************************************************************************
      * Translates phrase into a character array.
-     *************************************************************************
+     * ************************************************************************
      */
     public static void translatePhraseToChar() {
         setCharArray(getPhrase().toCharArray());
@@ -155,7 +155,7 @@ public class WordsAndPhrases implements Serializable {
     /**
      * *************************************************************************
      * Translates parallelPhrase into a character array.
-     *************************************************************************
+     * ************************************************************************
      */
     public static void translateParallelPhraseToChar() {
         setParallelCharArray(getParallelPhrase().toCharArray());
@@ -166,42 +166,38 @@ public class WordsAndPhrases implements Serializable {
      * Checks to see if the guessed letter is in the phrase.
      *
      * @param typeGuess
-     *************************************************************************
+     * ************************************************************************
      */
     public static void searchPhrase(int typeGuess) {
-        correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
-        incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.currentGuess));
         int control = 0;
-        if (CheckGuess.getCheckGuess()) {
-            for (int i = 0; i < getCharArray().length; i++) {
-                if (getCharArray()[i] == (CheckGuess.currentGuess)) {
-                    Game.setFoundMatch(true);
-                    control++;
-                    try {
-                        java.awt.EventQueue.invokeLater(new Runnable() {
-                            public void run() {
-                                correctGuess.setVisible(true);
-                }
-                        });
-                    } finally {
-                        if (WordsAndPhrases.correctGuess != null) {
-                            WordsAndPhrases.correctGuess.dispose();
-            }
-                    }
-                }
-            }
-            if (control == 0) {
-                Game.setFoundMatch(false);
+        for (int i = 0; i < getCharArray().length; i++) {
+            if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
+                control++;
+                correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
                 try {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                            incorrectGuess.setVisible(true);
-            }
+                            correctGuess.setVisible(true);
+                        }
                     });
                 } finally {
-                    if (WordsAndPhrases.incorrectGuess != null) {
-                        WordsAndPhrases.incorrectGuess.dispose();
+                    if (WordsAndPhrases.correctGuess != null) {
+                        WordsAndPhrases.correctGuess.dispose();
+                    }
+                }
+            }
         }
+        if (control == 0) {
+            incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
+            try {
+                java.awt.EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                        incorrectGuess.setVisible(true);
+                    }
+                });
+            } finally {
+                if (WordsAndPhrases.incorrectGuess != null) {
+                    WordsAndPhrases.incorrectGuess.dispose();
                 }
             }
         }
@@ -215,7 +211,7 @@ public class WordsAndPhrases implements Serializable {
      * *************************************************************************
      * replaces the location of the correctly guessed letters in the array with
      * the letter.
-     *************************************************************************
+     * ************************************************************************
      */
     public static void updateParallelArray() {
         if (Game.isFoundMatch()) {
@@ -230,13 +226,11 @@ public class WordsAndPhrases implements Serializable {
     /**
      * *************************************************************************
      * compares two strings to see if they are the same.
-     *************************************************************************
+     * ************************************************************************
      */
     public static void checkPhrase() {
         if (getPhrase().equals(Game.getGuessedPhrase())) {
-            CheckGuess.setCheckPhraseGuess(true);
         } else {
-            CheckGuess.setCheckGuess(false);
         }
 
     }
@@ -244,7 +238,7 @@ public class WordsAndPhrases implements Serializable {
     /**
      * *************************************************************************
      * displays the parallelCharArray to the screen.
-     *************************************************************************
+     * ************************************************************************
      */
     public static void displayParallelArray() {
         System.out.println(getParallelCharArray());
@@ -253,7 +247,7 @@ public class WordsAndPhrases implements Serializable {
     /**
      * *************************************************************************
      * displays the charArray to the screen.
-     *************************************************************************
+     * ************************************************************************
      */
     public static void displayCharArray() {
         System.out.println(getCharArray());
