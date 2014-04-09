@@ -6,9 +6,7 @@
 package rfortune;
 
 import java.io.Serializable;
-import RfortuneTeam.HeatherandLaura.customExceptions.letterCheckException;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
-import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
 
 /**
  * THESE (FUNCTIONS) ONLY CHECK TO SEE IF THE CONSONANT OR VOWEL IS A REPEAT AND
@@ -24,7 +22,7 @@ public class CheckGuess implements Serializable {
     private static char currentGuess;
     private static boolean checkGuessRepeat;
     private static char[] listOfGuesses = new char[26];
-    private static char[] vowel = {'A', 'E', 'I', 'O', 'U'};
+    private static final char[] vowel = {'A', 'E', 'I', 'O', 'U'};
     private static boolean checkPhraseRepeat;
     private static int guessIndex = 0;
     private static boolean isVowel;
