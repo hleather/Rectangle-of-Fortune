@@ -5,6 +5,7 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import java.io.Serializable;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class CheckGuess implements Serializable {
     private static int guessType = 0;
     private static boolean correctGuessType;
     ArrayList guessList = new ArrayList();
-    
+
     public static void setCurrentGuess(char guess) {
         currentGuess = guess;
     }
@@ -100,6 +101,7 @@ public class CheckGuess implements Serializable {
             CheckGuess.setIsVowel(false);
         } else if (control > 0) {
             CheckGuess.setIsVowel(true);
+
         }
     }
 
@@ -116,24 +118,30 @@ public class CheckGuess implements Serializable {
             checkRepeat(CheckGuess.getCurrentGuess());
         } else if (CheckGuess.guessType != control) {
             CheckGuess.setCorrectGuessType(false);
-            new RfortuneMessage().displayMessage("Failed @ CheckGuess.determine"
-                    + "CorrectGuessType");
+            new RfortuneError().displayError("You have to purchase a vowel. "
+                    + "Enter a letter.");
         }
     }
-   
+
     private void checkRepeat(char guess) {
-        if(guessList.contains(guess)) {
+        if (guessList.contains(guess)) {
             CheckGuess.setCheckGuessRepeat(true);
-            new RfortuneError().displayError("CheckGues.checkRepeat.true");
-        }
-        else {
+            if (CheckGuess.getGuessType() == 1) {
+                new RfortuneError().displayError("That letter has already been "
+                        + "guessed. Enter a different letter.");
+            } else if (CheckGuess.getGuessType() == 2) {
+                new RfortuneError().displayError("That vowel has already been "
+                        + "guessed. Enter a different vowel.");
+            }
+        } else {
             CheckGuess.setCheckGuessRepeat(false);
             updateGuessList(guess);
+            WordsAndPhrases.searchPhrase(CheckGuess.getGuessType(), guess);
+            WordsAndPhrases.updateAndTranslateParallelArrayToString();
         }
     }
 
     private void updateGuessList(char guess) {
         guessList.add(guess);
-        new RfortuneError().displayError("Guess Added");
     }
 }

@@ -47,8 +47,8 @@ public class GameTurnView extends Menu {
     public String getInput(Object object) {
 
         do {
-            WordsAndPhrases.updateParallelArray();
-            WordsAndPhrases.displayParallelArray();
+           // WordsAndPhrases.updateParallelArray();
+        //    WordsAndPhrases.displayParallelArray();
             if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
                 playerTurn.updatePlayersTurn();
                 Bank.displayPlayerUpBank();
@@ -84,7 +84,7 @@ public class GameTurnView extends Menu {
                     Bank.spin();
                     Bank.spinWorth();
                    // CheckGuess.checkVowelGuess();
-                    WordsAndPhrases.searchPhrase(2);
+                //    WordsAndPhrases.searchPhrase(2);
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     break;
                     //guess the phrase

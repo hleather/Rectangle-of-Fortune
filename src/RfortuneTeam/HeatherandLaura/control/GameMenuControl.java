@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
@@ -14,11 +13,13 @@ import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
 import rfortune.Game;
 import rfortune.PlayerTurn;
 import rfortune.WordsAndPhrases;
+
 /**
  *
  * @author Heather
  */
 public class GameMenuControl {
+
     Game game = new Game();
     PlayerTurn playerTurn = new PlayerTurn();
     GameMenuControl gameMenuControl = null;
@@ -27,18 +28,16 @@ public class GameMenuControl {
     static GuessLetter guessLetter = new GuessLetter();
     static GuessVowel guessVowel = new GuessVowel();
     static GuessPhrase guessPhrase = new GuessPhrase();
-    
+
     public GameMenuControl() {
-       
+
     }
 
-       
-    
-   public void takeTurn() {
-       gameMenuControl.startGameTurn();
-   }
-   
-   public void startGameTurn() {
+    public void takeTurn() {
+        gameMenuControl.startGameTurn();
+    }
+
+    public void startGameTurn() {
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
@@ -51,29 +50,9 @@ public class GameMenuControl {
             }
         }
     }
-   
-   public void contGameTurn() {
-        game.updateAllBank();
-        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
-        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
-        gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
-        gameTurn.jtfSpinWorth.setText(null);
-        GameTurn.controlSpin = 0;
-       try {
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    gameTurn.setVisible(true);
-                }
-            });
-        } finally {
-            if (gameTurn != null) {
-                gameTurn.dispose();
-            }
-        }
-   }
-   
-   public void guessLetter() {
-       gameMenuControl = new GameMenuControl();
+
+    public void guessLetter() {
+        gameMenuControl = new GameMenuControl();
         try {
             guessLetter.jtfLetterGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
@@ -87,7 +66,7 @@ public class GameMenuControl {
             }
         }
     }
-    
+
     public void guessVowel() {
         gameMenuControl = new GameMenuControl();
         try {
@@ -103,7 +82,7 @@ public class GameMenuControl {
             }
         }
     }
-    
+
     public void guessPhrase() {
         gameMenuControl = new GameMenuControl();
         try {
@@ -119,5 +98,5 @@ public class GameMenuControl {
             }
         }
     }
-    
-    }
+
+}

@@ -27,6 +27,7 @@ public class WordsAndPhrases implements Serializable {
     private static char[] charArray;
     private static char[] parallelCharArray;
     private static int woots;
+    private static boolean foundMatch;
 
     /**
      * @return the index
@@ -105,16 +106,18 @@ public class WordsAndPhrases implements Serializable {
     public static void setWoots(int aWoots) {
         woots = aWoots;
     }
+    
+    public static void setFoundMatch(boolean match) {
+        foundMatch = match;
+    }
+    
+    public static boolean getFoundMatch() {
+        return foundMatch;
+    }
 
     public WordsAndPhrases() {
     }
 
-    /**
-     * **************************************************************************
-     * Stores the list of different phrase options. There are two separate
-     * lists, one for easy phrases and one for hard phrases.
-     * *************************************************************************
-     */
     public static void setPhrases() {
         String easyPhrases[] = {"BETTER LATE THAN NEVER", "BLOOD IS THICKER THAN WATER",
             "MISERY LOVES COMPANY"};
@@ -143,39 +146,23 @@ public class WordsAndPhrases implements Serializable {
         }
     }
 
-    /**
-     * *************************************************************************
-     * Translates phrase into a character array.
-     * ************************************************************************
-     */
     public static void translatePhraseToChar() {
         setCharArray(getPhrase().toCharArray());
     }
 
-    /**
-     * *************************************************************************
-     * Translates parallelPhrase into a character array.
-     * ************************************************************************
-     */
     public static void translateParallelPhraseToChar() {
         setParallelCharArray(getParallelPhrase().toCharArray());
     }
 
-    /**
-     * *************************************************************************
-     * Checks to see if the guessed letter is in the phrase.
-     *
-     * @param typeGuess
-     * ************************************************************************
-     */
-    public static void searchPhrase(int typeGuess) {
+    public static void searchPhrase(int typeGuess, char guess) {
         int control = 0;
         for (int i = 0; i < getCharArray().length; i++) {
-            if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
+            if (getCharArray()[i] == guess) {
                 control++;
                 correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
                 try {
                     java.awt.EventQueue.invokeLater(new Runnable() {
+                        @Override
                         public void run() {
                             correctGuess.setVisible(true);
                         }
@@ -191,6 +178,7 @@ public class WordsAndPhrases implements Serializable {
             incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
             try {
                 java.awt.EventQueue.invokeLater(new Runnable() {
+                    @Override
                     public void run() {
                         incorrectGuess.setVisible(true);
                     }
@@ -207,52 +195,20 @@ public class WordsAndPhrases implements Serializable {
         }
     }
 
-    /**
-     * *************************************************************************
-     * replaces the location of the correctly guessed letters in the array with
-     * the letter.
-     * ************************************************************************
-     */
     public static void updateParallelArray() {
-        if (Game.isFoundMatch()) {
             for (int i = 0; i < getCharArray().length; i++) {
                 if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
                     getParallelCharArray()[i] = CheckGuess.getCurrentGuess();
                 }
             }
-        }
     }
 
-    /**
-     * *************************************************************************
-     * compares two strings to see if they are the same.
-     * ************************************************************************
-     */
     public static void checkPhrase() {
         if (getPhrase().equals(Game.getGuessedPhrase())) {
         } else {
         }
 
     }
-
-    /**
-     * *************************************************************************
-     * displays the parallelCharArray to the screen.
-     * ************************************************************************
-     */
-    public static void displayParallelArray() {
-        System.out.println(getParallelCharArray());
-    }
-
-    /**
-     * *************************************************************************
-     * displays the charArray to the screen.
-     * ************************************************************************
-     */
-    public static void displayCharArray() {
-        System.out.println(getCharArray());
-    }
-
     public static String updateAndTranslateParallelArrayToString() {
         WordsAndPhrases.updateParallelArray();
         String control = String.copyValueOf(WordsAndPhrases.getParallelCharArray());

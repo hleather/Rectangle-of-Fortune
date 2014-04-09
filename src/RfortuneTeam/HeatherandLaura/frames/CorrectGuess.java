@@ -15,6 +15,7 @@ import rfortune.WordsAndPhrases;
  * @author Heather
  */
 public class CorrectGuess extends javax.swing.JFrame {
+
     GameMenuControl gameMenuControl = new GameMenuControl();
 
     static GameTurn gameTurn = new GameTurn();
@@ -123,8 +124,23 @@ public class CorrectGuess extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCorrectContinueActionPerformed
-        Game.setRoundNumber(Game.getRoundNumber() - 1);
-        gameMenuControl.contGameTurn();
+        game.updateAllBank();
+        gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
+        gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
+        gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
+        gameTurn.jtfSpinWorth.setText(null);
+        GameTurn.controlSpin = 0;
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    gameTurn.setVisible(true);
+                }
+            });
+        } finally {
+            if (gameTurn != null) {
+                gameTurn.dispose();
+            }
+        }
         this.dispose();
     }//GEN-LAST:event_jbCorrectContinueActionPerformed
 
