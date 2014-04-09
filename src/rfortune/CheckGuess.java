@@ -5,7 +5,6 @@
  */
 package rfortune;
 
-import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import java.io.Serializable;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import java.util.ArrayList;
