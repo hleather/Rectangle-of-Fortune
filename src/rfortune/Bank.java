@@ -421,16 +421,16 @@ public class Bank implements Serializable {
         setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);
     }
 
-    public String[] sortScores() {
+    /*public static long[] sortScores() {
         Bank.updateBankPlayer();
-        String playerListOrder[] = {getBankPlayer1(), getBankPlayer2(), getBankPlayer3()};
-        String temp;
+        long playerListOrder[] = {getBankNumberPlayer1(), getBankNumberPlayer2(), getBankNumberPlayer3()};
+        long temp;
         boolean notDone = true;
         while (notDone) {
 
             notDone = false;
             for (int i = 0; i < playerListOrder.length - 1; i++) {
-                int compareResult = playerListOrder[i].compareTo(playerListOrder[i + 1]);
+                long compareResult = playerListOrder[i].compareTo(playerListOrder[i + 1]);
                 if (compareResult > 0) {
                     temp = playerListOrder[i];
                     playerListOrder[i] = playerListOrder[i + 1];
@@ -444,5 +444,15 @@ public class Bank implements Serializable {
         return playerListOrder;
 
     }
+    
+    public void determineWinner(){
+        Bank.sortScores();
+        long[]sortScores();
+        
+        if (sortScores[0] > sortScores[1]){
+            system.out.println("Congratulations!" ")
+        }
+            
+    }*/
 
 }

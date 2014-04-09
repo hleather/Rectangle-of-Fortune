@@ -5,8 +5,6 @@
  */
 package rfortune;
 
-import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
-import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 import RfortuneTeam.HeatherandLaura.frames.MainFrame;
 import java.util.Scanner;
 
@@ -17,26 +15,13 @@ import java.util.Scanner;
 public class Rfortune {
 
     // Instance variables
-    private String welcomeMsg
-            = "\n\t************************************************"
-            + "\n\t* Welcome to the game, Rectangle of Fortune.    *"
-            + "\n\t* You will be playing against one or two other  *"
-            + "\n\t* players. The object of the game is to have    *"
-            + "\n\t* earned the most money by the end of the game. *"
-            + "\n\t* The game ends when a player guesses the word  *"
-            + "\n\t* or phrase.                                    *"
-            + "\n\t*************************************************"
-            + "\n";
+   
     public static Scanner inFile = new Scanner(System.in);
     static MainFrame mainFrame = new MainFrame();
 
     public static void main(String[] args) {
         Rfortune rFortune = null;
-        
-
-        //first
-       // Rfortune myGame = new Rfortune();
-        //myGame.displayHelp();
+       
 
         //second
         try {
@@ -49,11 +34,17 @@ public class Rfortune {
                     mainFrame.setVisible(true);
                 }
             });
+        }
+
+            catch (Throwable ex){
+                    //Need to do: Add error display message
+                    //Need to do: Add any other desired action
+                    }
         
 
 
 
-        } finally {
+         finally {
             Rfortune.inFile.close();
              if(Rfortune.mainFrame != null) {
              Rfortune.mainFrame.dispose();
@@ -64,10 +55,6 @@ public class Rfortune {
 
     public static Scanner getInputFile() {
         return Rfortune.inFile;
-    }
-
-    public void displayHelp() {
-        System.out.println(this.welcomeMsg);
     }
 
 }
