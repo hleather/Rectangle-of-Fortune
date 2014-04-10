@@ -38,7 +38,7 @@ public class IncorrectGuess extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jtfIncorrectGuess = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        jtfIncorrectMessage = new javax.swing.JTextField();
         jbIncorrectContinue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,7 +47,7 @@ public class IncorrectGuess extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
         jLabel1.setBackground(new java.awt.Color(153, 0, 0));
-        jLabel1.setFont(new java.awt.Font("David", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("David", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SORRY");
 
@@ -57,12 +57,17 @@ public class IncorrectGuess extends javax.swing.JFrame {
         jtfIncorrectGuess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfIncorrectGuess.setBorder(null);
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(153, 0, 0));
-        jTextField1.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("is not in the phrase. Your turn is over.");
-        jTextField1.setBorder(null);
+        jtfIncorrectMessage.setEditable(false);
+        jtfIncorrectMessage.setBackground(new java.awt.Color(153, 0, 0));
+        jtfIncorrectMessage.setFont(new java.awt.Font("David", 0, 24)); // NOI18N
+        jtfIncorrectMessage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtfIncorrectMessage.setText("is not in the phrase. Your turn is over.");
+        jtfIncorrectMessage.setBorder(null);
+        jtfIncorrectMessage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfIncorrectMessageActionPerformed(evt);
+            }
+        });
 
         jbIncorrectContinue.setFont(new java.awt.Font("David", 0, 14)); // NOI18N
         jbIncorrectContinue.setText("Continue");
@@ -78,28 +83,28 @@ public class IncorrectGuess extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtfIncorrectGuess)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtfIncorrectGuess, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtfIncorrectMessage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(373, 373, 373)
                 .addComponent(jbIncorrectContinue)
-                .addGap(142, 142, 142))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jtfIncorrectGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(82, 82, 82)
+                .addComponent(jtfIncorrectGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jtfIncorrectMessage, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                .addGap(76, 76, 76)
                 .addComponent(jbIncorrectContinue)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(84, 84, 84))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +148,10 @@ public class IncorrectGuess extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jbIncorrectContinueActionPerformed
 
+    private void jtfIncorrectMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIncorrectMessageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfIncorrectMessageActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -150,8 +159,8 @@ public class IncorrectGuess extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField jTextField1;
     public javax.swing.JButton jbIncorrectContinue;
     public javax.swing.JTextField jtfIncorrectGuess;
+    public javax.swing.JTextField jtfIncorrectMessage;
     // End of variables declaration//GEN-END:variables
 }

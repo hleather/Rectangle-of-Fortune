@@ -89,7 +89,7 @@ public class MainMenuView extends Menu {
     }
     
     public void initiate() {
-        game.newGame();
+        game.startGame();
         myPlayers.getPlayerFrames();
     }
 }

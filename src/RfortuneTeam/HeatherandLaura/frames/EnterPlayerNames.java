@@ -292,7 +292,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }//GEN-LAST:event_jbValidate3ActionPerformed
 
     private void jbContinuePlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinuePlayerNamesActionPerformed
-        game.newGame();
+        game.startGame();
         mainMenuControl.startGameMenu();
         this.dispose();
     }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed

@@ -6,11 +6,14 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import rfortune.Game;
+
 /**
  *
  * @author Heather
  */
 public class EndingScreen extends javax.swing.JFrame {
+    Game game = new Game();
 
     /**
      * Creates new form NewJFrame
@@ -203,7 +206,7 @@ public class EndingScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewGameActionPerformed
-        // TODO add your handling code here:
+        game.newGame();
     }//GEN-LAST:event_jbNewGameActionPerformed
 
 

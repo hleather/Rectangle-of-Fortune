@@ -50,8 +50,12 @@ public class Game implements Serializable {
 
     public Game() {
     }
-
+    
     public void newGame() {
+        new RfortuneError().displayError("Game.newGame called");
+    }
+
+    public void startGame() {
         mainMenuControl.setScreen();
         WordsAndPhrases.setPhrases();
         WordsAndPhrases.translatePhraseToChar();

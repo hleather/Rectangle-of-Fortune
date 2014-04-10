@@ -60,6 +60,7 @@ public class GameMenuControl {
         gameMenuControl = new GameMenuControl();
         try {
             guessLetter.jtfLetterGuess.setText(null);
+            correctGuess.jtfCorrectMessage.setText("is in the phrase!");
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
                 public void run() {
@@ -110,6 +111,11 @@ public class GameMenuControl {
     public void correctWindow() {
         gameMenuControl = new GameMenuControl();
         correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
+        correctGuess.jtfCorrectMessage.setText("is not in the phrase. "
+                + "Your turn is over.");
+        if (MainMenuControl.getSetNumPlayers() == 1) {
+            correctGuess.jtfCorrectMessage.setText("is not in the phrase.");
+        }
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
@@ -127,6 +133,11 @@ public class GameMenuControl {
     public void incorrectWindow() {
         gameMenuControl = new GameMenuControl();
         incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
+        incorrectGuess.jtfIncorrectMessage.setText("is not in the phrase. "
+                + "Your turn is over.");
+        if (MainMenuControl.getSetNumPlayers() == 1) {
+            incorrectGuess.jtfIncorrectMessage.setText("is not in the phrase.");
+        }
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
