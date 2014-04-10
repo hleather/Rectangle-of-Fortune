@@ -141,6 +141,9 @@ public class CorrectGuess extends javax.swing.JFrame {
                 gameTurn.dispose();
             }
         }
+        /* if(CheckGuess.getGuessType() == 3) {
+            game.displayEndingMessage();
+        } */
         this.dispose();
     }//GEN-LAST:event_jbCorrectContinueActionPerformed
 
