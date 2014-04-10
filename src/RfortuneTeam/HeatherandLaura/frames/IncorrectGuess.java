@@ -128,7 +128,7 @@ public class IncorrectGuess extends javax.swing.JFrame {
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
         game.updateAllBank();
-        gameTurn.jtfBankDisplay.setText(game.displayPlayerUpBank());
+        gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {

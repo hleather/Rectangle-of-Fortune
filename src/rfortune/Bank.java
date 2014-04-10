@@ -145,7 +145,7 @@ public class Bank implements Serializable {
     /**
      * @return the hasEnough
      */
-    public static boolean isHasEnough() {
+    public static boolean getHasEnough() {
         return hasEnough;
     }
 
@@ -341,9 +341,11 @@ public class Bank implements Serializable {
             }
             Bank.updateBankPlayer();
         }
-        else
+        else {
+            Bank.setHasEnough(false);
             new RfortuneError().displayError("Sorry, you need $250 to purchase "
                     + "a vowel");
+        }
     }
 
     /**

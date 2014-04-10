@@ -6,13 +6,15 @@
 package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
+import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
 import RfortuneTeam.HeatherandLaura.frames.GuessVowel;
+import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
+import rfortune.CheckGuess;
 import rfortune.Game;
 import rfortune.PlayerTurn;
-import rfortune.WordsAndPhrases;
 
 /**
  *
@@ -28,6 +30,8 @@ public class GameMenuControl {
     static GuessLetter guessLetter = new GuessLetter();
     static GuessVowel guessVowel = new GuessVowel();
     static GuessPhrase guessPhrase = new GuessPhrase();
+    static CorrectGuess correctGuess = new CorrectGuess();
+    static IncorrectGuess incorrectGuess = new IncorrectGuess();
 
     public GameMenuControl() {
 
@@ -40,6 +44,7 @@ public class GameMenuControl {
     public void startGameTurn() {
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     gameTurn.setVisible(true);
                 }
@@ -56,6 +61,7 @@ public class GameMenuControl {
         try {
             guessLetter.jtfLetterGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     guessLetter.setVisible(true);
                 }
@@ -72,6 +78,7 @@ public class GameMenuControl {
         try {
             guessVowel.jtfVowelGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     guessVowel.setVisible(true);
                 }
@@ -88,6 +95,7 @@ public class GameMenuControl {
         try {
             guessPhrase.jtfPhraseGuess.setText(null);
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     guessPhrase.setVisible(true);
                 }
@@ -95,6 +103,40 @@ public class GameMenuControl {
         } finally {
             if (GameMenuControl.guessPhrase != null) {
                 GameMenuControl.guessPhrase.dispose();
+            }
+        }
+    }
+
+    public void correctWindow() {
+        gameMenuControl = new GameMenuControl();
+        correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    correctGuess.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.correctGuess != null) {
+                GameMenuControl.correctGuess.dispose();
+            }
+        }
+    }
+
+    public void incorrectWindow() {
+        gameMenuControl = new GameMenuControl();
+        incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    incorrectGuess.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.incorrectGuess != null) {
+                GameMenuControl.incorrectGuess.dispose();
             }
         }
     }

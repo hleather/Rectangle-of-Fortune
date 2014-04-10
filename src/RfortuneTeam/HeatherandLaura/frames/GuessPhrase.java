@@ -6,6 +6,8 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
+import rfortune.WordsAndPhrases;
+
 /**
  *
  * @author Heather
@@ -112,7 +114,8 @@ public class GuessPhrase extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSubmitPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSubmitPhraseActionPerformed
-        // TODO add your handling code here:
+        String phrase = jtfPhraseGuess.getText().toUpperCase();
+        WordsAndPhrases.checkPhrase(phrase);
     }//GEN-LAST:event_jbSubmitPhraseActionPerformed
 
     /**

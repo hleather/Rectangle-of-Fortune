@@ -5,22 +5,20 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *
  * @author Heather and Laura
  */
 public class Game implements Serializable {
+    MainMenuControl mainMenuControl = new MainMenuControl();
     PlayerTurn playerTurn = new PlayerTurn();
     static GameTurn gameTurn = new GameTurn();
     private static int roundNumber = 0;
     private static int correctGuesses = 0;
-    private static boolean foundMatch = false;
-    private static boolean turnOver = false;
-    private static String guessedPhrase;
 
     /**
      * @return the roundNumber
@@ -50,65 +48,14 @@ public class Game implements Serializable {
         correctGuesses = aCorrectGuesses;
     }
 
-    /**
-     * @return the foundMatch
-     */
-    public static boolean isFoundMatch() {
-        return foundMatch;
-    }
-
-    /**
-     * @param aFoundMatch the foundMatch to set
-     */
-    public static void setFoundMatch(boolean aFoundMatch) {
-        foundMatch = aFoundMatch;
-    }
-
-    /**
-     * @return the turnOver
-     */
-    public static boolean isTurnOver() {
-        return turnOver;
-    }
-
-    /**
-     * @param aTurnOver the turnOver to set
-     */
-    public static void setTurnOver(boolean aTurnOver) {
-        turnOver = aTurnOver;
-    }
-
     public Game() {
     }
 
-    public static void newGame() {
+    public void newGame() {
+        mainMenuControl.setScreen();
         WordsAndPhrases.setPhrases();
         WordsAndPhrases.translatePhraseToChar();
         WordsAndPhrases.translateParallelPhraseToChar();
-    }
-    
-  public static void display() {
-        if (isFoundMatch()) {
-            new RfortuneMessage().displayMessage("You have a match!");
-        } else if (!isFoundMatch()) {
-            new RfortuneMessage().displayMessage("Sorry, that is not in the "
-                    + "phrase. Your turn is over.");
-            setTurnOver(true);
-        }
-    }
-
-    public static void setGuessedPhrase() {
-        new RfortuneMessage().displayMessage("You have chosen to guess the "
-                + "phrase! Please enter your guess: ");
-        String guess;
-        Scanner inFile = new Scanner(System.in);
-        guess = inFile.nextLine();
-        guess = guess.trim().toUpperCase();
-        guessedPhrase = guess;
-    }
-
-    public static String getGuessedPhrase() {
-        return guessedPhrase;
     }
 
     public void updateAllBank() {

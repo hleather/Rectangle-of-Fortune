@@ -6,6 +6,7 @@
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
+import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
@@ -28,6 +29,7 @@ public class WordsAndPhrases implements Serializable {
     private static char[] parallelCharArray;
     private static int woots;
     private static boolean foundMatch;
+    static GameMenuControl gameMenuControl = new GameMenuControl();
 
     /**
      * @return the index
@@ -46,14 +48,14 @@ public class WordsAndPhrases implements Serializable {
     /**
      * @return the phrase
      */
-    public static String getPhrase() {
+    public static String getCurrentPhrase() {
         return phrase;
     }
 
     /**
      * @param aPhrase the phrase to set
      */
-    public static void setPhrase(String aPhrase) {
+    public static void setCurrentPhrase(String aPhrase) {
         phrase = aPhrase;
     }
 
@@ -106,11 +108,11 @@ public class WordsAndPhrases implements Serializable {
     public static void setWoots(int aWoots) {
         woots = aWoots;
     }
-    
+
     public static void setFoundMatch(boolean match) {
         foundMatch = match;
     }
-    
+
     public static boolean getFoundMatch() {
         return foundMatch;
     }
@@ -137,17 +139,17 @@ public class WordsAndPhrases implements Serializable {
         setIndex(1 + indexLocation.nextInt(control));
 
         if ("E".equals(GamePreferencesView.setDifficulty)) {
-            setPhrase(easyPhrases[getIndex()]);
+            setCurrentPhrase(easyPhrases[getIndex()]);
             setParallelPhrase(pEasyPhrases[getIndex()]);
         }
         if ("H".equals(GamePreferencesView.setDifficulty)) {
-            setPhrase(hardPhrases[getIndex()]);
+            setCurrentPhrase(hardPhrases[getIndex()]);
             setParallelPhrase(pHardPhrases[getIndex()]);
         }
     }
 
     public static void translatePhraseToChar() {
-        setCharArray(getPhrase().toCharArray());
+        setCharArray(getCurrentPhrase().toCharArray());
     }
 
     public static void translateParallelPhraseToChar() {
@@ -159,35 +161,12 @@ public class WordsAndPhrases implements Serializable {
         for (int i = 0; i < getCharArray().length; i++) {
             if (getCharArray()[i] == guess) {
                 control++;
-                correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
-                try {
-                    java.awt.EventQueue.invokeLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            correctGuess.setVisible(true);
-                        }
-                    });
-                } finally {
-                    if (WordsAndPhrases.correctGuess != null) {
-                        WordsAndPhrases.correctGuess.dispose();
-                    }
-                }
+                gameMenuControl.correctWindow();
             }
         }
         if (control == 0) {
-            incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
-            try {
-                java.awt.EventQueue.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        incorrectGuess.setVisible(true);
-                    }
-                });
-            } finally {
-                if (WordsAndPhrases.incorrectGuess != null) {
-                    WordsAndPhrases.incorrectGuess.dispose();
-                }
-            }
+            gameMenuControl.incorrectWindow();
+
         }
         setWoots(control);
         if (typeGuess == 1) {
@@ -196,19 +175,23 @@ public class WordsAndPhrases implements Serializable {
     }
 
     public static void updateParallelArray() {
-            for (int i = 0; i < getCharArray().length; i++) {
-                if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
-                    getParallelCharArray()[i] = CheckGuess.getCurrentGuess();
-                }
+        for (int i = 0; i < getCharArray().length; i++) {
+            if (getCharArray()[i] == (CheckGuess.getCurrentGuess())) {
+                getParallelCharArray()[i] = CheckGuess.getCurrentGuess();
             }
+        }
     }
 
-    public static void checkPhrase() {
-        if (getPhrase().equals(Game.getGuessedPhrase())) {
+    public static void checkPhrase(String phraseGuess) {
+        String guess = WordsAndPhrases.getCurrentPhrase();
+        if (guess.equals(phraseGuess)) {
+            new RfortuneError().displayError("Correct");
         } else {
+            new RfortuneError().displayError("Incorrect");
         }
 
     }
+
     public static String updateAndTranslateParallelArrayToString() {
         WordsAndPhrases.updateParallelArray();
         String control = String.copyValueOf(WordsAndPhrases.getParallelCharArray());

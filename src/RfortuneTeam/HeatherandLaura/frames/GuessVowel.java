@@ -125,7 +125,7 @@ public class GuessVowel extends javax.swing.JFrame {
             char guess = control.charAt(0);
             checkGuess.checkGuess(2, guess);
             if (!CheckGuess.getCheckGuessRepeat()) {
-                WordsAndPhrases.searchPhrase(2, guess);
+                wordsAndPhrases.searchPhrase(2, guess);
                 WordsAndPhrases.updateAndTranslateParallelArrayToString();
                 this.dispose();
             }

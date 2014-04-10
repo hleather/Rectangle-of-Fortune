@@ -5,7 +5,6 @@
  */
 package RfortuneTeam.HeatherandLaura.allMenuViews;
 
-import rfortune.Bank;
 import rfortune.Game;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
@@ -28,6 +27,7 @@ public class MainMenuView extends Menu {
         {"H", "Help"},
         {"X", "Exit Rectangle of Fortune"}
     };
+    Game game = new Game();
     PlayersList myList = new PlayersList();
     MainMenuControl mainMenuControl = new MainMenuControl();
     Player myPlayers = new Player();
@@ -89,7 +89,7 @@ public class MainMenuView extends Menu {
     }
     
     public void initiate() {
-        Game.newGame();
+        game.newGame();
         myPlayers.getPlayerFrames();
     }
 }

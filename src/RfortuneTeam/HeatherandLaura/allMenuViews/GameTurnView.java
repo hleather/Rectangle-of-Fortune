@@ -49,16 +49,16 @@ public class GameTurnView extends Menu {
         do {
            // WordsAndPhrases.updateParallelArray();
         //    WordsAndPhrases.displayParallelArray();
-            if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
-                playerTurn.updatePlayersTurn();
-                Bank.displayPlayerUpBank();
-            }
-            if (Game.isTurnOver()) {
-                playerTurn.updatePlayersTurn();
-                Bank.bankPlayerTurn();
-                Bank.updateBankPlayer();
-                Bank.displayPlayerUpBank();
-            }
+            //if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
+             //  playerTurn.updatePlayersTurn();
+              //  Bank.displayPlayerUpBank();
+           // }
+            //if (Game.isTurnOver()) {
+             //  playerTurn.updatePlayersTurn();
+             //   Bank.bankPlayerTurn();
+              //  Bank.updateBankPlayer();
+              //  Bank.displayPlayerUpBank();
+           // }
             this.display();
             switch (command) {
                 //guess a letter.
@@ -92,7 +92,7 @@ public class GameTurnView extends Menu {
                     playerTurn.updatePlayersTurn();
                     Bank.bankPlayerTurn();
                     Bank.phraseWorth();
-                    Game.setGuessedPhrase();
+                   // Game.setGuessedPhrase();
                     
                     Game.setRoundNumber(Game.getRoundNumber() + 1);
                     break;

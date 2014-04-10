@@ -297,13 +297,16 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbLetterActionPerformed
 
     private void jbVowelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVowelActionPerformed
-        gameMenuControl.guessVowel();
         Bank.updateBankVowelPurchase();
-        this.dispose();
+        if (Bank.getHasEnough()) {
+            gameMenuControl.guessVowel();
+            this.dispose();
+        }
     }//GEN-LAST:event_jbVowelActionPerformed
 
     private void jbPhraseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPhraseActionPerformed
-        // TODO add your handling code here:
+        gameMenuControl.guessPhrase();
+        this.dispose();
     }//GEN-LAST:event_jbPhraseActionPerformed
 
     /**

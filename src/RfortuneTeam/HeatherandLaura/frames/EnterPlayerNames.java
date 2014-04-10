@@ -7,6 +7,7 @@
 package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Game;
 import rfortune.Player;
 import rfortune.PlayerTurn;
 import rfortune.PlayersList;
@@ -22,6 +23,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     PlayersList playersList = new PlayersList();
     PlayerTurn playerTurn = new PlayerTurn();
     WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
+    Game game = new Game();
 
     /**
      * Creates new form EnterPlayerNames
@@ -290,8 +292,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }//GEN-LAST:event_jbValidate3ActionPerformed
 
     private void jbContinuePlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinuePlayerNamesActionPerformed
-        mainMenuControl.setScreen();
-        WordsAndPhrases.setPhrases();
+        game.newGame();
         mainMenuControl.startGameMenu();
         this.dispose();
     }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed

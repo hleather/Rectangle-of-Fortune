@@ -28,6 +28,7 @@ public class CheckGuess implements Serializable {
     private static int guessType = 0;
     private static boolean correctGuessType;
     ArrayList guessList = new ArrayList();
+    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
 
     public static void setCurrentGuess(char guess) {
         currentGuess = guess;
@@ -135,7 +136,7 @@ public class CheckGuess implements Serializable {
         } else {
             CheckGuess.setCheckGuessRepeat(false);
             updateGuessList(guess);
-            WordsAndPhrases.searchPhrase(CheckGuess.getGuessType(), guess);
+            wordsAndPhrases.searchPhrase(CheckGuess.getGuessType(), guess);
             WordsAndPhrases.updateAndTranslateParallelArrayToString();
         }
     }
