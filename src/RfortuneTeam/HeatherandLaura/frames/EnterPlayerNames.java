@@ -330,46 +330,23 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             if (control == 1) {
                 ready = true;
             }
-            if (Player.getPlayer1().isEmpty()) {
-                new RfortuneError().displayError("Player One needs a name");
-            }
+            else
+                new RfortuneError().displayError("Please submit player names");
 
         }
         if (MainMenuControl.getSetNumPlayers() == 2) {
-            if (control == 2) {
+            if (control == 2) 
                 ready = true;
-            }
-            if (control == 1) {
-                if (Player.getPlayer1().isEmpty()) {
-                    new RfortuneError().displayError("Player One needs a name");
-                }
-                if (Player.getPlayer2().isEmpty()) {
-                    new RfortuneError().displayError("Player Two needs a name");
-                }
-            }
-            if (control == 0) {
-                new RfortuneError().displayError("Enter names first");
-            }
+            else
+                new RfortuneError().displayError("Please submit player names");
 
         }
         if (MainMenuControl.getSetNumPlayers() == 3) {
             if (control == 3) {
                 ready = true;
             }
-            if (control == 1 || control == 2) {
-                if (Player.getPlayer1().isEmpty()) {
-                    new RfortuneError().displayError("Player One needs a name");
-                }
-                if (Player.getPlayer2().isEmpty()) {
-                    new RfortuneError().displayError("Player Two needs a name");
-                }
-                if (Player.getPlayer3().isEmpty()) {
-                    new RfortuneError().displayError("Player Three needs a name");
-                }
-            }
-            if (control == 0) {
-                new RfortuneError().displayError("Enter names first");
-            }
+            else
+                new RfortuneError().displayError("Please submit player names");
 
         }
         if (MainMenuControl.getSetNumPlayers() == 0) {

@@ -49,7 +49,7 @@ public class IncorrectGuess extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(153, 0, 0));
         jLabel1.setFont(new java.awt.Font("David", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SORRY");
+        jLabel1.setText("Sorry");
 
         jtfIncorrectGuess.setEditable(false);
         jtfIncorrectGuess.setBackground(new java.awt.Color(153, 0, 0));

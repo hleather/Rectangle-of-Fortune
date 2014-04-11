@@ -7,6 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
+import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
@@ -129,18 +130,15 @@ public class WordsAndPhrases implements Serializable {
             + "-- -----", "---- -- -------- ----- ---- -- -----",
             "--- -- ---"};
         int control = 2;
-        if ("H".equals(GamePreferencesView.setDifficulty)) {
-            control = 3;
-        }
 
         Random indexLocation = new Random();
-        setIndex(1 + indexLocation.nextInt(control));
+        setIndex(indexLocation.nextInt(control));
 
-        if ("E".equals(GamePreferencesView.setDifficulty)) {
+        if (GamePreferencesControl.getDifficulty() == 1) {
             setCurrentPhrase(easyPhrases[getIndex()]);
             setParallelPhrase(pEasyPhrases[getIndex()]);
         }
-        if ("H".equals(GamePreferencesView.setDifficulty)) {
+        if (GamePreferencesControl.getDifficulty() == 2) {
             setCurrentPhrase(hardPhrases[getIndex()]);
             setParallelPhrase(pHardPhrases[getIndex()]);
         }

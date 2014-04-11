@@ -5,6 +5,7 @@
  */
 package RfortuneTeam.HeatherandLaura.frames;
 
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.PlayersList;
 import rfortune.Rfortune;
 
@@ -15,11 +16,13 @@ import rfortune.Rfortune;
 public class EndMessage extends javax.swing.JFrame {
 
     static EnterPlayerNames enterPlayerNames = new EnterPlayerNames();
-PlayersList playersList = new PlayersList();
+    PlayersList playersList = new PlayersList();
+    MainMenuControl mainMenuControl = new MainMenuControl();
 
     public EndMessage() {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -206,7 +209,7 @@ PlayersList playersList = new PlayersList();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        System.exit(0);
+        mainMenuControl.exitGame();
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewGameActionPerformed

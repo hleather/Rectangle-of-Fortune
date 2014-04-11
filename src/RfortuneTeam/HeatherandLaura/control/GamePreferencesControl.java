@@ -13,7 +13,7 @@ import rfortune.RfortuneMessage;
  */
 public class GamePreferencesControl {
 
-    private int difficultyMode;
+    private static int difficultyMode = 1;
 
     public GamePreferencesControl() {
     }
@@ -28,7 +28,7 @@ public class GamePreferencesControl {
         }
     }
 
-    public int getDifficulty() {
+    public static int getDifficulty() {
         return difficultyMode;
     }
 

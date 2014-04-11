@@ -53,7 +53,7 @@ public class CorrectGuess extends javax.swing.JFrame {
         jlCongrats.setBackground(new java.awt.Color(0, 255, 153));
         jlCongrats.setFont(new java.awt.Font("David", 0, 36)); // NOI18N
         jlCongrats.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlCongrats.setText("CONGRATULATIONS");
+        jlCongrats.setText("Congratulations");
 
         jtfCorrectGuess.setEditable(false);
         jtfCorrectGuess.setBackground(new java.awt.Color(0, 255, 153));

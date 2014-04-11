@@ -114,7 +114,7 @@ public class GameTurn extends javax.swing.JFrame {
 
         jtfPhraseDisplay.setEditable(false);
         jtfPhraseDisplay.setBackground(new java.awt.Color(0, 153, 153));
-        jtfPhraseDisplay.setFont(new java.awt.Font("David", 0, 50)); // NOI18N
+        jtfPhraseDisplay.setFont(new java.awt.Font("David", 0, 40)); // NOI18N
         jtfPhraseDisplay.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfPhraseDisplay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102), 3));
 
