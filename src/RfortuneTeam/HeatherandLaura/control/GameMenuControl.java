@@ -7,6 +7,7 @@ package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
+import RfortuneTeam.HeatherandLaura.frames.EndingScreen;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
@@ -15,6 +16,7 @@ import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
 import rfortune.CheckGuess;
 import rfortune.Game;
 import rfortune.PlayerTurn;
+import rfortune.RfortuneError;
 
 /**
  *
@@ -32,6 +34,7 @@ public class GameMenuControl {
     static GuessPhrase guessPhrase = new GuessPhrase();
     static CorrectGuess correctGuess = new CorrectGuess();
     static IncorrectGuess incorrectGuess = new IncorrectGuess();
+    static EndingScreen endingScreen = new EndingScreen();
 
     public GameMenuControl() {
 
@@ -108,13 +111,12 @@ public class GameMenuControl {
         }
     }
 
-    public void correctWindow() {
+    public void correctWindow(String guess) {
         gameMenuControl = new GameMenuControl();
-        correctGuess.jtfCorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
-        correctGuess.jtfCorrectMessage.setText("is not in the phrase. "
-                + "Your turn is over.");
+        correctGuess.jtfCorrectGuess.setText(guess);
+        correctGuess.jtfCorrectMessage.setText("is in the phrase!.");
         if (MainMenuControl.getSetNumPlayers() == 1) {
-            correctGuess.jtfCorrectMessage.setText("is not in the phrase.");
+            correctGuess.jtfCorrectMessage.setText("is in the phrase!");
         }
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
@@ -148,6 +150,25 @@ public class GameMenuControl {
         } finally {
             if (GameMenuControl.incorrectGuess != null) {
                 GameMenuControl.incorrectGuess.dispose();
+            }
+        }
+    }
+    
+    public void displayEndScreen() {
+        new RfortuneError().displayError("displayEndScreen called");
+        gameMenuControl = new GameMenuControl();
+        try {
+           // guessLetter.jtfLetterGuess.setText(null);
+           // correctGuess.jtfCorrectMessage.setText("is in the phrase!");
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    endingScreen.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.endingScreen != null) {
+                GameMenuControl.endingScreen.dispose();
             }
         }
     }

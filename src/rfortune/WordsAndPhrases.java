@@ -161,7 +161,7 @@ public class WordsAndPhrases implements Serializable {
         for (int i = 0; i < getCharArray().length; i++) {
             if (getCharArray()[i] == guess) {
                 control++;
-                gameMenuControl.correctWindow();
+                gameMenuControl.correctWindow(String.valueOf(guess));
             }
         }
         if (control == 0) {
@@ -185,9 +185,9 @@ public class WordsAndPhrases implements Serializable {
     public static void checkPhrase(String phraseGuess) {
         String guess = WordsAndPhrases.getCurrentPhrase();
         if (guess.equals(phraseGuess)) {
-            new RfortuneError().displayError("Correct");
+            gameMenuControl.correctWindow(phraseGuess);
         } else {
-            new RfortuneError().displayError("Incorrect");
+            gameMenuControl.incorrectWindow();
         }
 
     }

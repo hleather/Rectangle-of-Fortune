@@ -7,6 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
+import RfortuneTeam.HeatherandLaura.frames.EndingScreen;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
 import java.util.Random;
@@ -29,6 +30,7 @@ public class Bank implements Serializable {
     private static long guessPhraseWorth;
     private static int randomSpin;
     private static int random;
+    static EndingScreen endingScreen = new EndingScreen();
 
     /**
      * @return the bankPlayerUp
@@ -421,43 +423,6 @@ public class Bank implements Serializable {
         int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;
         setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);
-    }
-
-    public static long[] sortScores() {
-        Bank.updateBankPlayer();
-        long playerListOrder[] = {getBankNumberPlayer1(), getBankNumberPlayer2(), getBankNumberPlayer3()};
-        long temp;
-        boolean notDone = true;
-        while (notDone) {
-
-            notDone = false;
-            for (int i = 0; i < playerListOrder.length - 1; i++) {
-                long compareResult = playerListOrder[i].compareTo(playerListOrder[i + 1]);
-                if (compareResult > 0) {
-                    temp = playerListOrder[i];
-                    playerListOrder[i] = playerListOrder[i + 1];
-                    playerListOrder[i + 1] = temp;
-                    notDone = true;
-
-                }
-            }
-
-        }
-        return playerListOrder;
-
-    }
-    
-    public void determineWinner(){
-        Bank.sortScores();
-        
-        
-        if (sortScores[0] > sortScores[1]){
-            System.out.println("Congratulations!");
-        }
-        else{
-            System.out.println("The game was a tie.");
-        }
-            
     }
 
 }
