@@ -8,7 +8,6 @@ package RfortuneTeam.HeatherandLaura.frames;
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import rfortune.Bank;
-import rfortune.RfortuneError;
 
 /**
  *
