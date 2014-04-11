@@ -127,7 +127,7 @@ public class CorrectGuess extends javax.swing.JFrame {
     private void jbCorrectContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCorrectContinueActionPerformed
         game.updateAllBank();
         if (CheckGuess.getGuessType() == 3) {
-            game.setEndScreen();
+            Game.setEndScreen();
             gameMenuControl.displayEndScreen();
             this.dispose();
         }

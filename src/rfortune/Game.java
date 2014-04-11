@@ -76,10 +76,10 @@ public class Game implements Serializable {
     }
 
     public static void sortScores() {
-        new RfortuneError().displayError("sortScores called");
+       // new RfortuneError().displayError("sortScores called");
         Bank.updateBankPlayer();
-        if(MainMenuControl.getSetNumPlayers() == 3) {
-            new RfortuneError().displayError("One player end screen");
+        if(MainMenuControl.getSetNumPlayers() == 1) {
+           // new RfortuneError().displayError("One player end screen");
         }
         long[] playerListOrder = {Bank.getBankNumberPlayer1(), Bank.getBankNumberPlayer2(), Bank.getBankNumberPlayer3()};
         String[] parallelListOrder = {Player.getPlayer1(), Player.getPlayer2(), Player.getPlayer3()};
@@ -112,7 +112,7 @@ public class Game implements Serializable {
         }
     }
 
-    public void setEndScreen() {
+    public static void setEndScreen() {
         Game.sortScores();
         endingScreen.jtfPlayer1Name.setText(Player.getPlayer1());
 
