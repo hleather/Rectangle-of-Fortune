@@ -15,41 +15,32 @@ import java.util.Scanner;
 public class Rfortune {
 
     // Instance variables
-   
     public static Scanner inFile = new Scanner(System.in);
     static MainFrame mainFrame = new MainFrame();
+    static Rfortune rFortune = null;
 
     public static void main(String[] args) {
-        Rfortune rFortune = null;
-       
 
         //second
         try {
             rFortune = new Rfortune();
-            
+
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     MainFrame mainFrame = new MainFrame();
-                    
+
                     mainFrame.setVisible(true);
                 }
             });
-        }
-
-            catch (Throwable ex){
+        } catch (Throwable ex) {
                     //Need to do: Add error display message
-                    //Need to do: Add any other desired action
-                    }
-        
-
-
-
-         finally {
+            //Need to do: Add any other desired action
+        } finally {
             Rfortune.inFile.close();
-             if(Rfortune.mainFrame != null) {
-             Rfortune.mainFrame.dispose();
+            if (Rfortune.mainFrame != null) {
+                Rfortune.mainFrame.dispose();
             }
-            
+
         }
     }
 
@@ -57,4 +48,24 @@ public class Rfortune {
         return Rfortune.inFile;
     }
 
+    public void newGame() {
+
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    MainFrame mainFrame = new MainFrame();
+
+                    mainFrame.setVisible(true);
+                }
+            });
+        } 
+         finally {
+            Rfortune.inFile.close();
+            if (Rfortune.mainFrame != null) {
+                Rfortune.mainFrame.dispose();
+            }
+
+        }
+    }
 }

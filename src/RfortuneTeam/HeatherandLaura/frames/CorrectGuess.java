@@ -128,7 +128,6 @@ public class CorrectGuess extends javax.swing.JFrame {
         game.updateAllBank();
         if (CheckGuess.getGuessType() == 3) {
             Game.setEndScreen();
-            gameMenuControl.displayEndScreen();
             this.dispose();
         }
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
@@ -149,9 +148,7 @@ public class CorrectGuess extends javax.swing.JFrame {
                 gameTurn.dispose();
             }
         }
-        if (CheckGuess.getGuessType() == 3) {
-            game.setEndScreen();
-        }
+        
         }
         this.dispose();
     }//GEN-LAST:event_jbCorrectContinueActionPerformed

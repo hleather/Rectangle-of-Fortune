@@ -8,6 +8,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames;
 import java.io.Serializable;
+
 /**
  *
  * @author Heather

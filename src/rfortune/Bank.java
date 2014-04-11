@@ -7,7 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
-import RfortuneTeam.HeatherandLaura.frames.EndingScreen;
+import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
 import java.util.Random;
@@ -30,7 +30,7 @@ public class Bank implements Serializable {
     private static long guessPhraseWorth;
     private static int randomSpin;
     private static int random;
-    static EndingScreen endingScreen = new EndingScreen();
+    static EndMessage endMessage = new EndMessage();
 
     /**
      * @return the bankPlayerUp
@@ -349,6 +349,38 @@ public class Bank implements Serializable {
                     + "a vowel");
         }
     }
+    
+    public static void updateBankPhraseGuess() {
+        Bank.phraseWorth();
+    PlayerTurn playerTurn = new PlayerTurn();
+        playerTurn.updatePlayersTurn();
+            long bank = 0;
+            long updateBank;
+            int control = 0;
+            if (PlayerTurn.getPlayerUp() == 0) {
+                bank = getBankNumberPlayer1();
+                control = 1;
+            } else if (PlayerTurn.getPlayerUp() == 1) {
+                bank = getBankNumberPlayer2();
+                control = 2;
+            } else if (PlayerTurn.getPlayerUp() == 2) {
+                bank = getBankNumberPlayer3();
+                control = 3;
+            }
+            updateBank = bank + Bank.getGuessPhraseWorth();
+            if (control == 1) {
+                setBankNumberPlayer1(updateBank);
+            } else if (control == 2) {
+                setBankNumberPlayer2(updateBank);
+            } else if (control == 3) {
+                setBankNumberPlayer3(updateBank);
+            } else if (control == 0) {
+                new RfortuneError().displayError("Sorry, there is a problem in Bank "
+                        + "Class, updateBankPhraseGuess.");
+            }
+            Bank.updateBankPlayer();
+        }
+    
 
     /**
      * *************************************************************************
@@ -382,8 +414,7 @@ public class Bank implements Serializable {
         return control;
     }
 
-    public static void updateBankSpinWorth() {
-        int woot = WordsAndPhrases.getWoots();
+    public static void updateBankSpinWorth(int woots) {
         long bank = 0;
         long updateBank;
         int control = 0;
@@ -397,7 +428,7 @@ public class Bank implements Serializable {
             bank = getBankNumberPlayer3();
             control = 3;
         }
-        updateBank = bank + (getSpinWorth() * woot);
+        updateBank = bank + (getSpinWorth() * woots);
         if (control == 1) {
             setBankNumberPlayer1(updateBank);
         } else if (control == 2) {
@@ -419,7 +450,7 @@ public class Bank implements Serializable {
      */
     public static void phraseWorth() {
         int phraseLength = WordsAndPhrases.getCharArray().length;
-        int cGuesses = Game.getCorrectGuesses();
+        int cGuesses = WordsAndPhrases.getCorrectGuesses();
         int guessOpenSpaceWorth = 100;
         int openSpaces = phraseLength - cGuesses;
         setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);

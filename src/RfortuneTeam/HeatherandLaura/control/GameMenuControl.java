@@ -7,7 +7,7 @@ package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
-import RfortuneTeam.HeatherandLaura.frames.EndingScreen;
+import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
@@ -16,7 +16,6 @@ import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
 import rfortune.CheckGuess;
 import rfortune.Game;
 import rfortune.PlayerTurn;
-import rfortune.RfortuneError;
 
 /**
  *
@@ -34,7 +33,7 @@ public class GameMenuControl {
     static GuessPhrase guessPhrase = new GuessPhrase();
     static CorrectGuess correctGuess = new CorrectGuess();
     static IncorrectGuess incorrectGuess = new IncorrectGuess();
-    static EndingScreen endingScreen = new EndingScreen();
+    static EndMessage endMessage = new EndMessage();
 
     public GameMenuControl() {
 
@@ -154,22 +153,5 @@ public class GameMenuControl {
         }
     }
     
-    public void displayEndScreen() {
-        gameMenuControl = new GameMenuControl();
-        try {
-           // guessLetter.jtfLetterGuess.setText(null);
-           // correctGuess.jtfCorrectMessage.setText("is in the phrase!");
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    endingScreen.setVisible(true);
-                }
-            });
-        } finally {
-            if (GameMenuControl.endingScreen != null) {
-                GameMenuControl.endingScreen.dispose();
-            }
-        }
-    }
 
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
@@ -11,6 +10,8 @@ import rfortune.Game;
 import rfortune.Player;
 import rfortune.PlayerTurn;
 import rfortune.PlayersList;
+import rfortune.Rfortune;
+import rfortune.RfortuneError;
 import rfortune.WordsAndPhrases;
 
 /**
@@ -18,12 +19,14 @@ import rfortune.WordsAndPhrases;
  * @author Laura
  */
 public class EnterPlayerNames extends javax.swing.JFrame {
-    
+
     MainMenuControl mainMenuControl = new MainMenuControl();
     PlayersList playersList = new PlayersList();
     PlayerTurn playerTurn = new PlayerTurn();
     WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
     Game game = new Game();
+    public static int control = 0;
+    
 
     /**
      * Creates new form EnterPlayerNames
@@ -54,13 +57,14 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jtfPlayer1 = new javax.swing.JTextField();
         jtfPlayer2 = new javax.swing.JTextField();
         jtfPlayer3 = new javax.swing.JTextField();
-        jbValidate1 = new javax.swing.JButton();
-        jbValidate2 = new javax.swing.JButton();
-        jbValidate3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jbContinuePlayerNames = new javax.swing.JButton();
+        jbBack = new javax.swing.JButton();
+        jbValidate1 = new javax.swing.JButton();
+        jbValidate2 = new javax.swing.JButton();
+        jbValidate3 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,32 +125,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
-        jbValidate1.setBackground(new java.awt.Color(153, 153, 153));
-        jbValidate1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbValidate1.setText("Validate");
-        jbValidate1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbValidate1ActionPerformed(evt);
-            }
-        });
+        jtfPlayer1.setEditable(false);
 
-        jbValidate2.setBackground(new java.awt.Color(153, 153, 153));
-        jbValidate2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbValidate2.setText("Validate");
-        jbValidate2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbValidate2ActionPerformed(evt);
-            }
-        });
+        jtfPlayer2.setEditable(false);
 
-        jbValidate3.setBackground(new java.awt.Color(153, 153, 153));
-        jbValidate3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbValidate3.setText("Validate");
-        jbValidate3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbValidate3ActionPerformed(evt);
-            }
-        });
+        jtfPlayer3.setEditable(false);
 
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jLabel4.setText("Players Name");
@@ -166,6 +149,42 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
         });
 
+        jbBack.setBackground(new java.awt.Color(153, 153, 153));
+        jbBack.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jbBack.setText("Back");
+        jbBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBackActionPerformed(evt);
+            }
+        });
+
+        jbValidate1.setBackground(new java.awt.Color(153, 153, 153));
+        jbValidate1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbValidate1.setText("Submit");
+        jbValidate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbValidate1ActionPerformed(evt);
+            }
+        });
+
+        jbValidate2.setBackground(new java.awt.Color(153, 153, 153));
+        jbValidate2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbValidate2.setText("Submit");
+        jbValidate2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbValidate2ActionPerformed(evt);
+            }
+        });
+
+        jbValidate3.setBackground(new java.awt.Color(153, 153, 153));
+        jbValidate3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jbValidate3.setText("Submit");
+        jbValidate3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbValidate3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -173,40 +192,51 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jbBack, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jcb1PlayerG)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jcb3PlayerG)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jcb2PlayerG)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfPlayer3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jbContinuePlayerNames, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbValidate1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jbValidate2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jbValidate3, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addComponent(jLabel3))
-                        .addGap(0, 22, Short.MAX_VALUE)))
-                .addContainerGap())
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jtfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jtfPlayer3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jtfPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jbValidate1)
+                                                .addGap(31, 31, 31))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jbValidate2)
+                                                    .addComponent(jbValidate3))
+                                                .addContainerGap())))
+                                    .addComponent(jLabel3)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(192, 192, 192)
+                                .addComponent(jbContinuePlayerNames, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,24 +251,26 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb1PlayerG)
                     .addComponent(jtfPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbValidate1)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel4)
+                    .addComponent(jbValidate1))
+                .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcb2PlayerG)
                     .addComponent(jtfPlayer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbValidate2)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel5)
+                    .addComponent(jbValidate2))
+                .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jcb3PlayerG)
                         .addComponent(jtfPlayer3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jbValidate3))
                     .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addComponent(jbContinuePlayerNames)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbBack)
+                    .addComponent(jbContinuePlayerNames))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,56 +283,133 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcb1PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb1PlayerGActionPerformed
-        mainMenuControl.setNumPlayers(1);
-    }//GEN-LAST:event_jcb1PlayerGActionPerformed
+    private void jbValidate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate3ActionPerformed
+        String player3 = jtfPlayer3.getText().trim();
+        playersList.checkInput(player3);
+        if (PlayersList.getJustRight()) {
+            Player.setPlayer3(player3);
+            control++;
+            jtfPlayer3.setEditable(false);
+        }
+    }//GEN-LAST:event_jbValidate3ActionPerformed
 
-    private void jcb2PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb2PlayerGActionPerformed
-        mainMenuControl.setNumPlayers(2);
-    }//GEN-LAST:event_jcb2PlayerGActionPerformed
+    private void jbValidate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate2ActionPerformed
+        String player2 = jtfPlayer2.getText().trim();
+        playersList.checkInput(player2);
+        if (PlayersList.getJustRight()) {
+            Player.setPlayer2(player2);
+            control++;
+            jtfPlayer2.setEditable(false);
+        }
+    }//GEN-LAST:event_jbValidate2ActionPerformed
+
+    private void jbValidate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate1ActionPerformed
+        String player1 = jtfPlayer1.getText().trim();
+        playersList.checkInput(player1);
+        if (PlayersList.getJustRight()) {
+            Player.setPlayer1(player1);
+            control++;
+            jtfPlayer1.setEditable(false);
+        }
+    }//GEN-LAST:event_jbValidate1ActionPerformed
+
+    private void jbBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBackActionPerformed
+        new Rfortune().newGame();
+        this.dispose();
+    }//GEN-LAST:event_jbBackActionPerformed
+
+    private void jbContinuePlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinuePlayerNamesActionPerformed
+        boolean ready = false;
+        if (MainMenuControl.getSetNumPlayers() == 1) {
+            if (control == 1) {
+                ready = true;
+            } else {
+                new RfortuneError().displayError("Player One needs a name");
+            }
+
+        }
+        if (MainMenuControl.getSetNumPlayers() == 2) {
+            if (control == 2) {
+                ready = true;
+            }
+            if (control == 1) {
+                if (Player.getPlayer1().isEmpty()) {
+                    new RfortuneError().displayError("Player One needs a name");
+                } else {
+                    new RfortuneError().displayError("Player Two needs a name");
+                }
+            }
+            if (control == 0) {
+                new RfortuneError().displayError("Enter names first");
+            }
+
+        }
+        if (MainMenuControl.getSetNumPlayers() == 3) {
+            if (control == 3) {
+                ready = true;
+            }
+            if (control == 1) {
+                if (Player.getPlayer1().isEmpty()) {
+                    new RfortuneError().displayError("Player One needs a name");
+                } else if (Player.getPlayer2().isEmpty()) {
+                    new RfortuneError().displayError("Player Two needs a name");
+                } else {
+                    new RfortuneError().displayError("Player Three needs a name");
+                }
+            }
+            if (control == 0) {
+                new RfortuneError().displayError("Enter names first");
+            }
+
+        }
+        if(MainMenuControl.getSetNumPlayers() == 0) {
+                new RfortuneError().displayError("How many people are playing? Check the box.");
+        }
+        if (ready) {
+            playersList.resetList();
+            game.startGame();
+            mainMenuControl.startGameMenu();
+            this.dispose();
+        }
+    }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed
 
     private void jcb3PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb3PlayerGActionPerformed
         mainMenuControl.setNumPlayers(3);
+        if (MainMenuControl.getSetNumPlayers() == 3) {
+            jtfPlayer1.setEditable(rootPaneCheckingEnabled);
+            jtfPlayer2.setEditable(rootPaneCheckingEnabled);
+            jtfPlayer3.setEditable(rootPaneCheckingEnabled);
+        }
     }//GEN-LAST:event_jcb3PlayerGActionPerformed
 
-    private void jbValidate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate1ActionPerformed
-        String playerO = jtfPlayer1.getText();
-        String player1 = playerO.trim();
-        playersList.checkInput(player1);
-        Player.setPlayer1(player1);
-    }//GEN-LAST:event_jbValidate1ActionPerformed
+    private void jcb2PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb2PlayerGActionPerformed
+        mainMenuControl.setNumPlayers(2);
+        if (MainMenuControl.getSetNumPlayers() == 2) {
+            jtfPlayer1.setEditable(rootPaneCheckingEnabled);
+            jtfPlayer2.setEditable(rootPaneCheckingEnabled);
+            jtfPlayer3.setEditable(false);
+        }
+    }//GEN-LAST:event_jcb2PlayerGActionPerformed
 
-    private void jbValidate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate2ActionPerformed
-        String playerW = jtfPlayer2.getText();
-        String player2 = playerW.trim();
-        playersList.checkInput(player2);
-        Player.setPlayer2(player2);
-    }//GEN-LAST:event_jbValidate2ActionPerformed
-
-    private void jbValidate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbValidate3ActionPerformed
-        String playerH = jtfPlayer3.getText();
-        String player3 = playerH.trim();
-        playersList.checkInput(player3);
-        Player.setPlayer3(player3);
-    }//GEN-LAST:event_jbValidate3ActionPerformed
-
-    private void jbContinuePlayerNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinuePlayerNamesActionPerformed
-        game.startGame();
-        mainMenuControl.startGameMenu();
-        this.dispose();
-    }//GEN-LAST:event_jbContinuePlayerNamesActionPerformed
+    private void jcb1PlayerGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb1PlayerGActionPerformed
+        mainMenuControl.setNumPlayers(1);
+        if (MainMenuControl.getSetNumPlayers() == 1) {
+            jtfPlayer1.setEditable(rootPaneCheckingEnabled);
+            jtfPlayer2.setEditable(false);
+            jtfPlayer3.setEditable(false);
+        }
+    }//GEN-LAST:event_jcb1PlayerGActionPerformed
 
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -313,6 +422,7 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jbBack;
     private javax.swing.JButton jbContinuePlayerNames;
     private javax.swing.JButton jbValidate1;
     private javax.swing.JButton jbValidate2;

@@ -27,13 +27,10 @@ public class WordsAndPhrases implements Serializable {
     private static String parallelPhrase;
     private static char[] charArray;
     private static char[] parallelCharArray;
-    private static int woots;
+    private static int correctGuesses;
     private static boolean foundMatch;
     static GameMenuControl gameMenuControl = new GameMenuControl();
 
-    /**
-     * @return the index
-     */
     public static int getIndex() {
         return index;
     }
@@ -101,12 +98,12 @@ public class WordsAndPhrases implements Serializable {
         parallelCharArray = aParallelCharArray;
     }
 
-    public static int getWoots() {
-        return woots;
+    public static int getCorrectGuesses() {
+        return correctGuesses;
     }
 
-    public static void setWoots(int aWoots) {
-        woots = aWoots;
+    public static void setCorrectGuesses(int aWoots) {
+        correctGuesses = aWoots;
     }
 
     public static void setFoundMatch(boolean match) {
@@ -161,16 +158,19 @@ public class WordsAndPhrases implements Serializable {
         for (int i = 0; i < getCharArray().length; i++) {
             if (getCharArray()[i] == guess) {
                 control++;
-                gameMenuControl.correctWindow(String.valueOf(guess));
+                setCorrectGuesses(getCorrectGuesses() + 1);
+
             }
+        }
+        if (control > 0) {
+            gameMenuControl.correctWindow(String.valueOf(guess));
         }
         if (control == 0) {
             gameMenuControl.incorrectWindow();
 
         }
-        setWoots(control);
         if (typeGuess == 1) {
-            Bank.updateBankSpinWorth();
+            Bank.updateBankSpinWorth(control);
         }
     }
 
@@ -185,6 +185,7 @@ public class WordsAndPhrases implements Serializable {
     public static void checkPhrase(String phraseGuess) {
         String guess = WordsAndPhrases.getCurrentPhrase();
         if (guess.equals(phraseGuess)) {
+            Bank.updateBankPhraseGuess();
             gameMenuControl.correctWindow(phraseGuess);
         } else {
             gameMenuControl.incorrectWindow();

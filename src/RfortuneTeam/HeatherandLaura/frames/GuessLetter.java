@@ -124,6 +124,7 @@ public class GuessLetter extends javax.swing.JFrame {
             String control = jtfLetterGuess.getText().toUpperCase();
             char guess = control.charAt(0);
             checkGuess.checkGuess(1, guess);
+            this.dispose();
         } else {
             new RfortuneError().displayError("A guess must be one letter");
         }
