@@ -423,7 +423,7 @@ public class Bank implements Serializable {
         setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);
     }
 
-    /*public static long[] sortScores() {
+    public static long[] sortScores() {
         Bank.updateBankPlayer();
         long playerListOrder[] = {getBankNumberPlayer1(), getBankNumberPlayer2(), getBankNumberPlayer3()};
         long temp;
@@ -449,12 +449,15 @@ public class Bank implements Serializable {
     
     public void determineWinner(){
         Bank.sortScores();
-        long[]sortScores();
+        
         
         if (sortScores[0] > sortScores[1]){
-            system.out.println("Congratulations!" ")
+            System.out.println("Congratulations!");
+        }
+        else{
+            System.out.println("The game was a tie.");
         }
             
-    }*/
+    }
 
 }
