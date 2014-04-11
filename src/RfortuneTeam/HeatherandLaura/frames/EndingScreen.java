@@ -110,6 +110,11 @@ public class EndingScreen extends javax.swing.JFrame {
         jbExit.setBackground(new java.awt.Color(153, 153, 153));
         jbExit.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jbExit.setText("Exit");
+        jbExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExitActionPerformed(evt);
+            }
+        });
 
         jtfPlayer1Bank1.setEditable(false);
         jtfPlayer1Bank1.setBackground(new java.awt.Color(0, 102, 102));
@@ -207,6 +212,10 @@ public class EndingScreen extends javax.swing.JFrame {
     private void jbNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewGameActionPerformed
         game.newGame();
     }//GEN-LAST:event_jbNewGameActionPerformed
+
+    private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbExitActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
