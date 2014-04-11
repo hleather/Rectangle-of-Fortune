@@ -6,6 +6,7 @@
 package RfortuneTeam.HeatherandLaura.control;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameMenuView;
+import static RfortuneTeam.HeatherandLaura.control.GameMenuControl.exit;
 import RfortuneTeam.HeatherandLaura.frames.GameMenu;
 import RfortuneTeam.HeatherandLaura.frames.GamePrefs;
 import RfortuneTeam.HeatherandLaura.frames.HelpMenu;
@@ -131,6 +132,22 @@ public class MainMenuControl implements Serializable {
         } finally {
             if (MainMenuControl.helpMenu != null) {
                 MainMenuControl.helpMenu.dispose();
+            }
+        }
+    }
+     
+     
+    public void exitGame() {
+        try {
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    exit.setVisible(true);
+                }
+            });
+        } finally {
+            if (GameMenuControl.exit != null) {
+                GameMenuControl.exit.dispose();
             }
         }
     }

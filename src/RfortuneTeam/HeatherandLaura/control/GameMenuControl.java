@@ -8,6 +8,7 @@ package RfortuneTeam.HeatherandLaura.control;
 import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
+import RfortuneTeam.HeatherandLaura.frames.Exit;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import RfortuneTeam.HeatherandLaura.frames.GuessPhrase;
@@ -34,6 +35,7 @@ public class GameMenuControl {
     static CorrectGuess correctGuess = new CorrectGuess();
     static IncorrectGuess incorrectGuess = new IncorrectGuess();
     static EndMessage endMessage = new EndMessage();
+    static Exit exit = new Exit();
 
     public GameMenuControl() {
 
@@ -62,7 +64,6 @@ public class GameMenuControl {
         gameMenuControl = new GameMenuControl();
         try {
             guessLetter.jtfLetterGuess.setText(null);
-            correctGuess.jtfCorrectMessage.setText("is in the phrase!");
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
                 public void run() {
@@ -111,11 +112,10 @@ public class GameMenuControl {
     }
 
     public void correctWindow(String guess) {
-        gameMenuControl = new GameMenuControl();
         correctGuess.jtfCorrectGuess.setText(guess);
-        correctGuess.jtfCorrectMessage.setText("is in the phrase!.");
-        if (MainMenuControl.getSetNumPlayers() == 1) {
-            correctGuess.jtfCorrectMessage.setText("is in the phrase!");
+        correctGuess.jtfCorrectMessage.setText("is in the phrase!");
+        if (CheckGuess.getGuessType() == 3) {
+            correctGuess.jtfCorrectMessage.setText("is the phrase!");
         }
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
@@ -131,12 +131,13 @@ public class GameMenuControl {
         }
     }
 
-    public void incorrectWindow() {
-        gameMenuControl = new GameMenuControl();
+    public void incorrectWindow(String guess) {
+        incorrectGuess.jtfIncorrectGuess.setText(guess);
         incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(CheckGuess.getCurrentGuess()));
-        incorrectGuess.jtfIncorrectMessage.setText("is not in the phrase. "
-                + "Your turn is over.");
-        if (MainMenuControl.getSetNumPlayers() == 1) {
+        if (MainMenuControl.getSetNumPlayers() > 1) {
+            incorrectGuess.jtfIncorrectMessage.setText("is not in the phrase. "
+                    + "Your turn is over.");
+        } else if (MainMenuControl.getSetNumPlayers() == 1) {
             incorrectGuess.jtfIncorrectMessage.setText("is not in the phrase.");
         }
         try {
@@ -152,6 +153,6 @@ public class GameMenuControl {
             }
         }
     }
-    
+
 
 }

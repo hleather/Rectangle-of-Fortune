@@ -287,7 +287,7 @@ public class GameTurn extends javax.swing.JFrame {
     }//GEN-LAST:event_jbSpinActionPerformed
 
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
-        this.dispose();
+        mainMenuControl.exitGame();;
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbLetterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLetterActionPerformed

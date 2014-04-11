@@ -136,6 +136,7 @@ public class IncorrectGuess extends javax.swing.JFrame {
         gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     gameTurn.setVisible(true);
                 }

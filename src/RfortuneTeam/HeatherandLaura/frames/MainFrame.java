@@ -230,7 +230,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnHelpActionPerformed
 
     private void jbtnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExitActionPerformed
-       System.exit(0);
+       mainMenuControl.exitGame();
     }//GEN-LAST:event_jbtnExitActionPerformed
 
     /**

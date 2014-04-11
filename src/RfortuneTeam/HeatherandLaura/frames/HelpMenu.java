@@ -120,7 +120,7 @@ public class HelpMenu extends javax.swing.JFrame {
 
         jbClose.setBackground(new java.awt.Color(153, 153, 153));
         jbClose.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jbClose.setText("Quit");
+        jbClose.setText("Back");
         jbClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCloseActionPerformed(evt);

@@ -7,6 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
+import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
@@ -154,6 +155,7 @@ public class WordsAndPhrases implements Serializable {
     }
 
     public static void searchPhrase(int typeGuess, char guess) {
+
         int control = 0;
         for (int i = 0; i < getCharArray().length; i++) {
             if (getCharArray()[i] == guess) {
@@ -164,9 +166,10 @@ public class WordsAndPhrases implements Serializable {
         }
         if (control > 0) {
             gameMenuControl.correctWindow(String.valueOf(guess));
-        }
-        if (control == 0) {
-            gameMenuControl.incorrectWindow();
+
+        } else if (control == 0) {
+            incorrectGuess.jtfIncorrectGuess.setText(String.valueOf(guess));
+            gameMenuControl.incorrectWindow(String.valueOf(guess));
 
         }
         if (typeGuess == 1) {
@@ -188,7 +191,7 @@ public class WordsAndPhrases implements Serializable {
             Bank.updateBankPhraseGuess();
             gameMenuControl.correctWindow(phraseGuess);
         } else {
-            gameMenuControl.incorrectWindow();
+            gameMenuControl.incorrectWindow(phraseGuess);
         }
 
     }

@@ -26,7 +26,6 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
     Game game = new Game();
     public static int control = 0;
-    
 
     /**
      * Creates new form EnterPlayerNames
@@ -234,9 +233,9 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                                                 .addContainerGap())))
                                     .addComponent(jLabel3)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(192, 192, 192)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jbContinuePlayerNames, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(71, 71, 71))))))
+                                .addGap(108, 108, 108))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +329,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         if (MainMenuControl.getSetNumPlayers() == 1) {
             if (control == 1) {
                 ready = true;
-            } else {
+            }
+            if (Player.getPlayer1().isEmpty()) {
                 new RfortuneError().displayError("Player One needs a name");
             }
 
@@ -342,7 +342,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             if (control == 1) {
                 if (Player.getPlayer1().isEmpty()) {
                     new RfortuneError().displayError("Player One needs a name");
-                } else {
+                }
+                if (Player.getPlayer2().isEmpty()) {
                     new RfortuneError().displayError("Player Two needs a name");
                 }
             }
@@ -355,12 +356,14 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             if (control == 3) {
                 ready = true;
             }
-            if (control == 1) {
+            if (control == 1 || control == 2) {
                 if (Player.getPlayer1().isEmpty()) {
                     new RfortuneError().displayError("Player One needs a name");
-                } else if (Player.getPlayer2().isEmpty()) {
+                }
+                if (Player.getPlayer2().isEmpty()) {
                     new RfortuneError().displayError("Player Two needs a name");
-                } else {
+                }
+                if (Player.getPlayer3().isEmpty()) {
                     new RfortuneError().displayError("Player Three needs a name");
                 }
             }
@@ -369,8 +372,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             }
 
         }
-        if(MainMenuControl.getSetNumPlayers() == 0) {
-                new RfortuneError().displayError("How many people are playing? Check the box.");
+        if (MainMenuControl.getSetNumPlayers() == 0) {
+            new RfortuneError().displayError("How many people are playing? Check the box.");
         }
         if (ready) {
             playersList.resetList();
@@ -427,11 +430,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     private javax.swing.JButton jbValidate1;
     private javax.swing.JButton jbValidate2;
     private javax.swing.JButton jbValidate3;
-    private javax.swing.JCheckBox jcb1PlayerG;
-    private javax.swing.JCheckBox jcb2PlayerG;
-    private javax.swing.JCheckBox jcb3PlayerG;
-    private javax.swing.JTextField jtfPlayer1;
-    private javax.swing.JTextField jtfPlayer2;
-    private javax.swing.JTextField jtfPlayer3;
+    public javax.swing.JCheckBox jcb1PlayerG;
+    public javax.swing.JCheckBox jcb2PlayerG;
+    public javax.swing.JCheckBox jcb3PlayerG;
+    public javax.swing.JTextField jtfPlayer1;
+    public javax.swing.JTextField jtfPlayer2;
+    public javax.swing.JTextField jtfPlayer3;
     // End of variables declaration//GEN-END:variables
 }

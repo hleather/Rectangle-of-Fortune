@@ -281,7 +281,7 @@ public class GameMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jbHelpActionPerformed
 
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
-       System.exit(0);
+       mainMenuControl.exitGame();
     }//GEN-LAST:event_jbQuitActionPerformed
 
     /**
