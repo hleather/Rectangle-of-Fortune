@@ -6,6 +6,7 @@
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import RfortuneTeam.HeatherandLaura.frames.EndingScreen;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
 
@@ -15,12 +16,12 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
-
     MainMenuControl mainMenuControl = new MainMenuControl();
     PlayerTurn playerTurn = new PlayerTurn();
     static GameTurn gameTurn = new GameTurn();
     private static int roundNumber = 0;
     private static int correctGuesses = 0;
+    static EndingScreen endingScreen = new EndingScreen();
 
     /**
      * @return the roundNumber
@@ -52,7 +53,7 @@ public class Game implements Serializable {
 
     public Game() {
     }
-    
+
     public void newGame() {
         new RfortuneError().displayError("Game.newGame called");
     }
@@ -67,15 +68,19 @@ public class Game implements Serializable {
     public void updateAllBank() {
         playerTurn.updatePlayersTurn();
         Bank.updateBankPlayer();
-        Bank.bankPlayerTurn();        
+        Bank.bankPlayerTurn();
     }
-    
+
     public String displayPlayerUpBank() {
         return Bank.displayPlayerUpBank();
     }
-    
-        public static void sortScores() {
+
+    public static void sortScores() {
+        new RfortuneError().displayError("sortScores called");
         Bank.updateBankPlayer();
+        if(MainMenuControl.getSetNumPlayers() == 3) {
+            new RfortuneError().displayError("One player end screen");
+        }
         long[] playerListOrder = {Bank.getBankNumberPlayer1(), Bank.getBankNumberPlayer2(), Bank.getBankNumberPlayer3()};
         String[] parallelListOrder = {Player.getPlayer1(), Player.getPlayer2(), Player.getPlayer3()};
         long temp;
@@ -99,18 +104,17 @@ public class Game implements Serializable {
             }
         }
         if (playerListOrder[0] > playerListOrder[1]) {
-            Bank.endingScreen.jtfWinnerMessage.setText("Congratulations");
-            Bank.endingScreen.jtfWinnerName.setText(parallelListOrder[0]);
+            endingScreen.jtfWinnerMessage.setText("Congratulations");
+            endingScreen.jtfWinnerName.setText(parallelListOrder[0]);
         } else {
-            Bank.endingScreen.jtfWinnerMessage.setText("The game was a tie");
-            Bank.endingScreen.jtfWinnerName.setText(null);
+            endingScreen.jtfWinnerMessage.setText("The game was a tie");
+            endingScreen.jtfWinnerName.setText(null);
         }
     }
 
-
-public void setEndScreen (){
+    public void setEndScreen() {
         Game.sortScores();
-        
-     
-}
+        endingScreen.jtfPlayer1Name.setText(Player.getPlayer1());
+
+    }
 }

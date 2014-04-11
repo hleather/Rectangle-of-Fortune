@@ -76,7 +76,6 @@ public class EndingScreen extends javax.swing.JFrame {
         jtfPlayer1Name.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
         jtfPlayer1Name.setForeground(new java.awt.Color(153, 153, 153));
         jtfPlayer1Name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtfPlayer1Name.setText("Player One");
 
         jtfPlayer2Name.setEditable(false);
         jtfPlayer2Name.setBackground(new java.awt.Color(0, 102, 102));

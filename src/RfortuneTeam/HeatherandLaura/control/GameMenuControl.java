@@ -155,7 +155,6 @@ public class GameMenuControl {
     }
     
     public void displayEndScreen() {
-        new RfortuneError().displayError("displayEndScreen called");
         gameMenuControl = new GameMenuControl();
         try {
            // guessLetter.jtfLetterGuess.setText(null);
