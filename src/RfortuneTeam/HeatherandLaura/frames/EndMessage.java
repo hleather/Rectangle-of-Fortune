@@ -7,7 +7,6 @@ package RfortuneTeam.HeatherandLaura.frames;
 
 import rfortune.PlayersList;
 import rfortune.Rfortune;
-import rfortune.RfortuneError;
 
 /**
  *
