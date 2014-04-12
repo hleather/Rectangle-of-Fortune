@@ -30,9 +30,9 @@ public enum ErrorType {
         this.message = message;
     }
 
-    //public String getMessage() {
-   //     return message;
-   // }
+    public String getMessage() {
+        return message;
+    }
 
     public String displayErrorType() {
         JOptionPane.showMessageDialog(null, this.message);

@@ -212,7 +212,7 @@ public class Bank implements Serializable {
      * empty for the MainMenuControl.setScreen().gameDisplay array. This
      * function also converts the bank (variable type long) to a String so it
      * can be displayed in the MainMenuControl.setScreen().gameDisplay array.
-    **************************************************************************
+     * *************************************************************************
      */
     public static void numPlayersBank() {
         if (MainMenuControl.getSetNumPlayers() == 3) {
@@ -248,7 +248,7 @@ public class Bank implements Serializable {
      * *************************************************************************
      * bankPlayerTurn(). defines whose bank will be adjusted based on which
      * players turn it currently is.
-    **************************************************************************
+     * *************************************************************************
      */
     public static void bankPlayerTurn() {
         if (PlayerTurn.getPlayerUp() == 0) {
@@ -263,8 +263,8 @@ public class Bank implements Serializable {
     /**
      * *************************************************************************
      * display the current player's bank amount.
-    **************************************************************************
-     * @return 
+     * *************************************************************************
+     * @return
      */
     public static String displayPlayerUpBank() {
         String control = null;
@@ -281,7 +281,7 @@ public class Bank implements Serializable {
     /**
      * *************************************************************************
      * display player 1's bank
-    **************************************************************************
+     * *************************************************************************
      */
     public static void displayBankPlayer1() {
         System.out.println(getBankPlayer1());
@@ -290,7 +290,7 @@ public class Bank implements Serializable {
     /**
      * *************************************************************************
      * display player 2's bank
-    **************************************************************************
+     * *************************************************************************
      */
     public static void displayBankPlayer2() {
         System.out.println(getBankPlayer2());
@@ -299,7 +299,7 @@ public class Bank implements Serializable {
     /**
      * *************************************************************************
      * display player 3's bank
-    **************************************************************************
+     * *************************************************************************
      */
     public static void displayBankPlayer3() {
         System.out.println(getBankPlayer3());
@@ -311,81 +311,82 @@ public class Bank implements Serializable {
      * enough money to purchase a vowel (250). If the player has enough money to
      * purchase a vowel, this function subtracts 250 from bankPlayerUp. It will
      * return true or false to let the ***vowel*** function know ***?***.
-    **************************************************************************
+     * *************************************************************************
      */
     public static void updateBankVowelPurchase() {
-    PlayerTurn playerTurn = new PlayerTurn();
+        PlayerTurn playerTurn = new PlayerTurn();
         playerTurn.updatePlayersTurn();
-        if (getBankPlayerUp() >= 250) {
-            setHasEnough(true);
-            long bank = 0;
-            long updateBank;
-            int control = 0;
-            if (PlayerTurn.getPlayerUp() == 0) {
-                bank = getBankNumberPlayer1();
-                control = 1;
-            } else if (PlayerTurn.getPlayerUp() == 1) {
-                bank = getBankNumberPlayer2();
-                control = 2;
-            } else if (PlayerTurn.getPlayerUp() == 2) {
-                bank = getBankNumberPlayer3();
-                control = 3;
-            }
-            updateBank = bank - 250;
-            if (control == 1) {
-                setBankNumberPlayer1(updateBank);
-            } else if (control == 2) {
-                setBankNumberPlayer2(updateBank);
-            } else if (control == 3) {
-                setBankNumberPlayer3(updateBank);
-            } else if (control == 0) {
-              ErrorType.ERROR101.displayErrorType();
-            }
-            Bank.updateBankPlayer();
+        try {
+            if (getBankPlayerUp() >= 250) {
+                setHasEnough(true);
+                long bank = 0;
+                long updateBank;
+                int control = 0;
+                if (PlayerTurn.getPlayerUp() == 0) {
+                    bank = getBankNumberPlayer1();
+                    control = 1;
+                } else if (PlayerTurn.getPlayerUp() == 1) {
+                    bank = getBankNumberPlayer2();
+                    control = 2;
+                } else if (PlayerTurn.getPlayerUp() == 2) {
+                    bank = getBankNumberPlayer3();
+                    control = 3;
+                }
+                updateBank = bank - 250;
+                if (control == 1) {
+                    setBankNumberPlayer1(updateBank);
+                } else if (control == 2) {
+                    setBankNumberPlayer2(updateBank);
+                } else if (control == 3) {
+                    setBankNumberPlayer3(updateBank);
+                } 
+                Bank.updateBankPlayer();
         }
         else {
-            Bank.setHasEnough(false);
+                Bank.setHasEnough(false);
             ErrorType.ERROR102.displayErrorType();
         }
+        } catch (Throwable ex) {
+            ErrorType.ERROR101.displayErrorType();
+        }
     }
-    
+
     public static void updateBankPhraseGuess() {
         Bank.phraseWorth();
-    PlayerTurn playerTurn = new PlayerTurn();
+        PlayerTurn playerTurn = new PlayerTurn();
         playerTurn.updatePlayersTurn();
-            long bank = 0;
-            long updateBank;
-            int control = 0;
-            if (PlayerTurn.getPlayerUp() == 0) {
-                bank = getBankNumberPlayer1();
-                control = 1;
-            } else if (PlayerTurn.getPlayerUp() == 1) {
-                bank = getBankNumberPlayer2();
-                control = 2;
-            } else if (PlayerTurn.getPlayerUp() == 2) {
-                bank = getBankNumberPlayer3();
-                control = 3;
-            }
-            updateBank = bank + Bank.getGuessPhraseWorth();
-            if (control == 1) {
-                setBankNumberPlayer1(updateBank);
-            } else if (control == 2) {
-                setBankNumberPlayer2(updateBank);
-            } else if (control == 3) {
-                setBankNumberPlayer3(updateBank);
-            } else if (control == 0) {
-                ErrorType.ERROR101.displayErrorType();
-            }
-            Bank.updateBankPlayer();
+        long bank = 0;
+        long updateBank;
+        int control = 0;
+        if (PlayerTurn.getPlayerUp() == 0) {
+            bank = getBankNumberPlayer1();
+            control = 1;
+        } else if (PlayerTurn.getPlayerUp() == 1) {
+            bank = getBankNumberPlayer2();
+            control = 2;
+        } else if (PlayerTurn.getPlayerUp() == 2) {
+            bank = getBankNumberPlayer3();
+            control = 3;
         }
-    
+        updateBank = bank + Bank.getGuessPhraseWorth();
+        if (control == 1) {
+            setBankNumberPlayer1(updateBank);
+        } else if (control == 2) {
+            setBankNumberPlayer2(updateBank);
+        } else if (control == 3) {
+            setBankNumberPlayer3(updateBank);
+        } else if (control == 0) {
+            ErrorType.ERROR101.displayErrorType();
+        }
+        Bank.updateBankPlayer();
+    }
 
     /**
      * *************************************************************************
      * spinWorth(). sets the amount the next character guess is worth using a
      * random number generator. The values will be different for Easy and Hard
      * modes and the function returns that value.
-    **************************************************************************
+     * *************************************************************************
      */
     public static void spin() {
         Random spin = new Random();
@@ -416,24 +417,26 @@ public class Bank implements Serializable {
         long bank = 0;
         long updateBank;
         int control = 0;
-        if (PlayerTurn.getPlayerUp() == 0) {
-            bank = getBankNumberPlayer1();
-            control = 1;
-        } else if (PlayerTurn.getPlayerUp() == 1) {
-            bank = getBankNumberPlayer2();
-            control = 2;
-        } else if (PlayerTurn.getPlayerUp() == 2) {
-            bank = getBankNumberPlayer3();
-            control = 3;
-        }
-        updateBank = bank + (getSpinWorth() * woots);
-        if (control == 1) {
-            setBankNumberPlayer1(updateBank);
-        } else if (control == 2) {
-            setBankNumberPlayer2(updateBank);
-        } else if (control == 3) {
-            setBankNumberPlayer3(updateBank);
-        } else if (control == 0) {
+        try {
+            if (PlayerTurn.getPlayerUp() == 0) {
+                bank = getBankNumberPlayer1();
+                control = 1;
+            } else if (PlayerTurn.getPlayerUp() == 1) {
+                bank = getBankNumberPlayer2();
+                control = 2;
+            } else if (PlayerTurn.getPlayerUp() == 2) {
+                bank = getBankNumberPlayer3();
+                control = 3;
+            }
+            updateBank = bank + (getSpinWorth() * woots);
+            if (control == 1) {
+                setBankNumberPlayer1(updateBank);
+            } else if (control == 2) {
+                setBankNumberPlayer2(updateBank);
+            } else if (control == 3) {
+                setBankNumberPlayer3(updateBank);
+            }
+        } catch (Throwable ex) {
             ErrorType.ERROR103.displayErrorType();
         }
         Bank.updateBankPlayer();
@@ -443,7 +446,7 @@ public class Bank implements Serializable {
      * *************************************************************************
      * phraseWorth(). calculates how much guessing the remainder of the phrase
      * is worth and returns that value.
-    **************************************************************************
+     * *************************************************************************
      */
     public static void phraseWorth() {
         int phraseLength = WordsAndPhrases.getCharArray().length;

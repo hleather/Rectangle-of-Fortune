@@ -123,14 +123,14 @@ public class CheckGuess implements Serializable {
     }
 
     private void checkRepeat(char guess) {
+        try {
         if (guessList.contains(guess)) {
             CheckGuess.setCheckGuessRepeat(true);
-            if (CheckGuess.getGuessType() == 1) {
+        }
+        } catch (Throwable ex) {
                 ErrorType.ERROR106.displayErrorType();
-            } else if (CheckGuess.getGuessType() == 2) {
-                 ErrorType.ERROR106.displayErrorType();
             }
-        } else {
+         if (!guessList.contains(guess)) {
             CheckGuess.setCheckGuessRepeat(false);
             updateGuessList(guess);
             WordsAndPhrases.searchPhrase(CheckGuess.getGuessType(), guess);

@@ -5,6 +5,7 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import RfortuneTeam.HeatherandLaura.frames.GameMenu;
 import RfortuneTeam.HeatherandLaura.frames.MainFrame;
 import java.util.Scanner;
@@ -37,8 +38,7 @@ public class Rfortune {
                 }
             });
         } catch (Throwable ex) {
-                    //Need to do: Add error display message
-            //Need to do: Add any other desired action
+            ErrorType.ERROR105.displayErrorType();
         } finally {
             Rfortune.inFile.close();
             if (Rfortune.mainFrame != null) {

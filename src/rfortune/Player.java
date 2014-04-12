@@ -75,6 +75,7 @@ public class Player implements Serializable {
         myPlayer = new Player();
             try {
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     enterPlayerNames.setVisible(true);  
                 }
@@ -87,7 +88,4 @@ public class Player implements Serializable {
         }
         
     }
-   /* public static void displayPlayer1Bank() {
-
-    } */
 }
