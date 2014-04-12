@@ -6,7 +6,6 @@
 package RfortuneTeam.HeatherandLaura.enums;
 
 import javax.swing.JOptionPane;
-import rfortune.RfortuneMessages;
 
 /**
  *
