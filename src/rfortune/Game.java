@@ -22,6 +22,7 @@ public class Game implements Serializable {
     private static int roundNumber = 0;
     private static int correctGuesses = 0;
     static EndMessage endMessage = new EndMessage();
+    Player player = new Player();
 
     /**
      * @return the roundNumber
@@ -130,5 +131,10 @@ public class Game implements Serializable {
             }
         }
 
+    }
+
+    public void initiate() {
+        this.startGame();
+        player.getPlayerFrames();
     }
 }
