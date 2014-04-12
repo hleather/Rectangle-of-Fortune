@@ -353,7 +353,6 @@ public class EnterPlayerNames extends javax.swing.JFrame {
             new RfortuneMessages().displayMessage("How many people are playing? Check the box.");
         }
         if (ready) {
-            playersList.resetList();
             game.startGame();
             mainMenuControl.startGameMenu();
             this.dispose();

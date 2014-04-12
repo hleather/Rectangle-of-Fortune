@@ -53,7 +53,6 @@ public class Rfortune {
     }
 
     public void newGame() {
-        playersList.resetList();
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override

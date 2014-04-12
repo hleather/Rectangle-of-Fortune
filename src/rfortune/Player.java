@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package rfortune;
 
-import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames;
 import java.io.Serializable;
 
@@ -14,11 +14,10 @@ import java.io.Serializable;
  * @author Heather
  */
 public class Player implements Serializable {
-
     private static String player1 = " ";
     private static String player2 = " ";
     private static String player3 = " ";
-    PlayersList myList = new PlayersList();
+    PlayersList myList = new PlayersList();   
     Player myPlayer = null;
     static EnterPlayerNames enterPlayerNames = new EnterPlayerNames();
 
@@ -63,27 +62,30 @@ public class Player implements Serializable {
     public static void setPlayer3(String aPlayer3) {
         player3 = aPlayer3;
     }
-
-    /**
-     * *************************************************************************
+    
+    /***************************************************************************
      * getPlayerNames(). initiates the function getInput() from PlayersList and
      * gets the names of the players from PlayersList. The amount of players
      * whose names get defined is determined by the number of players (from
      * MainMenuControl).
-     *************************************************************************
-     */
-    public final void getPlayerFrames() {
+     **************************************************************************/
+   
+    
+    public final void getPlayerFrames(){
         myPlayer = new Player();
-        try {
+            try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-                    enterPlayerNames.setVisible(true);
+                    enterPlayerNames.setVisible(true);  
                 }
             });
-        } catch (Throwable ex) {
-            ErrorType.ERROR202.displayErrorType();
         }
+        finally {
+            if (Player.enterPlayerNames != null) {
+                Player.enterPlayerNames.dispose();
+            }
+        }
+        
     }
-
 }
