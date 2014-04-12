@@ -6,10 +6,9 @@
 
 package RfortuneTeam.HeatherandLaura.frames;
 
-import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import RfortuneTeam.HeatherandLaura.allMenuViews.HelpMenuView;
-import RfortuneTeam.HeatherandLaura.allMenuViews.MainMenuView;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Game;
 import rfortune.Player;
 import rfortune.PlayersList;
 
@@ -25,7 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
     Player myPlayers = new Player();
     HelpMenuView helpMenuView = new HelpMenuView();
     GamePrefs myPrefs = new GamePrefs();
-    MainMenuView mainMenuView = new MainMenuView();
+    Game game = new Game();
     
 
     /**
@@ -217,7 +216,7 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartGameActionPerformed
-        mainMenuView.initiate();
+        game.initiate();
         this.dispose();
     }//GEN-LAST:event_jbStartGameActionPerformed
 

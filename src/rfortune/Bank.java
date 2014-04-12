@@ -5,8 +5,8 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
-import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
@@ -397,11 +397,11 @@ public class Bank implements Serializable {
 
     public static void spinWorth() {
         int amount = 25;
-        switch (GamePreferencesView.setDifficulty) {
-            case "E":
+        switch (GamePreferencesControl.getDifficulty()) {
+            case 1:
                 amount = 25;
                 break;
-            case "H":
+            case 2:
                 amount = 50;
                 break;
         }

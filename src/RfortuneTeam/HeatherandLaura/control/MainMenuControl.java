@@ -5,7 +5,6 @@
  */
 package RfortuneTeam.HeatherandLaura.control;
 
-import RfortuneTeam.HeatherandLaura.allMenuViews.GameMenuView;
 import static RfortuneTeam.HeatherandLaura.control.GameMenuControl.exit;
 import RfortuneTeam.HeatherandLaura.frames.GameMenu;
 import RfortuneTeam.HeatherandLaura.frames.GamePrefs;

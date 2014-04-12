@@ -5,7 +5,6 @@
  */
 package RfortuneTeam.HeatherandLaura.control;
 
-import RfortuneTeam.HeatherandLaura.allMenuViews.GameTurnView;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.Exit;
@@ -27,7 +26,6 @@ public class GameMenuControl {
     Game game = new Game();
     PlayerTurn playerTurn = new PlayerTurn();
     GameMenuControl gameMenuControl = null;
-    GameTurnView gameTurnView = new GameTurnView();
     static GameTurn gameTurn = new GameTurn();
     static GuessLetter guessLetter = new GuessLetter();
     static GuessVowel guessVowel = new GuessVowel();

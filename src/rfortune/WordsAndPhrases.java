@@ -5,10 +5,8 @@
  */
 package rfortune;
 
-import RfortuneTeam.HeatherandLaura.allMenuViews.GamePreferencesView;
 import RfortuneTeam.HeatherandLaura.control.GameMenuControl;
 import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
-import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import RfortuneTeam.HeatherandLaura.frames.IncorrectGuess;
