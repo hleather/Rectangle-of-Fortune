@@ -22,7 +22,8 @@ public enum ErrorType {
     ERROR107("A name must be at least one character long."),
     ERROR108("A name cannot be more than 10 characters long."),
     ERROR109("That name has already been entered."),
-    ERROR201("Valid.");
+    ERROR201("Valid."),
+    ERROR202("Array list broken");
     String message;
 
     private ErrorType(String message) {
