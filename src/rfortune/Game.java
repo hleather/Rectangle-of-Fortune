@@ -6,7 +6,6 @@
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
-import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
@@ -40,10 +39,6 @@ public class Game implements Serializable {
     }
 
     public Game() {
-    }
-
-    public void newGame() {
-        ErrorType.ERROR107.getMessage();
     }
 
     public void startGame() {

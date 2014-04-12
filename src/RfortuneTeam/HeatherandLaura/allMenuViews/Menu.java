@@ -64,13 +64,13 @@ public class Menu implements DisplayInfo {
 
         Scanner inFile = Rfortune.getInputFile();
         String command;
-        boolean valid = false;
+        boolean valid;
         do {
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                throw new MenuException(ErrorType.ERROR105.getMessage());  
+                throw new MenuException(ErrorType.ERROR105.displayErrorType());  
             }
             return command;
                 

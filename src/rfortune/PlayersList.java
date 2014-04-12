@@ -38,19 +38,19 @@ public class PlayersList implements Serializable {
         if (playerName.length() < 1) {
             setJustRight(false);
             control++;
-            ErrorType.ERROR108.getMessage();
+            ErrorType.ERROR107.displayErrorType();
         }
         if (playerName.length() > 10) {
             setJustRight(false);
             control++;
-            ErrorType.ERROR109.getMessage();
+            ErrorType.ERROR108.displayErrorType();
         }
             if (playerList.contains(playerName)) {
                 setJustRight(false);
                 control++;
-                ErrorType.ERROR201.getMessage();
+                ErrorType.ERROR109.displayErrorType();
             } else if (!playerList.contains(playerName) && control == 0) {
-                ErrorType.ERROR202.getMessage();
+                ErrorType.ERROR201.displayErrorType();
                 playerList.add(playerName);
                 setJustRight(true);
                 }

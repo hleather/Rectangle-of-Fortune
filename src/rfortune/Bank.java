@@ -339,13 +339,13 @@ public class Bank implements Serializable {
             } else if (control == 3) {
                 setBankNumberPlayer3(updateBank);
             } else if (control == 0) {
-              ErrorType.ERROR101.getMessage();
+              ErrorType.ERROR101.displayErrorType();
             }
             Bank.updateBankPlayer();
         }
         else {
             Bank.setHasEnough(false);
-            ErrorType.ERROR102.getMessage();
+            ErrorType.ERROR102.displayErrorType();
         }
     }
     
@@ -374,7 +374,7 @@ public class Bank implements Serializable {
             } else if (control == 3) {
                 setBankNumberPlayer3(updateBank);
             } else if (control == 0) {
-                ErrorType.ERROR101.getMessage();
+                ErrorType.ERROR101.displayErrorType();
             }
             Bank.updateBankPlayer();
         }
@@ -434,7 +434,7 @@ public class Bank implements Serializable {
         } else if (control == 3) {
             setBankNumberPlayer3(updateBank);
         } else if (control == 0) {
-            ErrorType.ERROR103.getMessage();
+            ErrorType.ERROR103.displayErrorType();
         }
         Bank.updateBankPlayer();
     }

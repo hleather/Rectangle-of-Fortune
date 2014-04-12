@@ -5,6 +5,7 @@
  */
 package RfortuneTeam.HeatherandLaura.enums;
 
+import javax.swing.JOptionPane;
 import rfortune.RfortuneMessages;
 
 /**
@@ -19,31 +20,23 @@ public enum ErrorType {
     ERROR104("You have to purchase a vowel. Enter a letter."),
     ERROR105("Invalid command. Please enter a valid command."),
     ERROR106("That letter has already been guessed. Enter a different guess."),
-    ERROR107("Game.newGame called."),
-    ERROR108("A name must be at least one character long."),
-    ERROR109("A name cannot be more than 10 characters long."),
-    ERROR201("That name has already been entered."),
-    ERROR202("Valid.");
+    ERROR107("A name must be at least one character long."),
+    ERROR108("A name cannot be more than 10 characters long."),
+    ERROR109("That name has already been entered."),
+    ERROR201("Valid.");
     String message;
 
-    ErrorType(String message) {
+    private ErrorType(String message) {
         this.message = message;
     }
 
-    public String getMessage() {
-        return this.message;
-    }
+    //public String getMessage() {
+   //     return message;
+   // }
 
-    public static void displayErrorMsg(String errorMessage) {
-        String fullMessage = "\t+ ERROR: " + errorMessage + " +";
-        int dividerLineLength = fullMessage.length();
-        StringBuilder dividerLine = new StringBuilder(dividerLineLength);
-        for (int i = 0; i < dividerLineLength; i++) {
-            dividerLine.insert(i, '+');
-}
-        System.out.println("\t" + dividerLine.toString());
-        System.out.println(fullMessage);
-        System.out.println("\t" + dividerLine.toString());
+    public String displayErrorType() {
+        JOptionPane.showMessageDialog(null, this.message);
+        return null;
 }
 
 }
