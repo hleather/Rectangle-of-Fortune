@@ -14,26 +14,14 @@ public enum ErrorType {
     ERROR101("Sorry, there is a problem in Bank Class, updateBankVowelPurchase."),
     ERROR102("Sorry, you need $250 to purchase."),
     ERROR103("Sorry, there is a problem in BankClass, updateBankSpinWorth."),
-    ERROR104("That character has already been selected by the other player. "
-            + "Try again."),
-    //We are using this the one below:
+    ERROR104("You have to purchase a vowel. Enter a letter."),
     ERROR105("Invalid command. Please enter a valid command."),
-    ERROR106("You must start a new game first."),
-    ERROR107("You must enter a name or enter a \"Q\" to quit. Try again."),
-    ERROR108("The game parameter is null."),
-    ERROR109("You must enter two numbers, a row and the column, "
-            + "or a \"Q\" to quit. Try again."),
-    ERROR201("No empty locations found on the board"),
-    ERROR203("This location is already occupied. Try a different "
-            + "location."),
-    ERROR204("Enter a non-blank character for the player's marker."),
-    ERROR205("Both players can not use the same character for a marker."),
-    ERROR206("There is no active game. You must start a new game before "
-            + "you can take a turn"),
-    ERROR207("The number of rows must be between 3 - 9 and the "
-            + "number of columns must be between 3 - 9 "),
-    ERROR209("GameCommands - takeTurn: invalidPlayerTYpe");
-
+    ERROR106("That letter has already been guessed. Enter a different guess."),
+    ERROR107("Game.newGame called."),
+    ERROR108("A name must be at least one character long."),
+    ERROR109("A name cannot be more than 10 characters long."),
+    ERROR201("That name has already been entered."),
+    ERROR202("Valid.");
     String message;
 
     ErrorType(String message) {
