@@ -58,9 +58,5 @@ public class PlayersList implements Serializable {
             setJustRight(true);
         }
     }
-
-    public void resetList() {
-        playerList.clear();
     }
 
-}
