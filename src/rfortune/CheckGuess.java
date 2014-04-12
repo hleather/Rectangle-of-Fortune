@@ -5,6 +5,7 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import java.io.Serializable;
 import RfortuneTeam.HeatherandLaura.frames.GuessLetter;
 import java.util.ArrayList;
@@ -118,8 +119,7 @@ public class CheckGuess implements Serializable {
             checkRepeat(CheckGuess.getCurrentGuess());
         } else if (CheckGuess.guessType != control) {
             CheckGuess.setCorrectGuessType(false);
-            new RfortuneError().displayError("You have to purchase a vowel. "
-                    + "Enter a letter.");
+            ErrorType.ERROR104.getMessage();
         }
     }
 
@@ -127,11 +127,9 @@ public class CheckGuess implements Serializable {
         if (guessList.contains(guess)) {
             CheckGuess.setCheckGuessRepeat(true);
             if (CheckGuess.getGuessType() == 1) {
-                new RfortuneError().displayError("That letter has already been "
-                        + "guessed. Enter a different letter.");
+                ErrorType.ERROR106.getMessage();
             } else if (CheckGuess.getGuessType() == 2) {
-                new RfortuneError().displayError("That vowel has already been "
-                        + "guessed. Enter a different vowel.");
+                 ErrorType.ERROR106.getMessage();
             }
         } else {
             CheckGuess.setCheckGuessRepeat(false);

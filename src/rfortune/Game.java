@@ -6,6 +6,7 @@
 package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
@@ -20,7 +21,7 @@ public class Game implements Serializable {
     PlayerTurn playerTurn = new PlayerTurn();
     static GameTurn gameTurn = new GameTurn();
     private static int roundNumber = 0;
-    private static int correctGuesses = 0;
+    private static final int correctGuesses = 0;
     static EndMessage endMessage = new EndMessage();
     Player player = new Player();
 
@@ -42,7 +43,7 @@ public class Game implements Serializable {
     }
 
     public void newGame() {
-        new RfortuneError().displayError("Game.newGame called");
+        ErrorType.ERROR107.getMessage();
     }
 
     public void startGame() {

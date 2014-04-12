@@ -5,6 +5,7 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -37,22 +38,19 @@ public class PlayersList implements Serializable {
         if (playerName.length() < 1) {
             setJustRight(false);
             control++;
-            new RfortuneError().displayError("\tA name must be at least one "
-                    + "character long.");
+            ErrorType.ERROR108.getMessage();
         }
         if (playerName.length() > 10) {
             setJustRight(false);
             control++;
-            new RfortuneError().displayError("\tA name cannot be more than 10 "
-                    + "characters long.");
+            ErrorType.ERROR109.getMessage();
         }
             if (playerList.contains(playerName)) {
                 setJustRight(false);
                 control++;
-                new RfortuneError().displayError("That name has already been "
-                        + "entered.");
+                ErrorType.ERROR201.getMessage();
             } else if (!playerList.contains(playerName) && control == 0) {
-                new RfortuneError().displayError("Valid.");
+                ErrorType.ERROR202.getMessage();
                 playerList.add(playerName);
                 setJustRight(true);
                 }
