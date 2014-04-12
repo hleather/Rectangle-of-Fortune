@@ -5,7 +5,8 @@
  */
 package RfortuneTeam.HeatherandLaura.control;
 
-import rfortune.RfortuneMessage;
+import rfortune.RfortuneMessages;
+
 
 /**
  *
@@ -21,10 +22,10 @@ public class GamePreferencesControl {
     public void setDifficulty(int mode) {
         difficultyMode = mode;
          if (difficultyMode == 1) {
-            new RfortuneMessage().displayMessage("You are in Easy mode.");
+            new RfortuneMessages().displayMessage("You are in Easy mode.");
         }
         if (difficultyMode == 2) {
-            new RfortuneMessage().displayMessage("You are in Hard mode.");
+            new RfortuneMessages().displayMessage("You are in Hard mode.");
         }
     }
 

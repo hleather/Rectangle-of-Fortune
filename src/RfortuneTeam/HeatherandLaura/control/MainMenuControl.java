@@ -65,7 +65,7 @@ public class MainMenuControl implements Serializable {
         Bank.updateBankPlayer();
         if (getSetNumPlayers() == 1) {
             gameMenu.jtfPlayer1Name.setText(Player.getPlayer1());
-            
+    
             gameMenu.jtfPlayer1Bank.setText("$ " + Bank.getBankPlayer1());
 
         }

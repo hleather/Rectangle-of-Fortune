@@ -5,6 +5,7 @@
  */
 package RfortuneTeam.HeatherandLaura.control;
 
+
 import RfortuneTeam.HeatherandLaura.frames.CorrectGuess;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.Exit;
@@ -151,6 +152,6 @@ public class GameMenuControl {
             }
         }
     }
-
-
-}
+    
+            
+        }

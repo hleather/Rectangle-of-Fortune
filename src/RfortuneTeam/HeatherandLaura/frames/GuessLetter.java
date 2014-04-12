@@ -6,7 +6,7 @@
 package RfortuneTeam.HeatherandLaura.frames;
 
 import rfortune.CheckGuess;
-import rfortune.RfortuneError;
+import rfortune.RfortuneMessages;
 import rfortune.WordsAndPhrases;
 
 /**
@@ -125,7 +125,7 @@ public class GuessLetter extends javax.swing.JFrame {
             char guess = control.charAt(0);
             checkGuess.checkGuess(1, guess);
         } else {
-            new RfortuneError().displayError("A guess must be one letter");
+            new RfortuneMessages().displayMessage("A guess must be one letter");
         }
         if(!CheckGuess.getCheckGuessRepeat()){
             this.dispose();

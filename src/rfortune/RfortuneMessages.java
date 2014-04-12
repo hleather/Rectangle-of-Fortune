@@ -5,14 +5,13 @@
  */
 
 package rfortune;
-
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Heather
+ * @author Heather and Laura
  */
-public class RfortuneMessage  {
+public class RfortuneMessages {
     public Object displayMessage(Object object) {
         JOptionPane.showMessageDialog(null, object);
         return null;

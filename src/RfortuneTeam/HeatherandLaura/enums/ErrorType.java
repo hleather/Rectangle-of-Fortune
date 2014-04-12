@@ -5,6 +5,8 @@
  */
 package RfortuneTeam.HeatherandLaura.enums;
 
+import rfortune.RfortuneMessages;
+
 /**
  *
  * @author Heather
@@ -38,10 +40,10 @@ public enum ErrorType {
         StringBuilder dividerLine = new StringBuilder(dividerLineLength);
         for (int i = 0; i < dividerLineLength; i++) {
             dividerLine.insert(i, '+');
-        }
+}
         System.out.println("\t" + dividerLine.toString());
         System.out.println(fullMessage);
         System.out.println("\t" + dividerLine.toString());
-    }
+}
 
 }

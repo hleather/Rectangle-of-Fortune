@@ -10,7 +10,7 @@ package RfortuneTeam.HeatherandLaura.allMenuViews;
  *
  * @author Heather and Laura
  */
-import RfortuneTeam.HeatherandLaura.control.HelpMenuControl;
+
 import RfortuneTeam.HeatherandLaura.customExceptions.MenuException;
 
 
@@ -29,9 +29,6 @@ public class HelpMenuView extends Menu {
         {"P", "About The Players"},        
         {"Q", "Quit Help"}        
     };
-    
-    // Create instance of the HelpMenuControl (action) class
-    HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // default constructor
     public HelpMenuView() {
@@ -78,41 +75,5 @@ public class HelpMenuView extends Menu {
             return this.message;
         }
     }
-    // display the help menu and get the end users input selection
-
-
-    public String getInput(Object object) {       
-        do {
-            try {
-            
-            this.display(); // display the menu
-            
-            // get commaned entered
-            command = this.getCommand();
-            switch (command) {
-                case "B":
-                    displayCommand.BOARDHELP.display();
-                    break;
-                case "R":
-                   displayCommand.GAMEHELP.display();
-                    break;                  
-                case "V":
-                    displayCommand.VOWELHELP.display();
-                    break;
-                case "G":
-                    displayCommand.GUESSHELP.display();
-                    break;
-                 case "P":
-                    displayCommand.PLAYERHELP.display();
-                    break;
-                 case "Q": 
-                    break;
-            }
-            } catch (MenuException e) {
-                System.out.println("\n" + e.getMessage());
-            }
-            
-        } while (!command.equals("Q"));  
-        return command;
-    }
+   
 }

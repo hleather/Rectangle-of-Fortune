@@ -11,7 +11,7 @@ import rfortune.Player;
 import rfortune.PlayerTurn;
 import rfortune.PlayersList;
 import rfortune.Rfortune;
-import rfortune.RfortuneError;
+import rfortune.RfortuneMessages;
 import rfortune.WordsAndPhrases;
 
 /**
@@ -331,14 +331,14 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                 ready = true;
             }
             else
-                new RfortuneError().displayError("Please submit player names");
+                new RfortuneMessages().displayMessage("Please submit player names");
 
         }
         if (MainMenuControl.getSetNumPlayers() == 2) {
             if (control == 2) 
                 ready = true;
             else
-                new RfortuneError().displayError("Please submit player names");
+                new RfortuneMessages().displayMessage("Please submit player names");
 
         }
         if (MainMenuControl.getSetNumPlayers() == 3) {
@@ -346,11 +346,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                 ready = true;
             }
             else
-                new RfortuneError().displayError("Please submit player names");
+                new RfortuneMessages().displayMessage("Please submit player names");
 
         }
         if (MainMenuControl.getSetNumPlayers() == 0) {
-            new RfortuneError().displayError("How many people are playing? Check the box.");
+            new RfortuneMessages().displayMessage("How many people are playing? Check the box.");
         }
         if (ready) {
             playersList.resetList();
