@@ -130,12 +130,12 @@ public class CorrectGuess extends javax.swing.JFrame {
             Game.setEndScreen();
             this.dispose();
         }
+        if (CheckGuess.getGuessType() != 3) {
         gameTurn.jtfPhraseDisplay.setText(WordsAndPhrases.updateAndTranslateParallelArrayToString());
         gameTurn.jtfPlayerTurnDisplay.setText(playerTurn.updatePlayersTurn());
         gameTurn.jtfBankDisplay.setText("$ " + game.displayPlayerUpBank());
         gameTurn.jtfSpinWorth.setText(null);
         GameTurn.controlSpin = 0;
-        if (CheckGuess.getGuessType() != 3) {
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
@@ -148,9 +148,8 @@ public class CorrectGuess extends javax.swing.JFrame {
                 gameTurn.dispose();
             }
         }
-        
-        }
         this.dispose();
+        }
     }//GEN-LAST:event_jbCorrectContinueActionPerformed
 
     /**

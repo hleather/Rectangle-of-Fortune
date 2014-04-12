@@ -452,5 +452,4 @@ public class Bank implements Serializable {
         int openSpaces = phraseLength - cGuesses;
         setGuessPhraseWorth(openSpaces * guessOpenSpaceWorth);
     }
-
 }
