@@ -16,8 +16,7 @@ import java.util.ArrayList;
 public class PlayersList implements Serializable {
 
     private static boolean justRight = false;
-    
-
+    ArrayList playerList = new ArrayList();
     
     public static boolean getJustRight(){
         return justRight;
@@ -30,9 +29,8 @@ public class PlayersList implements Serializable {
     public PlayersList() {
 
     }
-    
+
     public void checkInput(String playerName) {
-        ArrayList playerList = new ArrayList();
         int control = 0;
         if (playerName.length() < 1) {
             setJustRight(false);
@@ -58,5 +56,4 @@ public class PlayersList implements Serializable {
             setJustRight(true);
         }
     }
-    }
-
+}
