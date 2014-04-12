@@ -5,6 +5,8 @@
  */
 package rfortune;
 
+import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames;
+import RfortuneTeam.HeatherandLaura.frames.GameMenu;
 import RfortuneTeam.HeatherandLaura.frames.MainFrame;
 import java.util.Scanner;
 
@@ -18,6 +20,8 @@ public class Rfortune {
     public static Scanner inFile = new Scanner(System.in);
     static MainFrame mainFrame = new MainFrame();
     static Rfortune rFortune = null;
+    PlayersList playersList = new PlayersList();
+    static GameMenu gameMenu = new GameMenu();
 
     public static void main(String[] args) {
 
@@ -49,6 +53,17 @@ public class Rfortune {
     }
 
     public void newGame() {
+        playersList.resetList();
+        EnterPlayerNames.control = 0;
+        Bank.setBankNumberPlayer1(0);
+        Bank.setBankNumberPlayer2(0);
+        Bank.setBankNumberPlayer3(0);
+        gameMenu.jtfPlayer1Bank.setText(" ");
+        gameMenu.jtfPlayer2Bank.setText(" ");
+        gameMenu.jtfPlayer3Bank.setText(" ");
+        gameMenu.jtfPlayer1Name.setText(" ");
+        gameMenu.jtfPlayer2Name.setText(" ");
+        gameMenu.jtfPlayer3Name.setText(" ");
 
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {

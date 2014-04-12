@@ -6,6 +6,7 @@
 package RfortuneTeam.HeatherandLaura.frames;
 
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import rfortune.Bank;
 import rfortune.PlayersList;
 import rfortune.Rfortune;
 
@@ -213,7 +214,6 @@ public class EndMessage extends javax.swing.JFrame {
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewGameActionPerformed
-        playersList.resetList();
         new Rfortune().newGame();
         this.dispose();
     }//GEN-LAST:event_jbNewGameActionPerformed
