@@ -39,7 +39,6 @@ public class EndMessage extends javax.swing.JFrame {
         jtfBank1 = new javax.swing.JTextField();
         jtfBank2 = new javax.swing.JTextField();
         jtfBank3 = new javax.swing.JTextField();
-        jbNewGame = new javax.swing.JButton();
         jbExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -109,15 +108,6 @@ public class EndMessage extends javax.swing.JFrame {
         jtfBank3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfBank3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
-        jbNewGame.setBackground(new java.awt.Color(153, 153, 153));
-        jbNewGame.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
-        jbNewGame.setText("New Game");
-        jbNewGame.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbNewGameActionPerformed(evt);
-            }
-        });
-
         jbExit.setBackground(new java.awt.Color(153, 153, 153));
         jbExit.setFont(new java.awt.Font("Lucida Sans", 0, 12)); // NOI18N
         jbExit.setText("Exit");
@@ -156,13 +146,8 @@ public class EndMessage extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jbExit)
-                        .addGap(273, 273, 273))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jbNewGame)
-                        .addGap(254, 254, 254))))
+                .addComponent(jbExit)
+                .addGap(275, 275, 275))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,11 +167,9 @@ public class EndMessage extends javax.swing.JFrame {
                     .addComponent(jtfBank1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfBank2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtfBank3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jbNewGame)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jbExit)
-                .addGap(0, 29, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -213,18 +196,12 @@ public class EndMessage extends javax.swing.JFrame {
         mainMenuControl.exitGame();
     }//GEN-LAST:event_jbExitActionPerformed
 
-    private void jbNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewGameActionPerformed
-        new Rfortune().newGame();
-        this.dispose();
-    }//GEN-LAST:event_jbNewGameActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JSlider jSlider1;
     public javax.swing.JButton jbExit;
-    public javax.swing.JButton jbNewGame;
     public javax.swing.JTextField jtfBank1;
     public javax.swing.JTextField jtfBank2;
     public javax.swing.JTextField jtfBank3;

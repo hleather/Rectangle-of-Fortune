@@ -16,7 +16,6 @@ import rfortune.WordsAndPhrases;
  */
 public class GuessVowel extends javax.swing.JFrame {
     CheckGuess checkGuess = new CheckGuess();
-    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
 
     /**
      * Creates new form GuessPhrase
@@ -125,7 +124,7 @@ public class GuessVowel extends javax.swing.JFrame {
             char guess = control.charAt(0);
             checkGuess.checkGuess(2, guess);
             if (!CheckGuess.getCheckGuessRepeat()) {
-                wordsAndPhrases.searchPhrase(2, guess);
+                WordsAndPhrases.searchPhrase(2, guess);
                 WordsAndPhrases.updateAndTranslateParallelArrayToString();
                 this.dispose();
             }

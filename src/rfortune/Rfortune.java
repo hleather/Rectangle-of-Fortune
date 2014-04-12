@@ -54,17 +54,6 @@ public class Rfortune {
 
     public void newGame() {
         playersList.resetList();
-        EnterPlayerNames.control = 0;
-        Bank.setBankNumberPlayer1(0);
-        Bank.setBankNumberPlayer2(0);
-        Bank.setBankNumberPlayer3(0);
-        gameMenu.jtfPlayer1Bank.setText(" ");
-        gameMenu.jtfPlayer2Bank.setText(" ");
-        gameMenu.jtfPlayer3Bank.setText(" ");
-        gameMenu.jtfPlayer1Name.setText(" ");
-        gameMenu.jtfPlayer2Name.setText(" ");
-        gameMenu.jtfPlayer3Name.setText(" ");
-
         try {
             java.awt.EventQueue.invokeLater(new Runnable() {
                 @Override
