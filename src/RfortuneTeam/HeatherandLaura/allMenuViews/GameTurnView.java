@@ -47,34 +47,12 @@ public class GameTurnView extends Menu {
     public String getInput(Object object) {
 
         do {
-           // WordsAndPhrases.updateParallelArray();
-        //    WordsAndPhrases.displayParallelArray();
-            //if (Game.getRoundNumber() == 0 && Game.isFoundMatch()) {
-             //  playerTurn.updatePlayersTurn();
-              //  Bank.displayPlayerUpBank();
-           // }
-            //if (Game.isTurnOver()) {
-             //  playerTurn.updatePlayersTurn();
-             //   Bank.bankPlayerTurn();
-              //  Bank.updateBankPlayer();
-              //  Bank.displayPlayerUpBank();
-           // }
+          
             this.display();
             switch (command) {
                 //guess a letter.
                 case "L":
-                    //if (Game.getRoundNumber() != 0) {
-                    //    Bank.displayPlayerUpBank();
-                   // }
-                   // playerTurn.updatePlayersTurn();
-                    //Bank.spin();
-                   // Bank.spinWorth();
-                   // Bank.printSpinWorth();
-                    //CheckGuess.checkLetterGuess();
-                  //  WordsAndPhrases.searchPhrase(1);
-                    //Game.display();
-                   // Game.setRoundNumber(Game.getRoundNumber() + 1);
-                    //Game.gameRound();
+             
                     break;
                     //guess a vowel
                 case "V":
