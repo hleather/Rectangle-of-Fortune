@@ -29,6 +29,7 @@ public class CheckGuess implements Serializable {
     private static int guessType = 0;
     private static boolean correctGuessType;
     ArrayList guessList = new ArrayList();
+    WordsAndPhrases wordsAndPhrases = new WordsAndPhrases();
 
     public static void setCurrentGuess(char guess) {
         currentGuess = guess;
@@ -123,14 +124,10 @@ public class CheckGuess implements Serializable {
     }
 
     private void checkRepeat(char guess) {
-        try {
         if (guessList.contains(guess)) {
             CheckGuess.setCheckGuessRepeat(true);
-        }
-        } catch (Throwable ex) {
-                ErrorType.ERROR106.displayErrorType();
-            }
-         if (!guessList.contains(guess)) {
+            ErrorType.ERROR106.displayErrorType();
+        } else {
             CheckGuess.setCheckGuessRepeat(false);
             updateGuessList(guess);
             WordsAndPhrases.searchPhrase(CheckGuess.getGuessType(), guess);
@@ -139,10 +136,6 @@ public class CheckGuess implements Serializable {
     }
 
     private void updateGuessList(char guess) {
-        try {
         guessList.add(guess);
-        } catch (Throwable ex) {
-            ErrorType.ERROR202.displayErrorType();
-        }
     }
 }
