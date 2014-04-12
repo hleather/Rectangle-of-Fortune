@@ -7,6 +7,7 @@ package rfortune;
 
 import RfortuneTeam.HeatherandLaura.control.GamePreferencesControl;
 import RfortuneTeam.HeatherandLaura.control.MainMenuControl;
+import RfortuneTeam.HeatherandLaura.enums.ErrorType;
 import RfortuneTeam.HeatherandLaura.frames.EndMessage;
 import RfortuneTeam.HeatherandLaura.frames.GameTurn;
 import java.io.Serializable;
@@ -338,15 +339,13 @@ public class Bank implements Serializable {
             } else if (control == 3) {
                 setBankNumberPlayer3(updateBank);
             } else if (control == 0) {
-                new RfortuneError().displayError("Sorry, there is a problem in Bank "
-                        + "Class, updateBankVowelPurchase.");
+              ErrorType.ERROR101.getMessage();
             }
             Bank.updateBankPlayer();
         }
         else {
             Bank.setHasEnough(false);
-            new RfortuneError().displayError("Sorry, you need $250 to purchase "
-                    + "a vowel");
+            ErrorType.ERROR102.getMessage();
         }
     }
     
@@ -375,8 +374,7 @@ public class Bank implements Serializable {
             } else if (control == 3) {
                 setBankNumberPlayer3(updateBank);
             } else if (control == 0) {
-                new RfortuneError().displayError("Sorry, there is a problem in Bank "
-                        + "Class, updateBankPhraseGuess.");
+                ErrorType.ERROR101.getMessage();
             }
             Bank.updateBankPlayer();
         }
@@ -436,8 +434,7 @@ public class Bank implements Serializable {
         } else if (control == 3) {
             setBankNumberPlayer3(updateBank);
         } else if (control == 0) {
-            new RfortuneError().displayError("Sorry, there is a problem in Bank "
-                    + "Class, updateBankSpinWorth.");
+            ErrorType.ERROR103.getMessage();
         }
         Bank.updateBankPlayer();
     }

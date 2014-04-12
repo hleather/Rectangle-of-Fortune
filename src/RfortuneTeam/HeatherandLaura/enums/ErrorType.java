@@ -11,12 +11,9 @@ package RfortuneTeam.HeatherandLaura.enums;
  */
 public enum ErrorType {
 
-    ERROR101("You can not change the dimensions "
-            + "of the board once the game has been started. "
-            + "\n\tStart a new game and then change the dimensions "
-            + "of the board. "),
-    ERROR102("You must enter two numbers, the number rows and columns, "
-            + "or a \"Q\" to quit. Try again."),
+    ERROR101("Sorry, there is a problem in Bank Class, updateBankVowelPurchase."),
+    ERROR102("Sorry, you need $250 to purchase."),
+    ERROR103("Sorry, there is a problem in BankClass, updateBankSpinWorth."),
     ERROR104("That character has already been selected by the other player. "
             + "Try again."),
     //We are using this the one below:
@@ -47,7 +44,7 @@ public enum ErrorType {
         return this.message;
     }
 
-    public static void displayErorrMsg(String errorMessage) {
+    public static void displayErrorMsg(String errorMessage) {
         String fullMessage = "\t+ ERROR: " + errorMessage + " +";
         int dividerLineLength = fullMessage.length();
         StringBuilder dividerLine = new StringBuilder(dividerLineLength);
