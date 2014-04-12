@@ -143,6 +143,7 @@ public class CheckGuess implements Serializable {
         guessList.add(guess);
         } catch (Throwable ex) {
             ErrorType.ERROR202.displayErrorType();
+            throw ex;
         }
     }
 }
