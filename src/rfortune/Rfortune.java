@@ -5,7 +5,6 @@
  */
 package rfortune;
 
-import RfortuneTeam.HeatherandLaura.frames.EnterPlayerNames;
 import RfortuneTeam.HeatherandLaura.frames.GameMenu;
 import RfortuneTeam.HeatherandLaura.frames.MainFrame;
 import java.util.Scanner;
@@ -30,6 +29,7 @@ public class Rfortune {
             rFortune = new Rfortune();
 
             java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
                 public void run() {
                     MainFrame mainFrame = new MainFrame();
 
