@@ -16,15 +16,12 @@ import java.util.ArrayList;
 public class PlayersList implements Serializable {
 
     private static boolean justRight = false;
-
     ArrayList playerList = new ArrayList();
-    
-
     
     public static boolean getJustRight(){
         return justRight;
     }
-    
+
     public static void setJustRight(boolean right) {
         justRight = right;
     }
@@ -45,15 +42,18 @@ public class PlayersList implements Serializable {
             control++;
             ErrorType.ERROR108.displayErrorType();
         }
-            if (playerList.contains(playerName)) {
-                setJustRight(false);
-                control++;
-                ErrorType.ERROR109.displayErrorType();
-            } else if (!playerList.contains(playerName) && control == 0) {
-                ErrorType.ERROR201.displayErrorType();
+        if (playerList.contains(playerName)) {
+            setJustRight(false);
+            control++;
+            ErrorType.ERROR109.displayErrorType();
+        } else if (!playerList.contains(playerName) && control == 0) {
+            ErrorType.ERROR201.displayErrorType();
+            try {
                 playerList.add(playerName);
-                setJustRight(true);
-                }
+            } catch (Throwable ex) {
+                ErrorType.ERROR202.displayErrorType();
+            }
+            setJustRight(true);
+        }
     }
-    }
-
+}

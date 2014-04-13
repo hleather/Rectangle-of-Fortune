@@ -23,7 +23,7 @@ public enum ErrorType {
     ERROR108("A name cannot be more than 10 characters long."),
     ERROR109("That name has already been entered."),
     ERROR201("Valid."),
-    ERROR202("Array list broken");
+    ERROR202("PlayerList error");
     String message;
 
     private ErrorType(String message) {

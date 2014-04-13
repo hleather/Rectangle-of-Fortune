@@ -16,7 +16,7 @@ public class RfortuneException extends Exception {
     }
 
     public RfortuneException(String message) {
-        super(message);
+       super(message);
     }
 
     public RfortuneException(String message, Throwable cause) {
